@@ -3,7 +3,7 @@ import Head from "next/head";
 import "../assets/css/style.css";
 import { ApolloProvider } from "@apollo/react-hooks";
 import withData from "../utils/apollo";
-import Nav from "../components/nav";
+import Nav from "../components/Nav";
 
 const App = ({ Component, pageProps, apollo }) => {
   return (

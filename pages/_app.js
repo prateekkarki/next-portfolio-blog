@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import { ApolloProvider } from '@apollo/react-hooks';
 import withData from '../utils/apollo';
-import Nav from '../components/Nav';
+import Header from '../components/Header';
 import '../assets/css/tailwind.css';
 
 const App = ({ Component, pageProps, apollo }) => {
@@ -12,7 +12,7 @@ const App = ({ Component, pageProps, apollo }) => {
 				<title>Strapi blog</title>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 			</Head>
-			<Nav />
+			<Header />
 			<Component {...pageProps} />
 		</ApolloProvider>
 	);

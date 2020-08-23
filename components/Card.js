@@ -9,15 +9,15 @@ const Card = ({ article }) => {
 	//       : process.env.API_URL + article.image.url;
 	return (
 		<Link href={{ pathname: 'article', query: { id: article.id } }}>
-			<div className="max-w-sm rounded overflow-hidden shadow-lg">
+			<div className="w-100 rounded overflow-hidden shadow-md hover:shadow-lg cursor-pointer">
 				{article.image && (
-					<CloudinaryContext cloudName="pratiek">
+					<CloudinaryContext cloudName="pratiek" className="w-full h-64 overflow-hidden">
 						<Image
 							// dpr="auto"
 							responsive
 							width="auto"
 							crop="scale"
-							className="w-full"
+							className="w-full h-64 object-cover object-center transition-all duration-500 ease-out transform hover:scale-125 origin-center"
 							responsiveUseBreakpoints="true"
 							publicId={article.image.url.split('/').pop()}
 						>
@@ -27,13 +27,9 @@ const Card = ({ article }) => {
 					</CloudinaryContext>
 				)}
 				<div className="px-6 py-4">
-					<div className="font-bold text-xl mb-2">{article.title}</div>
-					<p className="text-gray-700 text-base">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et
-						perferendis eaque, exercitationem praesentium nihil.
-					</p>
+					<h2 className="font-bold text-xl mb-2">{article.title}</h2>
 				</div>
-				<div className="px-6 pt-4 pb-2">
+				<div className="px-6 pb-2">
 					<span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
 						#{article.category?.name || ''}
 					</span>

@@ -1,43 +1,35 @@
-import { useRouter } from "next/router";
-import Query from "../components/query";
-import ReactMarkdown from "react-markdown";
-import Moment from "react-moment";
-import ARTICLE_QUERY from "../apollo/queries/article/article";
+import { useRouter } from 'next/router';
+import Query from '../components/query';
+import ReactMarkdown from 'react-markdown';
+import Moment from 'react-moment';
+import ARTICLE_QUERY from '../apollo/queries/article/article';
 
 const Article = () => {
-  const router = useRouter();
-  return (
-    <Query query={ARTICLE_QUERY} id={router.query.id}>
-      {({ data: { article } }) => {
-        // const imgUrl =
-        //   process.env.NODE_ENV !== "development"
-        //     ? article.image.url
-        //     : process.env.API_URL + article.image.url;
-        return (
-          <div>
-            <div
-              id="banner"
-              className="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding uk-margin"
-              data-src={article.image.url}
-              data-srcset={article.image.url}
-              data-uk-img
-            >
-              <h1>{article.title}</h1>
-            </div>
+	const router = useRouter();
+	return (
+		<Query query={ARTICLE_QUERY} id={router.query.id}>
+			{({ data: { article } }) => {
+				return (
+					<article className="container mx-auto prose-lg">
+						<header
+							className="w-full h-64 bg-cover text-center flex flex-col items-center justify-center"
+							style={{ background: `url(${article.image.url}) no-repeat center` }}
+						>
+							<h1
+								className="w-full h-full flex justify-center items-center"
+								style={{ background: `rgba(255,255,255,0.5)`, margin: 0 }}
+							>
+								{article.title}
+							</h1>
+						</header>
 
-            <div className="uk-section">
-              <div className="uk-container uk-container-small">
-                <ReactMarkdown source={article.content} />
-                <p>
-                  <Moment format="MMM Do YYYY">{article.published_at}</Moment>
-                </p>
-              </div>
-            </div>
-          </div>
-        );
-      }}
-    </Query>
-  );
+						{article.published_at && <Moment format="MMM Do YYYY">{article.published_at}</Moment>}
+						<ReactMarkdown source={article.content} />
+					</article>
+				);
+			}}
+		</Query>
+	);
 };
 
 export default Article;

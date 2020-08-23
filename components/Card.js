@@ -1,49 +1,46 @@
-import React from "react";
-import Link from "next/link";
-import {
-  Image,
-  Placeholder,
-  Transformation,
-  CloudinaryContext,
-} from "cloudinary-react";
+import React from 'react';
+import Link from 'next/link';
+import { Image, Placeholder, Transformation, CloudinaryContext } from 'cloudinary-react';
 
 const Card = ({ article }) => {
-  //   const imageUrl =
-  //     process.env.NODE_ENV !== "development"
-  //       ? article.image.url
-  //       : process.env.API_URL + article.image.url;
-  return (
-    <Link href={{ pathname: "article", query: { id: article.id } }}>
-      <a className="uk-link-reset">
-        <div className="uk-card uk-card-muted">
-          <div className="uk-card-media-top">
-            <CloudinaryContext cloudName="pratiek">
-              <Image
-                dpr="auto"
-                responsive
-                width="auto"
-                crop="scale"
-                responsiveUseBreakpoints="true"
-                publicId={article.image.url.split("/").pop()}
-              >
-                <Transformation width="200" crop="scale" />
-                <Placeholder type="pixelate" />
-              </Image>
-            </CloudinaryContext>
-            {/* <img src={article.image.url} alt={article.image.url} height="100" /> */}
-          </div>
-          <div className="uk-card-body">
-            <p id="category" className="uk-text-uppercase">
-              {article.category.name}
-            </p>
-            <p id="title" className="uk-text-large">
-              {article.title}
-            </p>
-          </div>
-        </div>
-      </a>
-    </Link>
-  );
+	//   const imageUrl =
+	//     process.env.NODE_ENV !== "development"
+	//       ? article.image.url
+	//       : process.env.API_URL + article.image.url;
+	return (
+		<Link href={{ pathname: 'article', query: { id: article.id } }}>
+			<div className="max-w-sm rounded overflow-hidden shadow-lg">
+				{article.image && (
+					<CloudinaryContext cloudName="pratiek">
+						<Image
+							// dpr="auto"
+							responsive
+							width="auto"
+							crop="scale"
+							className="w-full"
+							responsiveUseBreakpoints="true"
+							publicId={article.image.url.split('/').pop()}
+						>
+							{/* <Transformation width="200" crop="scale" /> */}
+							<Placeholder type="pixelate" />
+						</Image>
+					</CloudinaryContext>
+				)}
+				<div className="px-6 py-4">
+					<div className="font-bold text-xl mb-2">{article.title}</div>
+					<p className="text-gray-700 text-base">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et
+						perferendis eaque, exercitationem praesentium nihil.
+					</p>
+				</div>
+				<div className="px-6 pt-4 pb-2">
+					<span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+						#{article.category?.name || ''}
+					</span>
+				</div>
+			</div>
+		</Link>
+	);
 };
 
 export default Card;

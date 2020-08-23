@@ -1,51 +1,57 @@
-import React from "react";
-import Link from "next/link";
-import Query from "../components/query";
-import CATEGORIES_QUERY from "../apollo/queries/category/categories";
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+import Query from '../components/query';
+import CATEGORIES_QUERY from '../apollo/queries/category/categories';
 
 const Nav = () => {
-  return (
-    <div>
-      <Query query={CATEGORIES_QUERY} id={null}>
-        {({ data: { categories } }) => {
-          return (
-            <div>
-              <nav className="uk-navbar-container" data-uk-navbar>
-                <div className="uk-navbar-left">
-                  <ul className="uk-navbar-nav">
-                    <li>
-                      <Link href="/">
-                        <a>Strapi Blog</a>
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
+	const [isExpanded, setIsExpanded] = useState(false);
+	const expandedClasses = isExpanded ? 'flex ' : 'hidden ';
 
-                <div className="uk-navbar-right">
-                  <ul className="uk-navbar-nav">
-                    {categories.map((category, i) => {
-                      return (
-                        <li key={category.id}>
-                          <Link
-                            href={{
-                              pathname: "category",
-                              query: { id: category.id },
-                            }}
-                          >
-                            <a className="uk-link-reset">{category.name}</a>
-                          </Link>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              </nav>
-            </div>
-          );
-        }}
-      </Query>
-    </div>
-  );
+	return (
+		<Query query={CATEGORIES_QUERY} id={null}>
+			{({ data: { categories } }) => {
+				return (
+					<React.Fragment>
+						<nav
+							className={`sm:flex text-lg flex-col items-center sm:flex-row transition-all duration-200 ease-in-out transform  ${expandedClasses}`}
+						>
+							{categories.map((category, i) => {
+								return (
+									<Link
+										href={{
+											pathname: 'category',
+											query: { id: category.id },
+										}}
+									>
+										<a className="text-gray-800 hover:text-purple-300 py-3 uppercase px-6">
+											{category.name}
+										</a>
+									</Link>
+								);
+							})}
+							<a
+								href="#"
+								className="bg-purple-200 hover:bg-purple-300 rounded-full uppercase text-purple-700 py-3 px-6"
+							>
+								Contact
+							</a>
+						</nav>
+
+						<button
+							className="flex sm:hidden flex-col focus:outline-none absolute top-0 right-0 p-4 mt-5"
+							onClick={() => {
+								setIsExpanded(!isExpanded);
+							}}
+						>
+							<span className="w-5 h-px mb-1 bg-orange-500"></span>
+							<span className="w-5 h-px mb-1 bg-orange-500"></span>
+							<span className="w-5 h-px mb-1 bg-orange-500"></span>
+						</button>
+					</React.Fragment>
+				);
+			}}
+		</Query>
+	);
 };
 
 export default Nav;

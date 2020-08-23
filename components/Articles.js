@@ -1,29 +1,14 @@
-import React from "react";
-import Card from "./Card";
+import React from 'react';
+import Card from './Card';
 
 const Articles = ({ articles }) => {
-  const leftArticlesCount = Math.ceil(articles.length / 5);
-  const leftArticles = articles.slice(0, leftArticlesCount);
-  const rightArticles = articles.slice(leftArticlesCount, articles.length);
-
-  return (
-    <div>
-      <div className="uk-child-width-1-2" data-uk-grid>
-        <div>
-          {leftArticles.map((article, i) => {
-            return <Card article={article} key={`article__${article.id}`} />;
-          })}
-        </div>
-        <div>
-          <div className="uk-child-width-1-2@m uk-grid-match" data-uk-grid>
-            {rightArticles.map((article, i) => {
-              return <Card article={article} key={`article__${article.id}`} />;
-            })}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+	return (
+		<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-2 gap-y-2 container mx-auto">
+			{articles.map((article, i) => {
+				return <Card article={article} key={`article__${article.id}`} />;
+			})}
+		</div>
+	);
 };
 
 export default Articles;

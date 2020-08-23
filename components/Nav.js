@@ -18,10 +18,10 @@ const Nav = () => {
 							{categories.map((category, i) => {
 								return (
 									<Link
-										href={{
-											pathname: 'category',
-											query: { id: category.id },
-										}}
+										href="/category/[cid]"
+										as={`/category/${category.id}`}
+										passHref
+										key={`nav-link-${i}`}
 									>
 										<a className="text-gray-800 hover:text-purple-300 py-3 uppercase px-6">
 											{category.name}

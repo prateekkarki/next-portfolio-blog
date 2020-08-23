@@ -8,7 +8,7 @@ const Card = ({ article }) => {
 	//       ? article.image.url
 	//       : process.env.API_URL + article.image.url;
 	return (
-		<Link href={{ pathname: 'article', query: { id: article.id } }}>
+		<Link href="/article/[aid]" as={`/article/${article.id}`} passHref>
 			<div className="w-100 rounded overflow-hidden shadow-md hover:shadow-lg cursor-pointer">
 				{article.image && (
 					<CloudinaryContext cloudName="pratiek" className="w-full h-64 overflow-hidden">

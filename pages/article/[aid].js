@@ -1,13 +1,15 @@
 import { useRouter } from 'next/router';
-import Query from '../components/query';
+import Query from '../../components/query';
 import ReactMarkdown from 'react-markdown';
 import Moment from 'react-moment';
-import ARTICLE_QUERY from '../apollo/queries/article/article';
+import ARTICLE_QUERY from '../../apollo/queries/article/article';
 
 const Article = () => {
 	const router = useRouter();
-	return (
-		<Query query={ARTICLE_QUERY} id={router.query.id}>
+	const { aid } = router.query;
+
+	return !router.query.aid ? null : (
+		<Query query={ARTICLE_QUERY} id={aid}>
 			{({ data: { article } }) => {
 				return (
 					<article className="container mx-auto prose-lg">

@@ -1,18 +1,27 @@
 import React from 'react';
 import Articles from '../components/Articles';
-import Query from '../components/query';
 import ARTICLES_QUERY from '../apollo/queries/article/articles';
+import { initializeApollo } from '../utils/apollo';
 
-const Home = () => {
+const Home = ({ articles }) => {
 	return (
 		<div>
-			<Query query={ARTICLES_QUERY}>
-				{({ data: { articles } }) => {
-					return <Articles articles={articles} />;
-				}}
-			</Query>
+			<Articles articles={articles} />;
 		</div>
 	);
 };
 
 export default Home;
+
+export async function getStaticProps() {
+	const client = initializeApollo();
+	const res = await client.query({
+		query: ARTICLES_QUERY,
+	});
+
+	// The value of the `props` key will be
+	//  passed to the `Home` component
+	return {
+		props: res.data,
+	};
+}

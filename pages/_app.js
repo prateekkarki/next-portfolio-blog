@@ -5,7 +5,8 @@ import withData from '../utils/apollo';
 import Header from '../components/Header';
 import '../assets/css/tailwind.css';
 
-const App = ({ Component, pageProps, apollo }) => {
+const App = (props) => {
+	const { Component, pageProps, apollo } = props;
 	return (
 		<ApolloProvider client={apollo}>
 			<Head>

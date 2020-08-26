@@ -41,3 +41,10 @@ const Article = () => {
 };
 
 export default Article;
+
+// export async function getStaticPaths() {
+// 	return {
+// 		paths: ['/article/[aid]'],
+// 		fallback: true,
+// 	};
+// }

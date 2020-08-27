@@ -6,5 +6,4 @@
 [[headers]]
   for = "/_next/static/*"
   [headers.values]
-	Expires=access plus 1 month
-  
+	max-age=100000

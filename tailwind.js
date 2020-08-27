@@ -7,5 +7,13 @@ module.exports = {
 	future: {
 		removeDeprecatedGapUtilities: true,
 	},
+	theme: {
+		extend: {
+			colors: {
+				coolteal: '#00e0e2',
+			},
+		},
+	},
+
 	plugins: [require('@tailwindcss/typography')],
 };

@@ -12,6 +12,7 @@ const Card = ({ article }) => {
 					<CloudinaryContext cloudName="pratiek" tw="w-full h-64 overflow-hidden">
 						<Image
 							// dpr="auto"
+							secure="true"
 							responsive
 							width="auto"
 							crop="scale"

@@ -1,12 +1,19 @@
 import React from 'react';
 import Head from 'next/head';
 import { ApolloProvider } from '@apollo/react-hooks';
-import withData from '../utils/apollo';
+import withApollo from '../utils/apollo';
+
 import Header from '../components/Header';
 import '../assets/css/tailwind.css';
 
 const App = (props) => {
 	const { Component, pageProps, apollo } = props;
+	const layoutProps = {
+		categories: [
+			{ id: '1', name: 'news' },
+			{ id: '2', name: 'trends' },
+		],
+	};
 	return (
 		<ApolloProvider client={apollo}>
 			<Head>
@@ -21,11 +28,12 @@ const App = (props) => {
 				></meta>
 				<meta name="keywords" content="Web Development, Web Developer, Javascript Developer, Freelancer"></meta>
 			</Head>
-			<Header />
+			<Header {...layoutProps} />
 			<Component {...pageProps} />
 		</ApolloProvider>
 	);
 };
 
 // Wraps all components in the tree with the data provider
-export default withData(App);
+const AppolloApp = withApollo(App);
+export default AppolloApp;

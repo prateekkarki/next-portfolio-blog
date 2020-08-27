@@ -2,3 +2,9 @@
   command   = "npm run build"
   functions = "out_functions"
   publish   = "out_publish"
+
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+	Expires=access plus 1 month
+  

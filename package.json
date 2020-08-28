@@ -11,7 +11,7 @@
   },
   "babelMacros": {
     "twin": {
-      "config": "tailwind.js",
+      "config": "tailwind-config.js",
       "preset": "emotion",
       "debugProp": true,
       "debugPlugins": false,
@@ -36,10 +36,10 @@
     "lodash": "^4.17.20",
     "moment": "^2.27.0",
     "next": "9.5.2",
-    "next-fonts": "^1.4.0",
     "next-on-netlify": "^2.3.2",
     "next-with-apollo": "^5.1.0",
     "react": "16.13.1",
+    "react-dark-mode-toggle": "^0.0.9",
     "react-dom": "16.13.1",
     "react-markdown": "^4.3.1",
     "react-moment": "^0.9.7",

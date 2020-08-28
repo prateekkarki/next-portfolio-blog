@@ -8,9 +8,19 @@ module.exports = {
 		removeDeprecatedGapUtilities: true,
 	},
 	theme: {
+		typography: {
+			default: {
+				css: {
+					color: '#333',
+					fontFamily: "'Poppins', sans-serif",
+				},
+			},
+		},
+
 		extend: {
 			colors: {
-				coolteal: '#00e0e2',
+				green: '#0ABEAD',
+				mainDark: '#1F2935',
 			},
 		},
 	},

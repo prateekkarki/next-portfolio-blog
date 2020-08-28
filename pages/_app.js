@@ -27,6 +27,10 @@ const App = (props) => {
 					he will suggest and provide the best solutions for any problems his clients might have."
 				></meta>
 				<meta name="keywords" content="Web Development, Web Developer, Javascript Developer, Freelancer"></meta>
+				<link
+					href={`https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;900&display=swap`}
+					rel="stylesheet"
+				/>
 			</Head>
 			<Header {...layoutProps} />
 			<Component {...pageProps} />

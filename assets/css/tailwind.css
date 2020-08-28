@@ -1,6 +1,9 @@
 /* purgecss start ignore */
 @tailwind base;
 /* purgecss end ignore */
+html {
+	font-family: 'Poppins', sans-serif;
+}
 
 h1 {
 	@apply text-2xl;

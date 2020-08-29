@@ -13,7 +13,7 @@ function Loader() {
 	`;
 
 	return (
-		<div tw="flex h-full items-center justify-center w-full">
+		<div css={tw`flex h-full items-center justify-center w-full`}>
 			<div
 				css={css`
 					${tw`border-gray-200 ease-linear rounded-full border-8 border-t-8  h-10 w-10 `}

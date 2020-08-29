@@ -6,7 +6,7 @@ import CATEGORY_ARTICLES_QUERY from '../../apollo/queries/category/articles';
 import Head from 'next/head';
 import _ from 'lodash';
 
-import 'twin.macro';
+import tw from 'twin.macro';
 
 const Category = () => {
 	const router = useRouter();
@@ -20,8 +20,10 @@ const Category = () => {
 							<title>{_.capitalize(category.name)} : Prateek Karki's blog</title>
 						</Head>
 
-						<div tw="container mx-auto">
-							<p tw="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+						<div css={tw`container mx-auto`}>
+							<p
+								css={tw`inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2`}
+							>
 								#{category.name}
 							</p>
 							<Articles articles={category.articles} />

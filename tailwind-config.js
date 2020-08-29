@@ -18,9 +18,19 @@ module.exports = {
 		},
 
 		extend: {
+			boxShadow: {
+				primary: '0px 16px 29px rgba(11, 190, 173, 0.4)',
+				secondary: '0px 16px 29px rgba(245, 127, 23, 0.24)',
+			},
+
 			colors: {
-				green: '#0ABEAD',
-				mainDark: '#1F2935',
+				light: '#95A5C6',
+				primary: '#0ABEAD',
+				secondary: '#F57F17',
+				main: {
+					light: '#1F2935',
+					dark: '#161D26',
+				},
 			},
 		},
 	},

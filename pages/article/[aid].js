@@ -5,7 +5,7 @@ import Moment from 'react-moment';
 import ARTICLE_QUERY from '../../apollo/queries/article/article';
 import Head from 'next/head';
 
-import 'twin.macro';
+import tw from 'twin.macro';
 
 const Article = () => {
 	const router = useRouter();
@@ -19,13 +19,13 @@ const Article = () => {
 						<Head>
 							<title>{article.title} : Prateek Karki's blog</title>
 						</Head>
-						<article tw="container mx-auto prose-lg">
+						<article css={tw`container mx-auto prose-lg`}>
 							<header
-								tw="w-full h-64 bg-cover text-center flex flex-col items-center justify-center"
+								css={tw`w-full h-64 bg-cover text-center flex flex-col items-center justify-center`}
 								style={{ background: `url(${article.image.url}) no-repeat center` }}
 							>
 								<h1
-									tw="w-full h-full flex justify-center items-center"
+									css={tw`w-full h-full flex justify-center items-center`}
 									style={{ background: `rgba(255,255,255,0.5)`, margin: 0 }}
 								>
 									{article.title}

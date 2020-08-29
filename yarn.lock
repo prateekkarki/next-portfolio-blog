@@ -1890,14 +1890,6 @@ babel-plugin-transform-react-remove-prop-types@0.4.24:
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-react-remove-prop-types/-/babel-plugin-transform-react-remove-prop-types-0.4.24.tgz#f2edaf9b4c6a5fbe5c1d678bfb531078c1555f3a"
   integrity sha512-eqj0hVcJUR57/Ug2zE1Yswsw4LhuqqHhD+8v120T1cl3kjg76QwtyBrdIk4WVwK+lAhBJVYCd/v+4nc4y+8JsA==
 
-babel-runtime@^6.26.0:
-  version "6.26.0"
-  resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
-  integrity sha1-llxwWGaOgrVde/4E/yM3vItWR/4=
-  dependencies:
-    core-js "^2.4.0"
-    regenerator-runtime "^0.11.0"
-
 bail@^1.0.0:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/bail/-/bail-1.0.5.tgz#b6fa133404a392cbc1f8c4bf63f5953351e7a776"
@@ -2552,11 +2544,6 @@ core-js-compat@^3.6.2:
     browserslist "^4.8.5"
     semver "7.0.0"
 
-core-js@^2.4.0:
-  version "2.6.11"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.11.tgz#38831469f9922bded8ee21c9dc46985e0399308c"
-  integrity sha512-5wjnpaT/3dV+XB4borEsnAYQchn00XSgTAWKDkEqv+K8KevjbzmofK6hfJ9TZIlpj2N0xQpazy7PiRQiWHqzWg==
-
 core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
@@ -3042,11 +3029,6 @@ dom-serializer@1.0.1, dom-serializer@^1.0.1:
     domelementtype "^2.0.1"
     domhandler "^3.0.0"
     entities "^2.0.0"
-
-dom-walk@^0.1.0:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/dom-walk/-/dom-walk-0.1.2.tgz#0c548bef048f4d1f2a97249002236060daa3fd84"
-  integrity sha512-6QvTW9mrGeIegrFXdtQi9pk7O/nSK6lSdXW2eqUspN5LWD7UTji2Fqw5V2YLjBpHEoU9Xl/eUWNpDeZvoyOv2w==
 
 domain-browser@^1.1.1:
   version "1.2.0"
@@ -3635,14 +3617,6 @@ glob@^7.0.0, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4:
     minimatch "^3.0.4"
     once "^1.3.0"
     path-is-absolute "^1.0.0"
-
-global@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/global/-/global-4.4.0.tgz#3e7b105179006a323ed71aafca3e9c57a5cc6406"
-  integrity sha512-wv/LAoHdRE3BeTGz53FAamhGlPLhlssK45usmGFThIi4XqnBmjKQ16u+RNbP7WvigRZDxUsM0J3gcQ5yicaL0w==
-  dependencies:
-    min-document "^2.19.0"
-    process "^0.11.10"
 
 globals@^11.1.0:
   version "11.12.0"
@@ -4472,26 +4446,6 @@ loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
-lottie-api@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/lottie-api/-/lottie-api-1.0.2.tgz#4de8c27b35a565604f643543bcf092e60dce3c99"
-  integrity sha512-v9I2fYYDCEIPOSWUwvaVl9rVTuMU2iRRXZXmNFiw6zzTFe8aQAQHr/Vun4Oblr+sxFIxIUdvZMZXB+NbeG/3eQ==
-
-lottie-react-web@^2.1.4:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/lottie-react-web/-/lottie-react-web-2.2.2.tgz#4bcf799fa76cad06accb568370e01815c550bf27"
-  integrity sha512-0xCUysLcOsIHUy+PdHOXdCJb58XOYrWtUaZkIJwVS3E807/j6Rs9jt57YvqYgziFXquCjI2uP3hxBrOw528CZQ==
-  dependencies:
-    babel-runtime "^6.26.0"
-    global "^4.4.0"
-    lottie-api "^1.0.2"
-    lottie-web "^5.6.1"
-
-lottie-web@^5.6.1:
-  version "5.7.3"
-  resolved "https://registry.yarnpkg.com/lottie-web/-/lottie-web-5.7.3.tgz#dbe542270665be5dd5b32deae19e27de6e77728c"
-  integrity sha512-ftN4AdiNmtoVpCfN1doiUIUbhOrDSMikH1Yl64/xO5lzQ31AO0+G82bqrCNHIW5Ec2zE/g7y4iz7zBR1YJwDaA==
-
 lru-cache@6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-6.0.0.tgz#6d6fe6570ebd96aaf90fcad1dafa3b2566db3a94"
@@ -4629,13 +4583,6 @@ mimic-fn@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-2.1.0.tgz#7ed2c2ccccaf84d3ffcb7a69b57711fc2083401b"
   integrity sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==
-
-min-document@^2.19.0:
-  version "2.19.0"
-  resolved "https://registry.yarnpkg.com/min-document/-/min-document-2.19.0.tgz#7bd282e3f5842ed295bb748cdd9f1ffa2c824685"
-  integrity sha1-e9KC4/WELtKVu3SM3Z8f+iyCRoU=
-  dependencies:
-    dom-walk "^0.1.0"
 
 mini-css-extract-plugin@0.8.0:
   version "0.8.0"
@@ -5317,11 +5264,6 @@ parse-json@^5.0.0:
     error-ex "^1.3.1"
     json-parse-even-better-errors "^2.3.0"
     lines-and-columns "^1.1.6"
-
-parse-unit@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/parse-unit/-/parse-unit-1.0.1.tgz#7e1bb6d5bef3874c28e392526a2541170291eecf"
-  integrity sha1-fhu21b7zh0wo45JSaiVBFwKR7s8=
 
 pascalcase@^0.1.1:
   version "0.1.1"
@@ -6287,14 +6229,6 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-dark-mode-toggle@^0.0.9:
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/react-dark-mode-toggle/-/react-dark-mode-toggle-0.0.9.tgz#3a4aabee5d680de0af05fd44739d56101a8c9881"
-  integrity sha512-v5b0BjvSgB2IS+KyosKJEO4Xu7uZKeHv/it82FtjGnT8jHK3aknB/ZNZ3L5AZjF9ZXvPl3xZ/C18sfq5C+/V2Q==
-  dependencies:
-    lottie-react-web "^2.1.4"
-    parse-unit "^1.0.1"
-
 react-dom@16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.13.1.tgz#c1bd37331a0486c078ee54c4740720993b2e0e7f"
@@ -6412,11 +6346,6 @@ regenerate@^1.4.0:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/regenerate/-/regenerate-1.4.1.tgz#cad92ad8e6b591773485fbe05a485caf4f457e6f"
   integrity sha512-j2+C8+NtXQgEKWk49MMP5P/u2GhnahTtVkRIHr5R5lVRlbKvmQ+oS+A5aLKWp2ma5VkT8sh6v+v4hbH0YHR66A==
-
-regenerator-runtime@^0.11.0:
-  version "0.11.1"
-  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
-  integrity sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg==
 
 regenerator-runtime@^0.13.4:
   version "0.13.7"

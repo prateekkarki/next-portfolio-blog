@@ -19,7 +19,7 @@ const App = (props) => {
 			<Head>
 				<title>Prateek Karki - Full-stack web developer from Kathmandu, Nepal</title>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-				<meta charset="utf-8"></meta>
+				<meta charSet="utf-8"></meta>
 				<meta
 					name="description"
 					content="Prateek Karki is a full-stack web developer dedicated to providing highly performant solutions on the internet. 
@@ -28,7 +28,7 @@ const App = (props) => {
 				></meta>
 				<meta name="keywords" content="Web Development, Web Developer, Javascript Developer, Freelancer"></meta>
 				<link
-					href={`https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;900&display=swap`}
+					href={`https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap`}
 					rel="stylesheet"
 				/>
 			</Head>

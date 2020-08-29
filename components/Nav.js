@@ -1,49 +1,125 @@
 /** @jsx jsx **/
-import { jsx } from '@emotion/core';
+import { jsx, css } from '@emotion/core';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { useRouter } from 'next/router';
+
 import Link from 'next/link';
 import tw, { styled } from 'twin.macro';
-import DarkModeToggle from 'react-dark-mode-toggle';
 
 const Nav = ({ categories }) => {
-	const [isExpanded, setIsExpanded] = useState(false);
-	const [isDarkMode, setIsDarkMode] = useState(false);
-	const Line = tw.span`w-5 h-px mb-1 bg-orange-500`;
+	let isExpanded = false;
+	const Line = tw.span`w-5 h-px mb-1 bg-secondary duration-300 ease-out transition-all`;
 
-	const MainNav = styled.nav(({ isExpanded }) => [
-		tw`sm:flex text-lg flex-col items-center sm:flex-row transition-all duration-200 ease-in-out transform sm:mr-4`,
-		isExpanded ? tw`flex` : tw`hidden`,
+	const mobileNavRef = useRef(null);
+	const mobileNavTrigger = useRef(null);
+
+	const MainNav = styled.nav(tw`hidden sm:flex text-lg flex-col items-center sm:flex-row sm:mr-4`);
+
+	const MobileNav = styled.nav([
+		css`
+			top: 128px;
+			transform: translateY(-100%);
+		`,
+		tw`flex sm:hidden w-full absolute bg-main-light text-lg flex-col items-center duration-700 ease-out transition-all z-0`,
 	]);
+
+	const expandMobileNav = () => {
+		if (isExpanded) {
+			mobileNavRef.current.style.transform = 'translateY(-100%)';
+			mobileNavTrigger.current.children[0].style.transform = 'rotate(0)';
+			mobileNavTrigger.current.children[1].style.opacity = '1';
+			mobileNavTrigger.current.children[2].style.transform = 'rotate(0) translate(0,0)';
+			isExpanded = false;
+		} else {
+			mobileNavRef.current.style.transform = 'translateY(0)';
+			mobileNavTrigger.current.children[0].style.transform = 'rotate(45deg)';
+			mobileNavTrigger.current.children[1].style.opacity = '0';
+			mobileNavTrigger.current.children[2].style.transform = 'rotate(-45deg) translate(7px, -7px)';
+			isExpanded = true;
+		}
+	};
+
+	const ActiveLink = (props) => {
+		const router = useRouter();
+
+		const NavLink = styled.a(({ isActive }) => [
+			tw`font-medium hover:text-primary py-3 uppercase text-base ml-4`,
+			isActive ? tw`text-primary` : tw`text-light`,
+		]);
+		return (
+			<Link {...props} passHref>
+				<NavLink isActive={router.asPath === props.as}>{props.children}</NavLink>
+			</Link>
+		);
+	};
 
 	return (
 		<React.Fragment>
-			<div tw="flex items-center justify-center">
-				<MainNav isExpanded={isExpanded}>
-					{categories.map((category, i) => {
-						return (
-							<Link href="/category/[cid]" as={`/category/${category.id}`} passHref key={`nav-link-${i}`}>
-								<a tw="text-gray-800 hover:text-purple-300 py-3 uppercase px-6">{category.name}</a>
-							</Link>
-						);
-					})}
-					<a href="#" tw="bg-purple-200 hover:bg-purple-300 rounded-full uppercase text-purple-700 py-3 px-6">
-						Contact
-					</a>
-				</MainNav>
-				<DarkModeToggle onChange={setIsDarkMode} checked={isDarkMode} size={80} speed={1.5} />
+			<div
+				css={tw`container bg-main-light relative mx-auto flex flex-col sm:flex-row items-center justify-between py-4 z-10`}
+			>
+				<h3 css={tw`text-6xl uppercase`}>
+					<Link href="/" passHref>
+						<a css={tw`font-black text-primary`}>PK.</a>
+					</Link>
+				</h3>
+				<div css={tw`flex items-center justify-center`}>
+					<MainNav>
+						<ActiveLink href="/#about" as="/#about">
+							About
+						</ActiveLink>
+						<ActiveLink href="/#services" as="/#services">
+							Services
+						</ActiveLink>
+						{categories.map((category, i) => {
+							return (
+								<ActiveLink
+									href="/category/[cid]"
+									as={`/category/${category.id}`}
+									key={`nav-link-${i}`}
+								>
+									{category.name}
+								</ActiveLink>
+							);
+						})}
+					</MainNav>
+				</div>
+
+				<button
+					css={[
+						css`
+							position: absolute;
+							top: 50%;
+							right: 0;
+							transform: translateY(-50%);
+						`,
+						tw`flex sm:hidden flex-col focus:outline-none p-4`,
+					]}
+					onClick={expandMobileNav}
+					ref={mobileNavTrigger}
+				>
+					<Line />
+					<Line />
+					<Line />
+				</button>
 			</div>
 
-			<button
-				tw="flex sm:hidden flex-col focus:outline-none absolute top-0 right-0 p-4 mt-5"
-				onClick={() => {
-					setIsExpanded(!isExpanded);
-				}}
-			>
-				<Line />
-				<Line />
-				<Line />
-			</button>
+			<MobileNav ref={mobileNavRef}>
+				<ActiveLink href="/#about" as="/#about">
+					About
+				</ActiveLink>
+				<ActiveLink href="/#services" as="/#services">
+					Services
+				</ActiveLink>
+				{categories.map((category, i) => {
+					return (
+						<ActiveLink href="/category/[cid]" as={`/category/${category.id}`} key={`nav-link-${i}`}>
+							{category.name}
+						</ActiveLink>
+					);
+				})}
+			</MobileNav>
 		</React.Fragment>
 	);
 };

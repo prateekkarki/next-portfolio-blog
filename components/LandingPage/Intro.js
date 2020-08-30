@@ -26,7 +26,7 @@ function Intro() {
 					</p>
 					<p css={tw`text-primary text-5xl font-bold`}>Javascript Developer</p>
 					<p css={tw`text-light text-base font-normal mt-2`}>
-						Freelancer Web/ Mobile UI/UX Designer with Motion Graphics
+						Full-Stack Web Developer | UX / Frontend / Backend
 					</p>
 					<div css={tw`flex gap-10 justify-center md:justify-start mt-4`}>
 						<button

@@ -60,7 +60,7 @@ const Nav = ({ categories }) => {
 				css={tw`container bg-main-light relative mx-auto flex flex-col sm:flex-row items-center justify-between py-4 z-10`}
 			>
 				<h3 css={tw`text-6xl uppercase`}>
-					<Link href="/" passHref>
+					<Link href="/#home" passHref>
 						<a css={tw`font-black text-primary`}>PK.</a>
 					</Link>
 				</h3>

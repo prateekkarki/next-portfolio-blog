@@ -8,11 +8,13 @@ import { animateScroll } from 'react-scroll';
 
 import Intro from '../components/LandingPage/Intro';
 import About from '../components/LandingPage/About';
+import Services from '../components/LandingPage/Services';
 
 const Home = ({ articles }) => {
 	const refs = {
 		home: useRef(null),
 		about: useRef(null),
+		services: useRef(null),
 	};
 	const router = useRouter();
 	useEffect(() => {
@@ -29,6 +31,9 @@ const Home = ({ articles }) => {
 			<Intro />
 			<div css={tw`container mx-auto mt-16`} ref={refs.about}>
 				<About />;
+			</div>
+			<div css={tw`container mx-auto mt-16`} ref={refs.services}>
+				<Services />;
 			</div>
 			<div css={tw`container mx-auto mt-16`}>
 				<Articles articles={articles} />;

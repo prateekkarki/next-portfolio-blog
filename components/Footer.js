@@ -158,7 +158,7 @@ function Footer() {
 					</div>
 				</ReactModal>
 				<p>
-					Made with ❤️ by me. Thanks to these
+					Made with ❤️ by me. Thanks to these{' '}
 					<button
 						type="button"
 						className="underline text-gray-600 focus:outline-none"

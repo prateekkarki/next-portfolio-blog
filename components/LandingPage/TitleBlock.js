@@ -1,5 +1,7 @@
 import React from 'react';
-import tw, { css } from 'twin.macro';
+import PropTypes from 'prop-types';
+
+import { css } from 'twin.macro';
 
 function TitleBlock({ title, subtitle }) {
 	return (
@@ -36,4 +38,8 @@ function TitleBlock({ title, subtitle }) {
 	);
 }
 
+TitleBlock.propTypes = {
+	title: PropTypes.string.isRequired,
+	subtitle: PropTypes.string.isRequired,
+};
 export default TitleBlock;

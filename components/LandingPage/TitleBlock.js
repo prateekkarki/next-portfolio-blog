@@ -22,7 +22,7 @@ function TitleBlock({ title, subtitle }) {
 						left: 50%;
 						transform: translate(-50%, -50%);
 					`}
-				></div>
+				/>
 				<div
 					className="w-16 absolute top-0 bg-primary rounded-full h-4"
 					css={css`
@@ -30,7 +30,7 @@ function TitleBlock({ title, subtitle }) {
 						left: 50%;
 						transform: translate(-50%, -50%);
 					`}
-				></div>
+				/>
 			</div>
 		</div>
 	);

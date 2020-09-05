@@ -1,9 +1,8 @@
-/** @jsx jsx **/
+/** @jsx jsx * */
 import { jsx } from '@emotion/core';
 
-import Nav from './Nav';
-
 import tw from 'twin.macro';
+import Nav from './Nav';
 
 function Header({ categories }) {
 	return (

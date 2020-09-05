@@ -1,4 +1,4 @@
-/** @jsx jsx **/
+/** @jsx jsx * */
 import { jsx, css, keyframes } from '@emotion/core';
 import tw from 'twin.macro';
 
@@ -20,7 +20,7 @@ function Loader() {
 					border-top-color: #3498db;
 					animation: ${spinner} 0.5s linear infinite;
 				`}
-			></div>
+			/>
 		</div>
 	);
 }

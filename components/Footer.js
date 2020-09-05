@@ -47,7 +47,7 @@ function Footer() {
 					contentLabel="Resources"
 				>
 					<div className="flex justify-between">
-						<h1>Used resources</h1>
+						<h1>Credits</h1>
 						<button
 							className="text-lg focus:outline-none"
 							onClick={() => {

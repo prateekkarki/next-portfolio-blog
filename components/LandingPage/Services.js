@@ -1,8 +1,8 @@
-/** @jsx jsx **/
+/** @jsx jsx * */
 import { jsx } from '@emotion/core';
 
-import TitleBlock from './TitleBlock';
 import tw from 'twin.macro';
+import TitleBlock from './TitleBlock';
 
 function Services() {
 	return (

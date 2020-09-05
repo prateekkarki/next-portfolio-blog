@@ -4,7 +4,7 @@ import Loader from './Loader';
 
 const Query = ({ children, query, id }) => {
 	const { data, loading, error } = useQuery(query, {
-		variables: { id: id },
+		variables: { id },
 	});
 
 	if (loading) return <Loader />;

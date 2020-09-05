@@ -1,4 +1,4 @@
-/** @jsx jsx **/
+/** @jsx jsx * */
 import { jsx, css } from '@emotion/core';
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -72,17 +72,11 @@ const Nav = ({ categories }) => {
 						<ActiveLink href="/#services" as="/#services">
 							Services
 						</ActiveLink>
-						{categories.map((category, i) => {
-							return (
-								<ActiveLink
-									href="/category/[cid]"
-									as={`/category/${category.id}`}
-									key={`nav-link-${i}`}
-								>
-									{category.name}
-								</ActiveLink>
-							);
-						})}
+						{categories.map((category, i) => (
+							<ActiveLink href="/category/[cid]" as={`/category/${category.id}`} key={`nav-link-${i}`}>
+								{category.name}
+							</ActiveLink>
+						))}
 					</MainNav>
 				</div>
 
@@ -112,13 +106,11 @@ const Nav = ({ categories }) => {
 				<ActiveLink href="/#services" as="/#services">
 					Services
 				</ActiveLink>
-				{categories.map((category, i) => {
-					return (
-						<ActiveLink href="/category/[cid]" as={`/category/${category.id}`} key={`nav-link-${i}`}>
-							{category.name}
-						</ActiveLink>
-					);
-				})}
+				{categories.map((category, i) => (
+					<ActiveLink href="/category/[cid]" as={`/category/${category.id}`} key={`nav-link-${i}`}>
+						{category.name}
+					</ActiveLink>
+				))}
 			</MobileNav>
 		</React.Fragment>
 	);

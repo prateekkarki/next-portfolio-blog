@@ -12,5 +12,7 @@ module.exports = {
 		sourceType: 'module',
 	},
 	plugins: ['react', 'prettier'],
-	rules: {},
+	rules: {
+		'linebreak-style': 0,
+	},
 };

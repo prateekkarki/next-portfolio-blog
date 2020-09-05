@@ -21,3 +21,35 @@ a {
 @tailwind components;
 
 @tailwind utilities;
+
+.ReactModal__Overlay {
+	z-index: 100;
+	opacity: 0;
+	transition: all 350ms ease-in-out;
+	transform-origin: center;
+}
+
+.ReactModal__Overlay--after-open {
+	opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+	opacity: 0;
+}
+
+.ReactModal__Content {
+	opacity: 0;
+	transform: translate(-50%, -50%) scale(0);
+	transition: all 350ms ease-in-out;
+	transform-origin: center;
+}
+
+.ReactModal__Content--after-open {
+	opacity: 1;
+	transform: translate(-50%, -50%) scale(1);
+}
+
+.ReactModal__Content--before-close {
+	opacity: 0;
+	transform: translate(-50%, -50%) scale(0);
+}

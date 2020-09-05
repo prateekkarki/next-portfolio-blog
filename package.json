@@ -40,7 +40,9 @@
     "next-with-apollo": "^5.1.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-icons": "^3.11.0",
     "react-markdown": "^4.3.1",
+    "react-modal": "^3.11.2",
     "react-moment": "^0.9.7",
     "react-scroll": "^1.8.1",
     "twin.macro": "^1.7.0"

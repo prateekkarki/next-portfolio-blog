@@ -81,6 +81,7 @@ const Nav = ({ categories }) => {
 				</div>
 
 				<button
+					type="button"
 					css={[
 						css`
 							position: absolute;

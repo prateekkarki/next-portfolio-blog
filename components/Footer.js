@@ -49,6 +49,7 @@ function Footer() {
 					<div className="flex justify-between">
 						<h1>Credits</h1>
 						<button
+							type="button"
 							className="text-lg focus:outline-none"
 							onClick={() => {
 								setModalOpen(false);
@@ -62,17 +63,17 @@ function Footer() {
 							<h2>Frontend</h2>
 							<ul>
 								<li>
-									<a target="_blank" href="#">
+									<a target="_blank" rel="noreferrer" href="https://nextjs.org/docs">
 										NextJS
 									</a>
 								</li>
 								<li>
-									<a target="_blank" href="#">
+									<a target="_blank" rel="noreferrer" href="http://reactjs.org/">
 										ReactJS
 									</a>
 								</li>
 								<li>
-									<a target="_blank" href="#">
+									<a target="_blank" rel="noreferrer" href="https://tailwindcss.com/">
 										Tailwind
 									</a>
 								</li>
@@ -82,22 +83,22 @@ function Footer() {
 							<h2>Backend</h2>
 							<ul>
 								<li>
-									<a target="_blank" href="#">
+									<a target="_blank" rel="noreferrer" href="https://graphql.org/">
 										GraphQL
 									</a>
 								</li>
 								<li>
-									<a target="_blank" href="#">
+									<a target="_blank" rel="noreferrer" href="http://strapi.io/">
 										Strapi
 									</a>
 								</li>
 								<li>
-									<a target="_blank" href="#">
+									<a target="_blank" rel="noreferrer" href="https://www.netlify.com/">
 										Netlify
 									</a>
 								</li>
 								<li>
-									<a target="_blank" href="#">
+									<a target="_blank" rel="noreferrer" href="https://cloudinary.com/">
 										Cloudinary
 									</a>
 								</li>
@@ -109,12 +110,13 @@ function Footer() {
 								<li>
 									<a
 										target="_blank"
+										rel="noreferrer"
 										href="https://dribbble.com/shots/11360621-Cv-Resume-One-Page-XD-PSD-Template-Free"
 									>
 										UI Design
-									</a>{' '}
-									by{' '}
-									<a target="_blank" href="https://dribbble.com/createuiux">
+									</a>
+									by
+									<a target="_blank" rel="noreferrer" href="https://dribbble.com/createuiux">
 										Tauhid Hasan
 									</a>
 								</li>
@@ -124,12 +126,16 @@ function Footer() {
 							<h2>Graphics</h2>
 							<ul>
 								<li>
-									<a target="_blank" href="https://dribbble.com/shots/6139167-Avento-marketing">
+									<a
+										target="_blank"
+										rel="noreferrer"
+										href="https://dribbble.com/shots/6139167-Avento-marketing"
+									>
 										Avento marketing
-									</a>{' '}
-									by{' '}
-									<a target="_blank" href="https://dribbble.com/peterhenderson">
-										Peter Henderson{' '}
+									</a>
+									by
+									<a target="_blank" rel="noreferrer" href="https://dribbble.com/peterhenderson">
+										Peter Henderson
 									</a>
 								</li>
 							</ul>
@@ -137,13 +143,14 @@ function Footer() {
 								<li>
 									<a
 										target="_blank"
+										rel="noreferrer"
 										href="https://www.freepik.com/free-vector/colourful-illustration-programmer-working_5483080.htm"
 									>
 										Colourful illustration of programmer
-									</a>{' '}
-									by{' '}
-									<a target="_blank" href="https://www.freepik.com/">
-										Freepik{' '}
+									</a>
+									by
+									<a target="_blank" rel="noreferrer" href="https://www.freepik.com/">
+										Freepik
 									</a>
 								</li>
 							</ul>
@@ -151,8 +158,9 @@ function Footer() {
 					</div>
 				</ReactModal>
 				<p>
-					Made with ❤️ by me. Thanks to these{' '}
+					Made with ❤️ by me. Thanks to these
 					<button
+						type="button"
 						className="underline text-gray-600 focus:outline-none"
 						onClick={() => {
 							setModalOpen(true);

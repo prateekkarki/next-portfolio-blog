@@ -11,7 +11,7 @@ function Services() {
 
 			<div css={tw`block md:flex`}>
 				<div css={tw`hidden md:block`}>
-					<img src="/images/coffee-laptop.jpg" alt="laptop coffee" />
+					<img src="/images/developer-on-work.gif" alt="developer at work" />
 				</div>
 				<div css={tw`text-center bg-main-light text-light py-4`}>
 					<h4 css={tw`text-2xl`}>

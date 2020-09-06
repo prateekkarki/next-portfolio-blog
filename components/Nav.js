@@ -15,7 +15,9 @@ const Nav = ({ categories }) => {
 	const mobileNavRef = useRef(null);
 	const mobileNavTrigger = useRef(null);
 
-	const MainNav = styled.nav(tw`hidden sm:flex text-lg flex-col items-center sm:flex-row sm:mr-4`);
+	const MainNav = styled.nav(
+		tw`hidden sm:flex text-lg flex-col items-center sm:flex-row sm:mr-4`
+	);
 
 	const MobileNav = styled.nav([
 		css`
@@ -36,7 +38,8 @@ const Nav = ({ categories }) => {
 			mobileNavRef.current.style.transform = 'translateY(0)';
 			mobileNavTrigger.current.children[0].style.transform = 'rotate(45deg)';
 			mobileNavTrigger.current.children[1].style.opacity = '0';
-			mobileNavTrigger.current.children[2].style.transform = 'rotate(-45deg) translate(7px, -7px)';
+			mobileNavTrigger.current.children[2].style.transform =
+				'rotate(-45deg) translate(7px, -7px)';
 			isExpanded = true;
 		}
 	};
@@ -120,7 +123,11 @@ const Nav = ({ categories }) => {
 					Services
 				</ActiveLink>
 				{categories.map((category) => (
-					<ActiveLink href="/category/[cid]" as={`/category/${category.id}`} key={`nav-link-${category.id}`}>
+					<ActiveLink
+						href="/category/[cid]"
+						as={`/category/${category.id}`}
+						key={`nav-link-${category.id}`}
+					>
 						{category.name}
 					</ActiveLink>
 				))}

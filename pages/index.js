@@ -1,10 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
+import tw from 'twin.macro';
+import PropTypes from 'prop-types';
+
+import { animateScroll } from 'react-scroll';
 import Articles from '../components/Articles';
 import ARTICLES_QUERY from '../apollo/queries/article/articles';
 import { initializeApollo } from '../utils/apollo';
-import tw, { css } from 'twin.macro';
-import { animateScroll } from 'react-scroll';
 
 import Intro from '../components/LandingPage/Intro';
 import About from '../components/LandingPage/About';
@@ -30,18 +32,21 @@ const Home = ({ articles }) => {
 		<div css={tw`bg-main-dark`} ref={refs.home}>
 			<Intro />
 			<div css={tw`container mx-auto mt-16`} ref={refs.about}>
-				<About />;
+				<About />
 			</div>
 			<div css={tw`container mx-auto mt-16`} ref={refs.services}>
-				<Services />;
+				<Services />
 			</div>
 			<div css={tw`container mx-auto mt-16`}>
-				<Articles articles={articles} />;
+				<Articles articles={articles} />
 			</div>
 		</div>
 	);
 };
 
+Home.propTypes = {
+	articles: PropTypes.isRequired,
+};
 export default Home;
 
 export async function getStaticProps() {

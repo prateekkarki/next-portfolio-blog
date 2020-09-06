@@ -22,8 +22,7 @@ function Intro() {
 			<div css={tw`container flex h-full items-center justify-center mx-auto`}>
 				<div css={tw`w-full md:w-1/2 text-center md:text-left`}>
 					<p css={tw`text-primary font-semibold text-2xl`}>
-						Hello, I&apos;m
-						<span css={tw`text-secondary`}>Prateek Karki</span>
+						Hello, I&apos;m <span css={tw`text-secondary`}>Prateek Karki</span>
 					</p>
 					<p css={tw`text-primary text-5xl font-bold`}>Javascript Developer</p>
 					<p css={tw`text-light text-base font-normal mt-2`}>

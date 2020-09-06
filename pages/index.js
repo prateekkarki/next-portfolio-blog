@@ -31,9 +31,11 @@ const Home = ({ articles }) => {
 	return (
 		<div css={tw`bg-main-dark`} ref={refs.home}>
 			<Intro />
+
 			<div css={tw`container mx-auto mt-16`} ref={refs.about}>
 				<About />
 			</div>
+
 			<div css={tw`container mx-auto mt-16`} ref={refs.services}>
 				<Services />
 			</div>

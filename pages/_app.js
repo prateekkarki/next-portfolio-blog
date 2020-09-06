@@ -27,7 +27,10 @@ const App = ({ Component, pageProps, apollo }) => {
 					Developing in ever emerging technologies like react JS and Node JS,
 					he will suggest and provide the best solutions for any problems his clients might have."
 				/>
-				<meta name="keywords" content="Web Development, Web Developer, Javascript Developer, Freelancer" />
+				<meta
+					name="keywords"
+					content="Web Development, Web Developer, Javascript Developer, Freelancer"
+				/>
 				<link
 					href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap"
 					rel="stylesheet"

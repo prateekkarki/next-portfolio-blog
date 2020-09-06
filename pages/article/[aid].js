@@ -32,7 +32,9 @@ const Article = () => {
 							</h1>
 						</header>
 
-						{article.published_at && <Moment format="MMM Do YYYY">{article.published_at}</Moment>}
+						{article.published_at && (
+							<Moment format="MMM Do YYYY">{article.published_at}</Moment>
+						)}
 						<ReactMarkdown source={article.content} />
 					</article>
 				</>

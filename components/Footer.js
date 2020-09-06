@@ -63,7 +63,11 @@ function Footer() {
 							<h2>Frontend</h2>
 							<ul>
 								<li>
-									<a target="_blank" rel="noreferrer" href="https://nextjs.org/docs">
+									<a
+										target="_blank"
+										rel="noreferrer"
+										href="https://nextjs.org/docs"
+									>
 										NextJS
 									</a>
 								</li>
@@ -73,7 +77,11 @@ function Footer() {
 									</a>
 								</li>
 								<li>
-									<a target="_blank" rel="noreferrer" href="https://tailwindcss.com/">
+									<a
+										target="_blank"
+										rel="noreferrer"
+										href="https://tailwindcss.com/"
+									>
 										Tailwind
 									</a>
 								</li>
@@ -93,12 +101,20 @@ function Footer() {
 									</a>
 								</li>
 								<li>
-									<a target="_blank" rel="noreferrer" href="https://www.netlify.com/">
+									<a
+										target="_blank"
+										rel="noreferrer"
+										href="https://www.netlify.com/"
+									>
 										Netlify
 									</a>
 								</li>
 								<li>
-									<a target="_blank" rel="noreferrer" href="https://cloudinary.com/">
+									<a
+										target="_blank"
+										rel="noreferrer"
+										href="https://cloudinary.com/"
+									>
 										Cloudinary
 									</a>
 								</li>
@@ -116,7 +132,11 @@ function Footer() {
 										UI Design
 									</a>{' '}
 									by{' '}
-									<a target="_blank" rel="noreferrer" href="https://dribbble.com/createuiux">
+									<a
+										target="_blank"
+										rel="noreferrer"
+										href="https://dribbble.com/createuiux"
+									>
 										Tauhid Hasan
 									</a>
 								</li>
@@ -134,7 +154,11 @@ function Footer() {
 										Avento marketing
 									</a>{' '}
 									by{' '}
-									<a target="_blank" rel="noreferrer" href="https://dribbble.com/peterhenderson">
+									<a
+										target="_blank"
+										rel="noreferrer"
+										href="https://dribbble.com/peterhenderson"
+									>
 										Peter Henderson
 									</a>
 								</li>
@@ -149,7 +173,11 @@ function Footer() {
 										Colourful illustration of programmer
 									</a>{' '}
 									by{' '}
-									<a target="_blank" rel="noreferrer" href="https://www.freepik.com/">
+									<a
+										target="_blank"
+										rel="noreferrer"
+										href="https://www.freepik.com/"
+									>
 										Freepik
 									</a>
 								</li>

@@ -12,6 +12,7 @@ module.exports = {
 	},
 	plugins: ['react', 'prettier'],
 	rules: {
+		'comma-dangle': 0,
 		'linebreak-style': 0,
 		'no-tabs': 0,
 		indent: 0,

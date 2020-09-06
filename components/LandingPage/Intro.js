@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
+import gsap from 'gsap';
 import tw, { css } from 'twin.macro';
 
 const curvedBg = css`
@@ -17,17 +18,40 @@ const curvedBg = css`
 `;
 
 function Intro() {
+	const introRef = useRef(null);
+
+	useEffect(() => {
+		console.log(introRef.current.querySelectorAll('p'));
+		gsap.from(introRef.current.querySelectorAll('p'), 0.8, {
+			delay: 0.5,
+			yPercent: 100,
+			ease: 'power1.inOut',
+			stagger: {
+				each: 0.3,
+				ease: 'power3.inOut',
+			},
+		});
+	});
+
 	return (
 		<div css={curvedBg}>
 			<div css={tw`container flex h-full items-center justify-center mx-auto`}>
-				<div css={tw`w-full md:w-1/2 text-center md:text-left`}>
-					<p css={tw`text-primary font-semibold text-2xl`}>
-						Hello, I&apos;m <span css={tw`text-secondary`}>Prateek Karki</span>
-					</p>
-					<p css={tw`text-primary text-5xl font-bold`}>Javascript Developer</p>
-					<p css={tw`text-light text-base font-normal mt-2`}>
-						Full-Stack Web Developer | UX / Frontend / Backend
-					</p>
+				<div ref={introRef} css={tw`w-full md:w-1/2 text-center md:text-left`}>
+					<div className="overflow-y-hidden">
+						<p css={tw`text-primary font-semibold text-2xl`}>
+							Hello, I&apos;m <span css={tw`text-secondary`}>Prateek Karki</span>
+						</p>
+					</div>
+
+					<div className="overflow-y-hidden">
+						<p css={tw`text-primary text-5xl font-bold `}>Javascript Developer</p>
+					</div>
+
+					<div className="overflow-y-hidden">
+						<p css={tw`text-light text-base font-normal mt-2 `}>
+							Full-Stack Web Developer | Frontend | Backend | Mobile
+						</p>
+					</div>
 					<div css={tw`flex gap-10 justify-center md:justify-start mt-4`}>
 						<button
 							type="button"

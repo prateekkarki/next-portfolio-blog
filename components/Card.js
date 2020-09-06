@@ -1,5 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
+import PropTypes from 'prop-types';
+
 import { Image, Placeholder, CloudinaryContext } from 'cloudinary-react';
 
 import tw from 'twin.macro';
@@ -30,11 +32,23 @@ const Card = ({ article }) => (
 				<span
 					css={tw`inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2`}
 				>
-					#{article.category?.name || ''}
+					#{article.category ? article.category.name : ''}
 				</span>
 			</div>
 		</div>
 	</Link>
 );
 
+Card.propTypes = {
+	article: PropTypes.shape({
+		id: PropTypes.string.isRequired,
+		image: PropTypes.PropTypes.shape({
+			url: PropTypes.string.isRequired,
+		}),
+		title: PropTypes.string.isRequired,
+		category: PropTypes.PropTypes.shape({
+			name: PropTypes.string.isRequired,
+		}),
+	}).isRequired,
+};
 export default Card;

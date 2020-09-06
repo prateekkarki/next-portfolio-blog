@@ -45,8 +45,9 @@ const Home = ({ articles }) => {
 };
 
 Home.propTypes = {
-	articles: PropTypes.isRequired,
+	articles: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
+
 export default Home;
 
 export async function getStaticProps() {

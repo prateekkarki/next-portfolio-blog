@@ -114,8 +114,8 @@ function Footer() {
 										href="https://dribbble.com/shots/11360621-Cv-Resume-One-Page-XD-PSD-Template-Free"
 									>
 										UI Design
-									</a>
-									by
+									</a>{' '}
+									by{' '}
 									<a target="_blank" rel="noreferrer" href="https://dribbble.com/createuiux">
 										Tauhid Hasan
 									</a>
@@ -132,8 +132,8 @@ function Footer() {
 										href="https://dribbble.com/shots/6139167-Avento-marketing"
 									>
 										Avento marketing
-									</a>
-									by
+									</a>{' '}
+									by{' '}
 									<a target="_blank" rel="noreferrer" href="https://dribbble.com/peterhenderson">
 										Peter Henderson
 									</a>
@@ -147,8 +147,8 @@ function Footer() {
 										href="https://www.freepik.com/free-vector/colourful-illustration-programmer-working_5483080.htm"
 									>
 										Colourful illustration of programmer
-									</a>
-									by
+									</a>{' '}
+									by{' '}
 									<a target="_blank" rel="noreferrer" href="https://www.freepik.com/">
 										Freepik
 									</a>

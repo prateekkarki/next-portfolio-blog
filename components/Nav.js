@@ -28,18 +28,18 @@ const Nav = ({ categories }) => {
 	]);
 
 	const expandMobileNav = () => {
+		const mNavLines = mobileNavTrigger.current.children;
 		if (isExpanded) {
 			mobileNavRef.current.style.transform = 'translateY(-100%)';
-			mobileNavTrigger.current.children[0].style.transform = 'rotate(0)';
-			mobileNavTrigger.current.children[1].style.opacity = '1';
-			mobileNavTrigger.current.children[2].style.transform = 'rotate(0) translate(0,0)';
+			mNavLines[0].style.transform = 'rotate(0)';
+			mNavLines[1].style.opacity = '1';
+			mNavLines[2].style.transform = 'rotate(0) translate(0,0)';
 			isExpanded = false;
 		} else {
 			mobileNavRef.current.style.transform = 'translateY(0)';
-			mobileNavTrigger.current.children[0].style.transform = 'rotate(45deg)';
-			mobileNavTrigger.current.children[1].style.opacity = '0';
-			mobileNavTrigger.current.children[2].style.transform =
-				'rotate(-45deg) translate(7px, -7px)';
+			mNavLines[0].style.transform = 'rotate(45deg)';
+			mNavLines[1].style.opacity = '0';
+			mNavLines[2].style.transform = 'rotate(-45deg) translate(7px, -7px)';
 			isExpanded = true;
 		}
 	};

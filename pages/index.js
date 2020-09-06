@@ -2,17 +2,21 @@ import React, { useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import tw from 'twin.macro';
 import PropTypes from 'prop-types';
-
 import { animateScroll } from 'react-scroll';
-import Articles from '../components/Articles';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+
 import ARTICLES_QUERY from '../apollo/queries/article/articles';
 import { initializeApollo } from '../utils/apollo';
 
+import Articles from '../components/Articles';
 import Intro from '../components/LandingPage/Intro';
 import About from '../components/LandingPage/About';
 import Services from '../components/LandingPage/Services';
 
 const Home = ({ articles }) => {
+	gsap.registerPlugin(ScrollTrigger);
+
 	const refs = {
 		home: useRef(null),
 		about: useRef(null),
@@ -20,6 +24,15 @@ const Home = ({ articles }) => {
 	};
 	const router = useRouter();
 	useEffect(() => {
+		// gsap.from(refs.home.current, {
+		// 	scale: 0,
+		// });
+
+		gsap.from(refs.services.current, {
+			scrollTrigger: refs.services.current,
+			x: -500,
+		});
+
 		if (router.asPath.length && router.asPath.slice(0, 2) === '/#') {
 			const block = router.asPath.slice(2);
 			if (refs[block]) {

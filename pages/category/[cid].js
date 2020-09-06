@@ -15,7 +15,7 @@ const Category = () => {
 			{({ data: { category } }) => (
 				<>
 					<Head>
-						<title>{_.capitalize(category.name)} : Prateek Karki's blog</title>
+						<title>{_.capitalize(category.name)} : Prateek Karki&apos;s blog</title>
 					</Head>
 
 					<div css={tw`container mx-auto`}>

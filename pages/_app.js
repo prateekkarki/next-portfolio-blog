@@ -1,8 +1,7 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { ApolloProvider } from '@apollo/react-hooks';
-// eslint-disable-next-line import/no-named-as-default, import/no-named-as-default-member
 import withApollo from '../utils/apollo';
 
 import Header from '../components/Header';
@@ -39,12 +38,6 @@ const App = ({ Component, pageProps, apollo }) => {
 			<Footer />
 		</ApolloProvider>
 	);
-};
-
-App.propTypes = {
-	Component: PropTypes.isRequired,
-	pageProps: PropTypes.isRequired,
-	apollo: PropTypes.isRequired,
 };
 
 // Wraps all components in the tree with the data provider

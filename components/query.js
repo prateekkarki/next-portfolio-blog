@@ -9,7 +9,6 @@ const Query = ({ children, query, id }) => {
 
 	if (loading) return <Loader />;
 	if (error) {
-		console.log(error);
 		return null;
 	}
 	return children({ data });

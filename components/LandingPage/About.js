@@ -17,10 +17,10 @@ function About() {
 						<strong>Hello stranger,</strong>
 					</h4>
 					<p css={tw`text-base font-normal mt-4`}>
-						I'm Prateek, a web developer from Kathmandu, Nepal.
-						<br />I enjoy creating things that live on the internet, whether that be websites, applications,
-						or anything in between. My goal is to always build products that provide pixel-perfect,
-						performant experiences.
+						I&apos;m Prateek, a web developer from Kathmandu, Nepal.
+						<br />I enjoy creating things that live on the internet, whether that be
+						websites, applications, or anything in between. My goal is to always build
+						products that provide pixel-perfect, performant experiences.
 					</p>
 				</div>
 			</div>

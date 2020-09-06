@@ -1,6 +1,8 @@
 /** @jsx jsx * */
 import { jsx } from '@emotion/core';
 
+import PropTypes from 'prop-types';
+
 import tw from 'twin.macro';
 import Nav from './Nav';
 
@@ -12,4 +14,7 @@ function Header({ categories }) {
 	);
 }
 
+Header.propTypes = {
+	categories: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 export default Header;

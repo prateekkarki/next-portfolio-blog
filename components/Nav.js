@@ -58,8 +58,8 @@ const Nav = ({ categories }) => {
 	};
 
 	ActiveLink.propTypes = {
-		as: PropTypes.isRequired,
-		children: PropTypes.isRequired,
+		as: PropTypes.string.isRequired,
+		children: PropTypes.string.isRequired,
 	};
 
 	return (
@@ -130,6 +130,6 @@ const Nav = ({ categories }) => {
 };
 
 Nav.propTypes = {
-	categories: PropTypes.isRequired,
+	categories: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 export default Nav;

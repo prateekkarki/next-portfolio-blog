@@ -11,21 +11,21 @@ let apolloClient;
 
 const link = createHttpLink({
 	fetch, // Switches between unfetch & node-fetch for client & server.
-	uri: GRAPHQL_URL + '/graphql',
+	uri: `${GRAPHQL_URL}/graphql`,
 });
 
 function createApolloClient() {
 	return new ApolloClient({
-		link: link,
+		link,
 		cache: new InMemoryCache(),
 	});
 }
 
 export function initializeApollo() {
-	const _apolloClient = apolloClient ?? createApolloClient();
-	if (!apolloClient) apolloClient = _apolloClient;
+	const pApolloClient = apolloClient || createApolloClient();
+	if (!apolloClient) apolloClient = pApolloClient;
 
-	return _apolloClient;
+	return pApolloClient;
 }
 
 // Export a HOC from next-with-apollo
@@ -33,11 +33,14 @@ export function initializeApollo() {
 export default withApollo(
 	// You can get headers and ctx (context) from the callback params
 	// e.g. ({ headers, ctx, initialState })
-	({ initialState }) =>
-		new ApolloClient({
-			link: link,
+	({ initialState }) => {
+		const client = new ApolloClient({
+			link,
 			cache: new InMemoryCache()
 				//  rehydrate the cache using the initial data passed from the server:
 				.restore(initialState || {}),
-		})
+		});
+		return client;
+		// eslint-disable-next-line comma-dangle
+	}
 );

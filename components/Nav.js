@@ -1,7 +1,8 @@
 /** @jsx jsx * */
 import { jsx, css } from '@emotion/core';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
+import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 
 import Link from 'next/link';
@@ -42,16 +43,23 @@ const Nav = ({ categories }) => {
 
 	const ActiveLink = (props) => {
 		const router = useRouter();
+		const { as, children } = props;
 
 		const NavLink = styled.a(({ isActive }) => [
 			tw`font-medium hover:text-primary py-3 uppercase text-base ml-4`,
 			isActive ? tw`text-primary` : tw`text-light`,
 		]);
+
 		return (
 			<Link {...props} passHref>
-				<NavLink isActive={router.asPath === props.as}>{props.children}</NavLink>
+				<NavLink isActive={router.asPath === as}>{children}</NavLink>
 			</Link>
 		);
+	};
+
+	ActiveLink.propTypes = {
+		as: PropTypes.isRequired,
+		children: PropTypes.isRequired,
 	};
 
 	return (
@@ -72,8 +80,12 @@ const Nav = ({ categories }) => {
 						<ActiveLink href="/#services" as="/#services">
 							Services
 						</ActiveLink>
-						{categories.map((category, i) => (
-							<ActiveLink href="/category/[cid]" as={`/category/${category.id}`} key={`nav-link-${i}`}>
+						{categories.map((category) => (
+							<ActiveLink
+								href="/category/[cid]"
+								as={`/category/${category.id}`}
+								key={`nav-link-${category.id}`}
+							>
 								{category.name}
 							</ActiveLink>
 						))}
@@ -107,8 +119,8 @@ const Nav = ({ categories }) => {
 				<ActiveLink href="/#services" as="/#services">
 					Services
 				</ActiveLink>
-				{categories.map((category, i) => (
-					<ActiveLink href="/category/[cid]" as={`/category/${category.id}`} key={`nav-link-${i}`}>
+				{categories.map((category) => (
+					<ActiveLink href="/category/[cid]" as={`/category/${category.id}`} key={`nav-link-${category.id}`}>
 						{category.name}
 					</ActiveLink>
 				))}
@@ -117,4 +129,7 @@ const Nav = ({ categories }) => {
 	);
 };
 
+Nav.propTypes = {
+	categories: PropTypes.isRequired,
+};
 export default Nav;

@@ -80,8 +80,8 @@ const Nav = ({ categories }) => {
 						<ActiveLink href="/#about" as="/#about">
 							About
 						</ActiveLink>
-						<ActiveLink href="/#services" as="/#services">
-							Services
+						<ActiveLink href="/#contact" as="/#contact">
+							Contact
 						</ActiveLink>
 						{categories.map((category) => (
 							<ActiveLink

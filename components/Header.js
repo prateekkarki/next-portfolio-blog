@@ -1,10 +1,9 @@
-/* eslint-disable operator-linebreak */
 /** @jsx jsx * */
 import { jsx } from '@emotion/core';
 import { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import tw from 'twin.macro';
 import gsap from 'gsap';
+import tw from 'twin.macro';
 
 import Nav from './Nav';
 
@@ -16,25 +15,23 @@ function Header({ categories }) {
 	useEffect(() => {
 		const scrollCheck = () => {
 			const st = window.pageYOffset || document.documentElement.scrollTop;
-			if (
-				st > lastScrollTop &&
-				!isUp &&
-				document.documentElement.scrollTop > headerRef.current.clientHeight
-			) {
-				gsap.fromTo(
-					headerRef.current,
-					0.4,
-					{
-						yPercent: 0,
-						ease: 'power1.inOut',
-						onComplete: () => {
-							setIsUp(true);
+			if (st > lastScrollTop) {
+				if (!isUp && st > headerRef.current.clientHeight) {
+					gsap.fromTo(
+						headerRef.current,
+						0.4,
+						{
+							yPercent: 0,
+							ease: 'power1.inOut',
+							onComplete: () => {
+								setIsUp(true);
+							},
 						},
-					},
-					{
-						yPercent: -100,
-					}
-				);
+						{
+							yPercent: -100,
+						}
+					);
+				}
 			} else if (isUp) {
 				gsap.fromTo(
 					headerRef.current,

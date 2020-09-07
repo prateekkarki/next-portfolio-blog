@@ -21,7 +21,6 @@ function Intro() {
 	const introRef = useRef(null);
 
 	useEffect(() => {
-		console.log(introRef.current.querySelectorAll('p'));
 		gsap.from(introRef.current.querySelectorAll('p'), 0.8, {
 			delay: 0.5,
 			yPercent: 100,

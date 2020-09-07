@@ -21,15 +21,22 @@ function Intro() {
 	const introRef = useRef(null);
 
 	useEffect(() => {
-		gsap.from(introRef.current.querySelectorAll('p'), 0.8, {
-			delay: 0.5,
-			yPercent: 100,
-			ease: 'power1.inOut',
-			stagger: {
-				each: 0.3,
-				ease: 'power3.inOut',
+		gsap.fromTo(
+			introRef.current.querySelectorAll('p'),
+			0.8,
+			{
+				delay: 0.5,
+				yPercent: 100,
+				ease: 'power1.inOut',
+				stagger: {
+					each: 0.3,
+					ease: 'power3.inOut',
+				},
 			},
-		});
+			{
+				yPercent: 0,
+			}
+		);
 	});
 
 	return (

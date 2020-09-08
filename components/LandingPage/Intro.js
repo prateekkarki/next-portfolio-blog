@@ -2,6 +2,8 @@ import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import tw, { css } from 'twin.macro';
 
+import Programmer from './Programmer';
+
 const curvedBg = css`
 	height: 400px;
 	background: url(/images/curve.png);
@@ -74,7 +76,7 @@ function Intro() {
 					</div>
 				</div>
 				<div css={tw`hidden md:block w-1/2`}>
-					<img src="/images/developer.svg" alt="developer" />
+					<Programmer />
 				</div>
 			</div>
 		</div>

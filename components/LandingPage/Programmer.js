@@ -39,7 +39,7 @@ function Programmer() {
 			translateX: ['400%', 0],
 			easing: 'easeInOutQuad',
 			duration: 800,
-			delay: anime.stagger(250),
+			delay: anime.stagger(250, { start: 1000 }),
 		});
 		return () => {};
 	});

@@ -80,9 +80,6 @@ const Nav = ({ categories }) => {
 						<ActiveLink href="/#about" as="/#about">
 							About
 						</ActiveLink>
-						<ActiveLink href="/#contact" as="/#contact">
-							Contact
-						</ActiveLink>
 						{categories.map((category) => (
 							<ActiveLink
 								href="/category/[cid]"
@@ -92,6 +89,9 @@ const Nav = ({ categories }) => {
 								{category.name}
 							</ActiveLink>
 						))}
+						<ActiveLink href="/#contact" as="/#contact">
+							Contact
+						</ActiveLink>
 					</MainNav>
 				</div>
 

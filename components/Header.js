@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/core';
 import { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import gsap from 'gsap';
+import anime from 'animejs';
 import tw from 'twin.macro';
 
 import Nav from './Nav';
@@ -17,38 +17,30 @@ function Header({ categories }) {
 			const st = window.pageYOffset || document.documentElement.scrollTop;
 			if (st > lastScrollTop) {
 				if (!isUp && st > headerRef.current.clientHeight) {
-					gsap.fromTo(
-						headerRef.current,
-						0.4,
-						{
-							yPercent: 0,
-							ease: 'power1.inOut',
-							onComplete: () => {
-								setIsUp(true);
-							},
+					// console.log('downscroll');
+					anime({
+						targets: [headerRef.current.parentElement.querySelectorAll('header')],
+						translateY: [0, '-100%'],
+						easing: 'easeInOutQuad',
+						duration: 400,
+						complete: () => {
+							setIsUp(true);
 						},
-						{
-							yPercent: -100,
-						}
-					);
+					});
 				}
 			} else if (isUp) {
-				gsap.fromTo(
-					headerRef.current,
-					0.4,
-					{
-						yPercent: -100,
-						ease: 'power1.inOut',
-						onComplete: () => {
-							setIsUp(false);
-						},
+				// console.log('upscroll');
+				anime({
+					targets: [headerRef.current],
+					translateY: ['-100', '0%'],
+					easing: 'easeInOutQuad',
+					duration: 400,
+					complete: () => {
+						setIsUp(false);
 					},
-					{
-						yPercent: 0,
-					}
-				);
+				});
 			}
-			setLastScrollTop(st <= 0 ? 0 : st); // For Mobile or negative scrolling
+			setLastScrollTop(st <= 0 ? 0 : st);
 		};
 
 		window.addEventListener('scroll', scrollCheck);

@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import gsap from 'gsap';
+import anime from 'animejs';
 import tw, { css } from 'twin.macro';
 
 import Programmer from './Programmer';
@@ -23,22 +23,13 @@ function Intro() {
 	const introRef = useRef(null);
 
 	useEffect(() => {
-		gsap.fromTo(
-			introRef.current.querySelectorAll('p'),
-			0.8,
-			{
-				delay: 0.5,
-				yPercent: 100,
-				ease: 'power1.inOut',
-				stagger: {
-					each: 0.3,
-					ease: 'power3.inOut',
-				},
-			},
-			{
-				yPercent: 0,
-			}
-		);
+		anime({
+			targets: introRef.current.querySelectorAll('p'),
+			translateY: ['100%', 0],
+			easing: 'easeInOutQuad',
+			duration: 800,
+			delay: anime.stagger(250),
+		});
 	});
 
 	return (

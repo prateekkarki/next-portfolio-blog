@@ -16,7 +16,7 @@ function About() {
 					<h4 css={tw`text-2xl`}>
 						<strong>Hello stranger,</strong>
 					</h4>
-					<p css={tw`text-base font-normal mt-4`}>
+					<p css={tw`text-base font-normal mt-4 px-3 md:px-6`}>
 						I&apos;m Prateek, a web developer from Kathmandu, Nepal.
 						<br />I enjoy creating things that live on the internet, whether that be
 						websites, applications, or anything in between. My goal is to always build

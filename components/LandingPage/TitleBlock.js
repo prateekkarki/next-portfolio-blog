@@ -5,7 +5,7 @@ import { css } from 'twin.macro';
 
 function TitleBlock({ title, subtitle }) {
 	return (
-		<div className="flex flex-col items-center text-center">
+		<div className="flex flex-col items-center text-center py-6">
 			<h2 className="font-bold text-primary text-5xl">{title}</h2>
 			<p
 				className="font-normal text-base text-light"
@@ -26,7 +26,7 @@ function TitleBlock({ title, subtitle }) {
 					`}
 				/>
 				<div
-					className="w-16 absolute top-0 bg-primary rounded-full h-4"
+					className="w-12 absolute top-0 bg-primary rounded-full h-3"
 					css={css`
 						top: 50%;
 						left: 50%;

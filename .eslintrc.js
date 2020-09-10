@@ -23,6 +23,7 @@ module.exports = {
 		'react/jsx-one-expression-per-line': 0,
 		'jsx-a11y/accessible-emoji': 0,
 		'jsx-a11y/anchor-is-valid': 0,
+		'jsx-a11y/label-has-associated-control': 0,
 		'import/no-named-as-default': 0,
 		'import/no-named-as-default-member': 0,
 	},

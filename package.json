@@ -19,11 +19,6 @@
       "debug": false
     }
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint"
-    }
-  },
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
     "@emotion/babel-preset-css-prop": "^10.0.27",
@@ -68,7 +63,6 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-react-hooks": "^4.1.0",
-    "husky": "^4.3.0",
     "postcss-cli": "^7.1.1",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.0.5",

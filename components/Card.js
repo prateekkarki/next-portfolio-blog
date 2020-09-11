@@ -8,7 +8,7 @@ import tw from 'twin.macro';
 
 const Card = ({ article }) => (
 	<Link href="/article/[aid]" as={`/article/${article.id}`} passHref>
-		<div css={tw`w-full px-3 overflow-hidden shadow-md hover:shadow-lg cursor-pointer`}>
+		<div css={tw`w-full overflow-hidden shadow-md hover:shadow-lg cursor-pointer`}>
 			{article.image && (
 				<CloudinaryContext
 					cloudName="pratiek"

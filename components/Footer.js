@@ -1,29 +1,34 @@
+/* eslint-disable react/jsx-wrap-multilines */
 /** @jsx jsx * */
 import { jsx } from '@emotion/core';
+import styled from '@emotion/styled';
 
 import { IoIosCloseCircle } from 'react-icons/io';
 import Popup from 'reactjs-popup';
 
-const modalStyles = {
-	position: 'absolute',
-	top: '50%',
-	left: '50%',
-	transform: 'translate(-50%, -50%)',
-	border: '1px solid #ccc',
-	background: '#fff',
-	overflow: 'auto',
-	WebkitOverflowScrolling: 'touch',
-	borderRadius: '4px',
-	outline: 'none',
-	padding: '20px',
-	height: 'fit-content',
-	width: '80%',
-};
-const overlayStyles = {
-	background: 'rgba(0,0,0,0.5)',
-	width: '100%',
-	height: '100%',
-};
+const StyledPopup = styled(Popup)`
+	&-overlay {
+		background: rgba(0, 0, 0, 0.75);
+		width: 100%;
+		height: 100%;
+	}
+
+	&-content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		border: 1px solid #ccc;
+		background: #fff;
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
+		border-radius: 4px;
+		outline: none;
+		padding: 20px;
+		height: fit-content;
+		width: 80%;
+	}
+`;
 
 function Footer() {
 	return (
@@ -31,21 +36,16 @@ function Footer() {
 			<div className="container mx-auto text-white">
 				<p>
 					Made with ❤️ by me. Thanks to these{' '}
-					<Popup
+					<StyledPopup
 						trigger={
 							<button
 								type="button"
 								className="underline text-gray-600 focus:outline-none"
-								onClick={() => {
-									setModalOpen(true);
-								}}
 							>
 								awesome projects
 							</button>
 						}
 						modal
-						overlayStyle={overlayStyles}
-						contentStyle={modalStyles}
 					>
 						{(close) => (
 							<div>
@@ -192,7 +192,6 @@ function Footer() {
 													Vecteezy
 												</a>
 											</li>
-											<a href="">Business Vectors by Vecteezy</a>
 											<li>
 												<a
 													target="_blank"
@@ -215,7 +214,7 @@ function Footer() {
 								</div>
 							</div>
 						)}
-					</Popup>
+					</StyledPopup>
 					.
 				</p>
 			</div>

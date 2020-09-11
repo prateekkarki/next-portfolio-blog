@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import tw from 'twin.macro';
 import PropTypes from 'prop-types';
 import { animateScroll } from 'react-scroll';
+import TitleBlock from '../components/LandingPage/TitleBlock';
 
 import ARTICLES_QUERY from '../apollo/queries/article/articles';
 import { initializeApollo } from '../utils/apollo';
@@ -36,6 +37,7 @@ const Home = ({ articles }) => {
 				<About />
 			</div>
 			<div css={tw`container mx-auto mt-16`}>
+				<TitleBlock title="Blog" subtitle="Stuff I wrote" />
 				<Articles articles={articles} />
 			</div>
 			<div css={tw`container mx-auto mt-16`} ref={refs.contact}>

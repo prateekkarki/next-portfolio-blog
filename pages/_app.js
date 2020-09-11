@@ -27,6 +27,26 @@ const App = ({ Component, pageProps, apollo }) => {
 					Developing in ever emerging technologies like react JS and Node JS,
 					he will suggest and provide the best solutions for any problems his clients might have."
 				/>
+				<link
+					rel="apple-touch-icon"
+					sizes="180x180"
+					href="/images/logo/apple-touch-icon.png"
+				/>
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="32x32"
+					href="/images/logo/favicon-32x32.png"
+				/>
+				<link
+					rel="icon"
+					type="image/png"
+					sizes="16x16"
+					href="/images/logo/favicon-16x16.png"
+				/>
+				<meta name="msapplication-TileColor" content="#da532c" />
+				<meta name="theme-color" content="#ffffff" />
+
 				<meta
 					name="keywords"
 					content="Web Development, Web Developer, Javascript Developer, Freelancer"

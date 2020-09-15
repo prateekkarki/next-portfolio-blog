@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+
 import { IoMdPin, IoIosCall, IoIosMail } from 'react-icons/io';
 
 import TitleBlock from './TitleBlock';
@@ -9,6 +10,7 @@ function Contact() {
 		email: '',
 		message: '',
 	});
+
 	const handleOnChange = (event) => {
 		event.persist();
 		setInputs((prev) => ({
@@ -85,7 +87,7 @@ function Contact() {
 				<div className="w-full sm:w-1/2 flex flex-col items-center py-6">
 					<form className="w-full max-w-lg" onSubmit={handleOnSubmit}>
 						<div className="flex flex-wrap mb-6">
-							<div className="w-full sm:w-1/2 px-3 mb-6 sm:mb-0">
+							<div className="w-full px-3 mb-6 sm:mb-0">
 								<label
 									className="block uppercase  tracking-wide text-primary text-xs font-bold mb-2"
 									htmlFor="full-name"

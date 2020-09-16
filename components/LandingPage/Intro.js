@@ -48,7 +48,7 @@ function Intro() {
 
 					<div className="overflow-y-hidden">
 						<p css={tw`text-light text-base font-normal mt-2 `}>
-							Full-Stack Web Developer | Frontend | Backend | Mobile
+							Tech lead | Software Engineer | Frontend | Backend | Mobile
 						</p>
 					</div>
 					<div css={tw`flex gap-10 justify-center md:justify-start mt-4`}>

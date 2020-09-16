@@ -1,24 +1,16 @@
-import React, { useState } from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
+import { useState } from 'react';
 import axios from 'axios';
+import { useForm } from 'react-hook-form';
+import tw from 'twin.macro';
 
 import { IoMdPin, IoIosCall, IoIosMail } from 'react-icons/io';
 
 import TitleBlock from './TitleBlock';
 
 function Contact() {
-	const [inputs, setInputs] = useState({
-		email: '',
-		message: '',
-	});
-
-	const handleOnChange = (event) => {
-		event.persist();
-		setInputs((prev) => ({
-			...prev,
-			[event.target.id]: event.target.value,
-		}));
-	};
-	/* End input state handling ^^^^ */
+	const { register, handleSubmit, errors } = useForm();
 
 	// Server state handling
 	const [serverState, setServerState] = useState({
@@ -26,24 +18,21 @@ function Contact() {
 		status: null,
 	});
 	const handleServerResponse = (ok, msg) => {
+		console.log(ok, msg);
 		setServerState({
 			submitting: false,
 			status: { ok, msg },
 		});
-		if (ok) {
-			setInputs({
-				email: '',
-				message: '',
-			});
-		}
 	};
-	const handleOnSubmit = (event) => {
-		event.preventDefault();
+
+	const onSubmit = (data) => {
+		console.log(data);
+		data = { ...data, _replyto: data.email };
 		setServerState({ submitting: true });
 		axios({
 			method: 'POST',
 			url: 'https://formspree.io/pratiek.karki@gmail.com',
-			data: inputs,
+			data,
 		})
 			.then(() => {
 				handleServerResponse(true, 'Thanks!');
@@ -85,7 +74,7 @@ function Contact() {
 					{/* 800 1236879 General Support contact@example.com */}
 				</div>
 				<div className="w-full sm:w-1/2 flex flex-col items-center py-6">
-					<form className="w-full max-w-lg" onSubmit={handleOnSubmit}>
+					<form className="w-full max-w-lg" onSubmit={handleSubmit(onSubmit)}>
 						<div className="flex flex-wrap mb-6">
 							<div className="w-full px-3 mb-6 sm:mb-0">
 								<label
@@ -95,16 +84,32 @@ function Contact() {
 									Full Name
 								</label>
 								<input
-									className="appearance-none block w-full bg-gray-200 text-gray-700 border border-secondary rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-									id="full-name"
+									css={[
+										tw`appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`,
+										errors.fullName ? tw`border-secondary` : tw`border-light`,
+									]}
+									id="fullName"
+									name="fullName"
 									type="text"
-									placeholder="Jane"
-									onChange={handleOnChange}
-									value={inputs.fullName}
+									placeholder="John Doe"
+									ref={register({
+										required: 'Please enter your full name.',
+										maxLength: {
+											value: 30,
+											message:
+												'Fullname cannot be more than 30 characters long.',
+										},
+										minLength: {
+											value: 3,
+											message: 'Fullname must be at least 3 characters long.',
+										},
+									})}
 								/>
-								<p className="text-secondary text-xs italic">
-									Please fill out this field.
-								</p>
+								{errors.fullName && (
+									<p className="text-secondary text-xs italic">
+										{errors.fullName.message || 'Please enter your full name.'}
+									</p>
+								)}
 							</div>
 						</div>
 						<div className="flex flex-wrap mb-6">
@@ -116,12 +121,27 @@ function Contact() {
 									E-mail
 								</label>
 								<input
-									className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+									css={[
+										tw`appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`,
+										errors.email ? tw`border-secondary` : tw`border-light`,
+									]}
 									id="email"
+									name="email"
 									type="email"
-									onChange={handleOnChange}
-									value={inputs.email}
+									placeholder="john.doe@example.com"
+									ref={register({
+										required: 'Please enter your email.',
+										pattern: {
+											value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+											message: 'Please enter a valid email address.',
+										},
+									})}
 								/>
+								{errors.email && (
+									<p className="text-secondary text-xs italic">
+										{errors.email.message || 'Please enter your email.'}
+									</p>
+								)}
 							</div>
 						</div>
 						<div className="flex flex-wrap mb-6">
@@ -133,18 +153,37 @@ function Contact() {
 									Message
 								</label>
 								<textarea
-									className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
+									css={[
+										tw`appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white h-48 resize-none`,
+										errors.message ? tw`border-secondary` : tw`border-light`,
+									]}
 									id="message"
-									onChange={handleOnChange}
-									value={inputs.message}
+									name="message"
+									ref={register({
+										required: 'Please enter the message.',
+										maxLength: {
+											value: 800,
+											message:
+												'Message cannot be more than 800 characters long.',
+										},
+										minLength: {
+											value: 3,
+											message: 'Message must be at least 3 characters long.',
+										},
+									})}
 								/>
+								{errors.message && (
+									<p className="text-secondary text-xs italic">
+										{errors.message.message || 'Please enter your email.'}
+									</p>
+								)}
 							</div>
 						</div>
 						<div className="sm:flex sm:items-center px-3">
 							<div className="sm:w-1/3">
 								<button
 									className="shadow bg-primary hover:bg-primary focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-									type="button"
+									type="submit"
 									disabled={serverState.submitting}
 								>
 									Send

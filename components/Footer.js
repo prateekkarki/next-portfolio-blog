@@ -39,9 +39,9 @@ function Footer() {
 	const [modalOpen, setModalOpen] = useState(false);
 	const el = useRef(null);
 	return (
-		<footer className="bg-main-dark border-main-light border-solid border-t-2 py-4">
+		<footer css={tw`bg-main-dark border-main-light border-solid border-t-2 py-4`}>
 			<div css={overlayStyles} />
-			<div className="container mx-auto text-white" ref={el}>
+			<div css={tw`container mx-auto text-white`} ref={el}>
 				<StyledModal
 					isOpen={modalOpen}
 					closeTimeoutMS={350}
@@ -51,46 +51,48 @@ function Footer() {
 					appElement={el.current}
 					contentLabel="Resources"
 				>
-					<div className="flex justify-between">
-						<h1 className="text-white">Credits</h1>
+					<div css={tw`flex justify-between`}>
+						<h1 css={tw`text-white`}>Credits</h1>
 						<button
 							type="button"
-							className="text-lg focus:outline-none"
+							css={tw`text-lg focus:outline-none`}
 							onClick={() => {
 								setModalOpen(false);
 							}}
 						>
-							<IoIosCloseCircle className="w-8 h-8 text-white" />
+							<IoIosCloseCircle css={tw`w-8 h-8 text-white`} />
 						</button>
 					</div>
-					<div className="sm:flex sm:flex-wrap">
-						<div className="mt-8 text-center sm:text-left sm:w-1/2 md:w-1/3 sm:inline-block">
-							<h2 className="text-white">Frontend</h2>
+					<div css={tw`sm:flex sm:flex-wrap`}>
+						<div
+							css={tw`mt-8 text-center sm:text-left sm:w-1/2 md:w-1/3 sm:inline-block`}
+						>
+							<h2 css={tw`text-white`}>Frontend</h2>
 							<ul>
-								<li className="text-light">
+								<li css={tw`text-light`}>
 									<a
 										target="_blank"
-										className="text-primary"
+										css={tw`text-primary`}
 										rel="noreferrer"
 										href="https://nextjs.org/docs"
 									>
 										NextJS
 									</a>
 								</li>
-								<li className="text-light">
+								<li css={tw`text-light`}>
 									<a
 										target="_blank"
 										rel="noreferrer"
-										className="text-primary"
+										css={tw`text-primary`}
 										href="http://reactjs.org/"
 									>
 										ReactJS
 									</a>
 								</li>
-								<li className="text-light">
+								<li css={tw`text-light`}>
 									<a
 										target="_blank"
-										className="text-primary"
+										css={tw`text-primary`}
 										rel="noreferrer"
 										href="https://tailwindcss.com/"
 									>
@@ -99,43 +101,45 @@ function Footer() {
 								</li>
 							</ul>
 						</div>
-						<div className="mt-8 text-center sm:text-left sm:w-1/2 md:w-1/3 sm:inline-block">
-							<h2 className="text-white">Backend</h2>
+						<div
+							css={tw`mt-8 text-center sm:text-left sm:w-1/2 md:w-1/3 sm:inline-block`}
+						>
+							<h2 css={tw`text-white`}>Backend</h2>
 							<ul>
-								<li className="text-light">
+								<li css={tw`text-light`}>
 									<a
 										target="_blank"
-										className="text-primary"
+										css={tw`text-primary`}
 										rel="noreferrer"
 										href="https://graphql.org/"
 									>
 										GraphQL
 									</a>
 								</li>
-								<li className="text-light">
+								<li css={tw`text-light`}>
 									<a
 										target="_blank"
-										className="text-primary"
+										css={tw`text-primary`}
 										rel="noreferrer"
 										href="http://strapi.io/"
 									>
 										Strapi
 									</a>
 								</li>
-								<li className="text-light">
+								<li css={tw`text-light`}>
 									<a
 										target="_blank"
-										className="text-primary"
+										css={tw`text-primary`}
 										rel="noreferrer"
 										href="https://www.netlify.com/"
 									>
 										Netlify
 									</a>
 								</li>
-								<li className="text-light">
+								<li css={tw`text-light`}>
 									<a
 										target="_blank"
-										className="text-primary"
+										css={tw`text-primary`}
 										rel="noreferrer"
 										href="https://cloudinary.com/"
 									>
@@ -144,13 +148,15 @@ function Footer() {
 								</li>
 							</ul>
 						</div>
-						<div className="mt-8 text-center sm:text-left sm:w-1/2 md:w-1/3 sm:inline-block">
-							<h2 className="text-white">Design / Graphics</h2>
+						<div
+							css={tw`mt-8 text-center sm:text-left sm:w-1/2 md:w-1/3 sm:inline-block`}
+						>
+							<h2 css={tw`text-white`}>Design / Graphics</h2>
 							<ul>
-								<li className="text-light">
+								<li css={tw`text-light`}>
 									<a
 										target="_blank"
-										className="text-primary"
+										css={tw`text-primary`}
 										rel="noreferrer"
 										href="https://dribbble.com/shots/11360621-Cv-Resume-One-Page-XD-PSD-Template-Free"
 									>
@@ -159,17 +165,17 @@ function Footer() {
 									by{' '}
 									<a
 										target="_blank"
-										className="text-primary"
+										css={tw`text-primary`}
 										rel="noreferrer"
 										href="https://dribbble.com/createuiux"
 									>
 										Tauhid Hasan
 									</a>
 								</li>
-								<li className="text-light">
+								<li css={tw`text-light`}>
 									<a
 										target="_blank"
-										className="text-primary"
+										css={tw`text-primary`}
 										rel="noreferrer"
 										href="https://dribbble.com/shots/6139167-Avento-marketing"
 									>
@@ -178,17 +184,17 @@ function Footer() {
 									by{' '}
 									<a
 										target="_blank"
-										className="text-primary"
+										css={tw`text-primary`}
 										rel="noreferrer"
 										href="https://dribbble.com/peterhenderson"
 									>
 										Peter Henderson
 									</a>
 								</li>
-								<li className="text-light">
+								<li css={tw`text-light`}>
 									<a
 										target="_blank"
-										className="text-primary"
+										css={tw`text-primary`}
 										rel="noreferrer"
 										href="https://www.vecteezy.com/vector-art/615323-p-logo-letter-business-corporate-design"
 									>
@@ -197,17 +203,17 @@ function Footer() {
 									by{' '}
 									<a
 										target="_blank"
-										className="text-primary"
+										css={tw`text-primary`}
 										rel="noreferrer"
 										href="https://www.vecteezy.com/free-vector/business"
 									>
 										Vecteezy
 									</a>
 								</li>
-								<li className="text-light">
+								<li css={tw`text-light`}>
 									<a
 										target="_blank"
-										className="text-primary"
+										css={tw`text-primary`}
 										rel="noreferrer"
 										href="https://www.freepik.com/free-vector/colourful-illustration-programmer-working_5483080.htm"
 									>
@@ -216,7 +222,7 @@ function Footer() {
 									by{' '}
 									<a
 										target="_blank"
-										className="text-primary"
+										css={tw`text-primary`}
 										rel="noreferrer"
 										href="https://www.freepik.com/"
 									>
@@ -232,7 +238,7 @@ function Footer() {
 					<a
 						target="_blank"
 						rel="noreferrer"
-						className="underline text-gray-600 focus:outline-none"
+						css={tw`underline text-gray-600 focus:outline-none`}
 						href="https://github.com/prateekkarki/"
 					>
 						me
@@ -240,7 +246,7 @@ function Footer() {
 					. Thanks to these{' '}
 					<button
 						type="button"
-						className="underline text-gray-600 focus:outline-none"
+						css={tw`underline text-gray-600 focus:outline-none`}
 						onClick={() => {
 							setModalOpen(true);
 						}}

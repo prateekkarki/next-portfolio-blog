@@ -1,11 +1,15 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import Head from 'next/head';
+import { ToastContainer, Slide } from 'react-toastify';
 import { ApolloProvider } from '@apollo/react-hooks';
+
 import withApollo from '../utils/apollo';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+
+import 'react-toastify/dist/ReactToastify.min.css';
 import '../assets/css/tailwind.css';
 
 const App = ({ Component, pageProps, apollo }) => {
@@ -58,6 +62,20 @@ const App = ({ Component, pageProps, apollo }) => {
 			</Head>
 			<Header {...layoutProps} />
 			<Component {...pageProps} />
+			<ToastContainer
+				className="impct-toast"
+				position="top-center"
+				autoClose={3000}
+				hideProgressBar
+				newestOnTop
+				closeOnClick
+				rtl={false}
+				pauseOnVisibilityChange
+				draggable={false}
+				pauseOnHover
+				transition={Slide}
+			/>
+
 			<Footer />
 		</ApolloProvider>
 	);

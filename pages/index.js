@@ -40,7 +40,7 @@ const Home = ({ articles }) => {
 				<TitleBlock title="Blog" subtitle="Stuff I wrote" />
 				<Articles articles={articles} />
 			</div>
-			<div css={tw`container mx-auto mt-16`} ref={refs.contact}>
+			<div css={tw`mx-auto mt-16`} ref={refs.contact}>
 				<Contact />
 			</div>
 		</div>

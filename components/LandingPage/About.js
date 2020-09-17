@@ -1,5 +1,6 @@
 /** @jsx jsx * */
 import { jsx } from '@emotion/core';
+import { Video, CloudinaryContext, Transformation } from 'cloudinary-react';
 
 import tw from 'twin.macro';
 import TitleBlock from './TitleBlock';
@@ -10,7 +11,17 @@ function About() {
 			<TitleBlock title="About Me" subtitle="Who am I?" />
 			<div css={tw`block md:flex`}>
 				<div css={tw`hidden md:block`}>
-					<img src="/images/developer-on-work.gif" alt="developer at work" />
+					<CloudinaryContext cloudName="pratiek">
+						<Video
+							publicId="dev-at-work"
+							loop
+							autoplay
+							alt="developer at work"
+							fallbackContent="Your browser does not support HTML5 video tags."
+						>
+							<Transformation width="350" crop="scale" />
+						</Video>
+					</CloudinaryContext>
 				</div>
 				<div css={tw`text-center bg-main-light text-light py-4`}>
 					<h4 css={tw`text-2xl`}>

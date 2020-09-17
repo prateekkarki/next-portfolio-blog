@@ -17,8 +17,8 @@ function Contact() {
 		submitting: false,
 		status: null,
 	});
+
 	const handleServerResponse = (ok, msg) => {
-		console.log(ok, msg);
 		setServerState({
 			submitting: false,
 			status: { ok, msg },
@@ -26,18 +26,20 @@ function Contact() {
 	};
 
 	const onSubmit = (data) => {
-		console.log(data);
-		data = { ...data, _replyto: data.email };
+		const newData = { ...data, _replyto: data.email };
 		setServerState({ submitting: true });
+
 		axios({
 			method: 'POST',
-			url: 'https://formspree.io/pratiek.karki@gmail.com',
-			data,
+			url: 'https://getform.io/f/55a243e6-bf8e-4554-be3e-ef8bd41e2acb',
+			data: newData,
+			headers: { Accept: 'application/json' },
 		})
 			.then(() => {
 				handleServerResponse(true, 'Thanks!');
 			})
 			.catch((r) => {
+				console.log(r);
 				handleServerResponse(false, r.response.data.error);
 			});
 	};

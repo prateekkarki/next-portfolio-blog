@@ -1,7 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import ReactMarkdown from 'react-markdown';
-import Moment from 'react-moment';
 import Head from 'next/head';
 
 import tw from 'twin.macro';
@@ -32,9 +31,7 @@ const Article = () => {
 							</h1>
 						</header>
 
-						{article.published_at && (
-							<Moment format="MMM Do YYYY">{article.published_at}</Moment>
-						)}
+						{article.published_at && <p>{article.published_at}</p>}
 						<ReactMarkdown source={article.content} />
 					</article>
 				</>

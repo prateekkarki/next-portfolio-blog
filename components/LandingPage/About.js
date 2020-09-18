@@ -11,7 +11,7 @@ function About() {
 			<TitleBlock title="About Me" subtitle="Who am I?" />
 			<div css={tw`block md:flex`}>
 				<div css={tw`hidden md:block`}>
-					<CloudinaryContext cloudName={process.env.CLOUDINARY_NAME}>
+					<CloudinaryContext cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_NAME}>
 						<Video
 							publicId="dev-at-work"
 							alt="developer at work"

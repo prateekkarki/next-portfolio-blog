@@ -37,7 +37,6 @@
     "graphql-tag": "^2.11.0",
     "isomorphic-unfetch": "^3.0.0",
     "lodash": "^4.17.20",
-    "moment": "^2.27.0",
     "next": "9.5.2",
     "next-on-netlify": "^2.3.2",
     "next-with-apollo": "^5.1.0",
@@ -48,7 +47,6 @@
     "react-icons": "^3.11.0",
     "react-markdown": "^4.3.1",
     "react-modal": "^3.11.2",
-    "react-moment": "^0.9.7",
     "react-scroll": "^1.8.1",
     "react-toastify": "^6.0.8",
     "twin.macro": "^1.7.0"

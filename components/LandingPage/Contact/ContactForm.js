@@ -46,13 +46,23 @@ function ContactForm() {
 			})
 			.catch((r) => {
 				handleServerResponse(false, r.response.data.error);
+
+				toast.error(r.response.data.error, {
+					position: 'bottom-right',
+					autoClose: 5000,
+					hideProgressBar: false,
+					closeOnClick: true,
+					pauseOnHover: true,
+					draggable: true,
+					progress: undefined,
+				});
 			});
 	};
 
 	return (
 		<form className="w-full max-w-lg" onSubmit={handleSubmit(onSubmit)}>
 			<div className="flex flex-wrap mb-6">
-				<div className="w-full px-3 mb-6 sm:mb-0">
+				<div className="w-full px-3 sm:mb-0">
 					<label
 						className="block uppercase  tracking-wide text-primary text-xs font-bold mb-2"
 						htmlFor="full-name"
@@ -134,6 +144,7 @@ function ContactForm() {
 						]}
 						id="message"
 						name="message"
+						placeholder="Type your message here"
 						ref={register({
 							required: 'Please enter the message.',
 							maxLength: {

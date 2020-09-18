@@ -11,13 +11,14 @@ function About() {
 			<TitleBlock title="About Me" subtitle="Who am I?" />
 			<div css={tw`block md:flex`}>
 				<div css={tw`hidden md:block`}>
-					<CloudinaryContext cloudName="pratiek">
+					<CloudinaryContext cloudName={process.env.CLOUDINARY_NAME}>
 						<Video
 							publicId="dev-at-work"
-							loop
-							autoplay
 							alt="developer at work"
 							fallbackContent="Your browser does not support HTML5 video tags."
+							secure
+							loop
+							autoPlay
 						>
 							<Transformation width="350" crop="scale" />
 						</Video>

@@ -11,7 +11,7 @@ const Card = ({ article }) => (
 		<div css={tw`w-full overflow-hidden shadow-md hover:shadow-lg cursor-pointer`}>
 			{article.image && (
 				<CloudinaryContext
-					cloudName="pratiek"
+					cloudName={process.env.CLOUDINARY_NAME}
 					css={tw`rounded-t-md w-full h-64 overflow-hidden`}
 				>
 					<Image

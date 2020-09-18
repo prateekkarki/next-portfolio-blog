@@ -10,7 +10,7 @@ function About() {
 		<div>
 			<TitleBlock title="About Me" subtitle="Who am I?" />
 			<div css={tw`block md:flex`}>
-				<div css={tw`hidden md:block`}>
+				<div css={tw`hidden md:block md:w-1/2 lg:w-1/4 `}>
 					<CloudinaryContext cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_NAME}>
 						<Video
 							publicId="dev-at-work"
@@ -20,11 +20,11 @@ function About() {
 							loop
 							autoPlay
 						>
-							<Transformation width="350" crop="scale" />
+							<Transformation width="384" crop="scale" />
 						</Video>
 					</CloudinaryContext>
 				</div>
-				<div css={tw`text-center bg-main-light text-light py-4`}>
+				<div css={tw`text-center bg-main-light text-light py-4 md:w-1/2 lg:w-3/4`}>
 					<h4 css={tw`text-2xl`}>
 						<strong>Hello stranger,</strong>
 					</h4>

@@ -11,7 +11,7 @@ import { initializeApollo } from '../utils/apollo';
 import Articles from '../components/Articles';
 import Intro from '../components/LandingPage/Intro';
 import About from '../components/LandingPage/About';
-import Contact from '../components/LandingPage/Contact';
+import Contact from '../components/LandingPage/Contact/Contact';
 
 const Home = ({ articles }) => {
 	const refs = {

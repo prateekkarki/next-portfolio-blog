@@ -36,17 +36,17 @@ function Intro() {
 		<div css={curvedBg}>
 			<div css={tw`container flex h-full items-center justify-center mx-auto`}>
 				<div ref={introRef} css={tw`w-full md:w-1/2 text-center md:text-left`}>
-					<div className="overflow-y-hidden">
+					<div css={tw`overflow-y-hidden`}>
 						<p css={tw`text-primary font-semibold text-2xl`}>
 							Hello, I&apos;m <span css={tw`text-secondary`}>Prateek Karki</span>
 						</p>
 					</div>
 
-					<div className="overflow-y-hidden">
+					<div css={tw`overflow-y-hidden`}>
 						<p css={tw`text-primary text-5xl font-bold `}>Javascript Developer</p>
 					</div>
 
-					<div className="overflow-y-hidden">
+					<div css={tw`overflow-y-hidden`}>
 						<p css={tw`text-light text-base font-normal mt-2 `}>
 							Tech lead | Software Engineer | Frontend | Backend | Mobile
 						</p>

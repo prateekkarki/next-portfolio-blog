@@ -19,6 +19,7 @@ function About() {
 							secure
 							loop
 							autoPlay
+							muted
 						>
 							<Transformation width="384" crop="scale" />
 						</Video>

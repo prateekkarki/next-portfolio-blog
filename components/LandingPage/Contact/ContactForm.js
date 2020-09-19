@@ -60,11 +60,11 @@ function ContactForm() {
 	};
 
 	return (
-		<form className="w-full max-w-lg" onSubmit={handleSubmit(onSubmit)}>
-			<div className="flex flex-wrap mb-6">
-				<div className="w-full px-3 sm:mb-0">
+		<form onSubmit={handleSubmit(onSubmit)} css={tw`w-full max-w-lg`}>
+			<div css={tw`flex flex-wrap mb-6`}>
+				<div css={tw`w-full px-3 sm:mb-0`}>
 					<label
-						className="block uppercase  tracking-wide text-primary text-xs font-bold mb-2"
+						css={tw`block uppercase  tracking-wide text-primary text-xs font-bold mb-2`}
 						htmlFor="full-name"
 					>
 						Full Name
@@ -91,16 +91,16 @@ function ContactForm() {
 						})}
 					/>
 					{errors.fullName && (
-						<p className="text-secondary text-xs italic">
+						<p css={tw`text-secondary text-xs italic`}>
 							{errors.fullName.message || 'Please enter your full name.'}
 						</p>
 					)}
 				</div>
 			</div>
-			<div className="flex flex-wrap mb-6">
-				<div className="w-full px-3">
+			<div css={tw`flex flex-wrap mb-6`}>
+				<div css={tw`w-full px-3`}>
 					<label
-						className="block uppercase  tracking-wide text-primary text-xs font-bold mb-2"
+						css={tw`block uppercase  tracking-wide text-primary text-xs font-bold mb-2`}
 						htmlFor="grid-password"
 					>
 						E-mail
@@ -123,16 +123,16 @@ function ContactForm() {
 						})}
 					/>
 					{errors.email && (
-						<p className="text-secondary text-xs italic">
+						<p css={tw`text-secondary text-xs italic`}>
 							{errors.email.message || 'Please enter your email.'}
 						</p>
 					)}
 				</div>
 			</div>
-			<div className="flex flex-wrap mb-6">
-				<div className="w-full px-3">
+			<div css={tw`flex flex-wrap mb-6`}>
+				<div css={tw`w-full px-3`}>
 					<label
-						className="block uppercase  tracking-wide text-primary text-xs font-bold mb-2"
+						css={tw`block uppercase  tracking-wide text-primary text-xs font-bold mb-2`}
 						htmlFor="grid-password"
 					>
 						Message
@@ -158,16 +158,16 @@ function ContactForm() {
 						})}
 					/>
 					{errors.message && (
-						<p className="text-secondary text-xs italic">
+						<p css={tw`text-secondary text-xs italic`}>
 							{errors.message.message || 'Please enter your email.'}
 						</p>
 					)}
 				</div>
 			</div>
-			<div className="sm:flex sm:items-center px-3">
-				<div className="sm:w-1/3">
+			<div css={tw`sm:flex sm:items-center px-3`}>
+				<div css={tw`sm:w-1/3`}>
 					<button
-						className="shadow bg-primary hover:bg-primary focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+						css={tw`shadow bg-primary hover:bg-primary focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded`}
 						type="submit"
 						disabled={serverState.submitting}
 					>

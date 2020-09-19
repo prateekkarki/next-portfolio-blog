@@ -3,6 +3,7 @@ import React from 'react';
 import Head from 'next/head';
 import { ToastContainer, Slide } from 'react-toastify';
 import { ApolloProvider } from '@apollo/react-hooks';
+import tw from 'twin.macro';
 
 import withApollo from '../utils/apollo';
 
@@ -60,23 +61,26 @@ const App = ({ Component, pageProps, apollo }) => {
 					rel="stylesheet"
 				/>
 			</Head>
-			<Header {...layoutProps} />
-			<Component {...pageProps} />
-			<ToastContainer
-				className="impct-toast"
-				position="top-center"
-				autoClose={3000}
-				hideProgressBar
-				newestOnTop
-				closeOnClick
-				rtl={false}
-				pauseOnVisibilityChange
-				draggable={false}
-				pauseOnHover
-				transition={Slide}
-			/>
 
-			<Footer />
+			<div css={tw`bg-main-dark`}>
+				<Header {...layoutProps} />
+				<Component {...pageProps} />
+				<ToastContainer
+					className="impct-toast"
+					position="top-center"
+					autoClose={3000}
+					hideProgressBar
+					newestOnTop
+					closeOnClick
+					rtl={false}
+					pauseOnVisibilityChange
+					draggable={false}
+					pauseOnHover
+					transition={Slide}
+				/>
+
+				<Footer />
+			</div>
 		</ApolloProvider>
 	);
 };

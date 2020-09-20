@@ -1,3 +1,5 @@
+const typography = require('@tailwindcss/typography');
+
 module.exports = {
 	purge: false,
 	target: 'relaxed',
@@ -23,7 +25,12 @@ module.exports = {
 				secondary: '0px 16px 29px rgba(245, 127, 23, 0.24)',
 			},
 
+			fontSize: {
+				huge: '6rem',
+			},
+
 			colors: {
+				white: '#e4e8f1',
 				light: '#95A5C6',
 				primary: '#0ABEAD',
 				secondary: '#F57F17',
@@ -35,5 +42,5 @@ module.exports = {
 		},
 	},
 
-	plugins: [require('@tailwindcss/typography')],
+	plugins: [typography],
 };

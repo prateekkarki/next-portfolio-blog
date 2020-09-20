@@ -139,8 +139,8 @@ function Footer() {
 								<li css={tw`text-light`}>
 									<a
 										target="_blank"
-										css={tw`text-primary`}
 										rel="noreferrer"
+										css={tw`text-primary`}
 										href="https://cloudinary.com/"
 									>
 										Cloudinary

@@ -61,72 +61,74 @@ function ContactForm() {
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)} css={tw`w-full max-w-lg`}>
-			<div css={tw`flex flex-wrap mb-6`}>
-				<div css={tw`w-full px-3 sm:mb-0`}>
-					<label
-						css={tw`block uppercase  tracking-wide text-primary text-xs font-bold mb-2`}
-						htmlFor="full-name"
-					>
-						Full Name
-					</label>
-					<input
-						css={[
-							tw`appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`,
-							errors.fullName ? tw`border-secondary` : tw`border-light`,
-						]}
-						id="fullName"
-						name="fullName"
-						type="text"
-						placeholder="John Doe"
-						ref={register({
-							required: 'Please enter your full name.',
-							maxLength: {
-								value: 30,
-								message: 'Fullname cannot be more than 30 characters long.',
-							},
-							minLength: {
-								value: 3,
-								message: 'Fullname must be at least 3 characters long.',
-							},
-						})}
-					/>
-					{errors.fullName && (
-						<p css={tw`text-secondary text-xs italic`}>
-							{errors.fullName.message || 'Please enter your full name.'}
-						</p>
-					)}
+			<div className="flex flex-col md:flex-row ">
+				<div css={tw`flex flex-wrap mb-6 w-full md:w-1/2`}>
+					<div css={tw`w-full px-3 sm:mb-0`}>
+						<label
+							css={tw`block uppercase  tracking-wide text-primary text-xs font-bold mb-2`}
+							htmlFor="full-name"
+						>
+							Full Name
+						</label>
+						<input
+							css={[
+								tw`appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`,
+								errors.fullName ? tw`border-secondary` : tw`border-light`,
+							]}
+							id="fullName"
+							name="fullName"
+							type="text"
+							placeholder="John Doe"
+							ref={register({
+								required: 'Please enter your full name.',
+								maxLength: {
+									value: 30,
+									message: 'Fullname cannot be more than 30 characters long.',
+								},
+								minLength: {
+									value: 3,
+									message: 'Fullname must be at least 3 characters long.',
+								},
+							})}
+						/>
+						{errors.fullName && (
+							<p css={tw`text-secondary text-xs italic`}>
+								{errors.fullName.message || 'Please enter your full name.'}
+							</p>
+						)}
+					</div>
 				</div>
-			</div>
-			<div css={tw`flex flex-wrap mb-6`}>
-				<div css={tw`w-full px-3`}>
-					<label
-						css={tw`block uppercase  tracking-wide text-primary text-xs font-bold mb-2`}
-						htmlFor="grid-password"
-					>
-						E-mail
-					</label>
-					<input
-						css={[
-							tw`appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`,
-							errors.email ? tw`border-secondary` : tw`border-light`,
-						]}
-						id="email"
-						name="email"
-						type="email"
-						placeholder="john.doe@example.com"
-						ref={register({
-							required: 'Please enter your email.',
-							pattern: {
-								value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-								message: 'Please enter a valid email address.',
-							},
-						})}
-					/>
-					{errors.email && (
-						<p css={tw`text-secondary text-xs italic`}>
-							{errors.email.message || 'Please enter your email.'}
-						</p>
-					)}
+				<div css={tw`flex flex-wrap mb-6 w-full md:w-1/2`}>
+					<div css={tw`w-full px-3`}>
+						<label
+							css={tw`block uppercase  tracking-wide text-primary text-xs font-bold mb-2`}
+							htmlFor="grid-password"
+						>
+							E-mail
+						</label>
+						<input
+							css={[
+								tw`appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`,
+								errors.email ? tw`border-secondary` : tw`border-light`,
+							]}
+							id="email"
+							name="email"
+							type="email"
+							placeholder="john.doe@example.com"
+							ref={register({
+								required: 'Please enter your email.',
+								pattern: {
+									value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+									message: 'Please enter a valid email address.',
+								},
+							})}
+						/>
+						{errors.email && (
+							<p css={tw`text-secondary text-xs italic`}>
+								{errors.email.message || 'Please enter your email.'}
+							</p>
+						)}
+					</div>
 				</div>
 			</div>
 			<div css={tw`flex flex-wrap mb-6`}>

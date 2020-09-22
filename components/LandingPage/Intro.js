@@ -6,15 +6,7 @@ import Programmer from './Programmer';
 
 const curvedBg = css`
 	height: 400px;
-	background: url(/images/curve.png);
-	background-repeat: no-repeat;
-
-	background-position: 10% 100%;
-	background-size: 200%;
-
 	@media (min-width: 768px) {
-		background-position: 30% 100%;
-		background-size: 110%;
 		height: 700px;
 	}
 `;

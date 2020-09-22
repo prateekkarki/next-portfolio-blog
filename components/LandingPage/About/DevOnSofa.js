@@ -11,7 +11,7 @@ function DevOnSofa() {
 
 	useEffect(() => {
 		const leaves = svgRef.current.querySelectorAll('#leaves');
-		const guywithlaptop = svgRef.current.querySelectorAll('#guywithlaptop');
+		// const guywithlaptop = svgRef.current.querySelectorAll('#guywithlaptop');
 
 		anime({
 			targets: [leaves],
@@ -22,13 +22,13 @@ function DevOnSofa() {
 			loop: true,
 		});
 
-		anime({
-			targets: [guywithlaptop],
-			translateX: ['225%', 0],
-			easing: 'easeInOutQuad',
-			duration: 800,
-			delay: 250,
-		});
+		// anime({
+		// 	targets: [guywithlaptop],
+		// 	translateX: ['225%', 0],
+		// 	easing: 'easeInOutQuad',
+		// 	duration: 800,
+		// 	delay: 250,
+		// });
 	});
 
 	return (
@@ -45,11 +45,6 @@ function DevOnSofa() {
 			enableBackground="new 0 0 3200 2000"
 			xmlSpace="preserve"
 		>
-			<path
-				fill="#2E3552"
-				d="M3056.6,1756.1H195.3c-2.2,0-4-1.8-4-4v-3.4c0-2.2,1.8-4,4-4h2861.3c2.2,0,4,1.8,4,4v3.4
-	C3060.5,1754.4,3058.7,1756.1,3056.6,1756.1z"
-			/>
 			<g id="leaves">
 				<g>
 					<path

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
-import tw from 'twin.macro';
+import tw, { css } from 'twin.macro';
 import PropTypes from 'prop-types';
 import { animateScroll } from 'react-scroll';
 import TitleBlock from '../components/LandingPage/TitleBlock';
@@ -10,7 +10,7 @@ import { initializeApollo } from '../utils/apollo';
 
 import Articles from '../components/Articles';
 import Intro from '../components/LandingPage/Intro';
-import About from '../components/LandingPage/About';
+import About from '../components/LandingPage/About/About';
 import Contact from '../components/LandingPage/Contact/Contact';
 
 const Home = ({ articles }) => {
@@ -33,10 +33,20 @@ const Home = ({ articles }) => {
 		<div css={tw`bg-main-dark`} ref={refs.home}>
 			<Intro />
 
-			<div css={tw`container mx-auto mt-16`} ref={refs.about}>
-				<About />
+			<div css={[tw`relative`]}>
+				<div
+					css={[
+						tw`absolute w-full h-full bg-main-light`,
+						css`
+							transform: skewY(-5deg);
+						`,
+					]}
+				/>
+				<div css={tw` relative container mx-auto py-16`} ref={refs.about}>
+					<About />
+				</div>
 			</div>
-			<div css={tw`container mx-auto mt-16`}>
+			<div css={tw`container mx-auto`}>
 				<TitleBlock title="Blog" subtitle="Stuff I wrote" />
 				<Articles articles={articles} />
 			</div>

@@ -9,6 +9,7 @@ import ARTICLES_QUERY from '../apollo/queries/article/articles';
 import { initializeApollo } from '../utils/apollo';
 
 import Articles from '../components/Articles';
+import Skewed from '../components/LandingPage/Skewed';
 import Intro from '../components/LandingPage/Intro';
 import About from '../components/LandingPage/About/About';
 import Contact from '../components/LandingPage/Contact/Contact';
@@ -32,26 +33,24 @@ const Home = ({ articles }) => {
 	return (
 		<div css={tw`bg-main-dark`} ref={refs.home}>
 			<Intro />
-
-			<div css={[tw`relative`]}>
-				<div
-					css={[
-						tw`absolute w-full h-full bg-main-light`,
-						css`
-							transform: skewY(-5deg);
-						`,
-					]}
-				/>
-				<div css={tw` relative container mx-auto py-16`} ref={refs.about}>
+				
+			<div css={[tw`relative my-16`]} ref={refs.about}>
+				<Skewed>
 					<About />
-				</div>
+				</Skewed>
 			</div>
+
 			<div css={tw`container mx-auto`}>
 				<TitleBlock title="Blog" subtitle="Stuff I wrote" />
 				<Articles articles={articles} />
 			</div>
-			<div css={tw`mx-auto mt-16`} ref={refs.contact}>
-				<Contact />
+
+			
+			
+			<div css={[tw`relative my-16`]} ref={refs.contact}>
+				<Skewed>
+					<Contact />
+				</Skewed>
 			</div>
 		</div>
 	);

@@ -30,8 +30,8 @@ function Programmer() {
 			targets: [codeElements],
 			scale: [0, 1],
 			easing: 'easeInOutQuad',
-			duration: 800,
-			delay: anime.stagger(250, { start: 1800 }),
+			duration: 500,
+			delay: anime.stagger(150, { start: 2500 }),
 		});
 
 		anime({

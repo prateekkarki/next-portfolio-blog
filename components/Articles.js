@@ -5,7 +5,9 @@ import PropTypes from 'prop-types';
 import Card from './Card';
 
 const Articles = ({ articles }) => (
-	<div css={tw`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 container mx-auto`}>
+	<div
+		css={tw`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 container mx-auto px-3 sm:px-0`}
+	>
 		{articles.map((article) => (
 			<Card article={article} key={`article__${article.id}`} />
 		))}

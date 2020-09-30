@@ -52,12 +52,14 @@ function Intro() {
 								Hire Me
 							</a>
 						</Link>
-						<button
-							type="button"
-							css={tw`w-40 focus:outline-none rounded-full bg-secondary font-semibold text-base py-4 text-white shadow-secondary text-center `}
+						<a
+							target="_blank"
+							rel="noreferrer"
+							href={process.env.NEXT_PUBLIC_RESUME_LINK}
+							css={tw`w-40 focus:outline-none rounded-full bg-secondary font-semibold text-base py-4 text-white shadow-secondary text-center`}
 						>
 							Get Resume
-						</button>
+						</a>
 					</div>
 				</div>
 				<div css={tw`hidden md:block w-1/2`}>

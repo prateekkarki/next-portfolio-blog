@@ -39,7 +39,7 @@ function Footer() {
 	const [modalOpen, setModalOpen] = useState(false);
 	const el = useRef(null);
 	return (
-		<footer css={tw`bg-main-dark border-main-light border-solid border-t-2 py-4`}>
+		<footer css={tw`bg-main-dark border-main-light border-solid border-t-2 py-4 px-3 sm:px-0`}>
 			<div css={overlayStyles} />
 			<div css={tw`container mx-auto text-white`} ref={el}>
 				<StyledModal
@@ -173,34 +173,7 @@ function Footer() {
 									</a>
 								</li>
 								<li css={tw`text-light`}>
-									<a
-										target="_blank"
-										css={tw`text-primary`}
-										rel="noreferrer"
-										href="https://dribbble.com/shots/6139167-Avento-marketing"
-									>
-										Avento marketing
-									</a>{' '}
-									by{' '}
-									<a
-										target="_blank"
-										css={tw`text-primary`}
-										rel="noreferrer"
-										href="https://dribbble.com/peterhenderson"
-									>
-										Peter Henderson
-									</a>
-								</li>
-								<li css={tw`text-light`}>
-									<a
-										target="_blank"
-										css={tw`text-primary`}
-										rel="noreferrer"
-										href="https://www.vecteezy.com/vector-art/615323-p-logo-letter-business-corporate-design"
-									>
-										Favicon logo
-									</a>{' '}
-									by{' '}
+									Favicon logo from{' '}
 									<a
 										target="_blank"
 										css={tw`text-primary`}
@@ -211,20 +184,12 @@ function Footer() {
 									</a>
 								</li>
 								<li css={tw`text-light`}>
+									Programmer illustrations from{' '}
 									<a
 										target="_blank"
 										css={tw`text-primary`}
 										rel="noreferrer"
 										href="https://www.freepik.com/free-vector/colourful-illustration-programmer-working_5483080.htm"
-									>
-										Colourful illustration of programmer
-									</a>{' '}
-									by{' '}
-									<a
-										target="_blank"
-										css={tw`text-primary`}
-										rel="noreferrer"
-										href="https://www.freepik.com/"
 									>
 										Freepik
 									</a>

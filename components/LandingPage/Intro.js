@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import anime from 'animejs';
+import Link from 'next/link';
 import tw, { css } from 'twin.macro';
 
 import Programmer from './Programmer';
@@ -27,7 +28,7 @@ function Intro() {
 	return (
 		<div css={curvedBg}>
 			<div css={tw`container flex h-full items-center justify-center mx-auto`}>
-				<div ref={introRef} css={tw`w-full md:w-1/2 text-center md:text-left`}>
+				<div ref={introRef} css={tw`w-full px-3 sm:px-0 md:w-1/2 text-center md:text-left`}>
 					<div css={tw`overflow-y-hidden`}>
 						<p css={tw`text-primary font-semibold text-2xl`}>
 							Hello, I&apos;m <span css={tw`text-secondary`}>Prateek Karki</span>
@@ -44,15 +45,16 @@ function Intro() {
 						</p>
 					</div>
 					<div css={tw`flex gap-10 justify-center md:justify-start mt-4`}>
+						<Link href="/#contact" as="/#contact" passHref>
+							<a
+								css={tw`w-40 focus:outline-none rounded-full bg-primary shadow-primary font-semibold text-base py-4 text-white text-center`}
+							>
+								Hire Me
+							</a>
+						</Link>
 						<button
 							type="button"
-							css={tw`w-40 rounded-full bg-primary shadow-primary font-semibold text-base py-4 text-white text-center`}
-						>
-							Hire Me
-						</button>
-						<button
-							type="button"
-							css={tw`w-40 rounded-full bg-secondary font-semibold text-base py-4 text-white shadow-secondary text-center `}
+							css={tw`w-40 focus:outline-none rounded-full bg-secondary font-semibold text-base py-4 text-white shadow-secondary text-center `}
 						>
 							Get Resume
 						</button>

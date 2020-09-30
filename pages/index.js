@@ -10,7 +10,7 @@ import { initializeApollo } from '../utils/apollo';
 
 import Articles from '../components/Articles';
 import Skewed from '../components/LandingPage/Skewed';
-import Intro from '../components/LandingPage/Intro';
+import Intro from '../components/LandingPage/Intro/Intro';
 import About from '../components/LandingPage/About/About';
 import Contact from '../components/LandingPage/Contact/Contact';
 

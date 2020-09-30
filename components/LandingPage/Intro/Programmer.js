@@ -16,6 +16,8 @@ function Programmer() {
 		const programmer = svgRef.current.querySelectorAll('#programmer');
 		const laptop = svgRef.current.querySelectorAll('#laptop');
 		const table = svgRef.current.querySelectorAll('#table');
+		const vase = svgRef.current.querySelectorAll('#vase');
+		const base = svgRef.current.querySelectorAll('#base');
 
 		anime({
 			targets: [leaves],
@@ -35,13 +37,16 @@ function Programmer() {
 		});
 
 		anime({
-			targets: [table, chair, laptop, programmer],
+			targets: [base, vase, table, chair, laptop, programmer],
 			translateX: ['400%', 0],
 			easing: 'easeInOutQuad',
 			duration: 800,
-			delay: anime.stagger(250, { start: 1000 }),
+			delay: anime.stagger(180, { start: 1000 }),
 		});
-		return () => {};
+
+		return () => {
+			anime.remove([leaves, codeElements, base, vase, table, chair, laptop, programmer]);
+		};
 	});
 
 	return (

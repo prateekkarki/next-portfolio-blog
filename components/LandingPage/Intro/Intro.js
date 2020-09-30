@@ -5,13 +5,6 @@ import tw, { css } from 'twin.macro';
 
 import Programmer from './Programmer';
 
-const curvedBg = css`
-	height: 400px;
-	@media (min-width: 768px) {
-		height: 700px;
-	}
-`;
-
 function Intro() {
 	const introRef = useRef(null);
 
@@ -23,10 +16,24 @@ function Intro() {
 			duration: 800,
 			delay: anime.stagger(250),
 		});
+		anime({
+			targets: introRef.current.querySelectorAll('a'),
+			scale: [0, 1],
+			easing: 'easeOutBack',
+			duration: 750,
+			delay: anime.stagger(150, { start: 1000 }),
+		});
 	});
 
 	return (
-		<div css={curvedBg}>
+		<div
+			css={css`
+				height: 400px;
+				@media (min-width: 768px) {
+					height: 700px;
+				}
+			`}
+		>
 			<div css={tw`container flex h-full items-center justify-center mx-auto`}>
 				<div ref={introRef} css={tw`w-full px-3 sm:px-0 md:w-1/2 text-center md:text-left`}>
 					<div css={tw`overflow-y-hidden`}>

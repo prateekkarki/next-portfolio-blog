@@ -21,14 +21,6 @@ function DevOnSofa() {
 			direction: 'alternate',
 			loop: true,
 		});
-
-		// anime({
-		// 	targets: [guywithlaptop],
-		// 	translateX: ['225%', 0],
-		// 	easing: 'easeInOutQuad',
-		// 	duration: 800,
-		// 	delay: 250,
-		// });
 	});
 
 	return (

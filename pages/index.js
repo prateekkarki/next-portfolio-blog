@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
-import tw, { css } from 'twin.macro';
+import tw from 'twin.macro';
 import PropTypes from 'prop-types';
 import { animateScroll } from 'react-scroll';
 import TitleBlock from '../components/LandingPage/TitleBlock';
@@ -33,7 +33,7 @@ const Home = ({ articles }) => {
 	return (
 		<div css={tw`bg-main-dark`} ref={refs.home}>
 			<Intro />
-				
+
 			<div css={[tw`relative my-16`]} ref={refs.about}>
 				<Skewed>
 					<About />
@@ -45,8 +45,6 @@ const Home = ({ articles }) => {
 				<Articles articles={articles} />
 			</div>
 
-			
-			
 			<div css={[tw`relative my-16`]} ref={refs.contact}>
 				<Skewed>
 					<Contact />

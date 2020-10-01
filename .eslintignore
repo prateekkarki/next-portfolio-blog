@@ -1,0 +1,4 @@
+.next
+assets/**
+public/**
+**/node_modules/**

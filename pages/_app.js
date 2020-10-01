@@ -55,7 +55,7 @@ const App = ({ Component, pageProps, apollo }) => {
 					name="keywords"
 					content="Web Development, Web Developer, Javascript Developer, Freelancer"
 				/>
-				<link rel="stylesheet" href="/ReactToastify.min.css" />
+				<link rel="stylesheet" href="/css/ReactToastify.min.css" />
 				<link
 					href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap"
 					rel="stylesheet"

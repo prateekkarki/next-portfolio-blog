@@ -22,15 +22,21 @@ function ContactForm() {
 		});
 	};
 
+	const encode = (data) => {
+		return Object.keys(data)
+			.map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+			.join('&');
+	};
+
 	const onSubmit = (data) => {
-		const newData = { ...data, _replyto: data.email };
+		const newData = encode({ ...data, 'form-name': 'contact' });
 		setServerState({ submitting: true });
 
 		axios({
 			method: 'POST',
-			url: 'https://getform.io/f/55a243e6-bf8e-4554-be3e-ef8bd41e2acb',
+			url: '/',
 			data: newData,
-			headers: { Accept: 'application/json' },
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 		})
 			.then(() => {
 				handleServerResponse(true, 'Thanks!');
@@ -60,12 +66,12 @@ function ContactForm() {
 	};
 
 	return (
-		<form onSubmit={handleSubmit(onSubmit)} css={tw`w-full max-w-lg`}>
+		<form onSubmit={handleSubmit(onSubmit)} name="contact" css={tw`w-full max-w-lg`}>
 			<div className="flex flex-col md:flex-row ">
 				<div css={tw`flex flex-wrap mb-6 w-full md:w-1/2`}>
 					<div css={tw`w-full px-3 sm:mb-0`}>
 						<label
-							css={tw`block uppercase  tracking-wide text-primary text-xs font-bold mb-2`}
+							css={tw`block uppercase tracking-wide text-primary text-xs font-bold mb-2`}
 							htmlFor="full-name"
 						>
 							Full Name

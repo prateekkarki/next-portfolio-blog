@@ -10,7 +10,6 @@ import withApollo from '../utils/apollo';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-import 'react-toastify/dist/ReactToastify.min.css';
 import '../assets/css/tailwind.css';
 
 const App = ({ Component, pageProps, apollo }) => {
@@ -56,6 +55,7 @@ const App = ({ Component, pageProps, apollo }) => {
 					name="keywords"
 					content="Web Development, Web Developer, Javascript Developer, Freelancer"
 				/>
+				<link rel="stylesheet" href="/ReactToastify.min.css" />
 				<link
 					href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap"
 					rel="stylesheet"

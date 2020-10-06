@@ -3,12 +3,11 @@ import { useRouter } from 'next/router';
 import tw from 'twin.macro';
 import PropTypes from 'prop-types';
 import { animateScroll } from 'react-scroll';
-import TitleBlock from '../components/LandingPage/TitleBlock';
 
-import ARTICLES_QUERY from '../apollo/queries/article/articles';
+import { LANDING_PAGE_POSTS } from '../apollo/queries/article/articles';
 import { initializeApollo } from '../utils/apollo';
 
-import Articles from '../components/Articles';
+import BlogPosts from '../components/LandingPage/BlogPosts/BlogPosts';
 import Skewed from '../components/LandingPage/Skewed';
 import Intro from '../components/LandingPage/Intro/Intro';
 import About from '../components/LandingPage/About/About';
@@ -41,8 +40,7 @@ const Home = ({ articles }) => {
 			</div>
 
 			<div css={tw`container mx-auto`}>
-				<TitleBlock title="Blog" subtitle="Stuff I wrote" />
-				<Articles articles={articles} />
+				<BlogPosts articles={articles} />
 			</div>
 
 			<div css={[tw`relative my-16`]} ref={refs.contact}>
@@ -63,7 +61,7 @@ export default Home;
 export async function getStaticProps() {
 	const client = initializeApollo();
 	const res = await client.query({
-		query: ARTICLES_QUERY,
+		query: LANDING_PAGE_POSTS,
 	});
 
 	// The value of the `props` key will be

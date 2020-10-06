@@ -70,7 +70,7 @@ function ContactForm() {
 			onSubmit={handleSubmit(onSubmit)}
 			name="contact"
 			css={tw`w-full max-w-lg`}
-			netlify
+			netlify="true"
 			data-netlify="true"
 		>
 			<div className="flex flex-col md:flex-row ">

@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import _ from 'lodash';
 import tw from 'twin.macro';
-import Articles from '../../components/Articles';
 import Query from '../../components/query';
 import CATEGORY_ARTICLES_QUERY from '../../apollo/queries/category/articles';
 
@@ -24,7 +23,6 @@ const Category = () => {
 						>
 							#{category.name}
 						</p>
-						<Articles articles={category.articles} />
 					</div>
 				</>
 			)}

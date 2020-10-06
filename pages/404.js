@@ -1,6 +1,8 @@
 /** @jsx jsx * */
 import { jsx, css } from '@emotion/core';
 
+import Link from 'next/link';
+
 const containerStyles = css`
 	color: #000;
 	background: #fff;
@@ -46,6 +48,9 @@ export default function Custom404() {
 				<h1>404</h1>
 				<div css={innerStyles}>
 					<h2>This page could not be found.</h2>
+					<Link href="/" as="/" passHref>
+						<a>Back to Homepage</a>
+					</Link>
 				</div>
 			</div>
 		</div>

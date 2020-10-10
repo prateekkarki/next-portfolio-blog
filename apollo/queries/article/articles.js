@@ -20,11 +20,15 @@ export default ARTICLES_QUERY;
 
 export const LANDING_PAGE_POSTS = gql`
 	query Articles {
-		articles(limit: 1) {
-			id
+		articles(limit: 1, where: { status: true, featured: true }) {
+			slug
 			title
 			category {
-				id
+				slug
+				name
+			}
+			tags {
+				slug
 				name
 			}
 			cover_image {

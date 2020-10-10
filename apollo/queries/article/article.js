@@ -1,19 +1,23 @@
 import gql from 'graphql-tag';
 
 const ARTICLE_QUERY = gql`
-	query Articles($id: ID!) {
-		article(id: $id) {
-			id
+	query Articles($slug: String!) {
+		articles(limit: 1, where: { slug: $slug }) {
+			slug
 			title
 			content
+			published_on
+			category {
+				slug
+				name
+			}
+			tags {
+				slug
+				name
+			}
 			cover_image {
 				url
 			}
-			category {
-				id
-				name
-			}
-			published_at
 		}
 	}
 `;

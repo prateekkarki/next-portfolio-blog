@@ -9,7 +9,7 @@ const ARTICLES_QUERY = gql`
 				id
 				name
 			}
-			image {
+			cover_image {
 				url
 			}
 		}
@@ -27,7 +27,7 @@ export const LANDING_PAGE_POSTS = gql`
 				id
 				name
 			}
-			image {
+			cover_image {
 				url
 			}
 		}

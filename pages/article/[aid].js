@@ -21,7 +21,9 @@ const Article = () => {
 					<article css={tw`container mx-auto prose-lg`}>
 						<header
 							css={tw`w-full h-64 bg-cover text-center flex flex-col items-center justify-center`}
-							style={{ background: `url(${article.image.url}) no-repeat center` }}
+							style={{
+								background: `url(${article.cover_image.url}) no-repeat center`,
+							}}
 						>
 							<h1
 								css={tw`w-full h-full flex justify-center items-center`}

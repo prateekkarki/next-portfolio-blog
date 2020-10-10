@@ -9,7 +9,7 @@ import tw from 'twin.macro';
 const Card = ({ article }) => (
 	<Link href="/article/[aid]" as={`/article/${article.id}`} passHref>
 		<div css={tw`w-full overflow-hidden shadow-md hover:shadow-lg cursor-pointer`}>
-			{article.image && (
+			{article.cover_image && (
 				<CloudinaryContext
 					cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_NAME}
 					css={tw`rounded-t-md w-full h-64 overflow-hidden`}
@@ -22,7 +22,7 @@ const Card = ({ article }) => (
 						crop="scale"
 						css={tw`w-full h-64 object-cover object-center transition-all rounded-t-md duration-500 ease-out transform hover:scale-125 origin-center`}
 						responsiveUseBreakpoints="true"
-						publicId={article.image.url.split('/').pop()}
+						publicId={article.cover_image.url.split('/').pop()}
 					>
 						<Placeholder type="pixelate" />
 					</Image>
@@ -45,7 +45,7 @@ const Card = ({ article }) => (
 Card.propTypes = {
 	article: PropTypes.shape({
 		id: PropTypes.string.isRequired,
-		image: PropTypes.PropTypes.shape({
+		cover_image: PropTypes.PropTypes.shape({
 			url: PropTypes.string.isRequired,
 		}),
 		title: PropTypes.string.isRequired,

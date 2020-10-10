@@ -1,3 +1,4 @@
+/* eslint-disable implicit-arrow-linebreak */
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { useState } from 'react';
@@ -22,11 +23,10 @@ function ContactForm() {
 		});
 	};
 
-	const encode = (data) => {
-		return Object.keys(data)
+	const encode = (data) =>
+		Object.keys(data)
 			.map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
 			.join('&');
-	};
 
 	const onSubmit = (data) => {
 		const newData = encode({ ...data, 'form-name': 'contact' });

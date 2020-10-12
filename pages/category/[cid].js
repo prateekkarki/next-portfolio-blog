@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import _ from 'lodash';
+import capitalize from 'lodash/capitalize';
 import tw from 'twin.macro';
 import Query from '../../components/query';
 import CATEGORY_ARTICLES_QUERY from '../../apollo/queries/category/articles';
@@ -14,7 +14,7 @@ const Category = () => {
 			{({ data: { category } }) => (
 				<>
 					<Head>
-						<title>{_.capitalize(category.name)} : Prateek Karki&apos;s blog</title>
+						<title>{capitalize(category.name)} : Prateek Karki&apos;s blog</title>
 					</Head>
 
 					<div css={tw`container mx-auto`}>

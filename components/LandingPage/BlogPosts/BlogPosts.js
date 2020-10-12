@@ -23,7 +23,7 @@ const BlogPosts = ({ articles }) => (
 				I usually post a few times every month. Here&apos;s one on the right to get you
 				started. Be sure to check out more by clicking the button below.
 			</p>
-			<Link href="/blogs" as="/blogs" passHref>
+			<Link href="/blog" as="/blog" passHref>
 				<a
 					css={tw`w-40 block focus:outline-none rounded-full bg-primary shadow-primary font-semibold text-base py-4 my-6 text-white text-center`}
 				>

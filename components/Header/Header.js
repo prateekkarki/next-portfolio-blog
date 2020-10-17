@@ -1,12 +1,11 @@
 import React, { useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
 import anime from 'animejs';
 import tw from 'twin.macro';
 import { throttle } from 'lodash';
 
-import Nav from './Nav';
+import Nav from './Nav/Nav';
 
-function Header({ categories }) {
+function Header() {
   const lastScrollTop = useRef(0);
   const isUp = useRef(false);
   const headerRef = useRef(null);
@@ -62,12 +61,9 @@ function Header({ categories }) {
       css={tw`bg-main-light z-10 sticky top-0 shadow-2xl`}
       ref={headerRef}
     >
-      <Nav categories={categories} />
+      <Nav />
     </header>
   );
 }
 
-Header.propTypes = {
-  categories: PropTypes.arrayOf(PropTypes.object).isRequired,
-};
 export default Header;

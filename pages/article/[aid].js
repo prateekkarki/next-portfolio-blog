@@ -6,7 +6,7 @@ import Head from 'next/head';
 
 import tw from 'twin.macro';
 import ARTICLE_QUERY from '../../apollo/queries/article/article';
-import Query from '../../components/query';
+import Query from '../../components/Query';
 
 const Article = () => {
   const router = useRouter();

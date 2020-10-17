@@ -2,7 +2,7 @@ import React from 'react';
 import tw from 'twin.macro';
 
 import Head from 'next/head';
-import Query from '../components/query';
+import Query from '../components/Query';
 import ARTICLES_QUERY from '../apollo/queries/article/articles';
 
 import Card from '../components/BlogPosts/Card';

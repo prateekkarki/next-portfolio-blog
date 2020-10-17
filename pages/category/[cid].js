@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import capitalize from 'lodash/capitalize';
 import tw from 'twin.macro';
-import Query from '../../components/query';
+import Query from '../../components/Query';
 import CATEGORY_ARTICLES_QUERY from '../../apollo/queries/category/articles';
 
 const Category = () => {

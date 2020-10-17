@@ -6,34 +6,18 @@ import { CgCodeSlash } from 'react-icons/cg';
 import tw from 'twin.macro';
 
 function CategoryToIcon({ category }) {
-	const [icon, setIcon] = useState(
-		<CgCodeSlash
-			css={tw`h-64 w-full mx-auto transition-all duration-500 ease-out transform hover:scale-125 origin-center`}
-		/>
-	);
+	const iconStyle = tw`
+		h-64 w-full mx-auto origin-center
+		transition-all duration-500 ease-out transform hover:scale-125
+	`;
 
+	const [icon, setIcon] = useState(<CgCodeSlash css={iconStyle} />);
 	useEffect(() => {
 		const categoryToIconConfig = {
-			react: (
-				<DiReact
-					css={tw`h-64 w-full mx-auto transition-all duration-500 ease-out transform hover:scale-125 origin-center`}
-				/>
-			),
-			javascript: (
-				<DiJavascript1
-					css={tw`h-64 w-full mx-auto transition-all duration-500 ease-out transform hover:scale-125 origin-center`}
-				/>
-			),
-			css: (
-				<DiSass
-					css={tw`h-64 w-full mx-auto transition-all duration-500 ease-out transform hover:scale-125 origin-center`}
-				/>
-			),
-			backendDevelopment: (
-				<DiDatabase
-					css={tw`h-64 w-full mx-auto transition-all duration-500 ease-out transform hover:scale-125 origin-center`}
-				/>
-			),
+			react: <DiReact css={iconStyle} />,
+			javascript: <DiJavascript1 css={iconStyle} />,
+			css: <DiSass css={iconStyle} />,
+			backendDevelopment: <DiDatabase css={iconStyle} />,
 		};
 
 		if (category && categoryToIconConfig[category.slug]) {
@@ -41,17 +25,25 @@ function CategoryToIcon({ category }) {
 		}
 	});
 	return (
-		<div css={tw`w-full h-64 text-center bg-light rounded-t-md overflow-hidden `}>{icon}</div>
+		<div
+			css={tw`
+				w-full h-64 text-center bg-light rounded-t-md overflow-hidden
+			`}
+		>
+			{icon}
+		</div>
 	);
 }
 
 CategoryToIcon.propTypes = {
-	category: PropTypes.arrayOf(
-		PropTypes.PropTypes.shape({
-			slug: PropTypes.string,
-			name: PropTypes.string,
-		})
-	),
+	category: PropTypes.PropTypes.shape({
+		slug: PropTypes.string,
+		name: PropTypes.string,
+	}),
+};
+
+CategoryToIcon.defaultProps = {
+	category: null,
 };
 
 export default CategoryToIcon;

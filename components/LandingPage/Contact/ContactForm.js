@@ -1,11 +1,16 @@
 /* eslint-disable implicit-arrow-linebreak */
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import tw from 'twin.macro';
 import { toast } from 'react-toastify';
+
+import {
+  ContactInput,
+  ContactTextarea,
+  PrimaryButton,
+  ContactLabel,
+} from '../../styled';
 
 function ContactForm() {
   const { register, handleSubmit, errors } = useForm();
@@ -78,19 +83,12 @@ function ContactForm() {
       <div className="flex flex-col md:flex-row ">
         <div css={tw`flex flex-wrap mb-6 w-full md:w-1/2`}>
           <div css={tw`w-full px-3 sm:mb-0`}>
-            <label
-              css={tw`block uppercase tracking-wide text-primary text-xs font-bold mb-2`}
-              htmlFor="full-name"
-            >
+            <ContactLabel hasError={errors.fullName} htmlFor="fullName">
               Full Name
-            </label>
-            <input
-              css={[
-                tw`appearance-none block w-full bg-gray-200`,
-                tw`text-gray-700 border rounded py-3 px-4 mb-3`,
-                tw`leading-tight focus:outline-none focus:bg-white`,
-                errors.fullName ? tw`border-secondary` : tw`border-light`,
-              ]}
+            </ContactLabel>
+
+            <ContactInput
+              hasError={errors.fullName}
               id="fullName"
               name="fullName"
               type="text"
@@ -116,19 +114,11 @@ function ContactForm() {
         </div>
         <div css={tw`flex flex-wrap mb-6 w-full md:w-1/2`}>
           <div css={tw`w-full px-3`}>
-            <label
-              css={tw`block uppercase  tracking-wide text-primary text-xs font-bold mb-2`}
-              htmlFor="grid-password"
-            >
+            <ContactLabel hasError={errors.email} htmlFor="email">
               E-mail
-            </label>
-            <input
-              css={[
-                tw`appearance-none block w-full bg-gray-200`,
-                tw`text-gray-700 border rounded py-3 px-4 mb-3`,
-                tw`leading-tight focus:outline-none focus:bg-white`,
-                errors.email ? tw`border-secondary` : tw`border-light`,
-              ]}
+            </ContactLabel>
+            <ContactInput
+              hasError={errors.email}
               id="email"
               name="email"
               type="email"
@@ -151,19 +141,11 @@ function ContactForm() {
       </div>
       <div css={tw`flex flex-wrap mb-6`}>
         <div css={tw`w-full px-3`}>
-          <label
-            css={tw`block uppercase  tracking-wide text-primary text-xs font-bold mb-2`}
-            htmlFor="grid-password"
-          >
+          <ContactLabel hasError={errors.message} htmlFor="message">
             Message
-          </label>
-          <textarea
-            css={[
-              tw`appearance-none block w-full bg-gray-200`,
-              tw`text-gray-700 border rounded py-3 px-4 mb-3`,
-              tw`leading-tight focus:outline-none focus:bg-white`,
-              errors.message ? tw`border-secondary` : tw`border-light`,
-            ]}
+          </ContactLabel>
+          <ContactTextarea
+            hasError={errors.message}
             id="message"
             name="message"
             placeholder="Type your message here"
@@ -174,8 +156,8 @@ function ContactForm() {
                 message: 'Message cannot be more than 800 characters long.',
               },
               minLength: {
-                value: 3,
-                message: 'Message must be at least 3 characters long.',
+                value: 15,
+                message: 'Message must be at least 15 characters long.',
               },
             })}
           />
@@ -188,17 +170,9 @@ function ContactForm() {
       </div>
       <div css={tw`sm:flex sm:items-center px-3`}>
         <div css={tw`sm:w-1/3`}>
-          <button
-            css={tw`
-              shadow bg-primary hover:bg-primary 
-              focus:shadow-outline focus:outline-none text-white font-bold 
-              py-2 px-4 rounded
-            `}
-            type="submit"
-            disabled={serverState.submitting}
-          >
+          <PrimaryButton type="submit" disabled={serverState.submitting}>
             Send
-          </button>
+          </PrimaryButton>
         </div>
       </div>
     </form>

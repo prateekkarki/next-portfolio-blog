@@ -1,6 +1,4 @@
-/** @jsx jsx * */
-import { jsx } from '@emotion/core';
-
+import React from 'react';
 import tw from 'twin.macro';
 import TitleBlock from './TitleBlock';
 

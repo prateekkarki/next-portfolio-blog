@@ -1,10 +1,7 @@
 /* eslint-disable max-len */
-/** @jsx jsx * */
-import { jsx } from '@emotion/core';
-import { useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 import anime from 'animejs';
-
 import programmerCss from './programmer.css';
 
 function Programmer() {

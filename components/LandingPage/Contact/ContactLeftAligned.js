@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
+import React from 'react';
 import { ImGithub, ImLinkedin2 } from 'react-icons/im';
 import { IoIosMail } from 'react-icons/io';
 

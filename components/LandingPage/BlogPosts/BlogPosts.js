@@ -5,6 +5,8 @@ import Link from 'next/link';
 
 import Card from '../../BlogPosts/Card';
 
+import { PrimaryLink } from '../../styled';
+
 const BlogPosts = ({ articles }) => (
   <div css={tw`block md:flex`}>
     <div
@@ -29,15 +31,7 @@ const BlogPosts = ({ articles }) => (
         get you started. Be sure to check out more by clicking the button below.
       </p>
       <Link href="/blog" as="/blog" passHref>
-        <a
-          css={tw`
-            w-40 block focus:outline-none 
-            rounded-full bg-primary shadow-primary 
-            font-semibold text-base py-4 my-6 text-white text-center
-          `}
-        >
-          View all posts
-        </a>
+        <PrimaryLink css={tw`mt-6`}>View all posts</PrimaryLink>
       </Link>
     </div>
 

@@ -1,10 +1,10 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
+import React from 'react';
 import { ImGithub, ImLinkedin2 } from 'react-icons/im';
 import { IoIosMail } from 'react-icons/io';
-
 import tw from 'twin.macro';
+
 import ContactForm from './ContactForm';
+import { Title } from '../../styled';
 
 function Contact() {
   return (
@@ -30,14 +30,7 @@ function Contact() {
 								sm:justify-start sm:items-start sm:text-left
 							`}
             >
-              <h1
-                css={tw`
-									font-bold text-white whitespace-no-wrap 
-									text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-huge
-								`}
-              >
-                Get in touch.
-              </h1>
+              <Title>Get in touch.</Title>
               <p css={tw`text-white text-base lg:text-lg`}>
                 <span>I love to develop things for the web.</span>
                 <span>

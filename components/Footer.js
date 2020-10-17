@@ -1,6 +1,4 @@
-/** @jsx jsx * */
-import { jsx, css } from '@emotion/core';
-import { useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import styled from '@emotion/styled';
 
 import { IoIosCloseCircle } from 'react-icons/io';
@@ -8,7 +6,7 @@ import Modal from 'react-modal';
 import tw from 'twin.macro';
 
 const StyledModal = styled(Modal)`
-  ${tw`bg-main-light w-11/12 overflow-auto rounded-lg p-6`}
+  ${tw`bg-main-light w-11/12 mx-auto overflow-auto rounded-lg p-6`}
   border: 1px solid #ccc;
   overflow: auto;
   height: fit-content;
@@ -31,10 +29,6 @@ const StyledModal = styled(Modal)`
   }
 `;
 
-const overlayStyles = css`
-  ${tw`bg-main-dark`}
-`;
-
 function Footer() {
   const [modalOpen, setModalOpen] = useState(false);
   const el = useRef(null);
@@ -42,7 +36,7 @@ function Footer() {
     <footer
       css={tw`bg-main-dark border-main-light border-solid border-t-2 py-4 px-3 sm:px-0`}
     >
-      <div css={overlayStyles} />
+      <div css={tw`bg-main-dark`} />
       <div css={tw`container mx-auto text-white`} ref={el}>
         <StyledModal
           isOpen={modalOpen}
@@ -57,7 +51,7 @@ function Footer() {
             <h1 css={tw`text-white`}>Credits</h1>
             <button
               type="button"
-              css={tw`text-lg focus:outline-none`}
+              css={tw`text-lg`}
               onClick={() => {
                 setModalOpen(false);
               }}
@@ -205,7 +199,7 @@ function Footer() {
           <a
             target="_blank"
             rel="noreferrer"
-            css={tw`underline text-gray-600 focus:outline-none`}
+            css={tw`underline text-gray-600`}
             href="https://github.com/prateekkarki/"
           >
             me
@@ -213,7 +207,7 @@ function Footer() {
           . Thanks to these{' '}
           <button
             type="button"
-            css={tw`underline text-gray-600 focus:outline-none`}
+            css={tw`underline text-gray-600`}
             onClick={() => {
               setModalOpen(true);
             }}

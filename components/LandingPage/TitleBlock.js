@@ -1,8 +1,7 @@
-/** @jsx jsx */
-import { jsx, css } from '@emotion/core';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-import tw from 'twin.macro';
+import tw, { css } from 'twin.macro';
 
 function TitleBlock({ title, subtitle }) {
   return (

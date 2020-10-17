@@ -1,6 +1,5 @@
-/** @jsx jsx * */
-import { jsx, css } from '@emotion/core';
-
+import React from 'react';
+import { css } from 'twin.macro';
 import Link from 'next/link';
 
 const containerStyles = css`

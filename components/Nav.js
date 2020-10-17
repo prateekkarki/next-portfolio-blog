@@ -1,12 +1,9 @@
-/** @jsx jsx * */
-import { jsx, css } from '@emotion/core';
-
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 
 import Link from 'next/link';
-import tw, { styled } from 'twin.macro';
+import tw, { styled, css } from 'twin.macro';
 
 const Nav = ({ categories }) => {
   let isExpanded = false;
@@ -67,7 +64,7 @@ const Nav = ({ categories }) => {
   };
 
   return (
-    <React.Fragment>
+    <>
       <div
         css={tw`
           container bg-main-light relative mx-auto 
@@ -136,7 +133,7 @@ const Nav = ({ categories }) => {
           </ActiveLink>
         ))}
       </MobileNav>
-    </React.Fragment>
+    </>
   );
 };
 

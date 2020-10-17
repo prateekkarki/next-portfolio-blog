@@ -1,6 +1,4 @@
-/** @jsx jsx * */
-import { jsx } from '@emotion/core';
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import anime from 'animejs';
 import tw from 'twin.macro';

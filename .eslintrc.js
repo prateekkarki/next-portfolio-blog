@@ -12,7 +12,7 @@ module.exports = {
 	},
 	plugins: ['react', 'prettier'],
 	rules: {
-		'max-len': ["error", 100],
+		'max-len': ["error", { code:80, "ignoreUrls": true, "ignoreStrings": true, "ignoreTemplateLiterals": true }],
 		'object-curly-newline': ["error", { "consistent": true }],
 		'comma-dangle': 0,
 		'linebreak-style': 0,

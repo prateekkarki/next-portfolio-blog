@@ -100,8 +100,8 @@ function ContactForm() {
                   message: 'Fullname cannot be more than 30 characters long.',
                 },
                 minLength: {
-                  value: 3,
-                  message: 'Fullname must be at least 3 characters long.',
+                  value: 5,
+                  message: 'Fullname must be at least 5 characters long.',
                 },
               })}
             />

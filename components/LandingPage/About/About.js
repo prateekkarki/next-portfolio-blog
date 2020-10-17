@@ -6,7 +6,6 @@ import DevOnSofa from './DevOnSofa';
 function About() {
   return (
     <div>
-      {/* <TitleBlock title="About Me" subtitle="Who am I?" /> */}
       <div css={tw`block md:flex`}>
         <div css={tw`hidden md:flex items-center md:w-1/2`}>
           <DevOnSofa />

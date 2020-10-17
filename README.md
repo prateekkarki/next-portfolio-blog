@@ -7,12 +7,12 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ### First, make a local copy of the env
 
 ```bash
-cp .env .env.local
+cp .env.example .env
 ```
 
 <br>
 
-### Update the `.env.local` file to add required parameters you'll find instructions on the file.
+### Update the `.env` file to add required parameters you'll find instructions on the file.
 
 <br>
 

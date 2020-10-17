@@ -48,13 +48,17 @@ function Intro() {
 
 					<div css={tw`overflow-y-hidden`}>
 						<p css={tw`text-light text-base font-normal mt-2 `}>
-							Tech lead | Software Engineer | Frontend | Backend | Mobile
+							Tech lead | Software Engineer | Frontend | Backend
 						</p>
 					</div>
 					<div css={tw`flex gap-10 justify-center md:justify-start mt-4`}>
 						<Link href="/#contact" as="/#contact" passHref>
 							<a
-								css={tw`w-40 focus:outline-none rounded-full bg-primary shadow-primary font-semibold text-base py-4 text-white text-center`}
+								css={tw`
+										w-40 py-4 focus:outline-none rounded-full 
+										bg-primary shadow-primary 
+										font-semibold text-base text-white text-center
+									`}
 							>
 								Hire Me
 							</a>
@@ -63,7 +67,11 @@ function Intro() {
 							target="_blank"
 							rel="noreferrer"
 							href={process.env.NEXT_PUBLIC_RESUME_LINK}
-							css={tw`w-40 focus:outline-none rounded-full bg-secondary font-semibold text-base py-4 text-white shadow-secondary text-center`}
+							css={tw`
+									w-40 focus:outline-none rounded-full 
+									bg-secondary font-semibold text-base py-4 
+									text-white shadow-secondary text-center
+								`}
 						>
 							Get Resume
 						</a>

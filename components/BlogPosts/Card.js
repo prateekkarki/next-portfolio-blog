@@ -16,12 +16,15 @@ const Card = ({ article }) => (
 					css={tw`rounded-t-md w-full h-64 overflow-hidden`}
 				>
 					<Image
-						// dpr="auto"
 						secure="true"
 						responsive
 						width="auto"
 						crop="scale"
-						css={tw`w-full h-64 object-cover object-center transition-all rounded-t-md duration-500 ease-out transform hover:scale-125 origin-center`}
+						css={tw`
+							w-full h-64 object-cover object-center 
+							transition-all duration-500 ease-out transform hover:scale-125 
+							rounded-t-md origin-center
+						`}
 						responsiveUseBreakpoints="true"
 						publicId={article.cover_image.url.split('/').pop()}
 					>
@@ -32,7 +35,11 @@ const Card = ({ article }) => (
 			{article.cover_image && article.cover_image.url.slice(0, 1) === '/' && (
 				<div css={tw`rounded-t-md w-full h-64 overflow-hidden`}>
 					<img
-						css={tw`w-full h-64 object-cover object-center transition-all rounded-t-md duration-500 ease-out transform hover:scale-125 origin-center`}
+						css={tw`
+							w-full h-64 object-cover object-center 
+							transition-all duration-500 ease-out transform hover:scale-125
+							rounded-t-md origin-center
+						`}
 						alt={`cover for article: ${article.title}`}
 						src={`${process.env.API_URL}${article.cover_image.url}`}
 					/>
@@ -44,7 +51,11 @@ const Card = ({ article }) => (
 			</div>
 			<div css={tw`px-6 pb-2 bg-main-light rounded-b-md`}>
 				<span
-					css={tw`inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-main-dark mr-2 mb-2`}
+					css={tw`
+						inline-block bg-gray-200 rounded-full 
+						px-3 py-1 mr-2 mb-2
+						text-sm font-semibold text-main-dark 
+					`}
 				>
 					#{article.category ? article.category.name : ''}
 				</span>

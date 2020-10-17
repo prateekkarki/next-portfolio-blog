@@ -12,23 +12,23 @@ function Contact() {
         <div css={tw`container mx-auto flex flex-col sm:flex-row`}>
           <div
             css={tw`
-							w-full sm:w-1/2 py-6 px-3
-							flex flex-col justify-center items-center text-center
-							sm:justify-start md:items-start sm:text-left
-						`}
+              w-full sm:w-1/2 py-6 px-3
+              flex flex-col justify-center items-center text-center
+              sm:justify-start md:items-start sm:text-left
+            `}
           >
             <div
               css={tw`
-								flex flex-col 
-								justify-center items-center text-center 
-								sm:justify-start sm:items-start sm:text-left
-							`}
+                flex flex-col 
+                justify-center items-center text-center 
+                sm:justify-start sm:items-start sm:text-left
+              `}
             >
               <h1
                 css={tw`
-									font-bold text-white whitespace-no-wrap 
-									text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-huge
-								`}
+                  font-bold text-white whitespace-no-wrap 
+                  text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-huge
+                `}
               >
                 Get in touch.
               </h1>
@@ -60,9 +60,9 @@ function Contact() {
                   rel="noreferrer"
                   href="mailto:info@meetprateek.com"
                   css={tw`
-										mr-4 p-3 text-2xl
-										bg-light hover:bg-primary text-main-dark rounded-full
-									`}
+                    mr-4 p-3 text-2xl
+                    bg-light hover:bg-primary text-main-dark rounded-full
+                  `}
                 >
                   <IoIosMail />
                 </a>
@@ -71,9 +71,9 @@ function Contact() {
                   rel="noreferrer"
                   href="https://github.com/prateekkarki/"
                   css={tw`
-										mr-4 p-3 bg-light hover:bg-primary rounded-full
-										text-2xl text-main-dark 
-									`}
+                    mr-4 p-3 bg-light hover:bg-primary rounded-full
+                    text-2xl text-main-dark 
+                  `}
                 >
                   <ImGithub />
                 </a>
@@ -82,9 +82,9 @@ function Contact() {
                   rel="noreferrer"
                   href="https://www.linkedin.com/in/prateekkarki/"
                   css={tw`
-										p-3 bg-light hover:bg-primary rounded-full
-										text-2xl text-main-dark 
-									`}
+                    p-3 bg-light hover:bg-primary rounded-full
+                    text-2xl text-main-dark 
+                  `}
                 >
                   <ImLinkedin2 />
                 </a>

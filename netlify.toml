@@ -6,4 +6,4 @@
 [[headers]]
   for = "/_next/static/*"
   [headers.values]
-	max-age=100000
+  max-age=100000

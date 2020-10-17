@@ -2,20 +2,20 @@
 @tailwind base;
 /* purgecss end ignore */
 html {
-	font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 h1 {
-	@apply text-2xl;
+  @apply text-2xl;
 }
 h2 {
-	@apply text-xl;
+  @apply text-xl;
 }
 h3 {
-	@apply text-lg;
+  @apply text-lg;
 }
 a {
-	@apply text-blue-600;
+  @apply text-blue-600;
 }
 
 @tailwind components;
@@ -23,19 +23,19 @@ a {
 @tailwind utilities;
 
 .ReactModal__Overlay {
-	z-index: 100;
-	opacity: 0;
-	transition: all 350ms ease-in-out;
-	transform-origin: center;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  z-index: 100;
+  opacity: 0;
+  transition: all 350ms ease-in-out;
+  transform-origin: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .ReactModal__Overlay--after-open {
-	opacity: 1;
+  opacity: 1;
 }
 
 .ReactModal__Overlay--before-close {
-	opacity: 0;
+  opacity: 0;
 }

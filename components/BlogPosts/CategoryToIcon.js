@@ -7,9 +7,9 @@ import tw from 'twin.macro';
 
 function CategoryToIcon({ category }) {
   const iconStyle = tw`
-		h-64 w-full mx-auto origin-center
-		transition-all duration-500 ease-out transform hover:scale-125
-	`;
+    h-64 w-full mx-auto origin-center
+    transition-all duration-500 ease-out transform hover:scale-125
+  `;
 
   const [icon, setIcon] = useState(<CgCodeSlash css={iconStyle} />);
   useEffect(() => {
@@ -27,8 +27,8 @@ function CategoryToIcon({ category }) {
   return (
     <div
       css={tw`
-				w-full h-64 text-center bg-light rounded-t-md overflow-hidden
-			`}
+        w-full h-64 text-center bg-light rounded-t-md overflow-hidden
+      `}
     >
       {icon}
     </div>

@@ -31,7 +31,7 @@ const App = ({ Component, pageProps, apollo }) => {
           name="description"
           content="Prateek Karki is a full-stack web developer dedicated
           to providing highly performant solutions on the internet.
-					Developing in ever emerging technologies like react JS and Node JS,
+          Developing in ever emerging technologies like react JS and Node JS,
           he will suggest and provide
           the best solutions for any problems his clients might have."
         />

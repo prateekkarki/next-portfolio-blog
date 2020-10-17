@@ -12,6 +12,11 @@ function Contact() {
       <div css={tw`bg-main-light`}>
         <div css={tw`container mx-auto flex flex-col sm:flex-row`}>
           <div
+            css={tw`w-full sm:w-1/2 flex flex-col justify-center items-center py-6`}
+          >
+            <ContactForm />
+          </div>
+          <div
             css={tw`
 							w-full sm:w-1/2 py-6 px-3
 							flex flex-col justify-center items-center text-center
@@ -91,9 +96,6 @@ function Contact() {
                 </a>
               </div>
             </div>
-          </div>
-          <div css={tw`w-full sm:w-1/2 flex flex-col items-center py-6`}>
-            <ContactForm />
           </div>
         </div>
       </div>

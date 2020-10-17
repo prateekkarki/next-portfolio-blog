@@ -1,5 +1,3 @@
-const typography = require('@tailwindcss/typography');
-
 module.exports = {
   purge: false,
   target: 'relaxed',
@@ -41,6 +39,4 @@ module.exports = {
       },
     },
   },
-
-  plugins: [typography],
 };

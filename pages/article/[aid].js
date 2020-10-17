@@ -18,7 +18,7 @@ const Article = () => {
           <Head>
             <title>{title} : Prateek Karki&apos;s blog</title>
           </Head>
-          <article css={tw`container mx-auto prose-lg`}>
+          <article css={tw`container mx-auto`}>
             <header
               css={tw`w-full h-64 bg-cover text-center flex flex-col items-center justify-center`}
               style={{

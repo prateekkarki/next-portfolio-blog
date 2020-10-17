@@ -10,7 +10,7 @@ import withApollo from '../utils/apollo';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-import '../assets/css/tailwind.css';
+import '../assets/css/styles.css';
 
 const App = ({ Component, pageProps, apollo }) => {
   const layoutProps = {

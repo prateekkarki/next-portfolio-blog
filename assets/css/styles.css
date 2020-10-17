@@ -1,26 +1,8 @@
-/* purgecss start ignore */
-@tailwind base;
-/* purgecss end ignore */
+@import 'base.css';
+
 html {
   font-family: 'Poppins', sans-serif;
 }
-
-h1 {
-  @apply text-2xl;
-}
-h2 {
-  @apply text-xl;
-}
-h3 {
-  @apply text-lg;
-}
-a {
-  @apply text-blue-600;
-}
-
-@tailwind components;
-
-@tailwind utilities;
 
 .ReactModal__Overlay {
   z-index: 100;

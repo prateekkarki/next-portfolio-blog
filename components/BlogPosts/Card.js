@@ -3,8 +3,9 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 import { Image, Placeholder, CloudinaryContext } from 'cloudinary-react';
-
 import tw from 'twin.macro';
+
+import CategoryToIcon from './CategoryToIcon';
 
 const Card = ({ article }) => (
 	<Link href="/article/[aid]" as={`/article/${article.slug}`} passHref>
@@ -28,7 +29,6 @@ const Card = ({ article }) => (
 					</Image>
 				</CloudinaryContext>
 			)}
-
 			{article.cover_image && article.cover_image.url.slice(0, 1) === '/' && (
 				<div css={tw`rounded-t-md w-full h-64 overflow-hidden`}>
 					<img
@@ -38,6 +38,7 @@ const Card = ({ article }) => (
 					/>
 				</div>
 			)}
+			{!article.cover_image && <CategoryToIcon category={article.category} />}
 			<div css={tw`px-6 py-4 bg-main-light`}>
 				<h2 css={tw`font-bold text-light text-xl mb-2`}>{article.title}</h2>
 			</div>
@@ -54,6 +55,12 @@ const Card = ({ article }) => (
 
 Card.propTypes = {
 	article: PropTypes.shape({
+		tags: PropTypes.arrayOf(
+			PropTypes.PropTypes.shape({
+				slug: PropTypes.string.isRequired,
+				name: PropTypes.string,
+			})
+		),
 		slug: PropTypes.string.isRequired,
 		cover_image: PropTypes.PropTypes.shape({
 			url: PropTypes.string.isRequired,

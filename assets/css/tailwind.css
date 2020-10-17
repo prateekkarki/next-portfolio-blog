@@ -27,7 +27,6 @@ a {
 	opacity: 0;
 	transition: all 350ms ease-in-out;
 	transform-origin: center;
-
 	display: flex;
 	justify-content: center;
 	align-items: center;

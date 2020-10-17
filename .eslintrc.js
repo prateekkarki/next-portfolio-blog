@@ -12,6 +12,7 @@ module.exports = {
 	},
 	plugins: ['react', 'prettier'],
 	rules: {
+		'max-len': ["error", 100],
 		'object-curly-newline': ["error", { "consistent": true }],
 		'comma-dangle': 0,
 		'linebreak-style': 0,

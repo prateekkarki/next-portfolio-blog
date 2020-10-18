@@ -72,10 +72,10 @@ const Article = () => {
             </Head>
             <ArticleTemplate postData={postData} postContent={postContent} />
             <DiscussionEmbed
-              shortname="meetprateek.disqus.com"
+              shortname={process.env.NEXT_PUBLIC_DISQUS_SHORTNAME}
               config={{
                 url: `${process.env.NEXT_PUBLIC_SITE_URL}/article/${postData.slug}`,
-                identifier: `${process.env.NEXT_PUBLIC_SITE_URL}/article/${postData.slug}`,
+                identifier: `article-${postData.slug}`,
                 title: postData.title,
                 language: 'en_US',
               }}

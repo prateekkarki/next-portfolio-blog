@@ -2,18 +2,31 @@ module.exports = {
   env: {
     browser: true,
   },
-  extends: ['plugin:react/recommended', 'plugin:prettier/recommended', 'airbnb'],
+  extends: [
+    'plugin:react/recommended',
+    'plugin:prettier/recommended',
+    'airbnb',
+  ],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 2019,
+    ecmaVersion: 2020,
     sourceType: 'module',
+    allowImportExportEverywhere: true,
   },
   plugins: ['react', 'prettier'],
   rules: {
-    'max-len': ["error", { code:80, "ignoreUrls": true, "ignoreStrings": true, "ignoreTemplateLiterals": true }],
-    'object-curly-newline': ["error", { "consistent": true }],
+    'max-len': [
+      'error',
+      {
+        code: 80,
+        ignoreUrls: true,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: true,
+      },
+    ],
+    'object-curly-newline': ['error', { consistent: true }],
     'comma-dangle': 0,
     'linebreak-style': 0,
     'no-tabs': 0,

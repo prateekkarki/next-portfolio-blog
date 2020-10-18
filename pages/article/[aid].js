@@ -6,9 +6,12 @@ import Head from 'next/head';
 import { useQuery } from '@apollo/react-hooks';
 
 import tw from 'twin.macro';
+
+import Markdown from 'react-markdown';
+
 import ARTICLE_QUERY from '../../apollo/queries/article/article';
 import Loader from '../../components/Loader';
-import ArticleTemplate from './ArticleTemplate';
+import ArticleTemplate from '../../components/BlogPosts/Article/ArticleTemplate';
 
 const Article = () => {
   const [postContent, setPostContent] = useState(<Loader />);
@@ -32,10 +35,7 @@ const Article = () => {
           })
           .catch(() => {
             setPostContent(
-              <div
-                css={tw`text-white`}
-                dangerouslySetInnerHTML={{ __html: postData.content }}
-              />
+              <Markdown className="article-main">{postData.content}</Markdown>
             );
           });
       }

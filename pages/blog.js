@@ -6,7 +6,7 @@ import Query from '../components/Query';
 import ARTICLES_QUERY from '../apollo/queries/article/articles';
 
 import Card from '../components/BlogPosts/Card';
-import TitleBlock from '../components/LandingPage/TitleBlock';
+import TitleBlock from '../components/Common/TitleBlock';
 
 function Blog() {
   return (

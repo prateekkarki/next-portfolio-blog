@@ -14,7 +14,7 @@ const ARTICLES_QUERY = gql`
         slug
         name
       }
-      cover_image {
+      thumbnail {
         url
       }
     }
@@ -41,7 +41,7 @@ export const LANDING_PAGE_POSTS = gql`
         slug
         name
       }
-      cover_image {
+      thumbnail {
         url
       }
     }

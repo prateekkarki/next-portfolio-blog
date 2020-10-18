@@ -8,7 +8,7 @@ const CATEGORY_ARTICLES_QUERY = gql`
         id
         title
         content
-        cover_image {
+        thumbnail {
           url
         }
         category {

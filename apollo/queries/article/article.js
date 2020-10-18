@@ -18,7 +18,7 @@ const ARTICLE_QUERY = gql`
         slug
         name
       }
-      cover_image {
+      thumbnail {
         url
       }
     }

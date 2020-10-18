@@ -9,6 +9,7 @@ import tw from 'twin.macro';
 
 import Markdown from 'react-markdown';
 
+import { DiscussionEmbed } from 'disqus-react';
 import ARTICLE_QUERY from '../../apollo/queries/article/article';
 import Loader from '../../components/Loader';
 import ArticleTemplate from '../../components/BlogPosts/Article/ArticleTemplate';
@@ -70,6 +71,15 @@ const Article = () => {
               <meta property="og:article:tag" content={tagsString} />
             </Head>
             <ArticleTemplate postData={postData} postContent={postContent} />
+            <DiscussionEmbed
+              shortname="meetprateek.disqus.com"
+              config={{
+                url: `${process.env.NEXT_PUBLIC_SITE_URL}/article/${postData.slug}`,
+                identifier: `${process.env.NEXT_PUBLIC_SITE_URL}/article/${postData.slug}`,
+                title: postData.title,
+                language: 'en_US',
+              }}
+            />
           </>
         )}
       </div>

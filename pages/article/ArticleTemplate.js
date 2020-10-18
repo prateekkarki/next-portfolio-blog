@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import tw from 'twin.macro';
 
 function ArticleTemplate({ postData, postContent }) {
-  return (
+  return !postData ? null : (
     <article css={tw`container mx-auto`}>
       <header
         css={tw`w-full h-64 bg-cover text-center flex

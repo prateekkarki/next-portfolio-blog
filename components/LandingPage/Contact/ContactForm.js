@@ -80,7 +80,7 @@ function ContactForm() {
       netlify="true"
       data-netlify="true"
     >
-      <div className="flex flex-col md:flex-row ">
+      <div css={tw`flex flex-col md:flex-row`}>
         <div css={tw`flex flex-wrap mb-6 w-full md:w-1/2`}>
           <div css={tw`w-full px-3 sm:mb-0`}>
             <ContactLabel hasError={errors.fullName} htmlFor="fullName">

@@ -1,46 +1,79 @@
 /* eslint-disable react/no-danger */
-/* eslint-disable camelcase */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 
+import { useQuery } from '@apollo/react-hooks';
+
 import tw from 'twin.macro';
 import ARTICLE_QUERY from '../../apollo/queries/article/article';
-import Query from '../../components/Query';
+import Loader from '../../components/Loader';
+import ArticleTemplate from './ArticleTemplate';
 
 const Article = () => {
+  const [postContent, setPostContent] = useState(<Loader />);
+  const [postData, setPostData] = useState(null);
+  const [tagsString, setTagsString] = useState('');
   const router = useRouter();
   const { aid } = router.query;
+
+  const { data, loading, error } = useQuery(ARTICLE_QUERY, {
+    variables: { slug: aid },
+  });
+
+  useEffect(() => {
+    if (data?.articles && aid) {
+      setPostData(data.articles[0]);
+      if (postData?.slug) {
+        setTagsString(postData.tags.map((tag) => tag.name).join(', '));
+        import(`./${postData.slug}/Post.js`)
+          .then((module) => {
+            setPostContent(module.default);
+          })
+          .catch(() => {
+            setPostContent(
+              <div
+                css={tw`text-white`}
+                dangerouslySetInnerHTML={{ __html: postData.content }}
+              />
+            );
+          });
+      }
+    }
+  }, [data, postData]);
+
   return !router.query.aid ? null : (
-    <Query query={ARTICLE_QUERY} slug={aid}>
-      {({ data: { title, cover_image, published_on, content } }) => (
-        <>
-          <Head>
-            <title>{title} : Prateek Karki&apos;s blog</title>
-          </Head>
-          <article css={tw`container mx-auto`}>
-            <header
-              css={tw`w-full h-64 bg-cover text-center flex flex-col items-center justify-center`}
-              style={{
-                background: `url(${cover_image.url}) no-repeat center`,
-              }}
-            >
-              <h1
-                css={tw`w-full h-full flex justify-center items-center`}
-                style={{ background: 'rgba(255,255,255,0.5)', margin: 0 }}
-              >
-                {title}
-              </h1>
-            </header>
-            {published_on && <p>{published_on}</p>}
-            <div
-              css={tw`text-white`}
-              dangerouslySetInnerHTML={{ __html: content }}
-            />
-          </article>
-        </>
-      )}
-    </Query>
+    <>
+      <div css={tw`container mx-auto`}>
+        {loading && <Loader />}
+        {error && (
+          <p css={tw`text-secondary text-center my-6`}>{error.message}</p>
+        )}
+        {postData?.slug && (
+          <>
+            <Head>
+              <title>{postData.title}</title>
+              <meta name="keywords" content={tagsString} />
+              <meta name="author" content="Prateek Karki" />
+              <meta name="description" content={postData.description} />
+              <meta property="og:type" content="article" />
+              <meta property="og:article:author" content="Prateek Karki" />
+              <meta
+                property="og:article:published_time"
+                content={postData.published_on || postData.created_at}
+              />
+              <meta
+                property="og:article:modified_time"
+                content={postData.updated_at}
+              />
+              <meta property="og:article:section" content="Technology" />
+              <meta property="og:article:tag" content={tagsString} />
+            </Head>
+            <ArticleTemplate postData={postData} postContent={postContent} />
+          </>
+        )}
+      </div>
+    </>
   );
 };
 

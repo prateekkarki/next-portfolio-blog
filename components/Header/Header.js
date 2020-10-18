@@ -13,10 +13,8 @@ function Header() {
   useEffect(() => {
     const scrollCheck = () => {
       const st = window.pageYOffset || document.documentElement.scrollTop;
-      // console.log(st, isUp.current);
       if (st > lastScrollTop.current) {
         if (!isUp.current && st > headerRef.current.clientHeight) {
-          // console.log('downscroll');
           anime({
             targets: [
               headerRef.current.parentElement.querySelectorAll('header'),
@@ -30,7 +28,6 @@ function Header() {
           });
         }
       } else if (isUp.current) {
-        // console.log('upscroll');
         anime({
           targets: [headerRef.current],
           translateY: ['-100', '0%'],

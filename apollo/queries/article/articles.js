@@ -25,7 +25,11 @@ export default ARTICLES_QUERY;
 
 export const LANDING_PAGE_POSTS = gql`
   query Articles {
-    articles(limit: 1, where: { status: true, featured: true }) {
+    articles(
+      limit: 1
+      where: { status: true, featured: true }
+      sort: "published_on:DESC"
+    ) {
       id
       slug
       title

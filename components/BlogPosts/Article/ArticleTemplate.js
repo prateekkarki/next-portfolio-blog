@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { BsChevronRight } from 'react-icons/bs';
 import tw from 'twin.macro';
 import Link from 'next/link';
-
+import format from 'date-fns/format';
 import css from './ArticleTemplate.css';
 import TitleBlock from '../../Common/TitleBlock';
 
@@ -26,8 +26,16 @@ function ArticleTemplate({ postData, postContent }) {
       </div>
       <TitleBlock title={postData.title} subtitle={postData.description} />
 
-      {postData.published_on && <p>{postData.published_on}</p>}
       {postContent}
+
+      {postData.published_on && (
+        <p css={tw`pt-4 text-light`}>
+          Posted on:{' '}
+          <span css={tw`italic`}>
+            {format(new Date(postData.published_on), 'do MMM yyyy')}
+          </span>
+        </p>
+      )}
     </article>
   );
 }

@@ -25,6 +25,13 @@ const Article = () => {
     variables: { slug: aid },
   });
 
+  // eslint-disable-next-line react/prop-types
+  const LinkRenderer = ({ href, children }) => (
+    <a href={href} target="_blank" rel="noreferrer">
+      {children}
+    </a>
+  );
+
   useEffect(() => {
     if (data?.articles && aid) {
       setPostData(data.articles[0]);
@@ -36,13 +43,17 @@ const Article = () => {
           })
           .catch(() => {
             setPostContent(
-              <Markdown className="article-main">{postData.content}</Markdown>
+              <Markdown
+                renderers={{ link: LinkRenderer }}
+                className="article-main"
+              >
+                {postData.content}
+              </Markdown>
             );
           });
       }
     }
   }, [data, postData]);
-
   return !router.query.aid ? null : (
     <>
       <div css={tw`container mx-auto`}>
@@ -70,8 +81,10 @@ const Article = () => {
               <meta property="og:article:section" content="Technology" />
               <meta property="og:article:tag" content={tagsString} />
             </Head>
+
             <ArticleTemplate postData={postData} postContent={postContent} />
             <DiscussionEmbed
+              css={tw`pt-16`}
               shortname={process.env.NEXT_PUBLIC_DISQUS_SHORTNAME}
               config={{
                 url: `${process.env.NEXT_PUBLIC_SITE_URL}/article/${postData.slug}`,

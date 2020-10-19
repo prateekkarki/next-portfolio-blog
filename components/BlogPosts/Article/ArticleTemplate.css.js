@@ -4,6 +4,13 @@ export default [
   tw`text-white container mx-auto`,
   css`
     .article-main {
+      a {
+        color: ${theme`colors.primary`};
+        &:hover {
+          color: ${theme`colors.light`};
+          text-decoration: underline;
+        }
+      }
       img {
         max-width: 100%;
         margin: 0 auto;

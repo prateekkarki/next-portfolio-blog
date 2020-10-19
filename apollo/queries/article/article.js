@@ -5,6 +5,7 @@ const ARTICLE_QUERY = gql`
     articles(limit: 1, where: { slug: $slug }) {
       slug
       title
+      subtitle
       content
       description
       published_on

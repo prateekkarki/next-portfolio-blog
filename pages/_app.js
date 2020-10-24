@@ -3,7 +3,7 @@ import React from 'react';
 import Head from 'next/head';
 import { ToastContainer, Slide } from 'react-toastify';
 import { ApolloProvider } from '@apollo/react-hooks';
-import tw from 'twin.macro';
+import tw, { GlobalStyles } from 'twin.macro';
 
 import withApollo from '../utils/apollo';
 
@@ -58,6 +58,7 @@ const App = ({ Component, pageProps, apollo }) => (
         rel="stylesheet"
       />
     </Head>
+    <GlobalStyles />
 
     <div css={tw`bg-main-dark`}>
       <Header />

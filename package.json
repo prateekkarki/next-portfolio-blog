@@ -50,7 +50,7 @@
     "react-modal": "^3.11.2",
     "react-scroll": "^1.8.1",
     "react-toastify": "^6.0.8",
-    "twin.macro": "^1.7.0"
+    "twin.macro": "^1.11.0"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.3.0",

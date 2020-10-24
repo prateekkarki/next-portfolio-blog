@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 import Card from '../../BlogPosts/Card';
 
-import { PrimaryLink } from '../../styled';
+import { BigLink } from '../../styled';
 
 const BlogPosts = ({ articles }) => (
   <div css={tw`block md:flex`}>
@@ -31,11 +31,13 @@ const BlogPosts = ({ articles }) => (
         get you started. Be sure to check out more by clicking the button below.
       </p>
       <Link href="/blog" as="/blog" passHref>
-        <PrimaryLink css={tw`mt-6`}>View all posts</PrimaryLink>
+        <BigLink css={tw`mt-6`}>View all posts</BigLink>
       </Link>
     </div>
 
-    <div css={tw`flex flex-col items-center justify-center md:w-1/2`}>
+    <div
+      css={tw`flex flex-col items-center justify-center md:w-1/2 px-3 md:px-6 `}
+    >
       {articles.map((article) => (
         <Card article={article} key={`article__${article.id}`} />
       ))}

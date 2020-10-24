@@ -8,7 +8,7 @@ import { toast } from 'react-toastify';
 import {
   ContactInput,
   ContactTextarea,
-  PrimaryButton,
+  BigButton,
   ContactLabel,
 } from '../../styled';
 
@@ -170,9 +170,9 @@ function ContactForm() {
       </div>
       <div css={tw`sm:flex sm:items-center px-3`}>
         <div css={tw`sm:w-1/3`}>
-          <PrimaryButton type="submit" disabled={serverState.submitting}>
+          <BigButton type="submit" disabled={serverState.submitting}>
             Send
-          </PrimaryButton>
+          </BigButton>
         </div>
       </div>
     </form>

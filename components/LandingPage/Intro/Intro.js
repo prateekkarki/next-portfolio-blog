@@ -4,7 +4,7 @@ import Link from 'next/link';
 import tw, { css } from 'twin.macro';
 
 import Programmer from './Programmer';
-import { PrimaryLink, SecondaryLink } from '../../styled';
+import { BigLink } from '../../styled';
 
 function Intro() {
   const introRef = useRef(null);
@@ -60,15 +60,16 @@ function Intro() {
           </div>
           <div css={tw`flex gap-10 justify-center md:justify-start mt-4`}>
             <Link href="/#contact" as="/#contact" passHref>
-              <PrimaryLink>Hire Me</PrimaryLink>
+              <BigLink>Hire Me</BigLink>
             </Link>
-            <SecondaryLink
+            <BigLink
               target="_blank"
               rel="noreferrer"
               href={process.env.NEXT_PUBLIC_RESUME_LINK}
+              variant="secondary"
             >
               Get Resume
-            </SecondaryLink>
+            </BigLink>
           </div>
         </div>
         <div css={tw`hidden md:block w-1/2 overflow-hidden`}>

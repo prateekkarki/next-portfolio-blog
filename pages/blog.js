@@ -18,7 +18,9 @@ function Blog() {
         <TitleBlock title="My Blog" subtitle="Check out my recent posts" />
         <Query query={ARTICLES_QUERY}>
           {({ data: { articles } }) => (
-            <div css={tw`grid gap-4 grid-cols-3 my-16`}>
+            <div
+              css={tw`grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 px-3 md:px-6 my-16`}
+            >
               {articles.map((article) => (
                 <Card article={article} key={`article__${article.id}`} />
               ))}

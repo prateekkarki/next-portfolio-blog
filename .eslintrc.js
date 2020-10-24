@@ -41,5 +41,6 @@ module.exports = {
     'jsx-a11y/label-has-associated-control': 0,
     'import/no-named-as-default': 0,
     'import/no-named-as-default-member': 0,
+    'operator-linebreak': 0,
   },
 };

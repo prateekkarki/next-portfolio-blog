@@ -13,6 +13,7 @@ function Contact() {
         <div css={tw`container mx-auto flex flex-col sm:flex-row`}>
           <div
             css={tw`w-full sm:w-1/2 flex flex-col justify-center items-center py-6`}
+            data-aos="zoom-out-down"
           >
             <ContactForm />
           </div>
@@ -22,6 +23,7 @@ function Contact() {
               flex flex-col justify-center items-center text-center
               sm:justify-start md:items-start sm:text-left
             `}
+            data-aos="zoom-in-up"
           >
             <div
               css={tw`
@@ -32,11 +34,11 @@ function Contact() {
             >
               <Title>Get in touch.</Title>
               <p css={tw`text-white text-base lg:text-lg`}>
-                <span>I love to develop things for the web.</span>
+                <span>I love to develop things for the web.</span>{' '}
                 <span>
                   I have lead projects and teams to build great end-products for
                   my clients.
-                </span>
+                </span>{' '}
                 <span>
                   If you want to get started with a project or just need my
                   help, feel free to contact me.

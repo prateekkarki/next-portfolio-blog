@@ -11,6 +11,7 @@ const BlogPosts = ({ articles }) => (
   <div css={tw`block md:flex`}>
     <div
       css={tw`text-center px-3 md:px-6 text-light py-4 md:w-1/2 md:text-left`}
+      data-aos="fade-right"
     >
       <h1
         css={tw`
@@ -37,6 +38,7 @@ const BlogPosts = ({ articles }) => (
 
     <div
       css={tw`flex flex-col items-center justify-center md:w-1/2 px-3 md:px-6 `}
+      data-aos="zoom-in-up"
     >
       {articles.map((article) => (
         <Card article={article} key={`article__${article.id}`} />

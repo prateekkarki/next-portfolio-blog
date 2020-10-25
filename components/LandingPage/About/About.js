@@ -7,10 +7,16 @@ function About() {
   return (
     <div>
       <div css={tw`block md:flex`}>
-        <div css={tw`hidden md:flex items-center md:w-1/2`}>
+        <div
+          css={tw`hidden md:flex items-center md:w-1/2`}
+          data-aos="zoom-in-up"
+        >
           <DevOnSofa />
         </div>
-        <div css={tw`text-center text-light py-4 md:w-1/2 md:text-left`}>
+        <div
+          css={tw`text-center text-light py-4 md:w-1/2 md:text-left`}
+          data-aos="fade-left"
+        >
           <h1
             css={tw`
               px-3 md:px-6 font-bold text-white

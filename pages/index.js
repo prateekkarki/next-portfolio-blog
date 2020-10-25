@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import tw from 'twin.macro';
 import PropTypes from 'prop-types';
-import { animateScroll } from 'react-scroll';
+import AOS from 'aos';
 
 import { LANDING_PAGE_POSTS } from '../apollo/queries/article/articles';
 import { initializeApollo } from '../utils/apollo';
@@ -19,13 +19,21 @@ const Home = ({ articles }) => {
     about: useRef(null),
     contact: useRef(null),
   };
+
   const router = useRouter();
   useEffect(() => {
+    AOS.init({
+      duration: 750,
+    });
+
     if (router.asPath.length && router.asPath.slice(0, 2) === '/#') {
       const block = router.asPath.slice(2);
       if (refs[block]) {
         const offsetTop = refs[block].current.offsetTop - 150;
-        animateScroll.scrollTo(offsetTop, { duration: 750 });
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth',
+        });
       }
     }
   });

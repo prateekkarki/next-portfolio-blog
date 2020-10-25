@@ -4,6 +4,8 @@ import Head from 'next/head';
 import { ToastContainer, Slide } from 'react-toastify';
 import { ApolloProvider } from '@apollo/react-hooks';
 import tw, { GlobalStyles } from 'twin.macro';
+import ScrollToTop from 'react-scroll-up';
+import { BiUpArrow } from 'react-icons/bi';
 
 import withApollo from '../utils/apollo';
 
@@ -11,6 +13,7 @@ import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 
 import '../assets/css/styles.css';
+import 'aos/dist/aos.css';
 
 const App = ({ Component, pageProps, apollo }) => (
   <ApolloProvider client={apollo}>
@@ -60,6 +63,11 @@ const App = ({ Component, pageProps, apollo }) => (
     </Head>
     <GlobalStyles />
 
+    <ScrollToTop showUnder={160} style={{ zIndex: 5 }}>
+      <div css={tw`bg-main-dark z-20 rounded-full p-2`}>
+        <BiUpArrow css={tw`w-8 h-8 text-white`} />
+      </div>
+    </ScrollToTop>
     <div css={tw`bg-main-dark`}>
       <Header />
       <Component {...pageProps} />

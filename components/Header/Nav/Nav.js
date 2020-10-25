@@ -46,7 +46,7 @@ const Nav = () => {
     <>
       <div
         css={tw`
-          container bg-main-light relative mx-auto 
+          container bg-main-light relative mx-auto px-3 lg:px-0
           flex flex-col sm:flex-row items-center justify-between py-4 z-10
         `}
       >

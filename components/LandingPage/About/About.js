@@ -8,7 +8,7 @@ function About() {
     <div>
       <div css={tw`block md:flex`}>
         <div
-          css={tw`hidden md:flex items-center md:w-1/2`}
+          css={tw`hidden md:flex items-center md:w-1/2 px-3 md:px-6`}
           data-aos="zoom-in-up"
         >
           <DevOnSofa />

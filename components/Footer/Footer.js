@@ -37,7 +37,7 @@ function Footer() {
       css={tw`bg-main-dark border-main-light border-solid border-t-2 py-4 px-3 sm:px-0`}
     >
       <div css={tw`bg-main-dark`} />
-      <div css={tw`container mx-auto text-white`} ref={el}>
+      <div css={tw`container mx-auto text-white px-3`} ref={el}>
         <StyledModal
           isOpen={modalOpen}
           closeTimeoutMS={350}

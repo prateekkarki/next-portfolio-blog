@@ -31,6 +31,12 @@ function Intro() {
       css={css`
         height: 400px;
         @media (min-width: 768px) {
+          height: 450px;
+        }
+        @media (min-width: 1024px) {
+          height: 550px;
+        }
+        @media (min-width: 1280px) {
           height: 700px;
         }
       `}
@@ -38,7 +44,7 @@ function Intro() {
       <div css={tw`container flex h-full items-center justify-center mx-auto`}>
         <div
           ref={introRef}
-          css={tw`w-full px-3 sm:px-0 md:w-1/2 text-center md:text-left`}
+          css={tw`w-full px-3 md:w-1/2 text-center md:text-left`}
         >
           <div css={tw`overflow-y-hidden`}>
             <p css={tw`text-primary font-semibold text-2xl`}>
@@ -48,13 +54,13 @@ function Intro() {
           </div>
 
           <div css={tw`overflow-y-hidden`}>
-            <p css={tw`text-primary text-5xl font-bold `}>
+            <p css={tw`text-primary text-5xl font-bold`}>
               Javascript Developer
             </p>
           </div>
 
           <div css={tw`overflow-y-hidden`}>
-            <p css={tw`text-light text-base font-normal mt-2 `}>
+            <p css={tw`text-light text-base font-normal mt-2`}>
               Tech lead | Software Engineer | Frontend | Backend
             </p>
           </div>

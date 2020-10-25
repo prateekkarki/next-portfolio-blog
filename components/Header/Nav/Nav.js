@@ -36,9 +36,6 @@ const Nav = () => {
       <ActiveLink href="/blog" as="/blog">
         Blog
       </ActiveLink>
-      <ActiveLink href="/#contact" as="/#contact">
-        Contact
-      </ActiveLink>
     </>
   );
 

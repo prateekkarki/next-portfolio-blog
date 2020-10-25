@@ -9,7 +9,7 @@ function TitleBlock({ title, subtitle }) {
       <h1 css={tw`font-bold text-primary text-5xl`}>{title}</h1>
       <p
         css={[
-          tw`my-4 font-normal text-base text-light`,
+          tw`mt-2 mb-4 font-normal text-base text-light`,
           css`
             letter-spacing: 0.5px;
             line-height: 19.2px;

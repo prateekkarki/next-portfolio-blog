@@ -1,10 +1,21 @@
 import React from 'react';
 import { ImGithub, ImLinkedin2 } from 'react-icons/im';
 import { IoIosMail } from 'react-icons/io';
-import tw from 'twin.macro';
+import tw, { styled } from 'twin.macro';
 
 import ContactForm from './ContactForm';
 import { Title } from '../../styled';
+
+const Links = styled.a(({ lastItem }) => [
+  tw`p-3 bg-light text-main-dark hover:(bg-primary text-light) rounded-full text-2xl mr-4`,
+  lastItem && tw`mr-0`,
+]);
+
+const ContactLinks = ({ href, children, lastItem }) => (
+  <Links target="_blank" rel="noreferrer" href={href} lastItem={lastItem}>
+    {children}
+  </Links>
+);
 
 function Contact() {
   return (
@@ -49,46 +60,22 @@ function Contact() {
                 <a
                   target="_blank"
                   rel="noreferrer"
-                  css={tw`text-xl text-light hover:text-light `}
+                  css={tw`text-xl text-light hover:text-primary`}
                   href="mailto:info@meetprateek.com"
                 >
                   info@meetprateek.com
                 </a>
               </div>
               <div css={tw`pt-4 flex`}>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="mailto:info@meetprateek.com"
-                  css={tw`
-                    mr-4 p-3 text-2xl
-                    bg-light hover:bg-primary text-main-dark rounded-full
-                  `}
-                >
+                <ContactLinks href="mailto:info@meetprateek.com">
                   <IoIosMail />
-                </a>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://github.com/prateekkarki/"
-                  css={tw`
-                    mr-4 p-3 bg-light hover:bg-primary rounded-full
-                    text-2xl text-main-dark 
-                  `}
-                >
+                </ContactLinks>
+                <ContactLinks href="https://github.com/prateekkarki/">
                   <ImGithub />
-                </a>
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://www.linkedin.com/in/prateekkarki/"
-                  css={tw`
-                    p-3 bg-light hover:bg-primary rounded-full
-                    text-2xl text-main-dark 
-                  `}
-                >
+                </ContactLinks>
+                <ContactLinks href="https://www.linkedin.com/in/prateekkarki/">
                   <ImLinkedin2 />
-                </a>
+                </ContactLinks>
               </div>
             </div>
           </div>

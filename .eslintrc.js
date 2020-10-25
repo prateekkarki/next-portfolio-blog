@@ -42,5 +42,6 @@ module.exports = {
     'import/no-named-as-default': 0,
     'import/no-named-as-default-member': 0,
     'operator-linebreak': 0,
+    'react/prop-types': 0,
   },
 };

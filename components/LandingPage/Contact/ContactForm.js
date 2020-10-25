@@ -170,8 +170,12 @@ function ContactForm() {
       </div>
       <div css={tw`sm:flex sm:items-center px-3`}>
         <div css={tw`sm:w-1/3`}>
-          <BigButton type="submit" disabled={serverState.submitting}>
-            Send
+          <BigButton
+            css={tw`w-full sm:w-40`}
+            type="submit"
+            disabled={serverState.submitting}
+          >
+            Send Message
           </BigButton>
         </div>
       </div>

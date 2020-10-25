@@ -32,7 +32,7 @@ const BlogPosts = ({ articles }) => (
         get you started. Be sure to check out more by clicking the button below.
       </p>
       <Link href="/blog" as="/blog" passHref>
-        <BigLink css={tw`mt-6`}>View all posts</BigLink>
+        <BigLink css={tw`mt-6 mx-auto md:ml-0`}>View all posts</BigLink>
       </Link>
     </div>
 

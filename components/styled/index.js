@@ -28,14 +28,18 @@ const buttonStyles = ({ variant }) => [
     font-semibold text-base text-white text-center`,
       css`
         &:after {
-          ${tw`bg-white h-40 w-12 absolute top-0 left-0 opacity-25 transition duration-700`}
+          ${tw`bg-white absolute top-0 opacity-25 `}
           content: '';
-          transform: rotate(35deg) translate(-5rem, -4rem);
-          transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+          left: -60%;
+          width: 50%;
+          height: 100%;
+          transform: skewX(-45deg);
+          transition: all 700ms cubic-bezier(0.19, 1, 0.22, 1);
         }
         &:hover {
           &:after {
-            transform: rotate(35deg) translate(8rem, -4rem);
+            /* transform: rotate(35deg) translate(350%, -50%); */
+            left: 110%;
           }
         }
       `,

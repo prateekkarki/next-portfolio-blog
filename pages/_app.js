@@ -14,7 +14,6 @@ import Footer from '../components/Footer/Footer';
 
 import '../assets/css/styles.css';
 import 'aos/dist/aos.css';
-import 'react-vertical-timeline-component/style.min.css';
 
 const App = ({ Component, pageProps, apollo }) => (
   <ApolloProvider client={apollo}>

@@ -2,8 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 
-import { Image, Placeholder, CloudinaryContext } from 'cloudinary-react';
-import tw from 'twin.macro';
+import { Image, Placeholder, Transformation } from 'cloudinary-react';
+import tw, { styled, css } from 'twin.macro';
 
 import CategoryToIcon from './CategoryToIcon';
 
@@ -11,48 +11,53 @@ const Tag = tw.span`
   inline-block bg-gray-200 rounded-full 
   px-3 py-1 mr-2 mb-2
   text-sm font-semibold text-main-dark `;
+
+const ImageWindow = styled.div([
+  tw`rounded-t-md w-full h-64 overflow-hidden cursor-pointer`,
+  css`
+    img {
+      width: 100%;
+      height: 16rem;
+      object-fit: cover;
+      object-position: center;
+      transition: all 500ms cubic-bezier(0, 0, 0.2, 1);
+      border-top-left-radius: 0.375rem;
+      border-top-right-radius: 0.375rem;
+      transform-origin: center;
+      &:hover {
+        transform: scale(1.25);
+      }
+    }
+  `,
+]);
+
 const Card = ({ article, dark }) => (
   <div css={tw`w-full overflow-hidden shadow-md hover:shadow-lg`}>
     <>
       {article.thumbnail && article.thumbnail.url.slice(0, 1) !== '/' && (
-        <CloudinaryContext
-          cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_NAME}
-          css={tw`rounded-t-md w-full h-64 overflow-hidden cursor-pointer`}
-        >
+        <ImageWindow>
           <Link href="/article/[aid]" as={`/article/${article.slug}`}>
             <Image
               secure="true"
               responsive
-              width="auto"
-              crop="scale"
-              css={tw`
-              w-full h-64 object-cover object-center 
-              transition-all duration-500 ease-out transform hover:scale-125 
-              rounded-t-md origin-center
-            `}
+              cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_NAME}
               responsiveUseBreakpoints="true"
               publicId={article.thumbnail.url.split('/').pop()}
             >
-              <Placeholder type="pixelate" />
+              <Transformation width="auto" crop="scale" fetchFormat="auto" />
+              <Placeholder type="blur" />
             </Image>
           </Link>
-        </CloudinaryContext>
+        </ImageWindow>
       )}
       {article.thumbnail && article.thumbnail.url.slice(0, 1) === '/' && (
         <Link href="/article/[aid]" as={`/article/${article.slug}`} passHref>
-          <div
-            css={tw`rounded-t-md w-full h-64 overflow-hidden cursor-pointer`}
-          >
+          <ImageWindow>
             <img
-              css={tw`
-              w-full h-64 object-cover object-center 
-              transition-all duration-500 ease-out transform hover:scale-125
-              rounded-t-md origin-center
-            `}
               alt={`cover for article: ${article.title}`}
               src={`${process.env.API_URL}${article.thumbnail.url}`}
             />
-          </div>
+          </ImageWindow>
         </Link>
       )}
     </>

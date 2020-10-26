@@ -59,7 +59,7 @@ export default css`
       clear: both;
     }
 
-    &:first-child {
+    &:first-of-type {
       margin-top: 0;
     }
 
@@ -72,7 +72,7 @@ export default css`
     .vertical-timeline-element {
       margin: 4em 0;
 
-      &:first-child {
+      &:first-of-type {
         margin-top: 0;
       }
 
@@ -260,14 +260,14 @@ export default css`
 
       .vertical-timeline-element {
         &.vertical-timeline-element--right .vertical-timeline-element-content,
-        &:nth-child(even):not(.vertical-timeline-element--left)
+        &:nth-of-type(even):not(.vertical-timeline-element--left)
           .vertical-timeline-element-content {
           float: right;
         }
 
         &.vertical-timeline-element--right
           .vertical-timeline-element-content-arrow,
-        &:nth-child(even):not(.vertical-timeline-element--left)
+        &:nth-of-type(even):not(.vertical-timeline-element--left)
           .vertical-timeline-element-content-arrow {
           top: 24px;
           left: auto;
@@ -280,7 +280,7 @@ export default css`
     .vertical-timeline--one-column-right .vertical-timeline-element {
       &.vertical-timeline-element--right
         .vertical-timeline-element-content-arrow,
-      &:nth-child(even):not(.vertical-timeline-element--left)
+      &:nth-of-type(even):not(.vertical-timeline-element--left)
         .vertical-timeline-element-content-arrow {
         top: 24px;
         left: 100%;
@@ -293,7 +293,7 @@ export default css`
       &.vertical-timeline-element--right
         .vertical-timeline-element-content
         .vertical-timeline-element-date,
-      &:nth-child(even):not(.vertical-timeline-element--left)
+      &:nth-of-type(even):not(.vertical-timeline-element--left)
         .vertical-timeline-element-content
         .vertical-timeline-element-date {
         left: auto;
@@ -319,7 +319,7 @@ export default css`
       .vertical-timeline-element {
       &.vertical-timeline-element--right
         .vertical-timeline-element-content.bounce-in,
-      &:nth-child(even):not(.vertical-timeline-element--left)
+      &:nth-of-type(even):not(.vertical-timeline-element--left)
         .vertical-timeline-element-content.bounce-in {
         animation: cd-bounce-2-inverse 0.6s;
       }

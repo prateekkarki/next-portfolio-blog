@@ -22,28 +22,25 @@ export const ContactLabel = styled.label(({ hasError }) => [
 ]);
 
 const buttonStyles = ({ variant }) => [
+  tw`w-40 py-4 block rounded-full overflow-hidden relative
+    font-semibold text-base text-white text-center
+    transform transition-all duration-200 ease-in-out translate-y-0 hover:-translate-y-1
+  `,
   css`
-    ${[
-      tw`w-40 py-4 block rounded-full overflow-hidden relative
-    font-semibold text-base text-white text-center`,
-      css`
-        &:after {
-          ${tw`bg-white absolute top-0 opacity-25 `}
-          content: '';
-          left: -60%;
-          width: 50%;
-          height: 100%;
-          transform: skewX(-45deg);
-          transition: all 700ms cubic-bezier(0.19, 1, 0.22, 1);
-        }
-        &:hover {
-          &:after {
-            /* transform: rotate(35deg) translate(350%, -50%); */
-            left: 110%;
-          }
-        }
-      `,
-    ]}
+    &:after {
+      ${tw`bg-white absolute top-0 opacity-25 `}
+      content: '';
+      left: -60%;
+      width: 50%;
+      height: 100%;
+      transform: skewX(-45deg);
+      transition: all 700ms cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    &:hover {
+      &:after {
+        left: 110%;
+      }
+    }
   `,
   variant === 'primary' &&
     tw`bg-primary hover:shadow-primary-focus shadow-primary-default`,

@@ -23,7 +23,7 @@ function Contact() {
       <div css={tw`bg-main-light`}>
         <div css={tw`container mx-auto flex flex-col sm:flex-row`}>
           <div
-            css={tw`w-full sm:w-1/2 flex flex-col justify-center items-center py-6`}
+            css={tw`w-full sm:w-1/2 flex flex-col justify-center items-center lg:items-start py-6`}
             data-aos="zoom-out-down"
           >
             <ContactForm />

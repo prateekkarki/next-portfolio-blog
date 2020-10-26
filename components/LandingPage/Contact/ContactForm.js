@@ -13,7 +13,9 @@ import {
 } from '../../styled';
 
 function ContactForm() {
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit, errors, reset } = useForm({
+    mode: 'onSubmit',
+  });
 
   // Server state handling
   const [serverState, setServerState] = useState({
@@ -56,6 +58,7 @@ function ContactForm() {
           draggable: true,
           progress: undefined,
         });
+        reset();
       })
       .catch((r) => {
         handleServerResponse(false, r.response.data.error);

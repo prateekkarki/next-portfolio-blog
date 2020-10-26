@@ -14,20 +14,6 @@ import timelineStyles from './Timeline.css';
 function Timeline() {
   const items = [
     {
-      id: 1,
-      date: '2010',
-      title: 'Arniko College BRT',
-      subtitle: 'High School, Science',
-      type: 'school',
-    },
-    {
-      id: 2,
-      date: '2012',
-      title: 'Kathmandu Engineering College',
-      subtitle: "Bachelor's Degree, Computer Engineering",
-      type: 'school',
-    },
-    {
       id: 3,
       date: '2014',
       title: 'Dot Web Technologies LLP',

@@ -8,7 +8,7 @@ import { BigLink } from '../../styled';
 
 function Intro() {
   const introRef = useRef(null);
-
+  const buttonsHolder = useRef(null);
   useEffect(() => {
     anime({
       targets: introRef.current.querySelectorAll('p'),
@@ -18,11 +18,11 @@ function Intro() {
       delay: anime.stagger(250),
     });
     anime({
-      targets: introRef.current.querySelectorAll('a'),
+      targets: buttonsHolder.current,
       scale: [0, 1],
       easing: 'easeOutBack',
       duration: 750,
-      delay: anime.stagger(150, { start: 1000 }),
+      delay: 1150,
     });
   });
 
@@ -60,11 +60,14 @@ function Intro() {
           </div>
 
           <div css={tw`overflow-y-hidden`}>
-            <p css={tw`text-light text-base font-normal mt-2`}>
+            <p css={tw`text-white text-base font-normal mt-2`}>
               Tech lead | Software Engineer | Frontend | Backend
             </p>
           </div>
-          <div css={tw`flex gap-10 justify-center md:justify-start mt-4`}>
+          <div
+            css={tw`flex gap-10 justify-center md:justify-start mt-4`}
+            ref={buttonsHolder}
+          >
             <Link href="/#contact" as="/#contact" passHref>
               <BigLink>Hire Me</BigLink>
             </Link>

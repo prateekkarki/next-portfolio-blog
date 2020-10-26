@@ -40,20 +40,19 @@ export default [
         margin: 0 auto;
       }
       pre {
-        border-radius: 5px;
-        padding: 20px 10px;
+        border-radius: 0.375rem;
+        padding: 1.25rem 0.75rem;
         background-color: ${theme`colors.light`};
         overflow: auto hidden;
-        margin-top: -1.5rem;
         margin-bottom: 1.5rem;
       }
       code {
         color: ${theme`colors.main.dark`};
         background-color: ${theme`colors.light`};
-        padding: 0px 5px;
-        border-radius: 5px;
+        padding: 0px 0.375rem;
+        border-radius: 0.375rem;
         &.language-js {
-          padding: 20px 10px;
+          padding: 1.25rem 0.75rem;
           background-color: ${theme`colors.light`};
           display: block;
         }

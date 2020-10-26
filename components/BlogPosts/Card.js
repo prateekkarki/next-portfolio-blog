@@ -44,7 +44,7 @@ const Card = ({ article, dark }) => (
               responsiveUseBreakpoints="true"
               publicId={article.thumbnail.url.split('/').pop()}
             >
-              <Transformation width="auto" crop="scale" fetchFormat="auto" />
+              <Transformation crop="scale" fetchFormat="auto" />
               <Placeholder type="blur" />
             </Image>
           </Link>

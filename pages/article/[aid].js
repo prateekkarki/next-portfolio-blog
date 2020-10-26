@@ -56,7 +56,7 @@ const Article = () => {
   }, [data, postData]);
   return !router.query.aid ? null : (
     <>
-      <div css={tw`container mx-auto`}>
+      <div css={tw`container mx-auto px-3`}>
         {loading && <Loader />}
         {error && (
           <p css={tw`text-secondary text-center my-6`}>{error.message}</p>

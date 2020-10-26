@@ -5,5 +5,9 @@
   "tabWidth": 2,
   "printWidth": 80,
   "useTabs": false,
+  "bracketSpacing": true,
+  "jsxBracketSameLine": false,
+  "arrowParens": "always",
+  "embeddedLanguageFormatting": "off",
   "trailingComma": "es5"
 }

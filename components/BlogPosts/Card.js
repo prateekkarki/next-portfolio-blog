@@ -40,6 +40,7 @@ const Card = ({ article, dark }) => (
             <Image
               secure="true"
               responsive
+              width="auto"
               cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_NAME}
               responsiveUseBreakpoints="true"
               publicId={article.thumbnail.url.split('/').pop()}

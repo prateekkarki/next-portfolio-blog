@@ -1,8 +1,6 @@
 /* eslint-disable max-len */
 import React, { useRef, useEffect } from 'react';
 
-import anime from 'animejs';
-
 import devCss from './devOnSofa.css';
 
 function DevOnSofa() {

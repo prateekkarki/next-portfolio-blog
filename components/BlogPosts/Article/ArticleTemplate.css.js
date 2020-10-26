@@ -1,9 +1,9 @@
-import tw, { theme, css } from 'twin.macro';
+import { theme, css } from 'twin.macro';
 
 export default [
-  tw`text-white container mx-auto`,
   css`
     .article-main {
+      padding-top: 1.5rem;
       p,
       pre {
         padding-bottom: 1.5rem;
@@ -20,9 +20,10 @@ export default [
       }
 
       h1 {
-        padding-bottom: 0.5rem;
-        padding-top: 1rem;
+        padding-top: 2rem;
+        margin-bottom: 1rem;
         font-size: 3rem;
+        border-bottom: 0.25rem solid ${theme`colors.white`};
       }
       h5 {
         font-size: 1.1rem;

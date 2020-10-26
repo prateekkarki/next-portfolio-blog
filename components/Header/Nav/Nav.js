@@ -30,7 +30,7 @@ const Nav = () => {
 
   const AllLinks = () => (
     <>
-      <ActiveLink href="/#about" as="/#about">
+      <ActiveLink href="/about" as="/about">
         About
       </ActiveLink>
       <ActiveLink href="/blog" as="/blog">
@@ -43,7 +43,7 @@ const Nav = () => {
     <>
       <div
         css={tw`
-          container bg-main-light relative mx-auto px-3 lg:px-0
+          container bg-main-light relative mx-auto px-3
           flex flex-col sm:flex-row items-center justify-between py-4 z-10
         `}
       >

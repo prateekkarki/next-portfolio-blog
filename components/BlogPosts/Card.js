@@ -11,15 +11,15 @@ const Tag = tw.span`
   inline-block bg-gray-200 rounded-full 
   px-3 py-1 mr-2 mb-2
   text-sm font-semibold text-main-dark `;
-const Card = ({ article }) => (
+const Card = ({ article, dark }) => (
   <div css={tw`w-full overflow-hidden shadow-md hover:shadow-lg`}>
-    <Link href="/article/[aid]" as={`/article/${article.slug}`} passHref>
-      <>
-        {article.thumbnail && article.thumbnail.url.slice(0, 1) !== '/' && (
-          <CloudinaryContext
-            cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_NAME}
-            css={tw`rounded-t-md w-full h-64 overflow-hidden cursor-pointer`}
-          >
+    <>
+      {article.thumbnail && article.thumbnail.url.slice(0, 1) !== '/' && (
+        <CloudinaryContext
+          cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_NAME}
+          css={tw`rounded-t-md w-full h-64 overflow-hidden cursor-pointer`}
+        >
+          <Link href="/article/[aid]" as={`/article/${article.slug}`}>
             <Image
               secure="true"
               responsive
@@ -35,9 +35,11 @@ const Card = ({ article }) => (
             >
               <Placeholder type="pixelate" />
             </Image>
-          </CloudinaryContext>
-        )}
-        {article.thumbnail && article.thumbnail.url.slice(0, 1) === '/' && (
+          </Link>
+        </CloudinaryContext>
+      )}
+      {article.thumbnail && article.thumbnail.url.slice(0, 1) === '/' && (
+        <Link href="/article/[aid]" as={`/article/${article.slug}`} passHref>
           <div
             css={tw`rounded-t-md w-full h-64 overflow-hidden cursor-pointer`}
           >
@@ -51,22 +53,28 @@ const Card = ({ article }) => (
               src={`${process.env.API_URL}${article.thumbnail.url}`}
             />
           </div>
-        )}
-      </>
-    </Link>
+        </Link>
+      )}
+    </>
     {!article.thumbnail && <CategoryToIcon category={article.category} />}
-    <div css={tw`px-6 pt-4 bg-main-light`}>
-      <Link href="/article/[aid]" as={`/article/${article.slug}`} passHref>
-        <a css={tw`font-bold text-light text-xl mb-0`}>{article.title}</a>
-      </Link>
-    </div>
-    <div css={tw`px-6 pb-2 bg-main-light rounded-b-md`}>
-      <p css={tw`font-semibold text-light`}>{article.category?.name || ''}</p>
-    </div>
-    <div css={tw`px-6 pb-2 bg-main-light rounded-b-md`}>
-      {article.tags.map((tag) => (
-        <Tag>#{tag.name}</Tag>
-      ))}
+    <div
+      css={
+        dark ? tw`bg-main-dark rounded-b-md` : tw`bg-main-light rounded-b-md`
+      }
+    >
+      <div css={tw`px-6 pt-4`}>
+        <Link href="/article/[aid]" as={`/article/${article.slug}`} passHref>
+          <a css={tw`font-bold text-light text-xl mb-0`}>{article.title}</a>
+        </Link>
+      </div>
+      <div css={tw`px-6 pb-2`}>
+        <p css={tw`font-semibold text-light`}>{article.category?.name || ''}</p>
+      </div>
+      <div css={tw`px-6 pb-2`}>
+        {article.tags.map((tag) => (
+          <Tag key={`tag-${tag.slug}`}>#{tag.name}</Tag>
+        ))}
+      </div>
     </div>
   </div>
 );

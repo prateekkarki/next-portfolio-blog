@@ -51,6 +51,7 @@
     "react-modal": "^3.11.2",
     "react-scroll-up": "^1.3.5",
     "react-toastify": "^6.0.8",
+    "react-vertical-timeline-component": "^3.3.0",
     "twin.macro": "^1.11.0"
   },
   "devDependencies": {

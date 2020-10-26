@@ -14,6 +14,7 @@ import Footer from '../components/Footer/Footer';
 
 import '../assets/css/styles.css';
 import 'aos/dist/aos.css';
+import 'react-vertical-timeline-component/style.min.css';
 
 const App = ({ Component, pageProps, apollo }) => (
   <ApolloProvider client={apollo}>
@@ -70,7 +71,7 @@ const App = ({ Component, pageProps, apollo }) => (
         <FaArrowUp css={tw`w-8 h-8`} />
       </div>
     </ScrollToTop>
-    <div css={tw`bg-main-dark`}>
+    <div css={tw`bg-main-dark text-white`}>
       <Header />
       <Component {...pageProps} />
       <ToastContainer
@@ -86,7 +87,6 @@ const App = ({ Component, pageProps, apollo }) => (
         pauseOnHover
         transition={Slide}
       />
-
       <Footer />
     </div>
   </ApolloProvider>

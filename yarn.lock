@@ -6967,6 +6967,11 @@ react-icons@^3.11.0:
   dependencies:
     camelcase "^5.0.0"
 
+react-intersection-observer@^8.26.2:
+  version "8.29.1"
+  resolved "https://registry.yarnpkg.com/react-intersection-observer/-/react-intersection-observer-8.29.1.tgz#8c6f494ca81b39aee9f509f12d29443fc66a2256"
+  integrity sha512-JLxJ4V0L73ailfvbYQ2/lfAyirtud1WsRsYnzHyVLMfQff1AIG1lWdC5XaGSK4yb9jZHVbbNsrVIO3PJm03koQ==
+
 react-is@16.13.1, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.6:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
@@ -7034,6 +7039,15 @@ react-transition-group@^4.4.1:
     dom-helpers "^5.0.1"
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
+
+react-vertical-timeline-component@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/react-vertical-timeline-component/-/react-vertical-timeline-component-3.3.0.tgz#826dd44bc64fe650654b564ada7631c4a948199e"
+  integrity sha512-EcDlb4ebzcD+cfIWgXZIjpJvlLFJXe7tMdmyV5q7+GBYV7daCXcbCBNdRJ/OZm0QXzqC3RhCxQdJM8R2Ct866A==
+  dependencies:
+    classnames "^2.2.6"
+    prop-types "^15.7.2"
+    react-intersection-observer "^8.26.2"
 
 react@16.13.1:
   version "16.13.1"

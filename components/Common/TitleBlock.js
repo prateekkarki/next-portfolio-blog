@@ -5,7 +5,7 @@ import tw, { css } from 'twin.macro';
 
 function TitleBlock({ title, subtitle }) {
   return (
-    <div css={tw`flex flex-col items-center text-center py-6`}>
+    <div css={tw`flex flex-col items-center text-center py-16`}>
       <h1 css={tw`font-bold text-primary text-5xl`}>{title}</h1>
       <p
         css={[
@@ -18,7 +18,7 @@ function TitleBlock({ title, subtitle }) {
       >
         {subtitle}
       </p>
-      <div css={tw`w-64 relative h-6 mt-6`}>
+      <div css={tw`w-64 relative h-6 mt-2`}>
         <div
           css={[
             tw`w-full absolute top-0 bg-primary rounded-full h-1`,

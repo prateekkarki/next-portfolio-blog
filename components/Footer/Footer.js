@@ -150,25 +150,6 @@ function Footer() {
               <h2 css={tw`text-white`}>Design / Graphics</h2>
               <ul>
                 <li css={tw`text-light`}>
-                  <a
-                    target="_blank"
-                    css={tw`text-primary`}
-                    rel="noreferrer"
-                    href="https://dribbble.com/shots/11360621-Cv-Resume-One-Page-XD-PSD-Template-Free"
-                  >
-                    UI Design
-                  </a>{' '}
-                  by{' '}
-                  <a
-                    target="_blank"
-                    css={tw`text-primary`}
-                    rel="noreferrer"
-                    href="https://dribbble.com/createuiux"
-                  >
-                    Tauhid Hasan
-                  </a>
-                </li>
-                <li css={tw`text-light`}>
                   Favicon logo from{' '}
                   <a
                     target="_blank"

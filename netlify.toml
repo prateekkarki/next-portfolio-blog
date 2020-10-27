@@ -6,4 +6,12 @@
 [[headers]]
   for = "/_next/static/*"
   [headers.values]
-  max-age=100000
+    cache-control = '''
+    public,
+    max-age=100000'''
+
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+

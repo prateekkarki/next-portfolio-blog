@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import tw from 'twin.macro';
 import Head from 'next/head';
 
@@ -7,7 +7,7 @@ import Timeline from '../components/AboutPage/Timeline';
 
 function about() {
   return (
-    <>
+    <Fragment>
       <Head>
         <title>About me | Prateek Karki</title>
       </Head>
@@ -17,7 +17,7 @@ function about() {
           <Timeline />
         </div>
       </div>
-    </>
+    </Fragment>
   );
 }
 

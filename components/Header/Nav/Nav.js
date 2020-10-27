@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef, Fragment } from 'react';
 
 import Link from 'next/link';
 import tw from 'twin.macro';
@@ -29,18 +29,18 @@ const Nav = () => {
   };
 
   const AllLinks = () => (
-    <>
+    <Fragment>
       <ActiveLink href="/about" as="/about">
         About
       </ActiveLink>
       <ActiveLink href="/blog" as="/blog">
         Blog
       </ActiveLink>
-    </>
+    </Fragment>
   );
 
   return (
-    <>
+    <Fragment>
       <div
         css={tw`
           container bg-main-light relative mx-auto px-3
@@ -72,7 +72,7 @@ const Nav = () => {
       <MobileNav ref={mobileNavRef}>
         <AllLinks />
       </MobileNav>
-    </>
+    </Fragment>
   );
 };
 

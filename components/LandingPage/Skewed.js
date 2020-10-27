@@ -1,11 +1,11 @@
-import React from 'react';
+import { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import tw, { css } from 'twin.macro';
 
 function Skewed({ children }) {
   return (
-    <>
+    <Fragment>
       <div
         css={[
           tw`absolute w-full h-full bg-main-light`,
@@ -15,7 +15,7 @@ function Skewed({ children }) {
         ]}
       />
       <div css={tw` relative container mx-auto py-16`}>{children}</div>
-    </>
+    </Fragment>
   );
 }
 

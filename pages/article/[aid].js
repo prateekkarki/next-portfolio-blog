@@ -1,5 +1,5 @@
 /* eslint-disable react/no-danger */
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 import { useRouter } from 'next/router';
 
 import { useQuery } from '@apollo/react-hooks';
@@ -25,7 +25,7 @@ const SingleArticle = () => {
     }
   }, [data, postData]);
   return !router.query.aid ? null : (
-    <>
+    <Fragment>
       <div css={tw`container mx-auto px-3`}>
         {loading && <Loader />}
         {error && (
@@ -33,11 +33,11 @@ const SingleArticle = () => {
         )}
       </div>
       {postData?.slug && (
-        <>
+        <Fragment>
           <ArticleTemplate postData={postData} />
-        </>
+        </Fragment>
       )}
-    </>
+    </Fragment>
   );
 };
 

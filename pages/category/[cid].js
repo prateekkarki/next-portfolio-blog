@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import capitalize from 'lodash/capitalize';
@@ -12,7 +12,7 @@ const Category = () => {
   return (
     <Query query={CATEGORY_ARTICLES_QUERY} id={router.query.cid}>
       {({ data: { category } }) => (
-        <>
+        <Fragment>
           <Head>
             <title>
               {capitalize(category.name)} : Prateek Karki&apos;s blog
@@ -29,7 +29,7 @@ const Category = () => {
               #{category.name}
             </p>
           </div>
-        </>
+        </Fragment>
       )}
     </Query>
   );

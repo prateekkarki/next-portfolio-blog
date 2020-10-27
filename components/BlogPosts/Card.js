@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 
@@ -33,7 +33,7 @@ const ImageWindow = styled.div([
 
 const Card = ({ article, dark }) => (
   <div css={tw`w-full overflow-hidden shadow-md hover:shadow-lg`}>
-    <>
+    <Fragment>
       {article.thumbnail && article.thumbnail.url.slice(0, 1) !== '/' && (
         <ImageWindow>
           <Link href="/article/[aid]" as={`/article/${article.slug}`}>
@@ -62,7 +62,7 @@ const Card = ({ article, dark }) => (
           </ImageWindow>
         </Link>
       )}
-    </>
+    </Fragment>
     {!article.thumbnail && <CategoryToIcon category={article.category} />}
     <div
       css={

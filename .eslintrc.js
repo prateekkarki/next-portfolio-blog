@@ -43,5 +43,8 @@ module.exports = {
     'import/no-named-as-default-member': 0,
     'operator-linebreak': 0,
     'react/prop-types': 0,
+    'react/react-in-jsx-scope': 0,
+    'react/jsx-uses-react': 0,
+    'react/jsx-fragments': 0,
   },
 };

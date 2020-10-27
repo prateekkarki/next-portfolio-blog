@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import tw from 'twin.macro';
 import Head from 'next/head';
 import AOS from 'aos';
@@ -14,7 +14,7 @@ function ContactPage() {
   });
 
   return (
-    <>
+    <Fragment>
       <Head>
         <title>Prateek Karki&apos;s blog</title>
       </Head>
@@ -25,7 +25,7 @@ function ContactPage() {
         />
         <Contact />
       </div>
-    </>
+    </Fragment>
   );
 }
 

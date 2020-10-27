@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import tw from 'twin.macro';
 
 import Head from 'next/head';
@@ -10,7 +10,7 @@ import TitleBlock from '../components/Common/TitleBlock';
 
 function Blog() {
   return (
-    <>
+    <Fragment>
       <Head>
         <title>Prateek Karki&apos;s blog</title>
       </Head>
@@ -30,7 +30,7 @@ function Blog() {
           </Query>
         </div>
       </div>
-    </>
+    </Fragment>
   );
 }
 

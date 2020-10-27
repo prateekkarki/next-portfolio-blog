@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import React from 'react';
+import { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import tw from 'twin.macro';
 import Markdown from 'react-markdown';
@@ -21,7 +21,7 @@ function ArticleTemplate({ postData }) {
 
   const tagsString = postData.tags.map((tag) => tag.name).join(', ');
   return (
-    <>
+    <Fragment>
       <Head>
         <title>{postData.title}</title>
         <meta name="keywords" content={tagsString} />
@@ -85,7 +85,7 @@ function ArticleTemplate({ postData }) {
           />
         </div>
       </div>
-    </>
+    </Fragment>
   );
 }
 

@@ -10,6 +10,7 @@
     public,
     max-age=100000'''
 
+[[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"

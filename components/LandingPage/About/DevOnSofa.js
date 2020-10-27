@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 
 import devCss from './devOnSofa.css';
 

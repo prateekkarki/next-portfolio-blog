@@ -1,5 +1,3 @@
-import React from 'react';
-
 import tw, { theme } from 'twin.macro';
 import {
   VerticalTimeline,

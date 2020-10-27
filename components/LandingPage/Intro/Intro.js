@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import anime from 'animejs';
 import Link from 'next/link';
 import tw, { css } from 'twin.macro';

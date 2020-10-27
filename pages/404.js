@@ -1,4 +1,3 @@
-import React from 'react';
 import { css } from 'twin.macro';
 import Link from 'next/link';
 

@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
 import Head from 'next/head';
 import { ToastContainer, Slide } from 'react-toastify';
 import { ApolloProvider } from '@apollo/react-hooks';

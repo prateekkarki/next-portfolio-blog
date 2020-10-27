@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import anime from 'animejs';
 import tw from 'twin.macro';
 import { throttle } from 'lodash';

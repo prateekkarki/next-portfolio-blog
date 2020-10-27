@@ -70,7 +70,9 @@ const App = ({ Component, pageProps, apollo }) => (
         <FaArrowUp css={tw`w-8 h-8`} />
       </div>
     </ScrollToTop>
-    <div css={tw`bg-main-dark text-white`}>
+    <div
+      css={tw`bg-main-dark text-white max-w-full overflow-x-auto overflow-y-hidden`}
+    >
       <Header />
       <Component {...pageProps} />
       <ToastContainer

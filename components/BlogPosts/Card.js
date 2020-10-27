@@ -41,6 +41,7 @@ const Card = ({ article, dark }) => (
               secure="true"
               responsive
               width="auto"
+              alt={`thumbnail for article: ${article.title}`}
               cloudName={process.env.NEXT_PUBLIC_CLOUDINARY_NAME}
               responsiveUseBreakpoints="true"
               publicId={article.thumbnail.url.split('/').pop()}
@@ -55,7 +56,7 @@ const Card = ({ article, dark }) => (
         <Link href="/article/[aid]" as={`/article/${article.slug}`} passHref>
           <ImageWindow>
             <img
-              alt={`cover for article: ${article.title}`}
+              alt={`thumbnail for article: ${article.title}`}
               src={`${process.env.API_URL}${article.thumbnail.url}`}
             />
           </ImageWindow>

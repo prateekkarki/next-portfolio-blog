@@ -199,7 +199,7 @@ function Footer() {
           <a
             target="_blank"
             rel="noreferrer"
-            css={tw`underline text-gray-600`}
+            css={tw`font-semibold text-primary hover:text-secondary`}
             href="https://github.com/prateekkarki/"
           >
             me
@@ -207,7 +207,7 @@ function Footer() {
           . Thanks to these{' '}
           <button
             type="button"
-            css={tw`underline text-gray-600`}
+            css={tw`font-semibold text-primary hover:text-secondary`}
             onClick={() => {
               setModalOpen(true);
             }}

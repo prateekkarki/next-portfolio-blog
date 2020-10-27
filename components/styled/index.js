@@ -7,9 +7,10 @@ export const Title = tw.h1`
 
 const inputStyles = ({ hasError }) => [
   tw`
-    appearance-none block w-full bg-gray-200
+    appearance-none block w-full bg-light
     text-gray-700 border border-light rounded py-3 px-4 mb-3
-    leading-tight focus:(bg-white)
+    leading-tight focus:bg-white
+    transform duration-200 ease-in-out focus:(translate-x-1)
   `,
   hasError && tw`border-secondary`,
 ];

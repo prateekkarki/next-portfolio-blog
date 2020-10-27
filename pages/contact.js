@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 import tw from 'twin.macro';
 import Head from 'next/head';
 import AOS from 'aos';
@@ -7,7 +7,7 @@ import TitleBlock from '../components/Common/TitleBlock';
 import Contact from '../components/LandingPage/Contact/Contact';
 
 function ContactPage() {
-  React.useEffect(() => {
+  useEffect(() => {
     AOS.init({
       duration: 750,
     });

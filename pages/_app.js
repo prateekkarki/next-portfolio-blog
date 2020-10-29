@@ -1,10 +1,14 @@
 /* eslint-disable react/prop-types */
+import { Fragment } from 'React';
 import Head from 'next/head';
 import { ToastContainer, Slide } from 'react-toastify';
 import { ApolloProvider } from '@apollo/react-hooks';
-import tw, { GlobalStyles } from 'twin.macro';
+import tw, { css, GlobalStyles } from 'twin.macro';
 import ScrollToTop from 'react-scroll-up';
 import { FaArrowUp } from 'react-icons/fa';
+
+import { Transition, TransitionGroup } from 'react-transition-group';
+import anime from 'animejs';
 
 import withApollo from '../utils/apollo';
 
@@ -14,7 +18,7 @@ import Footer from '../components/Footer/Footer';
 import '../assets/css/styles.css';
 import 'aos/dist/aos.css';
 
-const App = ({ Component, pageProps, apollo }) => (
+const App = ({ Component, pageProps, apollo, router }) => (
   <ApolloProvider client={apollo}>
     <Head>
       <title>
@@ -73,7 +77,77 @@ const App = ({ Component, pageProps, apollo }) => (
       css={tw`bg-main-dark text-white max-w-full overflow-x-auto overflow-y-hidden`}
     >
       <Header />
-      <Component {...pageProps} />
+      <TransitionGroup component={null}>
+        <Transition
+          key={router.pathname}
+          unmountOnExit
+          onEnter={(node) => {
+            const el = node;
+            el.style.display = 'none';
+          }}
+          onEntered={(node) => {
+            const el = node;
+            el.style.display = 'block';
+            anime({
+              targets: node.querySelectorAll('.fullpage-loader>div'),
+              translateX: ['0%', '100%'],
+              duration: 500,
+              easing: 'easeInOutSine',
+              delay: anime.stagger(150),
+            });
+          }}
+          onExit={(node) => {
+            anime({
+              targets: node.querySelectorAll('.fullpage-loader>div'),
+              scaleX: [0, 1],
+              translateX: ['0%', '0%'],
+              duration: 500,
+              easing: 'easeInOutSine',
+              delay: anime.stagger(150),
+            });
+          }}
+          timeout={650}
+        >
+          <div>
+            <div
+              className="fullpage-loader"
+              css={[
+                tw`w-full flex flex-col items-start`,
+                css`
+                  position:fixed;
+                  top:0;
+                  pointer-events:none;
+                  height:calc(100vh);
+                  z-index:20;
+                `,
+              ]}
+            >
+              <div
+                css={[
+                  tw`w-full bg-light`,
+                  css`
+                  height:calc(50vh);
+                  transform:translateX(0%) scaleX(.5);
+                  transform-origin: 0% 0%;
+                `,
+                ]}
+              />
+              <div
+                css={[
+                  tw`w-full bg-light`,
+                  css`
+                  height:calc(50vh);
+                  transform:translateX(0%) scaleX(.5);
+                  transform-origin: 0% 0%;
+                `,
+                ]}
+              />
+            </div>
+            {/* <h2>{router.pathname}</h2> */}
+            <Component {...pageProps} />
+          </div>
+        </Transition>
+      </TransitionGroup>
       <ToastContainer
         className="impct-toast"
         position="top-center"

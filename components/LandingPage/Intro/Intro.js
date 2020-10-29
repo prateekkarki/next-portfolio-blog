@@ -15,14 +15,14 @@ function Intro() {
       translateY: ['100%', 0],
       easing: 'easeInOutQuad',
       duration: 800,
-      delay: anime.stagger(250),
+      delay: anime.stagger(250, { start: 500 }),
     });
     anime({
       targets: buttonsHolder.current,
       scale: [0, 1],
       easing: 'easeOutBack',
       duration: 750,
-      delay: 1150,
+      delay: 1650,
     });
   });
 

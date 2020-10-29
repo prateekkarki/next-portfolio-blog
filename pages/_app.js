@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import { Fragment } from 'React';
 import Head from 'next/head';
 import { ToastContainer, Slide } from 'react-toastify';
 import { ApolloProvider } from '@apollo/react-hooks';
@@ -14,6 +13,7 @@ import withApollo from '../utils/apollo';
 
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
+import FullpageLoader from '../components/Common/FullpageLoader';
 
 import '../assets/css/styles.css';
 import 'aos/dist/aos.css';
@@ -74,7 +74,10 @@ const App = ({ Component, pageProps, apollo, router }) => (
       </div>
     </ScrollToTop>
     <div
-      css={tw`bg-main-dark text-white max-w-full overflow-x-auto overflow-y-hidden`}
+      css={[
+        tw`bg-main-dark text-white max-w-full overflow-x-auto overflow-y-hidden`,
+        css`padding-top:128px;`,
+      ]}
     >
       <Header />
       <TransitionGroup component={null}>
@@ -109,41 +112,7 @@ const App = ({ Component, pageProps, apollo, router }) => (
           timeout={650}
         >
           <div>
-            <div
-              className="fullpage-loader"
-              css={[
-                tw`w-full flex flex-col items-start`,
-                css`
-                  position:fixed;
-                  top:0;
-                  pointer-events:none;
-                  height:calc(100vh);
-                  z-index:20;
-                `,
-              ]}
-            >
-              <div
-                css={[
-                  tw`w-full bg-light`,
-                  css`
-                  height:calc(50vh);
-                  transform:translateX(0%) scaleX(.5);
-                  transform-origin: 0% 0%;
-                `,
-                ]}
-              />
-              <div
-                css={[
-                  tw`w-full bg-light`,
-                  css`
-                  height:calc(50vh);
-                  transform:translateX(0%) scaleX(.5);
-                  transform-origin: 0% 0%;
-                `,
-                ]}
-              />
-            </div>
-            {/* <h2>{router.pathname}</h2> */}
+            <FullpageLoader />
             <Component {...pageProps} />
           </div>
         </Transition>

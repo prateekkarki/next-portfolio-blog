@@ -26,12 +26,12 @@ const SingleArticle = () => {
   }, [data, postData]);
   return !router.query.aid ? null : (
     <Fragment>
-      <div css={tw`container mx-auto px-3`}>
-        {loading && <Loader />}
-        {error && (
+      {loading && <Loader fullpage />}
+      {error && (
+        <div css={tw`container mx-auto px-3`}>
           <p css={tw`text-secondary text-center my-6`}>{error.message}</p>
-        )}
-      </div>
+        </div>
+      )}
       {postData?.slug && (
         <Fragment>
           <ArticleTemplate postData={postData} />

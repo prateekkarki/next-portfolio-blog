@@ -47,7 +47,7 @@ function ArticleTemplate({ postData }) {
             blocks={[
               { path: '/', title: 'Home' },
               { path: '/blog', title: 'Blogs' },
-              { title: postData.category.name },
+              { title: postData.category?.name },
             ]}
           />
         </div>

@@ -1,7 +1,12 @@
-import tw from 'twin.macro';
+import tw, { css } from 'twin.macro';
 
-const Loader = () => (
-  <div css={tw`flex h-full items-center justify-center w-full`}>
+const Loader = ({ fullpage }) => (
+  <div
+    css={[
+      tw`flex h-full items-center justify-center w-full`,
+      fullpage && css`min-height:calc(100vh - 128px - 58px)`,
+    ]}
+  >
     <div css={tw`w-12 h-12 m-4`}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" stroke="#fff">
         <g fill="none" fillRule="evenodd" strokeWidth="2">

@@ -25,7 +25,26 @@ export default [
         font-size: 3rem;
         border-bottom: 0.25rem solid ${theme`colors.white`};
       }
+      h2 {
+        padding-top: 1.5rem;
+        margin-bottom: 1rem;
+        font-size: 2.5rem;
+      }
+      h3 {
+        padding-top: 1rem;
+        margin-bottom: 0.5rem;
+        font-size: 2.25rem;
+      }
+      h4 {
+        padding-top: 1rem;
+        margin-bottom: 0.25rem;
+        font-size: 1.75rem;
+      }
       h5 {
+        font-size: 1.25rem;
+        font-weight: 500;
+      }
+      h6 {
         font-size: 1.1rem;
         font-weight: 500;
       }

@@ -14,6 +14,8 @@ const Container = styled.div([
   css`padding-top:128px;`,
 ]);
 
+const InnerContainer = styled.div(css`min-height:calc(100vh - 128px - 58px);`);
+
 const transitionConfig = {
   timeout: 650,
   unmountOnExit: true,
@@ -51,13 +53,12 @@ function MainLayout({ children, pathname }) {
       <MetaHead />
       <ScrollToTop />
       <Header />
-
       <TransitionGroup>
         <Transition key={pathname} {...transitionConfig}>
-          <div>
+          <InnerContainer>
             <FullpageLoader />
             {children}
-          </div>
+          </InnerContainer>
         </Transition>
       </TransitionGroup>
       <Footer />

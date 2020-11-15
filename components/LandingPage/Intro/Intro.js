@@ -1,9 +1,10 @@
 import { useRef, useEffect } from 'react';
 import anime from 'animejs';
 import Link from 'next/link';
-import tw, { css } from 'twin.macro';
+import tw from 'twin.macro';
 
 import Programmer from './Programmer';
+import { IntroContainer, ButtonsHolder } from './intro.components';
 import { BigLink } from '../../styled';
 
 function Intro() {
@@ -27,20 +28,7 @@ function Intro() {
   });
 
   return (
-    <div
-      css={css`
-        height: 400px;
-        @media (min-width: 768px) {
-          height: 450px;
-        }
-        @media (min-width: 1024px) {
-          height: 550px;
-        }
-        @media (min-width: 1280px) {
-          height: 700px;
-        }
-      `}
-    >
+    <IntroContainer>
       <div css={tw`container flex h-full items-center justify-center mx-auto`}>
         <div
           ref={introRef}
@@ -64,10 +52,7 @@ function Intro() {
               Tech lead | Software Engineer | Frontend | Backend
             </p>
           </div>
-          <div
-            css={tw`flex gap-10 justify-center md:justify-start mt-4`}
-            ref={buttonsHolder}
-          >
+          <ButtonsHolder ref={buttonsHolder}>
             <Link href="/#contact" as="/#contact" passHref>
               <BigLink>Hire Me</BigLink>
             </Link>
@@ -79,13 +64,13 @@ function Intro() {
             >
               Get Resume
             </BigLink>
-          </div>
+          </ButtonsHolder>
         </div>
         <div css={tw`hidden md:block w-1/2 overflow-hidden`}>
           <Programmer />
         </div>
       </div>
-    </div>
+    </IntroContainer>
   );
 }
 

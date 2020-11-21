@@ -12,7 +12,7 @@ function about() {
         <title>About me | Prateek Karki</title>
       </Head>
       <TitleBlock title="About Me" subtitle="Who am I?" />
-      <div css={tw`bg-main-light`}>
+      <div css={tw`bg-main-700`}>
         <div css={tw`container mx-auto`}>
           <Timeline />
         </div>

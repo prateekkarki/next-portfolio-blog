@@ -4,7 +4,7 @@ import Nav from './Nav/Nav';
 
 function Header() {
   return (
-    <header css={tw`bg-main-light w-full z-10 fixed top-0 shadow-2xl`}>
+    <header css={tw`bg-main-700 w-full z-10 fixed top-0 shadow-2xl`}>
       <Nav />
     </header>
   );

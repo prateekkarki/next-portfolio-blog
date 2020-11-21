@@ -10,7 +10,7 @@ import CategoryToIcon from './CategoryToIcon';
 const Tag = tw.span`
   inline-block bg-gray-200 rounded-full 
   px-3 py-1 mr-2 mb-2
-  text-sm font-semibold text-main-dark `;
+  text-sm font-semibold text-main-800 `;
 
 const ImageWindow = styled.div([
   tw`rounded-t-md w-full h-64 overflow-hidden cursor-pointer`,
@@ -66,16 +66,16 @@ const Card = ({ article, dark }) => (
     {!article.thumbnail && <CategoryToIcon category={article.category} />}
     <div
       css={
-        dark ? tw`bg-main-dark rounded-b-md` : tw`bg-main-light rounded-b-md`
+        dark ? tw`bg-main-800 rounded-b-md` : tw`bg-main-700 rounded-b-md`
       }
     >
       <div css={tw`px-6 pt-4`}>
         <Link href="/article/[aid]" as={`/article/${article.slug}`} passHref>
-          <a css={tw`font-bold text-light text-xl mb-0`}>{article.title}</a>
+          <a css={tw`font-bold text-main-200 text-xl mb-0`}>{article.title}</a>
         </Link>
       </div>
       <div css={tw`px-6 pb-2`}>
-        <p css={tw`font-semibold text-light`}>{article.category?.name || ''}</p>
+        <p css={tw`font-semibold text-main-200`}>{article.category?.name || ''}</p>
       </div>
       <div css={tw`px-6 pb-2`}>
         {article.tags.map((tag) => (

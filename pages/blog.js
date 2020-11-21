@@ -15,7 +15,7 @@ function Blog() {
         <title>Prateek Karki&apos;s blog</title>
       </Head>
       <TitleBlock title="My Blog" subtitle="Check out my recent posts" />
-      <div css={tw`bg-main-light`}>
+      <div css={tw`bg-main-700`}>
         <div css={tw`container mx-auto`}>
           <Query query={ARTICLES_QUERY}>
             {({ data: { articles } }) => (

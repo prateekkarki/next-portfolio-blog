@@ -10,7 +10,7 @@ import Footer from './Footer';
 import { FullpageLoader, MetaHead, ScrollToTop } from '..';
 
 const Container = styled.div([
-  tw`bg-main-dark text-white max-w-full overflow-x-auto overflow-y-hidden`,
+  tw`bg-main-800 text-main-100 max-w-full overflow-x-auto overflow-y-hidden`,
   css`padding-top:128px;`,
 ]);
 

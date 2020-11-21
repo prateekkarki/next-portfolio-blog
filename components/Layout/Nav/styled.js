@@ -9,7 +9,7 @@ export const MobileNav = styled.nav([
     top: 128px;
     transform: translateY(-100%);
   `,
-  tw`flex sm:hidden w-full absolute bg-main-light text-lg flex-col items-center`,
+  tw`flex sm:hidden w-full absolute bg-main-700 text-lg flex-col items-center`,
   tw`duration-700 ease-out transition-all z-0`,
 ]);
 

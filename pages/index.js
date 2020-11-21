@@ -39,7 +39,7 @@ const Home = ({ articles }) => {
   });
 
   return (
-    <div css={tw`bg-main-dark`} ref={refs.home}>
+    <div css={tw`bg-main-800`} ref={refs.home}>
       <Intro />
 
       <div css={[tw`relative my-16`]} ref={refs.about}>

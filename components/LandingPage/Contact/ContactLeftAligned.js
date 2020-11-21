@@ -7,7 +7,7 @@ import ContactForm from './ContactForm';
 function Contact() {
   return (
     <div>
-      <div css={tw`bg-main-light`}>
+      <div css={tw`bg-main-700`}>
         <div css={tw`container mx-auto flex flex-col sm:flex-row`}>
           <div
             css={tw`
@@ -25,13 +25,13 @@ function Contact() {
             >
               <h1
                 css={tw`
-                  font-bold text-white whitespace-no-wrap 
+                  font-bold text-main-100 whitespace-no-wrap 
                   text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-huge
                 `}
               >
                 Get in touch.
               </h1>
-              <p css={tw`text-white text-base lg:text-lg`}>
+              <p css={tw`text-main-100 text-base lg:text-lg`}>
                 <span>I love to develop things for the web.</span>
                 <span>
                   I have lead projects and teams to build great end-products for
@@ -47,7 +47,7 @@ function Contact() {
                 <a
                   target="_blank"
                   rel="noreferrer"
-                  css={tw`text-xl text-light hover:text-light `}
+                  css={tw`text-xl text-main-200 hover:text-main-200 `}
                   href="mailto:info@meetprateek.com"
                 >
                   info@meetprateek.com
@@ -60,7 +60,7 @@ function Contact() {
                   href="mailto:info@meetprateek.com"
                   css={tw`
                     mr-4 p-3 text-2xl
-                    bg-light hover:bg-primary text-main-dark rounded-full
+                    bg-main-200 hover:bg-primary text-main-800 rounded-full
                   `}
                 >
                   <IoIosMail />
@@ -70,8 +70,8 @@ function Contact() {
                   rel="noreferrer"
                   href="https://github.com/prateekkarki/"
                   css={tw`
-                    mr-4 p-3 bg-light hover:bg-primary rounded-full
-                    text-2xl text-main-dark 
+                    mr-4 p-3 bg-main-200 hover:bg-primary rounded-full
+                    text-2xl text-main-800 
                   `}
                 >
                   <ImGithub />
@@ -81,8 +81,8 @@ function Contact() {
                   rel="noreferrer"
                   href="https://www.linkedin.com/in/prateekkarki/"
                   css={tw`
-                    p-3 bg-light hover:bg-primary rounded-full
-                    text-2xl text-main-dark 
+                    p-3 bg-main-200 hover:bg-primary rounded-full
+                    text-2xl text-main-800 
                   `}
                 >
                   <ImLinkedin2 />

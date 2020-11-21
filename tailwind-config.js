@@ -34,14 +34,16 @@ module.exports = {
       },
       // DF2935 some red good one
       colors: {
-        white: '#EDF6F9',
-        light: '#C4DCE9',
         primary: '#5398BE',
         secondary: '#E26D5A',
         danger: '#DF2935',
         main: {
-          light: '#1F2935',
-          dark: '#161D26',
+          100: '#EDF6F9',
+          200: '#C4DCE9',
+          400: '#98AEC8',
+          500: '#597290',
+          700: '#1F2935',
+          800: '#161D26',
         },
       },
     },

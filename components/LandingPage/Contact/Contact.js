@@ -6,7 +6,7 @@ import ContactForm from './ContactForm';
 import { Title } from '../../styled';
 
 const Links = styled.a(({ lastItem }) => [
-  tw`p-3 bg-light text-main-dark hover:(bg-primary text-light) rounded-full text-2xl mr-4`,
+  tw`p-3 bg-main-200 text-main-800 hover:(bg-primary text-main-200) rounded-full text-2xl mr-4`,
   lastItem && tw`mr-0`,
 ]);
 
@@ -19,7 +19,7 @@ const ContactLinks = ({ href, children, lastItem }) => (
 function Contact() {
   return (
     <div>
-      <div css={tw`bg-main-light`}>
+      <div css={tw`bg-main-700`}>
         <div css={tw`container mx-auto flex flex-col sm:flex-row`}>
           <div
             css={tw`w-full sm:w-1/2 flex flex-col justify-center items-center lg:items-start py-6`}
@@ -43,7 +43,7 @@ function Contact() {
               `}
             >
               <Title>Get in touch.</Title>
-              <p css={tw`text-white text-base lg:text-lg`}>
+              <p css={tw`text-main-100 text-base lg:text-lg`}>
                 <span>I love to develop things for the web.</span>{' '}
                 <span>
                   I have lead projects and teams to build great end-products for
@@ -59,7 +59,7 @@ function Contact() {
                 <a
                   target="_blank"
                   rel="noreferrer"
-                  css={tw`text-xl text-light hover:text-primary`}
+                  css={tw`text-xl text-main-200 hover:text-primary`}
                   href="mailto:info@meetprateek.com"
                 >
                   info@meetprateek.com

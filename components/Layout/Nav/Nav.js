@@ -43,7 +43,7 @@ const Nav = () => {
     <Fragment>
       <div
         css={tw`
-          container bg-main-light relative mx-auto px-3
+          container bg-main-700 relative mx-auto px-3
           flex flex-col sm:flex-row items-center justify-between py-4 z-10
         `}
       >

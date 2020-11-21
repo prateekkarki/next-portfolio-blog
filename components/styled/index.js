@@ -43,11 +43,9 @@ const buttonStyles = ({ variant }) => [
       }
     }
   `,
-  variant === 'primary' &&
-    tw`bg-primary hover:shadow-primary-focus shadow-primary-default`,
-  variant === 'secondary' &&
-    tw`bg-secondary hover:shadow-secondary-focus shadow-secondary-default`,
-  !variant && tw`bg-primary hover:shadow-primary-focus shadow-primary-default`,
+  variant === 'primary' && tw`bg-primary`,
+  variant === 'secondary' && tw`bg-secondary`,
+  !variant && tw`bg-primary`,
 ];
 
 export const BigLink = styled.a(buttonStyles);

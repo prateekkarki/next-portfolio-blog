@@ -14,7 +14,7 @@ export const IntroContainer = styled.div(css`
 `);
 
 export const ButtonsHolder = styled.div([
-  tw`flex gap-10 justify-center md:justify-start mt-4`,
+  tw`flex gap-10 justify-center md:justify-start mt-16`,
   css`
     width: 100%;
     @media (min-width: 768px) {

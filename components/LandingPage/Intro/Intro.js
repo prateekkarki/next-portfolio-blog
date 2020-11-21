@@ -23,7 +23,7 @@ function Intro() {
       scale: [0, 1],
       easing: 'easeOutBack',
       duration: 750,
-      delay: 1650,
+      delay: 1250,
     });
   });
 
@@ -47,11 +47,6 @@ function Intro() {
             </p>
           </div>
 
-          <div css={tw`overflow-y-hidden`}>
-            <p css={tw`text-white text-base font-normal mt-2`}>
-              Tech lead | Software Engineer | Frontend | Backend
-            </p>
-          </div>
           <ButtonsHolder ref={buttonsHolder}>
             <Link href="/#contact" as="/#contact" passHref>
               <BigLink>Hire Me</BigLink>

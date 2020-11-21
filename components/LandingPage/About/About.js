@@ -1,7 +1,7 @@
 import tw from 'twin.macro';
 import Link from 'next/link';
 import DevOnSofa from './DevOnSofa';
-import { BigLink } from '../../styled';
+import { BigLink, Text, Title } from '../../styled';
 
 function About() {
   return (
@@ -17,28 +17,20 @@ function About() {
           css={tw`px-3 md:px-6 text-center text-main-200 py-4 md:w-1/2 md:text-left`}
           data-aos="fade-left"
         >
-          <h1
-            css={tw`
-              font-bold text-main-100
-              whitespace-no-wrap text-3xl 
-              sm:text-4xl md:text-5xl lg:text-6xl xl:text-huge
-            `}
-          >
-            About Me
-          </h1>
-          <p css={tw`text-main-100 text-sm md:text-base lg:text-lg`}>
+          <Title>About Me</Title>
+          <Text>
             I&apos;m Prateek Karki, a web developer from Kathmandu, Nepal.
             <br />I enjoy creating things for the internet, whether that be
             websites, applications, games or anything in between. My goal is to
             build products that provide pixel-perfect, performant experiences.
-          </p>
-          <p css={tw`mt-4 text-main-100 text-sm md:text-base lg:text-lg`}>
+          </Text>
+          <Text>
             With my experiences as Solution architect, Senior software engineer
             and Project lead with highly reputed companies, I can think in terms
             of systems architecture, feasibility and risks for any given
             project. I believe in long term relationships with the every client
             and my primarily focus on long term projects.
-          </p>
+          </Text>
           <Link href="/about" as="/about" passHref>
             <BigLink css={tw`mt-6 mx-auto md:ml-0`}>Find out more</BigLink>
           </Link>

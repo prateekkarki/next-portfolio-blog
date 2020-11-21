@@ -5,6 +5,15 @@ export const Title = tw.h1`
   text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-huge
 `;
 
+export const Text = styled.p([
+  tw`text-main-400 text-sm md:text-base lg:text-lg leading-7`,
+  css`
+    &+&{
+      ${tw`mt-6`}
+    }
+  `,
+]);
+
 const inputStyles = ({ hasError }) => [
   tw`
     appearance-none block w-full bg-main-200
@@ -23,7 +32,8 @@ export const ContactLabel = styled.label(({ hasError }) => [
 ]);
 
 const buttonStyles = ({ variant }) => [
-  tw`w-40 py-4 block rounded-full overflow-hidden relative
+  tw`
+    w-40 py-4 block rounded-full overflow-hidden relative
     font-semibold text-base text-main-100 text-center
     transform transition-all duration-200 ease-in-out translate-y-0 hover:-translate-y-1
   `,

@@ -8,9 +8,10 @@ import tw, { styled, css } from 'twin.macro';
 import CategoryToIcon from './CategoryToIcon';
 
 const Tag = tw.span`
-  inline-block bg-gray-200 rounded-full 
+  inline-block bg-main-600 rounded-full 
   px-3 py-1 mr-2 mb-2
-  text-sm font-semibold text-main-800 `;
+  text-sm font-semibold text-main-500 
+`;
 
 const ImageWindow = styled.div([
   tw`rounded-t-md w-full h-64 overflow-hidden cursor-pointer`,
@@ -65,9 +66,7 @@ const Card = ({ article, dark }) => (
     </Fragment>
     {!article.thumbnail && <CategoryToIcon category={article.category} />}
     <div
-      css={
-        dark ? tw`bg-main-800 rounded-b-md` : tw`bg-main-700 rounded-b-md`
-      }
+      css={dark ? tw`bg-main-800 rounded-b-md` : tw`bg-main-700 rounded-b-md`}
     >
       <div css={tw`px-6 pt-4`}>
         <Link href="/article/[aid]" as={`/article/${article.slug}`} passHref>
@@ -75,9 +74,9 @@ const Card = ({ article, dark }) => (
         </Link>
       </div>
       <div css={tw`px-6 pb-2`}>
-        <p css={tw`font-semibold text-main-200`}>{article.category?.name || ''}</p>
+        <p css={tw`text-main-400`}>{article.category?.name || ''}</p>
       </div>
-      <div css={tw`px-6 pb-2`}>
+      <div css={tw`px-6 pb-2 mt-4`}>
         {article.tags.map((tag) => (
           <Tag key={`tag-${tag.slug}`}>#{tag.name}</Tag>
         ))}

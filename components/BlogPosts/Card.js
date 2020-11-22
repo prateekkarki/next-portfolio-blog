@@ -70,7 +70,12 @@ const Card = ({ article, dark }) => (
     >
       <div css={tw`px-6 pt-4`}>
         <Link href="/article/[aid]" as={`/article/${article.slug}`} passHref>
-          <a css={tw`font-bold text-main-200 text-xl mb-0`}>{article.title}</a>
+          <a
+            href="/article/[aid]"
+            css={tw`font-bold text-main-200 text-xl mb-0`}
+          >
+            {article.title}
+          </a>
         </Link>
       </div>
       <div css={tw`px-6 pb-2`}>

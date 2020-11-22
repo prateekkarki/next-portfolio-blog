@@ -47,7 +47,7 @@ export default function Custom404() {
         <div css={innerStyles}>
           <h2>This page could not be found.</h2>
           <Link href="/" as="/" passHref>
-            <a>Back to Homepage</a>
+            <a href="/">Back to Homepage</a>
           </Link>
         </div>
       </div>

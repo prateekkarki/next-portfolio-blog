@@ -9,7 +9,9 @@ function EachBlock({ path, title }) {
   return path ? (
     <Fragment>
       <Link href={path} as={path} passHref>
-        <a css={tw`text-main-200 hover:text-primary font-bold`}>{title}</a>
+        <a href={path} css={tw`text-main-200 hover:text-primary font-bold`}>
+          {title}
+        </a>
       </Link>
       <BsChevronRight />
     </Fragment>

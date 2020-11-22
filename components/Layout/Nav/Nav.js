@@ -49,7 +49,9 @@ const Nav = () => {
       >
         <h3 css={tw`text-6xl uppercase`}>
           <Link href="/#home" passHref>
-            <a css={tw`font-black text-primary`}>PK.</a>
+            <a href="/#home" css={tw`font-black text-primary`}>
+              PK.
+            </a>
           </Link>
         </h3>
         <div css={tw`flex items-center justify-center`}>

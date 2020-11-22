@@ -14,6 +14,21 @@ const Container = styled.div([
   css`padding-top:128px;`,
 ]);
 
+const StyledToastContainer = styled(ToastContainer)`
+  .Toastify__toast {
+    ${tw`rounded`}
+  }
+  .Toastify__toast--error{
+    ${tw`bg-secondary`}
+  }
+  .Toastify__toast--success{
+    ${tw`bg-success`}
+  }
+  .Toastify__progress-bar{
+    ${tw`bg-main-100`}
+  }
+`;
+
 const InnerContainer = styled.div(css`min-height:calc(100vh - 128px - 58px);`);
 
 const transitionConfig = {
@@ -63,7 +78,7 @@ function MainLayout({ children, pathname }) {
       </TransitionGroup>
       <Footer />
 
-      <ToastContainer
+      <StyledToastContainer
         className="impct-toast"
         position="top-center"
         autoClose={3000}

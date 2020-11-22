@@ -18,16 +18,31 @@ function ContactForm() {
   });
 
   // Server state handling
-  const [serverState, setServerState] = useState({
-    submitting: false,
-    status: null,
-  });
+  const [submitting, isSubmitting] = useState(false);
 
   const handleServerResponse = (ok, msg) => {
-    setServerState({
-      submitting: false,
-      status: { ok, msg },
-    });
+    isSubmitting(false);
+    if (ok) {
+      toast.success(msg, {
+        position: 'bottom-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    } else {
+      toast.error(msg, {
+        position: 'bottom-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    }
   };
 
   const encode = (data) =>
@@ -39,7 +54,7 @@ function ContactForm() {
 
   const onSubmit = (data) => {
     const newData = encode({ ...data, 'form-name': 'contact' });
-    setServerState({ submitting: true });
+    isSubmitting(true);
 
     axios({
       method: 'POST',
@@ -48,30 +63,20 @@ function ContactForm() {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     })
       .then(() => {
-        handleServerResponse(true, 'Thanks!');
-        toast.success("Thanks for reaching out! I'll get back to you soon.", {
-          position: 'bottom-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
+        handleServerResponse(
+          true,
+          "Thanks for reaching out! I'll get back to you soon."
+        );
         reset();
       })
       .catch((r) => {
-        handleServerResponse(false, r.response.data.error);
-
-        toast.error(r.response.data.error, {
-          position: 'bottom-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
+        if (r.response.data.error) {
+          handleServerResponse(false, r.response.data.error);
+        } else if (r.message) {
+          handleServerResponse(false, r.message);
+        } else {
+          handleServerResponse(false, r.statusText);
+        }
       });
   };
 
@@ -176,7 +181,7 @@ function ContactForm() {
           <BigButton
             css={tw`w-full sm:w-40`}
             type="submit"
-            disabled={serverState.submitting}
+            disabled={submitting}
           >
             Send Message
           </BigButton>

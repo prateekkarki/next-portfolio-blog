@@ -51,7 +51,7 @@ export default [
       a {
         color: ${theme`colors.primary`};
         &:hover {
-          color: ${theme`colors.light`};
+          color: ${theme`colors.main.100`};
           text-decoration: underline;
         }
       }
@@ -62,18 +62,18 @@ export default [
       pre {
         border-radius: 0.375rem;
         padding: 1.25rem 0.75rem;
-        background-color: ${theme`colors.light`};
+        background-color: ${theme`colors.main.100`};
         overflow: auto hidden;
         margin-bottom: 1.5rem;
       }
       code {
-        color: ${theme`colors.main.dark`};
-        background-color: ${theme`colors.light`};
+        color: ${theme`colors.main.800`};
+        background-color: ${theme`colors.main.100`};
         padding: 0px 0.375rem;
         border-radius: 0.375rem;
         &.language-js {
           padding: 1.25rem 0.75rem;
-          background-color: ${theme`colors.light`};
+          background-color: ${theme`colors.main.100`};
           display: block;
         }
       }

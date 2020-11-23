@@ -8,15 +8,6 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
   },
   theme: {
-    typography: {
-      default: {
-        css: {
-          color: '#333',
-          fontFamily: "'Poppins', sans-serif",
-        },
-      },
-    },
-
     extend: {
       boxShadow: {
         primary: {

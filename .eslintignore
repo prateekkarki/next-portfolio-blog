@@ -1,4 +1,6 @@
 .next
 assets/**
+out_functions/**
+out_publish/**
 public/**
 **/node_modules/**

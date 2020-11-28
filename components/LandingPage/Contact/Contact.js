@@ -42,7 +42,7 @@ function Contact() {
                 sm:justify-start sm:items-start sm:text-left
               `}
             >
-              <Title>Get in touch.</Title>
+              <Title>Get in touch</Title>
               <Text>
                 <span>I love to develop things for the web.</span>{' '}
                 <span>

@@ -8,7 +8,7 @@ const ActiveLink = (props) => {
   const { as, children } = props;
 
   const NavLink = styled.a(({ isActive }) => [
-    tw`font-medium hover:text-primary py-3 uppercase text-base ml-4`,
+    tw`font-medium hover:text-primary p-3 uppercase text-base`,
     isActive ? tw`text-primary` : tw`text-main-200`,
   ]);
 

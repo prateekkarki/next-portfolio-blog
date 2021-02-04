@@ -23,7 +23,6 @@ module.exports = {
       fontSize: {
         huge: '6rem',
       },
-      // DF2935 some red good one
       colors: {
         primary: '#5398BE',
         secondary: '#E26D5A',

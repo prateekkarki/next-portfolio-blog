@@ -1,12 +1,38 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import tw from 'twin.macro';
+import tw, { styled, css, theme } from 'twin.macro';
 
 import { GA_TRACKING_ID } from '../utils/analytics';
+
+const Body = styled.body([
+  tw`overflow-x-hidden`,
+  css`
+    ::-webkit-scrollbar {
+      width: 14px;
+    }
+
+    ::-webkit-scrollbar-track {
+      ${tw`bg-main-600`};
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: 8px;
+      ${tw`
+        bg-main-400 bg-opacity-50 hover:bg-opacity-100
+        border-4 border-solid border-main-600
+      `};
+    }
+  `,
+]);
+
+const StyledHtml = styled(Html)`
+  scrollbar-width: thin;
+  scrollbar-color: ${theme`colors.main.400`} ${theme`colors.main.600`};
+`;
 
 class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en">
+      <StyledHtml lang="en">
         <Head>
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
@@ -27,11 +53,11 @@ class MyDocument extends Document {
             }}
           />
         </Head>
-        <body css={tw`overflow-x-hidden`}>
+        <Body>
           <Main />
           <NextScript />
-        </body>
-      </Html>
+        </Body>
+      </StyledHtml>
     );
   }
 }

@@ -25,7 +25,7 @@ function Contact() {
             >
               <h1
                 css={tw`
-                  font-bold text-main-100 whitespace-no-wrap 
+                  font-bold text-main-100 whitespace-nowrap 
                   text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-huge
                 `}
               >

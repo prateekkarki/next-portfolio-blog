@@ -1,9 +1,8 @@
 import { useState, useRef } from 'react';
-import styled from '@emotion/styled';
+import tw, { styled } from 'twin.macro';
 
 import { IoIosCloseCircle } from 'react-icons/io';
 import Modal from 'react-modal';
-import tw from 'twin.macro';
 
 const StyledModal = styled(Modal)`
   ${tw`bg-main-700 w-11/12 mx-auto overflow-auto rounded-lg p-6`}

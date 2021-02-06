@@ -40,7 +40,6 @@
     "isomorphic-unfetch": "^3.0.0",
     "lodash": "^4.17.20",
     "next": "10.0.0",
-    "next-on-netlify": "^2.3.2",
     "next-with-apollo": "^5.1.0",
     "prop-types": "^15.7.2",
     "react": "17.0.0",

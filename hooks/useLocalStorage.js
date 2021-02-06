@@ -5,13 +5,9 @@ function useLocalStorage(key, initialValue) {
   // Pass initial state function to useState so logic is only executed once
   const [storedValue, setStoredValue] = useState(() => {
     try {
-      let item;
       // Get from local storage by key
-      if (typeof window !== 'undefined') {
-        item = window.localStorage.getItem(key);
-      } else {
-        item = null;
-      }
+      const item =
+        typeof window !== 'undefined' ? window.localStorage.getItem(key) : null;
 
       // Parse stored json or if none return initialValue
       return item ? JSON.parse(item) : initialValue;

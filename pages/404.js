@@ -1,7 +1,7 @@
-import { css } from 'twin.macro';
+import { styled, css } from 'twin.macro';
 import Link from 'next/link';
 
-const containerStyles = css`
+const Container = styled.div(css`
   color: #000;
   background: #fff;
   min-height: 50vh;
@@ -21,9 +21,9 @@ const containerStyles = css`
     font-weight: 500;
     vertical-align: top;
   }
-`;
+`);
 
-const innerStyles = css`
+const Inner = styled.div(css`
   display: inline-block;
   text-align: left;
   line-height: 49px;
@@ -37,20 +37,20 @@ const innerStyles = css`
     margin: 0;
     padding: 0;
   }
-`;
+`);
 
 export default function Custom404() {
   return (
-    <div css={containerStyles}>
+    <Container>
       <div>
         <h1>404</h1>
-        <div css={innerStyles}>
+        <Inner>
           <h2>This page could not be found.</h2>
           <Link href="/" as="/" passHref>
             <a href="/">Back to Homepage</a>
           </Link>
-        </div>
+        </Inner>
       </div>
-    </div>
+    </Container>
   );
 }

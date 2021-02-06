@@ -1,23 +1,13 @@
 import { useRef, Fragment } from 'react';
 
 import Link from 'next/link';
-import tw, { styled } from 'twin.macro';
-
-import { RiVolumeUpFill, RiVolumeMuteFill } from 'react-icons/ri';
-import { IoMdSunny, IoMdMoon } from 'react-icons/io';
-import { useLocalStorage, useHasMounted } from '../../../hooks';
+import tw from 'twin.macro';
 import ActiveLink from './ActiveLink';
 import { MainNav, MobileNav, NavTrigger, Line } from './styled';
-
-const SettingButton = styled.button(() => [
-  tw`font-medium hover:text-primary p-3 uppercase text-base`,
-]);
+import SettingButtons from './SettingButtons';
 
 const Nav = () => {
   let isExpanded = false;
-  const hasMounted = useHasMounted();
-  const [isMuted, setIsMuted] = useLocalStorage('isMuted', false);
-  const [isDark, setIsDark] = useLocalStorage('isDark', false);
   const mobileNavRef = useRef(null);
   const mobileNavTrigger = useRef(null);
 
@@ -46,24 +36,7 @@ const Nav = () => {
       <ActiveLink href="/blog" as="/blog">
         Blog
       </ActiveLink>
-      {hasMounted && (
-        <SettingButton
-          onClick={() => {
-            setIsMuted(!isMuted);
-          }}
-        >
-          {isMuted ? <RiVolumeMuteFill /> : <RiVolumeUpFill />}
-        </SettingButton>
-      )}
-      {hasMounted && (
-        <SettingButton
-          onClick={() => {
-            setIsDark(!isDark);
-          }}
-        >
-          {isDark ? <IoMdSunny /> : <IoMdMoon />}
-        </SettingButton>
-      )}
+      <SettingButtons />
     </Fragment>
   );
 

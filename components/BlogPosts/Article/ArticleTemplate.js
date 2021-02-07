@@ -80,7 +80,6 @@ function ArticleTemplate({ postData }) {
               url: `${process.env.NEXT_PUBLIC_SITE_URL}/article/${postData.slug}`,
               identifier: `article-${postData.slug}`,
               title: postData.title,
-              language: 'en_US',
             }}
           />
         </div>

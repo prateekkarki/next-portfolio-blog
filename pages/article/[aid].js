@@ -1,35 +1,30 @@
 /* eslint-disable react/no-danger */
 import { useState, useEffect, Fragment } from 'react';
 import { useRouter } from 'next/router';
-
-import { useQuery } from '@apollo/react-hooks';
-
 import tw from 'twin.macro';
+import { initializeApollo } from '../../utils/apollo';
 
 import ARTICLE_QUERY from '../../apollo/queries/article/article';
-import Loader from '../../components/Loader';
+import ARTICLES_QUERY from '../../apollo/queries/article/articles';
 import ArticleTemplate from '../../components/BlogPosts/Article/ArticleTemplate';
 
-const SingleArticle = () => {
+const SingleArticle = ({ articles }) => {
   const [postData, setPostData] = useState(null);
   const router = useRouter();
   const { aid } = router.query;
-
-  const { data, loading, error } = useQuery(ARTICLE_QUERY, {
-    variables: { slug: aid },
-  });
-
   useEffect(() => {
-    if (data?.articles && aid) {
-      setPostData(data.articles[0]);
+    if (articles && aid) {
+      setPostData(articles[0]);
     }
-  }, [data, postData]);
+  }, [articles, postData]);
   return !router.query.aid ? null : (
     <Fragment>
-      {loading && <Loader fullpage />}
-      {error && (
+      {!articles && (
         <div css={tw`container mx-auto px-3`}>
-          <p css={tw`text-secondary text-center my-6`}>{error.message}</p>
+          <p css={tw`text-secondary text-center my-6`}>
+            Looks like the article does not exist. Please checkout other
+            sections of the website.
+          </p>
         </div>
       )}
       {postData?.slug && (
@@ -42,3 +37,32 @@ const SingleArticle = () => {
 };
 
 export default SingleArticle;
+
+export async function getStaticPaths() {
+  const client = initializeApollo();
+  const res = await client.query({
+    query: ARTICLES_QUERY,
+  });
+  const paths = res.data.articles.map((post) => ({
+    params: { aid: post.slug },
+  }));
+
+  return {
+    paths,
+    fallback: true,
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const client = initializeApollo();
+  const res = await client.query({
+    query: ARTICLE_QUERY,
+    variables: { slug: params.aid },
+  });
+
+  // The value of the `props` key will be
+  //  passed to the `Home` component
+  return {
+    props: res.data,
+  };
+}

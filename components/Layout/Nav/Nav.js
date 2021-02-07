@@ -1,32 +1,14 @@
-import { useRef, Fragment } from 'react';
+import { useState, Fragment } from 'react';
+import { Squash as Hamburger } from 'hamburger-react';
 
 import Link from 'next/link';
-import tw from 'twin.macro';
+import tw, { theme } from 'twin.macro';
 import ActiveLink from './ActiveLink';
-import { MainNav, MobileNav, NavTrigger, Line } from './styled';
+import { MainNav, MobileNav, NavTrigger } from './styled';
 import SettingButtons from './SettingButtons';
 
 const Nav = () => {
-  let isExpanded = false;
-  const mobileNavRef = useRef(null);
-  const mobileNavTrigger = useRef(null);
-
-  const expandMobileNav = () => {
-    const mNavLines = mobileNavTrigger.current.children;
-    if (isExpanded) {
-      mobileNavRef.current.style.transform = 'translateY(-100%)';
-      mNavLines[0].style.transform = 'rotate(0)';
-      mNavLines[1].style.opacity = '1';
-      mNavLines[2].style.transform = 'rotate(0) translate(0,0)';
-      isExpanded = false;
-    } else {
-      mobileNavRef.current.style.transform = 'translateY(0)';
-      mNavLines[0].style.transform = 'rotate(45deg)';
-      mNavLines[1].style.opacity = '0';
-      mNavLines[2].style.transform = 'rotate(-45deg) translate(7px, -7px)';
-      isExpanded = true;
-    }
-  };
+  const [isExpanded, setExpanded] = useState(false);
 
   const AllLinks = () => (
     <Fragment>
@@ -48,31 +30,28 @@ const Nav = () => {
           flex flex-col sm:flex-row items-center justify-between py-4 z-10
         `}
       >
-        <h3 css={tw`text-6xl uppercase`}>
-          <Link href="/#home" passHref>
-            <a href="/#home" css={tw`font-black text-primary`}>
-              PK.
-            </a>
-          </Link>
-        </h3>
+        <Link href="/#home" passHref>
+          <a href="/#home" css={tw`font-black text-primary`}>
+            <h3 css={tw`text-6xl leading-10 uppercase`}>PK.</h3>
+          </a>
+        </Link>
         <div css={tw`flex items-center justify-center`}>
           <MainNav>
             <AllLinks />
           </MainNav>
         </div>
-
-        <NavTrigger
-          type="button"
-          onClick={expandMobileNav}
-          ref={mobileNavTrigger}
-        >
-          <Line />
-          <Line />
-          <Line />
+        <NavTrigger>
+          <Hamburger
+            tw="block sm:hidden"
+            color={theme`colors.main.200`}
+            rounded
+            toggled={isExpanded}
+            toggle={setExpanded}
+          />
         </NavTrigger>
       </div>
 
-      <MobileNav ref={mobileNavRef}>
+      <MobileNav isExpanded={isExpanded}>
         <AllLinks />
       </MobileNav>
     </Fragment>

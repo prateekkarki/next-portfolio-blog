@@ -2518,6 +2518,11 @@ graphql@^15.3.0:
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-15.5.0.tgz#39d19494dbe69d1ea719915b578bf920344a69d5"
   integrity sha512-OmaM7y0kaK31NKG31q4YbD2beNYa6jBBKtMFT6gLYJljHLJr42IqJ8KX08u3Li/0ifzTU5HjmoOOrwa5BRLeDA==
 
+hamburger-react@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/hamburger-react/-/hamburger-react-2.4.0.tgz#b2950fe28c4cf46b41e6887550140c3c17cb66a3"
+  integrity sha512-VYUhF7X9JszeHXSGHKJLaTIWPc/U64fVdcr4DTmOb04gOoJwricqi6gcRZXAylVtsJOs4CWtMVZNnWjXiWF0Xw==
+
 has-flag@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/has-flag/-/has-flag-3.0.0.tgz#b5d454dc2199ae225699f3467e5a07f3b955bafd"

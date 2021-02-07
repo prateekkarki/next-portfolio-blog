@@ -39,6 +39,7 @@
     "dotenv": "^8.2.0",
     "graphql": "^15.3.0",
     "graphql-tag": "^2.11.0",
+    "hamburger-react": "^2.4.0",
     "isomorphic-unfetch": "^3.0.0",
     "lodash": "^4.17.20",
     "next": "10.0.6",

@@ -11,7 +11,7 @@ import { FullpageLoader, MetaHead, ScrollToTop } from '..';
 
 const Container = styled.div([
   tw`bg-main-800 text-main-100 max-w-full overflow-x-auto overflow-y-hidden`,
-  css`padding-top:128px;`,
+  css`padding-top:72px;`,
 ]);
 
 const StyledToastContainer = styled(ToastContainer)`
@@ -29,7 +29,7 @@ const StyledToastContainer = styled(ToastContainer)`
   }
 `;
 
-const InnerContainer = styled.div(css`min-height:calc(100vh - 128px - 58px);`);
+const InnerContainer = styled.div(css`min-height:calc(100vh - 72px - 58px);`);
 
 const transitionConfig = {
   timeout: 650,

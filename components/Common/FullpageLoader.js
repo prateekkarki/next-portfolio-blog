@@ -4,9 +4,9 @@ const Loader = styled.div([
   tw`w-full flex flex-col items-start`,
   css`
     position:fixed;
-    top:128px;
+    top:72px;
     pointer-events:none;
-    height:calc(100vh - 128px);
+    height:calc(100vh - 72px);
     z-index:20;
   `,
 ]);

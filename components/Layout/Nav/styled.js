@@ -5,12 +5,10 @@ export const MainNav = styled.nav(
 );
 
 export const MobileNav = styled.nav(({ isExpanded }) => [
-  css`
-    top: ${theme`spacing.header`};
-  `,
   tw`flex sm:hidden w-full absolute bg-main-700 text-lg flex-col items-center`,
-  tw`duration-700 transform ease-out transition-all z-0`,
+  tw`transform ease-out transition-all z-0`,
   isExpanded ? tw`translate-y-0` : tw`-translate-y-full`,
+  css`top: ${theme`spacing.header`}; transition-duration: 500ms;`,
 ]);
 
 export const NavTrigger = styled.button([
@@ -22,7 +20,4 @@ export const NavTrigger = styled.button([
   tw`absolute flex sm:hidden flex-col focus:outline-none p-4`,
 ]);
 
-export const MainTitle = styled.h3([
-  tw`text-6xl uppercase`,
-  css`line-height:48px`,
-]);
+export const MainLogo = styled.img(tw`h-12 px-3 sm:px-0`);

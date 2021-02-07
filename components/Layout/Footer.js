@@ -47,7 +47,7 @@ function Footer() {
           contentLabel="Resources"
         >
           <div css={tw`flex justify-between`}>
-            <h1 css={tw`text-main-100`}>Credits</h1>
+            <h1 css={tw`font-bold text-2xl text-main-100`}>Credits</h1>
             <button
               type="button"
               css={tw`text-lg`}
@@ -62,7 +62,7 @@ function Footer() {
             <div
               css={tw`mt-8 text-center sm:text-left sm:w-1/2 md:w-1/3 sm:inline-block`}
             >
-              <h2 css={tw`text-main-100`}>Frontend</h2>
+              <h2 css={tw`font-bold text-lg text-main-100`}>Frontend</h2>
               <ul>
                 <li css={tw`text-main-200`}>
                   <a
@@ -99,7 +99,7 @@ function Footer() {
             <div
               css={tw`mt-8 text-center sm:text-left sm:w-1/2 md:w-1/3 sm:inline-block`}
             >
-              <h2 css={tw`text-main-100`}>Backend</h2>
+              <h2 css={tw`font-bold text-lg text-main-100`}>Backend</h2>
               <ul>
                 <li css={tw`text-main-200`}>
                   <a
@@ -146,19 +146,8 @@ function Footer() {
             <div
               css={tw`mt-8 text-center sm:text-left sm:w-1/2 md:w-1/3 sm:inline-block`}
             >
-              <h2 css={tw`text-main-100`}>Design / Graphics</h2>
+              <h2 css={tw`font-bold text-lg text-main-100`}>Graphics</h2>
               <ul>
-                <li css={tw`text-main-200`}>
-                  Favicon logo from{' '}
-                  <a
-                    target="_blank"
-                    css={tw`text-primary`}
-                    rel="noreferrer"
-                    href="https://www.vecteezy.com/free-vector/business"
-                  >
-                    Vecteezy
-                  </a>
-                </li>
                 <li css={tw`text-main-200`}>
                   Programmer illustrations from{' '}
                   <a

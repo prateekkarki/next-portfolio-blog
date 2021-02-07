@@ -4,7 +4,7 @@ import { Squash as Hamburger } from 'hamburger-react';
 import Link from 'next/link';
 import tw, { theme } from 'twin.macro';
 import ActiveLink from './ActiveLink';
-import { MainNav, MobileNav, NavTrigger, MainTitle } from './styled';
+import { MainNav, MobileNav, NavTrigger, MainLogo } from './styled';
 import SettingButtons from './SettingButtons';
 
 const Nav = () => {
@@ -17,7 +17,7 @@ const Nav = () => {
       <ActiveLink href="/blog" as="/blog">
         Blog
       </ActiveLink>
-      <SettingButtons />
+      {/* <SettingButtons /> */}
     </Fragment>
   );
 
@@ -26,12 +26,12 @@ const Nav = () => {
       <div
         css={tw`
           container bg-main-700 relative mx-auto px-3
-          flex flex-col sm:flex-row items-center justify-between py-4 z-10
+          flex flex-row items-center justify-between py-4 z-10
         `}
       >
         <Link href="/#home" passHref>
           <a href="/#home" css={tw`font-black text-primary`}>
-            <MainTitle>PK.</MainTitle>
+            <MainLogo src="/images/logo/logo.svg" alt="logo" />
           </a>
         </Link>
         <div css={tw`flex items-center justify-center`}>
@@ -50,7 +50,12 @@ const Nav = () => {
         </NavTrigger>
       </div>
 
-      <MobileNav isExpanded={isExpanded}>
+      <MobileNav
+        isExpanded={isExpanded}
+        onClick={() => {
+          setExpanded(false);
+        }}
+      >
         <AllLinks />
       </MobileNav>
     </Fragment>

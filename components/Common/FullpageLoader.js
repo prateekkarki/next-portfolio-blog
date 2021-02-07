@@ -1,12 +1,12 @@
-import tw, { styled, css } from 'twin.macro';
+import tw, { styled, css, theme } from 'twin.macro';
 
 const Loader = styled.div([
   tw`w-full flex flex-col items-start`,
   css`
     position:fixed;
-    top:72px;
+    top:${theme`spacing.header`};
     pointer-events:none;
-    height:calc(100vh - 72px);
+    height:calc(100vh - ${theme`spacing.header`});
     z-index:20;
   `,
 ]);

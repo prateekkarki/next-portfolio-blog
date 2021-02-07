@@ -19,7 +19,10 @@ module.exports = {
           focus: '3px 3px 10px rgba(223,122,113,0.6)',
         },
       },
-
+      spacing: {
+        header: '5rem',
+        footer: '58px',
+      },
       fontSize: {
         huge: '6rem',
       },

@@ -1,4 +1,4 @@
-import tw, { css, styled, GlobalStyles } from 'twin.macro';
+import tw, { css, styled, GlobalStyles, theme } from 'twin.macro';
 import anime from 'animejs';
 import { ToastContainer, Slide } from 'react-toastify';
 
@@ -11,7 +11,7 @@ import { FullpageLoader, MetaHead, ScrollToTop } from '..';
 
 const Container = styled.div([
   tw`bg-main-800 text-main-100 max-w-full overflow-x-auto overflow-y-hidden`,
-  css`padding-top:72px;`,
+  css`padding-top:${theme`spacing.header`};`,
 ]);
 
 const StyledToastContainer = styled(ToastContainer)`
@@ -29,7 +29,9 @@ const StyledToastContainer = styled(ToastContainer)`
   }
 `;
 
-const InnerContainer = styled.div(css`min-height:calc(100vh - 72px - 58px);`);
+const InnerContainer = styled.div(
+  css`min-height:calc(100vh - ${theme`spacing.header`} -  ${theme`spacing.footer`});`
+);
 
 const transitionConfig = {
   timeout: 650,

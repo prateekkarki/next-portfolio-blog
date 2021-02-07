@@ -1,10 +1,11 @@
-import tw, { css } from 'twin.macro';
+import tw, { css, theme } from 'twin.macro';
 
 const Loader = ({ fullpage }) => (
   <div
     css={[
       tw`flex h-full items-center justify-center w-full`,
-      fullpage && css`min-height:calc(100vh - 72px - 58px)`,
+      fullpage &&
+        css`min-height:calc(100vh - ${theme`spacing.header`} - ${theme`spacing.footer`})`,
     ]}
   >
     <div css={tw`w-12 h-12 m-4`}>

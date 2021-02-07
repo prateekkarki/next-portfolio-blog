@@ -1,11 +1,11 @@
-import { styled, css } from 'twin.macro';
+import { styled, css, theme } from 'twin.macro';
 import Link from 'next/link';
 
 const Container = styled.div(css`
   color: #000;
   background: #fff;
   min-height: 50vh;
-  height: calc(100vh - 108px - 58px - 20px);
+  height: calc(100vh - ${theme`spacing.header`} - ${theme`spacing.footer`});
   text-align: center;
   display: flex;
   flex-direction: column;

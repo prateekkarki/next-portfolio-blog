@@ -4,12 +4,11 @@ import { Squash as Hamburger } from 'hamburger-react';
 import Link from 'next/link';
 import tw, { theme } from 'twin.macro';
 import ActiveLink from './ActiveLink';
-import { MainNav, MobileNav, NavTrigger } from './styled';
+import { MainNav, MobileNav, NavTrigger, MainTitle } from './styled';
 import SettingButtons from './SettingButtons';
 
 const Nav = () => {
   const [isExpanded, setExpanded] = useState(false);
-
   const AllLinks = () => (
     <Fragment>
       <ActiveLink href="/about" as="/about">
@@ -32,7 +31,7 @@ const Nav = () => {
       >
         <Link href="/#home" passHref>
           <a href="/#home" css={tw`font-black text-primary`}>
-            <h3 css={tw`text-6xl leading-10 uppercase`}>PK.</h3>
+            <MainTitle>PK.</MainTitle>
           </a>
         </Link>
         <div css={tw`flex items-center justify-center`}>

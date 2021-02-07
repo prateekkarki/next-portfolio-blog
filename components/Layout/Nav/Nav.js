@@ -5,7 +5,7 @@ import Link from 'next/link';
 import tw, { theme } from 'twin.macro';
 import ActiveLink from './ActiveLink';
 import { MainNav, MobileNav, NavTrigger, MainLogo } from './styled';
-import SettingButtons from './SettingButtons';
+// import SettingButtons from './SettingButtons';
 
 const Nav = () => {
   const [isExpanded, setExpanded] = useState(false);

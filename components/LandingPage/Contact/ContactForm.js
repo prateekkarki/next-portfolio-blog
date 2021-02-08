@@ -53,14 +53,13 @@ function ContactForm() {
       .join('&');
 
   const onSubmit = (data) => {
-    const newData = encode({ ...data, 'form-name': 'contact' });
+    const newData = encode({ ...data, _replyto: data.email });
     isSubmitting(true);
 
     axios({
       method: 'POST',
-      url: '/',
+      url: 'https://formspree.io/f/xdolrnlo',
       data: newData,
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     })
       .then(() => {
         handleServerResponse(

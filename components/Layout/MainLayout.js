@@ -7,7 +7,7 @@ import { Transition, TransitionGroup } from 'react-transition-group';
 import Header from './Header';
 import Footer from './Footer';
 
-import { FullpageLoader, MetaHead, ScrollToTop } from '..';
+import { FullpageLoader, MetaHead } from '..';
 
 const Container = styled.div([
   tw`bg-main-800 text-main-100 max-w-full overflow-x-auto overflow-y-hidden`,
@@ -68,7 +68,6 @@ function MainLayout({ children, pathname }) {
     <Container>
       <GlobalStyles />
       <MetaHead />
-      <ScrollToTop />
       <Header />
       <TransitionGroup>
         <Transition key={pathname} {...transitionConfig}>

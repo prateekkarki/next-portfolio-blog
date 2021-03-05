@@ -6,12 +6,7 @@ export const Title = tw.h1`
 `;
 
 export const Text = styled.p([
-  tw`text-main-400 text-sm md:text-base lg:text-lg leading-7`,
-  css`
-    &+&{
-      ${tw`mt-6`}
-    }
-  `,
+  tw`mt-6 text-main-400 text-sm md:text-base lg:text-lg leading-7`,
 ]);
 
 const inputStyles = ({ hasError }) => [
@@ -32,31 +27,50 @@ export const ContactLabel = styled.label(({ hasError }) => [
 ]);
 
 const buttonStyles = ({ variant }) => [
-  tw`
-    w-40 py-4 block rounded-full overflow-hidden relative
-    font-semibold text-base text-main-100 text-center
-    transform transition-all duration-200 ease-in-out translate-y-0 hover:-translate-y-1
-  `,
+  tw`bg-transparent cursor-pointer`,
   css`
-    &:after {
-      ${tw`bg-main-100 absolute top-0 opacity-25 `}
-      content: '';
-      left: -60%;
-      width: 50%;
-      height: 100%;
-      transform: skewX(-45deg);
-      transition: all 700ms cubic-bezier(0.19, 1, 0.22, 1);
+    div {
+      ${tw`
+        relative overflow-hidden
+        font-semibold text-base text-main-100 text-center
+        w-40 py-4 block rounded-full
+        transform transition-all duration-200 ease-in-out translate-y-0
+      `}
+
+      ${variant === 'primary' && tw`bg-primary `}
+      ${variant === 'secondary' && tw`bg-secondary `}
+      ${!variant && tw`bg-primary `}
+
+      &:after {
+        ${tw`bg-main-100 absolute top-0 opacity-25 `}
+        content: '';
+        left: -60%;
+        width: 50%;
+        height: 100%;
+        transform: skewX(-45deg);
+        transition: all 700ms cubic-bezier(0.19, 1, 0.22, 1);
+      }
     }
     &:hover {
-      &:after {
-        left: 110%;
+      div {
+        ${tw`-translate-y-1 `}
+        will-change: transform;
+        &:after {
+          left: 110%;
+        }
       }
     }
   `,
-  variant === 'primary' && tw`bg-primary`,
-  variant === 'secondary' && tw`bg-secondary`,
-  !variant && tw`bg-primary`,
 ];
-
-export const BigLink = styled.a(buttonStyles);
-export const BigButton = styled.button(buttonStyles);
+export const PseudoBigLink = styled.a(buttonStyles);
+export const PseudoBigButton = styled.button(buttonStyles);
+export const BigLink = ({ children, variant }) => (
+  <PseudoBigLink variant={variant}>
+    <div>{children}</div>
+  </PseudoBigLink>
+);
+export const BigButton = ({ children, variant }) => (
+  <PseudoBigButton variant={variant}>
+    <div>{children}</div>
+  </PseudoBigButton>
+);

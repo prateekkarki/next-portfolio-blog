@@ -72,7 +72,18 @@ const Card = ({ article, dark }) => (
         </Link>
       )}
     </Fragment>
-    {!article.thumbnail && <CategoryToIcon category={article.category} />}
+    {!article.thumbnail && (
+      <Link
+        href="/article/[aid]"
+        as={`/article/${article.slug}`}
+        passHref
+        title={article.title}
+      >
+        <a>
+          <CategoryToIcon category={article.category} />
+        </a>
+      </Link>
+    )}
     <div
       css={dark ? tw`bg-main-800 rounded-b-md` : tw`bg-main-700 rounded-b-md`}
     >

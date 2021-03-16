@@ -64,13 +64,13 @@ const buttonStyles = ({ variant }) => [
 ];
 export const PseudoBigLink = styled.a(buttonStyles);
 export const PseudoBigButton = styled.button(buttonStyles);
-export const BigLink = ({ children, variant }) => (
-  <PseudoBigLink variant={variant}>
+export const BigLink = ({ children, variant, ...others }) => (
+  <PseudoBigLink variant={variant} {...others}>
     <div>{children}</div>
   </PseudoBigLink>
 );
-export const BigButton = ({ children, variant }) => (
-  <PseudoBigButton variant={variant}>
+export const BigButton = ({ children, variant, ...others }) => (
+  <PseudoBigButton variant={variant} {...others}>
     <div>{children}</div>
   </PseudoBigButton>
 );

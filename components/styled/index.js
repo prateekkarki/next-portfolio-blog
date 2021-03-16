@@ -27,7 +27,7 @@ export const ContactLabel = styled.label(({ hasError }) => [
 ]);
 
 const buttonStyles = ({ variant }) => [
-  tw`bg-transparent cursor-pointer`,
+  tw`bg-transparent cursor-pointer inline-block`,
   css`
     div {
       ${tw`
@@ -49,6 +49,14 @@ const buttonStyles = ({ variant }) => [
         height: 100%;
         transform: skewX(-45deg);
         transition: all 700ms cubic-bezier(0.19, 1, 0.22, 1);
+      }
+
+      @media not all and (min-resolution:.001dpcm) { 
+        @supports (-webkit-appearance:none) and (stroke-color:transparent) { 
+          &:after {
+            display:none;
+          }
+        } 
       }
     }
     &:hover {

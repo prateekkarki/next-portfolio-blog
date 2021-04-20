@@ -7,10 +7,11 @@ import { Transition, TransitionGroup } from 'react-transition-group';
 import Header from './Header';
 import Footer from './Footer';
 
+import { useLocalStorage } from '../../hooks';
 import { FullpageLoader, MetaHead } from '..';
 
 const Container = styled.div([
-  tw`bg-main-800 text-main-100 max-w-full overflow-x-auto overflow-y-hidden`,
+  tw`bg-main-800 text-main-100 dark:bg-main-100 dark:text-main-800 max-w-full overflow-x-auto overflow-y-hidden`,
   css`padding-top:${theme`spacing.header`};`,
 ]);
 
@@ -64,35 +65,43 @@ const transitionConfig = {
 };
 
 function MainLayout({ children, pathname }) {
+  const [isDark, setIsDark] = useLocalStorage('isDark', false);
   return (
-    <Container>
-      <GlobalStyles />
-      <MetaHead />
-      <Header />
-      <TransitionGroup>
-        <Transition key={pathname} {...transitionConfig}>
-          <InnerContainer>
-            <FullpageLoader />
-            {children}
-          </InnerContainer>
-        </Transition>
-      </TransitionGroup>
-      <Footer />
+    <div className={isDark ? 'dark' : ''}>
+      <Container>
+        <GlobalStyles />
+        <MetaHead />
+        <Header
+          isDark={isDark}
+          onThemeToggle={() => {
+            setIsDark(!isDark);
+          }}
+        />
+        <TransitionGroup>
+          <Transition key={pathname} {...transitionConfig}>
+            <InnerContainer>
+              <FullpageLoader />
+              {children}
+            </InnerContainer>
+          </Transition>
+        </TransitionGroup>
+        <Footer />
 
-      <StyledToastContainer
-        className="impct-toast"
-        position="top-center"
-        autoClose={3000}
-        hideProgressBar
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnVisibilityChange
-        draggable={false}
-        pauseOnHover
-        transition={Slide}
-      />
-    </Container>
+        <StyledToastContainer
+          className="impct-toast"
+          position="top-center"
+          autoClose={3000}
+          hideProgressBar
+          newestOnTop
+          closeOnClick
+          rtl={false}
+          pauseOnVisibilityChange
+          draggable={false}
+          pauseOnHover
+          transition={Slide}
+        />
+      </Container>
+    </div>
   );
 }
 

@@ -5,9 +5,9 @@ import Link from 'next/link';
 import tw, { theme } from 'twin.macro';
 import ActiveLink from './ActiveLink';
 import { MainNav, MobileNav, NavTrigger, MainLogo } from './styled';
-// import SettingButtons from './SettingButtons';
+import SettingButtons from './SettingButtons';
 
-const Nav = () => {
+const Nav = ({ isDark, onThemeToggle }) => {
   const [isExpanded, setExpanded] = useState(false);
   const AllLinks = () => (
     <Fragment>
@@ -17,7 +17,7 @@ const Nav = () => {
       <ActiveLink href="/blog" as="/blog">
         Blog
       </ActiveLink>
-      {/* <SettingButtons /> */}
+      <SettingButtons isDark={isDark} onThemeToggle={onThemeToggle} />
     </Fragment>
   );
 
@@ -25,7 +25,7 @@ const Nav = () => {
     <Fragment>
       <div
         css={tw`
-          container bg-main-700 relative mx-auto px-3
+          container relative mx-auto px-3
           flex flex-row items-center justify-between py-4 z-10
         `}
       >

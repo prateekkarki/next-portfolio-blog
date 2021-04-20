@@ -85,12 +85,18 @@ const Card = ({ article, dark }) => (
       </Link>
     )}
     <div
-      css={dark ? tw`bg-main-800 rounded-b-md` : tw`bg-main-700 rounded-b-md`}
+      css={
+        dark
+          ? tw`bg-main-800 dark:bg-main-100 rounded-b-md`
+          : tw`bg-main-700 dark:bg-main-200 rounded-b-md`
+      }
     >
       <div css={tw`px-6 pt-4`}>
         <Link href="/article/[aid]" as={`/article/${article.slug}`} passHref>
           <a href="/article/[aid]" title={article.title}>
-            <p css={tw`font-bold text-main-200 text-xl mb-0 truncate `}>
+            <p
+              css={tw`font-bold text-main-200 dark:text-main-700 text-xl mb-0 truncate `}
+            >
               {truncate(article.title, {
                 length: 50,
                 omission: '...',
@@ -100,7 +106,9 @@ const Card = ({ article, dark }) => (
         </Link>
       </div>
       <div css={tw`px-6 pb-2`}>
-        <p css={tw`text-main-400`}>{article.category?.name || ''}</p>
+        <p css={tw`text-main-400 dark:text-main-600`}>
+          {article.category?.name || ''}
+        </p>
       </div>
       <div css={tw`px-6 pb-2 mt-4`}>
         {article.tags.map((tag) => (

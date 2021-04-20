@@ -2,6 +2,7 @@ module.exports = {
   purge: false,
   target: 'relaxed',
   prefix: '',
+  darkMode: 'class',
   important: false,
   separator: ':',
   future: {

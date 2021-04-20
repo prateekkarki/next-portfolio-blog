@@ -5,6 +5,7 @@ import capitalize from 'lodash/capitalize';
 import tw from 'twin.macro';
 import Query from '../../components/Query';
 import CATEGORY_ARTICLES_QUERY from '../../apollo/queries/category/articles';
+import { Container } from '../../components/styled';
 
 const Category = () => {
   const router = useRouter();
@@ -19,7 +20,7 @@ const Category = () => {
             </title>
           </Head>
 
-          <div css={tw`container mx-auto`}>
+          <Container>
             <p
               css={tw`
                 inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2
@@ -28,7 +29,7 @@ const Category = () => {
             >
               #{category.name}
             </p>
-          </div>
+          </Container>
         </Fragment>
       )}
     </Query>

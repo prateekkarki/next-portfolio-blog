@@ -33,7 +33,9 @@ function Footer() {
   const el = useRef(null);
   return (
     <footer
-      css={tw`bg-main-800 dark:bg-main-100 border-main-700 dark:border-main-100 border-solid border-t-2 py-4 px-3 sm:px-0`}
+      css={tw`bg-main-800 dark:bg-main-100 
+        border-main-700 dark:border-main-100 
+        border-solid border-t-2 py-4 px-3 sm:px-0`}
     >
       <div css={tw`bg-main-800 dark:bg-main-100`} />
       <div

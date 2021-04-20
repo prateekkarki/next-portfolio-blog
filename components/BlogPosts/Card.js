@@ -9,9 +9,10 @@ import tw, { styled, css } from 'twin.macro';
 import CategoryToIcon from './CategoryToIcon';
 
 const Tag = tw.span`
-  inline-block bg-main-600 rounded-full 
+  bg-main-600 dark:bg-main-400 text-main-500 dark:text-main-600 
+  inline-block rounded-full 
   px-3 py-1 mr-2 mb-2
-  text-sm font-semibold text-main-500 
+  text-sm font-semibold 
 `;
 
 const ImageWindow = styled.div([

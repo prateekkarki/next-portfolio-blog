@@ -8,6 +8,8 @@ import ARTICLE_QUERY from '../../apollo/queries/article/article';
 import ARTICLES_QUERY from '../../apollo/queries/article/articles';
 import ArticleTemplate from '../../components/BlogPosts/Article/ArticleTemplate';
 
+import { Container } from '../../components/styled';
+
 const SingleArticle = ({ articles }) => {
   const [postData, setPostData] = useState(null);
   const router = useRouter();
@@ -20,12 +22,12 @@ const SingleArticle = ({ articles }) => {
   return !router.query.aid ? null : (
     <Fragment>
       {!articles && (
-        <div css={tw`container mx-auto px-3`}>
+        <Container css={tw`px-3`}>
           <p css={tw`text-secondary text-center my-6`}>
             Looks like the article does not exist. Please checkout other
             sections of the website.
           </p>
-        </div>
+        </Container>
       )}
       {postData?.slug && (
         <Fragment>

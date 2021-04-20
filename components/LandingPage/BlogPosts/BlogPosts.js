@@ -4,22 +4,15 @@ import Link from 'next/link';
 
 import Card from '../../BlogPosts/Card';
 
-import { BigLink, Text } from '../../styled';
+import { BigLink, Text, Title, Flex } from '../../styled';
 
 const BlogPosts = ({ articles }) => (
-  <div css={tw`block md:flex`}>
+  <Flex>
     <div
       css={tw`text-center px-3 md:px-6 text-main-200 py-4 md:w-1/2 md:text-left`}
       data-aos="fade-right"
     >
-      <h1
-        css={tw`
-          font-bold text-main-100 whitespace-nowrap text-3xl 
-          sm:text-4xl md:text-5xl lg:text-6xl xl:text-huge
-        `}
-      >
-        Latest Posts
-      </h1>
+      <Title>Latest Posts</Title>
       <Text>
         I also write articles in my free time. I write about new technologies
         that I find interesting, solutions to an issue that bugs me, and some
@@ -43,7 +36,7 @@ const BlogPosts = ({ articles }) => (
         <Card article={article} key={`article__${article.id}`} />
       ))}
     </div>
-  </div>
+  </Flex>
 );
 
 BlogPosts.propTypes = {

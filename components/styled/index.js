@@ -5,6 +5,12 @@ export const Title = tw.h1`
   text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-huge
 `;
 
+export const Flex = tw.div`block md:flex`;
+
+export const Container = tw.div`container mx-auto`;
+
+export const MainBg = tw.div`bg-main-700 dark:bg-main-200`;
+
 export const Text = styled.p([
   tw`mt-6 text-main-400 dark:text-main-600 text-sm md:text-base lg:text-lg leading-7`,
 ]);
@@ -33,7 +39,7 @@ const buttonStyles = ({ variant }) => [
     div {
       ${tw`
         relative overflow-hidden
-        font-semibold text-base text-main-100 dark:text-main-800 text-center
+        font-semibold text-base text-main-100 text-center
         w-40 py-4 block rounded-full
         transform transition-all duration-200 ease-in-out translate-y-0
       `}

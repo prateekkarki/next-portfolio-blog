@@ -1,9 +1,9 @@
 import { Fragment } from 'react';
-import tw from 'twin.macro';
 import Head from 'next/head';
 
 import TitleBlock from '../components/Common/TitleBlock';
-import Timeline from '../components/AboutPage/Timeline';
+import Timeline from '../components/AboutPage/Timeline/index';
+import { Container, MainBg } from '../components/styled';
 
 function about() {
   return (
@@ -12,11 +12,11 @@ function about() {
         <title>About me | Prateek Karki</title>
       </Head>
       <TitleBlock title="About Me" subtitle="Who am I?" />
-      <div css={tw`bg-main-700`}>
-        <div css={tw`container mx-auto`}>
+      <MainBg>
+        <Container>
           <Timeline />
-        </div>
-      </div>
+        </Container>
+      </MainBg>
     </Fragment>
   );
 }

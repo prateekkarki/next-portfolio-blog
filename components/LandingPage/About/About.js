@@ -13,7 +13,7 @@ function About() {
         <DevOnSofa />
       </div>
       <div
-        css={tw`px-3 md:px-6 text-center text-mainLight-200 py-4 md:w-1/2 md:text-left`}
+        css={tw`px-3 md:px-6 text-center text-mainLight-700 py-4 md:w-1/2 md:text-left`}
         data-aos="fade-left"
       >
         <Title>About Me</Title>

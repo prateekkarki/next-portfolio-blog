@@ -9,7 +9,7 @@ function EachBlock({ path, title }) {
   return path ? (
     <Fragment>
       <Link href={path} as={path} passHref>
-        <a href={path} css={tw`text-mainLight-200 hover:text-primary font-bold`}>
+        <a href={path} css={tw`text-mainLight-700 hover:text-primary font-bold`}>
           {title}
         </a>
       </Link>

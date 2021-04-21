@@ -2,7 +2,7 @@ import tw, { css, styled, theme } from 'twin.macro';
 import { ToastContainer } from 'react-toastify';
 
 export const MainContainer = styled.div([
-  tw`bg-mainLight-800 text-mainLight-100 dark:bg-mainDark-100 dark:text-mainDark-800 max-w-full overflow-x-auto overflow-y-hidden`,
+  tw`bg-mainLight-100 text-mainLight-800 dark:bg-mainDark-100 dark:text-mainDark-800 max-w-full overflow-x-auto overflow-y-hidden`,
   css`padding-top:${theme`spacing.header`};`,
 ]);
 
@@ -17,7 +17,7 @@ export const StyledToastContainer = styled(ToastContainer)`
     ${tw`bg-success`}
   }
   .Toastify__progress-bar{
-    ${tw`bg-mainLight-100`}
+    ${tw`bg-mainLight-800`}
   }
 `;
 

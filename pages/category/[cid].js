@@ -5,7 +5,7 @@ import capitalize from 'lodash/capitalize';
 import tw from 'twin.macro';
 import Query from '../../components/Query';
 import CATEGORY_ARTICLES_QUERY from '../../apollo/queries/category/articles';
-import { Container } from '../../components/styled';
+import { Container } from '../../components/styles';
 
 const Category = () => {
   const router = useRouter();

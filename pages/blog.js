@@ -7,7 +7,7 @@ import ARTICLES_QUERY from '../apollo/queries/article/articles';
 import { initializeApollo } from '../utils/apollo';
 import Card from '../components/BlogPosts/Card';
 import TitleBlock from '../components/Common/TitleBlock';
-import { Container, MainBg } from '../components/styled';
+import { Container, MainBg } from '../components/styles';
 
 function Blog({ articles }) {
   return (

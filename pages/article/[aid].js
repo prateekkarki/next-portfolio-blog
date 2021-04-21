@@ -8,7 +8,7 @@ import ARTICLE_QUERY from '../../apollo/queries/article/article';
 import ARTICLES_QUERY from '../../apollo/queries/article/articles';
 import ArticleTemplate from '../../components/BlogPosts/Article/ArticleTemplate';
 
-import { Container } from '../../components/styled';
+import { Container } from '../../components/styles';
 
 const SingleArticle = ({ articles }) => {
   const [postData, setPostData] = useState(null);

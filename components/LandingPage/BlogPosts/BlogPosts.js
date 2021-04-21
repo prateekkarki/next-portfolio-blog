@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import Card from '../../BlogPosts/Card';
 
-import { BigLink, Text, Title, Flex } from '../../styled';
+import { BigLink, Text, Title, Flex } from '../../styles';
 
 const BlogPosts = ({ articles }) => (
   <Flex>

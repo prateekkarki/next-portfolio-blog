@@ -7,7 +7,7 @@ import { Transition, TransitionGroup } from 'react-transition-group';
 import Header from './Header';
 import Footer from './Footer';
 
-import { StyledToastContainer, InnerContainer, MainContainer } from './styled';
+import { StyledToastContainer, InnerContainer, MainContainer } from './styles';
 
 import { useLocalStorage } from '../../../hooks';
 import { FullpageLoader, MetaHead } from '../..';

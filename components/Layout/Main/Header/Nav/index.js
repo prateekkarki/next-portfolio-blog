@@ -4,7 +4,7 @@ import { Squash as Hamburger } from 'hamburger-react';
 import Link from 'next/link';
 import tw, { theme } from 'twin.macro';
 import ActiveLink from './ActiveLink';
-import { MainNav, MobileNav, NavTrigger, MainLogo } from './styled';
+import { MainNav, MobileNav, NavTrigger, MainLogo } from './styles';
 import SettingButtons from './SettingButtons';
 
 const Nav = ({ isDark, onThemeToggle }) => {

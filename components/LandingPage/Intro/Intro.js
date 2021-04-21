@@ -5,7 +5,7 @@ import tw from 'twin.macro';
 
 import Programmer from './Programmer';
 import { IntroContainer, ButtonsHolder } from './intro.components';
-import { BigLink } from '../../styled';
+import { BigLink } from '../../styles';
 
 function Intro() {
   const introRef = useRef(null);

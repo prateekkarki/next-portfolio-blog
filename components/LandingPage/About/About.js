@@ -1,7 +1,7 @@
 import tw from 'twin.macro';
 import Link from 'next/link';
 import DevOnSofa from './DevOnSofa';
-import { BigLink, Text, Title, Flex } from '../../styled';
+import { BigLink, Text, Title, Flex } from '../../styles';
 
 function About() {
   return (

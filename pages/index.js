@@ -12,7 +12,7 @@ import Skewed from '../components/LandingPage/Skewed';
 import Intro from '../components/LandingPage/Intro/Intro';
 import About from '../components/LandingPage/About/About';
 import Contact from '../components/LandingPage/Contact/Contact';
-import { Container } from '../components/styled';
+import { Container } from '../components/styles';
 
 const Home = ({ articles }) => {
   const refs = {

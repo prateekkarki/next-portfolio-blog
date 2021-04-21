@@ -34,8 +34,7 @@ function Footer() {
   return (
     <footer
       css={tw`bg-mainLight-100 dark:bg-mainDark-100 
-        border-mainLight-200 dark:border-mainDark-100 
-        border-solid border-t-2 py-4 px-3 sm:px-0`}
+         py-4 px-3 sm:px-0`}
     >
       <div css={tw`bg-mainLight-100 dark:bg-mainDark-100`} />
       <div

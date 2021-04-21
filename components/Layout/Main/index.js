@@ -1,38 +1,16 @@
-import tw, { css, styled, GlobalStyles, theme } from 'twin.macro';
+import { GlobalStyles } from 'twin.macro';
 import anime from 'animejs';
-import { ToastContainer, Slide } from 'react-toastify';
+import { Slide } from 'react-toastify';
 
 import { Transition, TransitionGroup } from 'react-transition-group';
 
 import Header from './Header';
 import Footer from './Footer';
 
-import { useLocalStorage } from '../../hooks';
-import { FullpageLoader, MetaHead } from '..';
+import { StyledToastContainer, InnerContainer, MainContainer } from './styled';
 
-const Container = styled.div([
-  tw`bg-main-800 text-main-100 dark:bg-main-100 dark:text-main-800 max-w-full overflow-x-auto overflow-y-hidden`,
-  css`padding-top:${theme`spacing.header`};`,
-]);
-
-const StyledToastContainer = styled(ToastContainer)`
-  .Toastify__toast {
-    ${tw`rounded`}
-  }
-  .Toastify__toast--error{
-    ${tw`bg-secondary`}
-  }
-  .Toastify__toast--success{
-    ${tw`bg-success`}
-  }
-  .Toastify__progress-bar{
-    ${tw`bg-main-100`}
-  }
-`;
-
-const InnerContainer = styled.div(
-  css`min-height:calc(100vh - ${theme`spacing.header`} -  ${theme`spacing.footer`});`
-);
+import { useLocalStorage } from '../../../hooks';
+import { FullpageLoader, MetaHead } from '../..';
 
 const transitionConfig = {
   timeout: 650,
@@ -64,11 +42,11 @@ const transitionConfig = {
   },
 };
 
-function MainLayout({ children, pathname }) {
+function Main({ children, pathname }) {
   const [isDark, setIsDark] = useLocalStorage('isDark', false);
   return (
     <div className={isDark ? 'dark' : ''}>
-      <Container>
+      <MainContainer>
         <GlobalStyles />
         <MetaHead />
         <Header
@@ -100,9 +78,9 @@ function MainLayout({ children, pathname }) {
           pauseOnHover
           transition={Slide}
         />
-      </Container>
+      </MainContainer>
     </div>
   );
 }
 
-export default MainLayout;
+export default Main;

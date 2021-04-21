@@ -1,6 +1,6 @@
 import tw from 'twin.macro';
 
-import Nav from './Nav/Nav';
+import Nav from './Nav';
 
 function Header({ isDark, onThemeToggle }) {
   return (

@@ -9,7 +9,7 @@ import { BigLink, Text, Title, Flex } from '../../styled';
 const BlogPosts = ({ articles }) => (
   <Flex>
     <div
-      css={tw`text-center px-3 md:px-6 text-main-200 py-4 md:w-1/2 md:text-left`}
+      css={tw`text-center px-3 md:px-6 text-mainLight-200 py-4 md:w-1/2 md:text-left`}
       data-aos="fade-right"
     >
       <Title>Latest Posts</Title>

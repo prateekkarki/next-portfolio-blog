@@ -42,7 +42,7 @@ const Nav = ({ isDark, onThemeToggle }) => {
         <NavTrigger>
           <Hamburger
             tw="block sm:hidden"
-            color={theme`colors.main.200`}
+            color={theme`colors.mainDark.200`}
             rounded
             toggled={isExpanded}
             toggle={setExpanded}

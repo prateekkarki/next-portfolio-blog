@@ -9,7 +9,7 @@ import tw, { styled, css } from 'twin.macro';
 import CategoryToIcon from './CategoryToIcon';
 
 const Tag = tw.span`
-  bg-main-600 dark:bg-main-400 text-main-500 dark:text-main-600 
+  bg-mainLight-600 dark:bg-mainDark-400 text-mainLight-500 dark:text-mainDark-600 
   inline-block rounded-full 
   px-3 py-1 mr-2 mb-2
   text-sm font-semibold 
@@ -88,15 +88,15 @@ const Card = ({ article, dark }) => (
     <div
       css={
         dark
-          ? tw`bg-main-800 dark:bg-main-100 rounded-b-md`
-          : tw`bg-main-700 dark:bg-main-200 rounded-b-md`
+          ? tw`bg-mainLight-800 dark:bg-mainDark-100 rounded-b-md`
+          : tw`bg-mainLight-700 dark:bg-mainDark-200 rounded-b-md`
       }
     >
       <div css={tw`px-6 pt-4`}>
         <Link href="/article/[aid]" as={`/article/${article.slug}`} passHref>
           <a href="/article/[aid]" title={article.title}>
             <p
-              css={tw`font-bold text-main-200 dark:text-main-700 text-xl mb-0 truncate `}
+              css={tw`font-bold text-mainLight-200 dark:text-mainDark-700 text-xl mb-0 truncate `}
             >
               {truncate(article.title, {
                 length: 50,
@@ -107,7 +107,7 @@ const Card = ({ article, dark }) => (
         </Link>
       </div>
       <div css={tw`px-6 pb-2`}>
-        <p css={tw`text-main-400 dark:text-main-600`}>
+        <p css={tw`text-mainLight-400 dark:text-mainDark-600`}>
           {article.category?.name || ''}
         </p>
       </div>

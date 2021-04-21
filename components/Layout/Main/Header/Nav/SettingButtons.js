@@ -5,7 +5,7 @@ import { IoMdSunny, IoMdMoon } from 'react-icons/io';
 import { useHasMounted } from '../../../../../hooks';
 
 const SettingButton = styled.button(() => [
-  tw`font-medium hover:text-primary p-3 uppercase text-base text-main-200 dark:text-main-700`,
+  tw`font-medium hover:text-primary p-3 uppercase text-base text-mainLight-200 dark:text-mainDark-700`,
 ]);
 
 function SettingButtons({ isDark, onThemeToggle }) {

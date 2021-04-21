@@ -53,7 +53,7 @@ function ArticleTemplate({ postData }) {
         </div>
         <TitleBlock title={postData.title} subtitle={postData.description} />
       </div>
-      <div css={tw`bg-main-700`}>
+      <div css={tw`bg-mainLight-700`}>
         <div css={tw`container mx-auto px-3`}>
           <article css={css}>
             <Markdown
@@ -64,7 +64,7 @@ function ArticleTemplate({ postData }) {
             </Markdown>
 
             {postData.published_on && (
-              <p css={tw`pt-4 text-main-200`}>
+              <p css={tw`pt-4 text-mainLight-200`}>
                 Posted on:{' '}
                 <span css={tw`italic`}>
                   {format(new Date(postData.published_on), 'do MMM yyyy')}

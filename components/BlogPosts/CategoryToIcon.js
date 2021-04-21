@@ -27,7 +27,7 @@ function CategoryToIcon({ category }) {
   return (
     <div
       css={tw`
-        w-full h-64 text-center bg-main-200 rounded-t-md overflow-hidden
+        w-full h-64 text-center bg-mainLight-200 rounded-t-md overflow-hidden
       `}
     >
       {icon}

@@ -5,7 +5,7 @@ import { IoIosCloseCircle } from 'react-icons/io';
 import Modal from 'react-modal';
 
 const StyledModal = styled(Modal)`
-  ${tw`bg-main-700 w-11/12 mx-auto overflow-auto rounded-lg p-6`}
+  ${tw`bg-mainLight-700 w-11/12 mx-auto overflow-auto rounded-lg p-6`}
   border: 1px solid #ccc;
   overflow: auto;
   height: fit-content;
@@ -33,13 +33,13 @@ function Footer() {
   const el = useRef(null);
   return (
     <footer
-      css={tw`bg-main-800 dark:bg-main-100 
-        border-main-700 dark:border-main-100 
+      css={tw`bg-mainLight-800 dark:bg-mainDark-100 
+        border-mainLight-700 dark:border-mainDark-100 
         border-solid border-t-2 py-4 px-3 sm:px-0`}
     >
-      <div css={tw`bg-main-800 dark:bg-main-100`} />
+      <div css={tw`bg-mainLight-800 dark:bg-mainDark-100`} />
       <div
-        css={tw`container mx-auto text-main-100 dark:text-main-700 px-3`}
+        css={tw`container mx-auto text-mainLight-100 dark:text-mainDark-700 px-3`}
         ref={el}
       >
         <StyledModal
@@ -52,7 +52,9 @@ function Footer() {
           contentLabel="Resources"
         >
           <div css={tw`flex justify-between`}>
-            <h1 css={tw`font-bold text-2xl text-main-100 dark:text-main-700`}>
+            <h1
+              css={tw`font-bold text-2xl text-mainLight-100 dark:text-mainDark-700`}
+            >
               Credits
             </h1>
             <button
@@ -63,7 +65,7 @@ function Footer() {
               }}
             >
               <IoIosCloseCircle
-                css={tw`w-8 h-8 text-main-100 dark:text-main-700`}
+                css={tw`w-8 h-8 text-mainLight-100 dark:text-mainDark-700`}
               />
             </button>
           </div>
@@ -71,11 +73,13 @@ function Footer() {
             <div
               css={tw`mt-8 text-center sm:text-left sm:w-1/2 md:w-1/3 sm:inline-block`}
             >
-              <h2 css={tw`font-bold text-lg text-main-100 dark:text-main-700`}>
+              <h2
+                css={tw`font-bold text-lg text-mainLight-100 dark:text-mainDark-700`}
+              >
                 Frontend
               </h2>
               <ul>
-                <li css={tw`text-main-200`}>
+                <li css={tw`text-mainLight-200`}>
                   <a
                     target="_blank"
                     css={tw`text-primary`}
@@ -85,7 +89,7 @@ function Footer() {
                     NextJS
                   </a>
                 </li>
-                <li css={tw`text-main-200`}>
+                <li css={tw`text-mainLight-200`}>
                   <a
                     target="_blank"
                     rel="noreferrer"
@@ -95,7 +99,7 @@ function Footer() {
                     ReactJS
                   </a>
                 </li>
-                <li css={tw`text-main-200`}>
+                <li css={tw`text-mainLight-200`}>
                   <a
                     target="_blank"
                     css={tw`text-primary`}
@@ -110,11 +114,13 @@ function Footer() {
             <div
               css={tw`mt-8 text-center sm:text-left sm:w-1/2 md:w-1/3 sm:inline-block`}
             >
-              <h2 css={tw`font-bold text-lg text-main-100 dark:text-main-700`}>
+              <h2
+                css={tw`font-bold text-lg text-mainLight-100 dark:text-mainDark-700`}
+              >
                 Backend
               </h2>
               <ul>
-                <li css={tw`text-main-200`}>
+                <li css={tw`text-mainLight-200`}>
                   <a
                     target="_blank"
                     css={tw`text-primary`}
@@ -124,7 +130,7 @@ function Footer() {
                     GraphQL
                   </a>
                 </li>
-                <li css={tw`text-main-200`}>
+                <li css={tw`text-mainLight-200`}>
                   <a
                     target="_blank"
                     css={tw`text-primary`}
@@ -134,7 +140,7 @@ function Footer() {
                     Strapi
                   </a>
                 </li>
-                <li css={tw`text-main-200`}>
+                <li css={tw`text-mainLight-200`}>
                   <a
                     target="_blank"
                     css={tw`text-primary`}
@@ -144,7 +150,7 @@ function Footer() {
                     Netlify
                   </a>
                 </li>
-                <li css={tw`text-main-200`}>
+                <li css={tw`text-mainLight-200`}>
                   <a
                     target="_blank"
                     rel="noreferrer"
@@ -159,11 +165,13 @@ function Footer() {
             <div
               css={tw`mt-8 text-center sm:text-left sm:w-1/2 md:w-1/3 sm:inline-block`}
             >
-              <h2 css={tw`font-bold text-lg text-main-100 dark:text-main-700`}>
+              <h2
+                css={tw`font-bold text-lg text-mainLight-100 dark:text-mainDark-700`}
+              >
                 Graphics
               </h2>
               <ul>
-                <li css={tw`text-main-200`}>
+                <li css={tw`text-mainLight-200`}>
                   Programmer illustrations from{' '}
                   <a
                     target="_blank"

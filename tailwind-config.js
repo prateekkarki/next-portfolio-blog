@@ -31,7 +31,7 @@ module.exports = {
         primary: '#5398BE',
         secondary: '#E26D5A',
         success: '#5FA85F',
-        main: {
+        mainLight: {
           100: '#EDF6F9',
           200: '#C4DCE9',
           400: '#98AEC8',
@@ -39,6 +39,15 @@ module.exports = {
           600: '#2f3f54',
           700: '#1F2935',
           800: '#161D26',
+        },
+        mainDark: {
+          800: '#EDF6F9',
+          700: '#C4DCE9',
+          600: '#98AEC8',
+          500: '#597290',
+          400: '#2f3f54',
+          200: '#1F2935',
+          100: '#161D26',
         },
       },
     },

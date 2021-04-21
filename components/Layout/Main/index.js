@@ -43,7 +43,7 @@ const transitionConfig = {
 };
 
 function Main({ children, pathname }) {
-  const [isDark, setIsDark] = useLocalStorage('isDark', false);
+  const [isDark, setIsDark] = useLocalStorage('isDark', true);
   return (
     <div className={isDark ? 'dark' : ''}>
       <MainContainer>

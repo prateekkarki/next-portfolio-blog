@@ -1,7 +1,6 @@
-import { useContext } from 'react';
 import { GlobalStyles } from 'twin.macro';
 import { Slide } from 'react-toastify';
-
+import { useTheme } from 'next-themes';
 import { Transition, TransitionGroup } from 'react-transition-group';
 
 import Header from './Header';
@@ -10,21 +9,19 @@ import Footer from './Footer';
 import { StyledToastContainer, InnerContainer, MainContainer } from './styles';
 import transitionConfig from './styles/transitionConfig';
 
-import { ThemeContext } from '../../../utils/theme';
 import { FullpageLoader, MetaHead } from '../..';
 
 function Main({ children, pathname }) {
-  const { colorMode, setColorMode } = useContext(ThemeContext);
-  console.log(colorMode);
+  const { theme, setTheme } = useTheme();
   return (
-    <div className={colorMode}>
+    <div>
       <MainContainer>
         <GlobalStyles />
         <MetaHead />
         <Header
-          isDark={colorMode === 'dark'}
+          isDark={theme === 'dark'}
           onThemeToggle={() => {
-            setColorMode(colorMode === 'dark' ? 'light' : 'dark');
+            setTheme(theme === 'dark' ? 'light' : 'dark');
           }}
         />
         <TransitionGroup>

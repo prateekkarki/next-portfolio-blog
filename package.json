@@ -43,6 +43,7 @@
     "isomorphic-unfetch": "^3.0.0",
     "lodash": "^4.17.20",
     "next": "10.0.6",
+    "next-themes": "^0.0.14",
     "next-with-apollo": "^5.1.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",

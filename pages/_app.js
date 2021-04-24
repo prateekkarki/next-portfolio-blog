@@ -2,9 +2,8 @@ import { useEffect } from 'react';
 import { ApolloProvider } from '@apollo/react-hooks';
 
 import * as analytics from '../utils/analytics';
-
 import withApollo from '../utils/apollo';
-
+import { ThemeProvider } from '../utils/theme';
 import { MainLayout } from '../components';
 
 import '../assets/css/styles.css';
@@ -23,9 +22,11 @@ const App = ({ Component, pageProps, apollo, router }) => {
 
   return (
     <ApolloProvider client={apollo}>
-      <MainLayout pathname={router.pathname}>
-        <Component {...pageProps} />
-      </MainLayout>
+      <ThemeProvider>
+        <MainLayout pathname={router.pathname}>
+          <Component {...pageProps} />
+        </MainLayout>
+      </ThemeProvider>
     </ApolloProvider>
   );
 };

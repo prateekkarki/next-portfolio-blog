@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import { GlobalStyles } from 'twin.macro';
 import { Slide } from 'react-toastify';
 
@@ -9,20 +10,21 @@ import Footer from './Footer';
 import { StyledToastContainer, InnerContainer, MainContainer } from './styles';
 import transitionConfig from './styles/transitionConfig';
 
-import { useLocalStorage } from '../../../hooks';
+import { ThemeContext } from '../../../utils/theme';
 import { FullpageLoader, MetaHead } from '../..';
 
 function Main({ children, pathname }) {
-  const [isDark, setIsDark] = useLocalStorage('isDark', true);
+  const { colorMode, setColorMode } = useContext(ThemeContext);
+  console.log(colorMode);
   return (
-    <div className={isDark ? 'dark' : ''}>
+    <div className={colorMode}>
       <MainContainer>
         <GlobalStyles />
         <MetaHead />
         <Header
-          isDark={isDark}
+          isDark={colorMode === 'dark'}
           onThemeToggle={() => {
-            setIsDark(!isDark);
+            setColorMode(colorMode === 'dark' ? 'light' : 'dark');
           }}
         />
         <TransitionGroup>

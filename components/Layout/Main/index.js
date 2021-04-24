@@ -1,6 +1,5 @@
 import { GlobalStyles } from 'twin.macro';
 import { Slide } from 'react-toastify';
-import { useTheme } from 'next-themes';
 import { Transition, TransitionGroup } from 'react-transition-group';
 
 import Header from './Header';
@@ -12,18 +11,12 @@ import transitionConfig from './styles/transitionConfig';
 import { FullpageLoader, MetaHead } from '../..';
 
 function Main({ children, pathname }) {
-  const { theme, setTheme } = useTheme();
   return (
     <div>
       <MainContainer>
         <GlobalStyles />
         <MetaHead />
-        <Header
-          isDark={theme === 'dark'}
-          onThemeToggle={() => {
-            setTheme(theme === 'dark' ? 'light' : 'dark');
-          }}
-        />
+        <Header />
         <TransitionGroup>
           <Transition key={pathname} {...transitionConfig}>
             <InnerContainer>

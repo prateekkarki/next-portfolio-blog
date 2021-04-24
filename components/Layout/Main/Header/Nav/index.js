@@ -7,7 +7,7 @@ import ActiveLink from './ActiveLink';
 import { MainNav, MobileNav, NavTrigger, MainLogo } from './styles';
 import SettingButtons from './SettingButtons';
 
-const Nav = ({ isDark, onThemeToggle }) => {
+const Nav = () => {
   const [isExpanded, setExpanded] = useState(false);
   const AllLinks = () => (
     <Fragment>
@@ -17,7 +17,7 @@ const Nav = ({ isDark, onThemeToggle }) => {
       <ActiveLink href="/blog" as="/blog">
         Blog
       </ActiveLink>
-      <SettingButtons isDark={isDark} onThemeToggle={onThemeToggle} />
+      <SettingButtons />
     </Fragment>
   );
 

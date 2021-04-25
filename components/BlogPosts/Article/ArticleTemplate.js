@@ -5,15 +5,29 @@ import tw from 'twin.macro';
 import Markdown from 'react-markdown';
 import format from 'date-fns/format';
 import Head from 'next/head';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import syntaxTheme from 'react-syntax-highlighter/dist/cjs/styles/prism/atom-dark';
 import TitleBlock from '../../Common/TitleBlock';
 import BreadCrumbs from '../../Common/BreadCrumbs';
-import css from './ArticleTemplate.css';
+import style from './ArticleTemplate.css';
 
 function ArticleTemplate({ postData }) {
   const LinkRenderer = ({ href, children }) => (
     <a href={href} target="_blank" rel="noreferrer">
       {children}
     </a>
+  );
+  const SyntaxRenderer = ({ className, value, language, ...props }) => (
+    <SyntaxHighlighter
+      style={syntaxTheme}
+      language={language}
+      customStyle={{ background: 'rgb(22, 29, 38)' }}
+      className={className}
+      PreTag="div"
+      {...props}
+    >
+      {String(value).replace(/\n$/, '')}
+    </SyntaxHighlighter>
   );
 
   const tagsString = postData.tags.map((tag) => tag.name).join(', ');
@@ -52,9 +66,9 @@ function ArticleTemplate({ postData }) {
       </div>
       <div css={tw`bg-mainLight-200 dark:bg-mainDark-200`}>
         <div css={tw`container mx-auto px-3`}>
-          <article css={css}>
+          <article css={style}>
             <Markdown
-              renderers={{ link: LinkRenderer }}
+              renderers={{ code: SyntaxRenderer, link: LinkRenderer }}
               className="article-main"
             >
               {postData.content}

@@ -92,7 +92,6 @@ export default [
       code {
         color: ${theme`colors.mainDark.800`};
         background-color: ${theme`colors.mainDark.100`};
-        padding: 0px 0.375rem;
         border-radius: 0.375rem;
         &.language-js {
           padding: 1.25rem 0.75rem;

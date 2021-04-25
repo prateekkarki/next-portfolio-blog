@@ -1,16 +1,14 @@
 import { useState, Fragment } from 'react';
-import { Squash as Hamburger } from 'hamburger-react';
 
 import Link from 'next/link';
-import tw, { theme as twinTheme } from 'twin.macro';
-import { useTheme } from 'next-themes';
+import tw from 'twin.macro';
 import ActiveLink from './ActiveLink';
-import { MainNav, MobileNav, NavTrigger, MainLogo } from './styles';
+import { MainNav, MobileNav, MainLogo } from './styles';
 import SettingButtons from './SettingButtons';
+import Trigger from './Trigger';
 
 const Nav = () => {
   const [isExpanded, setExpanded] = useState(false);
-  const { theme } = useTheme();
   const AllLinks = () => (
     <Fragment>
       <ActiveLink href="/about" as="/about">
@@ -42,19 +40,7 @@ const Nav = () => {
             <AllLinks />
           </MainNav>
         </div>
-        <NavTrigger>
-          <Hamburger
-            tw="block sm:hidden"
-            color={
-              theme === 'dark'
-                ? twinTheme`colors.mainDark.700`
-                : twinTheme`colors.mainLight.700`
-            }
-            rounded
-            toggled={isExpanded}
-            toggle={setExpanded}
-          />
-        </NavTrigger>
+        <Trigger toggled={isExpanded} toggle={setExpanded} />
       </div>
 
       <MobileNav

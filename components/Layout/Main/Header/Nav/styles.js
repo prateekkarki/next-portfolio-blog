@@ -5,7 +5,7 @@ export const MainNav = styled.nav(
 );
 
 export const MobileNav = styled.nav(({ isExpanded }) => [
-  tw`flex sm:hidden w-full absolute bg-mainLight-200 text-lg flex-col items-center`,
+  tw`flex sm:hidden w-full absolute bg-mainLight-200 dark:bg-mainDark-200 text-lg flex-col items-center`,
   tw`transform ease-out transition-all z-0`,
   isExpanded ? tw`translate-y-0` : tw`-translate-y-full`,
   css`top: ${theme`spacing.header`}; transition-duration: 500ms;`,

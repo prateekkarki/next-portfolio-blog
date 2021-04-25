@@ -2,6 +2,29 @@ import { theme, css } from 'twin.macro';
 
 export default [
   css`
+    .dark &{
+      .article-main {
+        h1 {
+          border-bottom: 0.25rem solid ${theme`colors.mainDark.100`};
+        }
+        a {
+          color: ${theme`colors.primary`};
+          &:hover {
+            color: ${theme`colors.mainDark.100`};
+          }
+        }
+        pre {
+          background-color: ${theme`colors.mainDark.100`};
+        }
+        code {
+          color: ${theme`colors.mainDark.800`};
+          background-color: ${theme`colors.mainDark.100`};
+          &.language-js {
+            background-color: ${theme`colors.mainDark.100`};
+          }
+        }
+      }
+    }
     .article-main {
       padding-top: 1.5rem;
       p,

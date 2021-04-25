@@ -2,6 +2,7 @@
 import { useState, useEffect, Fragment } from 'react';
 import { useRouter } from 'next/router';
 import tw from 'twin.macro';
+import { DiscussionEmbed } from 'disqus-react';
 import { initializeApollo } from '../../utils/apollo';
 
 import ARTICLE_QUERY from '../../apollo/queries/article/article';
@@ -32,6 +33,18 @@ const SingleArticle = ({ articles }) => {
       {postData?.slug && (
         <Fragment>
           <ArticleTemplate postData={postData} />
+          <div css={tw`pt-16 bg-mainLight-500 dark:bg-mainDark-400`}>
+            <div css={tw`container mx-auto px-3`}>
+              <DiscussionEmbed
+                shortname={process.env.NEXT_PUBLIC_DISQUS_SHORTNAME}
+                config={{
+                  url: `${process.env.NEXT_PUBLIC_SITE_URL}/article/${postData.slug}`,
+                  identifier: `article-${postData.slug}`,
+                  title: postData.title,
+                }}
+              />
+            </div>
+          </div>
         </Fragment>
       )}
     </Fragment>

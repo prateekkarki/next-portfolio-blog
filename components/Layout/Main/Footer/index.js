@@ -5,7 +5,7 @@ import { IoIosCloseCircle } from 'react-icons/io';
 import Modal from 'react-modal';
 
 const StyledModal = styled(Modal)`
-  ${tw`bg-mainLight-200 w-11/12 mx-auto overflow-auto rounded-lg p-6`}
+  ${tw`bg-mainLight-200 dark:bg-mainDark-200 w-11/12 mx-auto overflow-auto rounded-lg p-6`}
   border: 1px solid #ccc;
   overflow: auto;
   height: fit-content;

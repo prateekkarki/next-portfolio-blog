@@ -5,9 +5,6 @@ import tw from 'twin.macro';
 import Markdown from 'react-markdown';
 import format from 'date-fns/format';
 import Head from 'next/head';
-
-import { DiscussionEmbed } from 'disqus-react';
-
 import TitleBlock from '../../Common/TitleBlock';
 import BreadCrumbs from '../../Common/BreadCrumbs';
 import css from './ArticleTemplate.css';
@@ -53,7 +50,7 @@ function ArticleTemplate({ postData }) {
         </div>
         <TitleBlock title={postData.title} subtitle={postData.description} />
       </div>
-      <div css={tw`bg-mainLight-200`}>
+      <div css={tw`bg-mainLight-200 dark:bg-mainDark-200`}>
         <div css={tw`container mx-auto px-3`}>
           <article css={css}>
             <Markdown
@@ -64,7 +61,7 @@ function ArticleTemplate({ postData }) {
             </Markdown>
 
             {postData.published_on && (
-              <p css={tw`pt-4 text-mainLight-700`}>
+              <p css={tw`pt-4 text-mainLight-700 dark:text-mainDark-700`}>
                 Posted on:{' '}
                 <span css={tw`italic`}>
                   {format(new Date(postData.published_on), 'do MMM yyyy')}
@@ -72,16 +69,6 @@ function ArticleTemplate({ postData }) {
               </p>
             )}
           </article>
-
-          <DiscussionEmbed
-            css={tw`pt-16`}
-            shortname={process.env.NEXT_PUBLIC_DISQUS_SHORTNAME}
-            config={{
-              url: `${process.env.NEXT_PUBLIC_SITE_URL}/article/${postData.slug}`,
-              identifier: `article-${postData.slug}`,
-              title: postData.title,
-            }}
-          />
         </div>
       </div>
     </Fragment>

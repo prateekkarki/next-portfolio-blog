@@ -9,7 +9,10 @@ function EachBlock({ path, title }) {
   return path ? (
     <Fragment>
       <Link href={path} as={path} passHref>
-        <a href={path} css={tw`text-mainLight-700 hover:text-primary font-bold`}>
+        <a
+          href={path}
+          css={tw`text-mainLight-700 dark:text-mainDark-700 hover:text-primary font-bold`}
+        >
           {title}
         </a>
       </Link>
@@ -23,8 +26,12 @@ function EachBlock({ path, title }) {
 function BreadCrumbs({ blocks }) {
   return (
     <div css={tw`flex items-center col-gap-2`}>
-      {blocks.map((block) => (
-        <EachBlock path={block.path} title={block.title} key={block.title} />
+      {blocks.map((block, i) => (
+        <EachBlock
+          path={block.path}
+          title={block.title}
+          key={block.title || i}
+        />
       ))}
     </div>
   );

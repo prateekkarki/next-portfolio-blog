@@ -2,11 +2,14 @@
 import { useState, useEffect, Fragment } from 'react';
 import { useRouter } from 'next/router';
 import tw from 'twin.macro';
+import { DiscussionEmbed } from 'disqus-react';
 import { initializeApollo } from '../../utils/apollo';
 
 import ARTICLE_QUERY from '../../apollo/queries/article/article';
 import ARTICLES_QUERY from '../../apollo/queries/article/articles';
 import ArticleTemplate from '../../components/BlogPosts/Article/ArticleTemplate';
+
+import { Container } from '../../components/styles';
 
 const SingleArticle = ({ articles }) => {
   const [postData, setPostData] = useState(null);
@@ -20,16 +23,28 @@ const SingleArticle = ({ articles }) => {
   return !router.query.aid ? null : (
     <Fragment>
       {!articles && (
-        <div css={tw`container mx-auto px-3`}>
+        <Container css={tw`px-3`}>
           <p css={tw`text-secondary text-center my-6`}>
             Looks like the article does not exist. Please checkout other
             sections of the website.
           </p>
-        </div>
+        </Container>
       )}
       {postData?.slug && (
         <Fragment>
           <ArticleTemplate postData={postData} />
+          <div css={tw`pt-16 bg-mainLight-500 dark:bg-mainDark-400`}>
+            <div css={tw`container mx-auto px-3`}>
+              <DiscussionEmbed
+                shortname={process.env.NEXT_PUBLIC_DISQUS_SHORTNAME}
+                config={{
+                  url: `${process.env.NEXT_PUBLIC_SITE_URL}/article/${postData.slug}`,
+                  identifier: `article-${postData.slug}`,
+                  title: postData.title,
+                }}
+              />
+            </div>
+          </div>
         </Fragment>
       )}
     </Fragment>

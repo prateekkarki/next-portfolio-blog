@@ -4,34 +4,11 @@ import PropTypes from 'prop-types';
 import truncate from 'lodash/truncate';
 
 import { Image, Placeholder, Transformation } from 'cloudinary-react';
-import tw, { styled, css } from 'twin.macro';
+import tw from 'twin.macro';
 
-import CategoryToIcon from './CategoryToIcon';
+import { ImageWindow, Tag } from './styles';
 
-const Tag = tw.span`
-  inline-block bg-main-600 rounded-full 
-  px-3 py-1 mr-2 mb-2
-  text-sm font-semibold text-main-500 
-`;
-
-const ImageWindow = styled.div([
-  tw`rounded-t-md w-full h-64 overflow-hidden cursor-pointer`,
-  css`
-    img {
-      width: 100%;
-      height: 16rem;
-      object-fit: cover;
-      object-position: center;
-      transition: all 500ms cubic-bezier(0, 0, 0.2, 1);
-      border-top-left-radius: 0.375rem;
-      border-top-right-radius: 0.375rem;
-      transform-origin: center;
-      &:hover {
-        transform: scale(1.25);
-      }
-    }
-  `,
-]);
+import TagToIcon from './TagToIcon';
 
 const Card = ({ article, dark }) => (
   <div css={tw`w-full overflow-hidden shadow-md hover:shadow-lg`}>
@@ -80,17 +57,23 @@ const Card = ({ article, dark }) => (
         title={article.title}
       >
         <a>
-          <CategoryToIcon category={article.category} />
+          <TagToIcon tags={article.tags} />
         </a>
       </Link>
     )}
     <div
-      css={dark ? tw`bg-main-800 rounded-b-md` : tw`bg-main-700 rounded-b-md`}
+      css={
+        dark
+          ? tw`bg-mainLight-100 dark:bg-mainDark-100 rounded-b-md`
+          : tw`bg-mainLight-200 dark:bg-mainDark-200 rounded-b-md`
+      }
     >
       <div css={tw`px-6 pt-4`}>
         <Link href="/article/[aid]" as={`/article/${article.slug}`} passHref>
           <a href="/article/[aid]" title={article.title}>
-            <p css={tw`font-bold text-main-200 text-xl mb-0 truncate `}>
+            <p
+              css={tw`font-bold text-mainLight-700 dark:text-mainDark-700 text-xl mb-0 truncate `}
+            >
               {truncate(article.title, {
                 length: 50,
                 omission: '...',
@@ -100,7 +83,9 @@ const Card = ({ article, dark }) => (
         </Link>
       </div>
       <div css={tw`px-6 pb-2`}>
-        <p css={tw`text-main-400`}>{article.category?.name || ''}</p>
+        <p css={tw`text-mainLight-600 dark:text-mainDark-600`}>
+          {article.category?.name || ''}
+        </p>
       </div>
       <div css={tw`px-6 pb-2 mt-4`}>
         {article.tags.map((tag) => (

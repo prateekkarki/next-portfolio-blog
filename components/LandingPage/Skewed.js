@@ -8,7 +8,7 @@ function Skewed({ children }) {
     <Fragment>
       <div
         css={[
-          tw`absolute w-full h-full bg-main-700`,
+          tw`absolute w-full h-full bg-mainLight-200 dark:bg-mainDark-200`,
           css`
             transform: skewY(-5deg);
           `,

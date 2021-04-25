@@ -6,7 +6,7 @@ function ScrollToTop() {
   return (
     <Scroller showUnder={160} style={{ zIndex: 5 }}>
       <div
-        css={tw`z-20 rounded-full p-4 bg-main-200 text-main-800 hover:(bg-primary text-main-200)`}
+        css={tw`z-20 rounded-full p-4 bg-mainLight-700 text-mainLight-100 hover:(bg-primary text-mainLight-700)`}
       >
         <FaArrowUp css={tw`w-8 h-8`} />
       </div>

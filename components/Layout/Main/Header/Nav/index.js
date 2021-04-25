@@ -1,11 +1,11 @@
 import { useState, Fragment } from 'react';
-import { Squash as Hamburger } from 'hamburger-react';
 
 import Link from 'next/link';
-import tw, { theme } from 'twin.macro';
+import tw from 'twin.macro';
 import ActiveLink from './ActiveLink';
-import { MainNav, MobileNav, NavTrigger, MainLogo } from './styled';
-// import SettingButtons from './SettingButtons';
+import { MainNav, MobileNav, MainLogo } from './styles';
+import SettingButtons from './SettingButtons';
+import Trigger from './Trigger';
 
 const Nav = () => {
   const [isExpanded, setExpanded] = useState(false);
@@ -17,7 +17,7 @@ const Nav = () => {
       <ActiveLink href="/blog" as="/blog">
         Blog
       </ActiveLink>
-      {/* <SettingButtons /> */}
+      <SettingButtons />
     </Fragment>
   );
 
@@ -25,7 +25,8 @@ const Nav = () => {
     <Fragment>
       <div
         css={tw`
-          container bg-main-700 relative mx-auto px-3
+          bg-mainLight-200 dark:bg-mainDark-200 
+          container relative mx-auto px-3
           flex flex-row items-center justify-between py-4 z-10
         `}
       >
@@ -39,15 +40,7 @@ const Nav = () => {
             <AllLinks />
           </MainNav>
         </div>
-        <NavTrigger>
-          <Hamburger
-            tw="block sm:hidden"
-            color={theme`colors.main.200`}
-            rounded
-            toggled={isExpanded}
-            toggle={setExpanded}
-          />
-        </NavTrigger>
+        <Trigger toggled={isExpanded} toggle={setExpanded} />
       </div>
 
       <MobileNav

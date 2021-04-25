@@ -1,19 +1,26 @@
 import tw, { css, styled } from 'twin.macro';
 
 export const Title = tw.h1`
-  font-bold text-main-100 whitespace-nowrap 
+  font-bold text-mainLight-800 dark:text-mainDark-800 whitespace-nowrap 
   text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-huge
 `;
 
+export const Flex = tw.div`block md:flex`;
+
+export const Container = tw.div`container mx-auto`;
+
+export const MainBg = tw.div`bg-mainLight-200 dark:bg-mainDark-200`;
+
 export const Text = styled.p([
-  tw`mt-6 text-main-400 text-sm md:text-base lg:text-lg leading-7`,
+  tw`mt-6 text-mainLight-600 dark:text-mainDark-600 
+  text-sm md:text-base lg:text-lg leading-7`,
 ]);
 
 const inputStyles = ({ hasError }) => [
   tw`
-    appearance-none block w-full bg-main-200
-    text-gray-700 border border-main-200 rounded py-3 px-4 mb-3
-    leading-tight focus:bg-main-100
+    appearance-none block w-full
+    bg-mainLight-100 border-mainLight-400 
+    text-gray-700 border rounded py-3 px-4 mb-3 leading-tight
     transform duration-200 ease-in-out focus:(translate-x-1)
   `,
   hasError && tw`border-secondary`,
@@ -32,7 +39,7 @@ const buttonStyles = ({ variant }) => [
     div {
       ${tw`
         relative overflow-hidden
-        font-semibold text-base text-main-100 text-center
+        font-semibold text-base text-mainLight-100 text-center
         w-40 py-4 block rounded-full
         transform transition-all duration-200 ease-in-out translate-y-0
       `}
@@ -42,7 +49,7 @@ const buttonStyles = ({ variant }) => [
       ${!variant && tw`bg-primary `}
 
       &:after {
-        ${tw`bg-main-100 absolute top-0 opacity-25 `}
+        ${tw`bg-mainLight-100 absolute top-0 opacity-25 `}
         content: '';
         left: -60%;
         width: 50%;

@@ -1,6 +1,6 @@
-import { css, theme } from 'twin.macro';
+import { css, theme, styled } from 'twin.macro';
 
-export default css`
+export default styled.div(css`
   .vertical-timeline {
     * {
       box-sizing: border-box;
@@ -155,7 +155,7 @@ export default css`
     background: ${theme`colors.white`};
     border-radius: 0.25em;
     padding: 1em;
-    box-shadow: 0 3px 0 ${theme`colors.main.100`};
+    box-shadow: 0 3px 0 ${theme`colors.mainDark.100`};
   }
 
   .vertical-timeline--one-column-right .vertical-timeline-element-content {
@@ -176,13 +176,10 @@ export default css`
     }
 
     .vertical-timeline-element-date {
+      display: inline-block;
       font-size: 13px;
       font-size: 0.8125rem;
       font-weight: 500;
-    }
-
-    .vertical-timeline-element-date {
-      display: inline-block;
     }
   }
 
@@ -364,4 +361,4 @@ export default css`
       transform: translateX(0);
     }
   }
-`;
+`);

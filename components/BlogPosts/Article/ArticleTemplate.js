@@ -5,18 +5,29 @@ import tw from 'twin.macro';
 import Markdown from 'react-markdown';
 import format from 'date-fns/format';
 import Head from 'next/head';
-
-import { DiscussionEmbed } from 'disqus-react';
-
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import syntaxTheme from 'react-syntax-highlighter/dist/cjs/styles/prism/atom-dark';
 import TitleBlock from '../../Common/TitleBlock';
 import BreadCrumbs from '../../Common/BreadCrumbs';
-import css from './ArticleTemplate.css';
+import style from './ArticleTemplate.css';
 
 function ArticleTemplate({ postData }) {
   const LinkRenderer = ({ href, children }) => (
     <a href={href} target="_blank" rel="noreferrer">
       {children}
     </a>
+  );
+  const SyntaxRenderer = ({ className, value, language, ...props }) => (
+    <SyntaxHighlighter
+      style={syntaxTheme}
+      language={language}
+      customStyle={{ background: 'rgb(22, 29, 38)' }}
+      className={className}
+      PreTag="div"
+      {...props}
+    >
+      {String(value).replace(/\n$/, '')}
+    </SyntaxHighlighter>
   );
 
   const tagsString = postData.tags.map((tag) => tag.name).join(', ');
@@ -53,18 +64,18 @@ function ArticleTemplate({ postData }) {
         </div>
         <TitleBlock title={postData.title} subtitle={postData.description} />
       </div>
-      <div css={tw`bg-main-700`}>
+      <div css={tw`bg-mainLight-200 dark:bg-mainDark-200`}>
         <div css={tw`container mx-auto px-3`}>
-          <article css={css}>
+          <article css={style}>
             <Markdown
-              renderers={{ link: LinkRenderer }}
+              renderers={{ code: SyntaxRenderer, link: LinkRenderer }}
               className="article-main"
             >
               {postData.content}
             </Markdown>
 
             {postData.published_on && (
-              <p css={tw`pt-4 text-main-200`}>
+              <p css={tw`pt-4 text-mainLight-700 dark:text-mainDark-700`}>
                 Posted on:{' '}
                 <span css={tw`italic`}>
                   {format(new Date(postData.published_on), 'do MMM yyyy')}
@@ -72,16 +83,6 @@ function ArticleTemplate({ postData }) {
               </p>
             )}
           </article>
-
-          <DiscussionEmbed
-            css={tw`pt-16`}
-            shortname={process.env.NEXT_PUBLIC_DISQUS_SHORTNAME}
-            config={{
-              url: `${process.env.NEXT_PUBLIC_SITE_URL}/article/${postData.slug}`,
-              identifier: `article-${postData.slug}`,
-              title: postData.title,
-            }}
-          />
         </div>
       </div>
     </Fragment>

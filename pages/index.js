@@ -12,6 +12,7 @@ import Skewed from '../components/LandingPage/Skewed';
 import Intro from '../components/LandingPage/Intro/Intro';
 import About from '../components/LandingPage/About/About';
 import Contact from '../components/LandingPage/Contact/Contact';
+import { Container } from '../components/styles';
 
 const Home = ({ articles }) => {
   const refs = {
@@ -39,7 +40,7 @@ const Home = ({ articles }) => {
   });
 
   return (
-    <div css={tw`bg-main-800`} ref={refs.home}>
+    <div css={tw`bg-mainLight-100 dark:bg-mainDark-100`} ref={refs.home}>
       <Intro />
 
       <div css={[tw`relative my-16`]} ref={refs.about}>
@@ -48,9 +49,9 @@ const Home = ({ articles }) => {
         </Skewed>
       </div>
 
-      <div css={tw`container mx-auto`}>
+      <Container>
         <BlogPosts articles={articles} />
-      </div>
+      </Container>
 
       <div css={[tw`relative my-16`]} ref={refs.contact}>
         <Skewed>

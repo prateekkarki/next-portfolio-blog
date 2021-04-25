@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
 import tw, { styled } from 'twin.macro';
 
 import { IoMdSunny, IoMdMoon } from 'react-icons/io';
@@ -13,15 +13,20 @@ function SettingButtons() {
   const hasMounted = useHasMounted();
   const { theme, setTheme } = useTheme();
 
-  const isDark = theme === 'dark';
   const onThemeToggle = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
+  useEffect(() => {
+    if (theme === 'system') {
+      setTheme('dark');
+    }
+  }, [theme]);
+
   return !hasMounted ? null : (
     <Fragment>
       <SettingButton onClick={onThemeToggle}>
-        {isDark ? <IoMdMoon /> : <IoMdSunny />}
+        {theme === 'dark' ? <IoMdMoon /> : <IoMdSunny />}
       </SettingButton>
     </Fragment>
   );

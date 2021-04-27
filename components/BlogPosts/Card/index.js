@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import truncate from 'lodash/truncate';
 
 import { Image, Placeholder, Transformation } from 'cloudinary-react';
-import tw from 'twin.macro';
+import tw, { css } from 'twin.macro';
 
 import { ImageWindow, Tag } from './styles';
 
@@ -62,11 +62,12 @@ const Card = ({ article, dark }) => (
       </Link>
     )}
     <div
-      css={
+      css={[
         dark
           ? tw`bg-mainLight-100 dark:bg-mainDark-100 rounded-b-md`
-          : tw`bg-mainLight-200 dark:bg-mainDark-200 rounded-b-md`
-      }
+          : tw`bg-mainLight-200 dark:bg-mainDark-200 rounded-b-md`,
+        css`height:calc(100% - 16rem);`,
+      ]}
     >
       <div css={tw`px-6 pt-4`}>
         <Link href="/article/[aid]" as={`/article/${article.slug}`} passHref>

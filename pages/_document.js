@@ -6,6 +6,8 @@ import { GA_TRACKING_ID } from '../utils/analytics';
 const Body = styled.body([
   tw`overflow-x-hidden`,
   css`
+    font-family: 'Poppins', sans-serif;
+    
     ::-webkit-scrollbar {
       width: 14px;
     }
@@ -33,7 +35,17 @@ class MyDocument extends Document {
   render() {
     return (
       <StyledHtml lang="en">
-        <Head>
+        <Head />
+        <Body>
+          <Main />
+          <NextScript />
+          <script
+            type="text/javascript"
+            id="hs-script-loader"
+            async
+            defer
+            src="https://js.hs-scripts.com/9390117.js"
+          />
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async
@@ -51,17 +63,6 @@ class MyDocument extends Document {
                 });
               `,
             }}
-          />
-        </Head>
-        <Body>
-          <Main />
-          <NextScript />
-          <script
-            type="text/javascript"
-            id="hs-script-loader"
-            async
-            defer
-            src="https://js.hs-scripts.com/9390117.js"
           />
         </Body>
       </StyledHtml>

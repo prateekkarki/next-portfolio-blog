@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import tw, { styled } from 'twin.macro';
 import Link from 'next/link';
@@ -8,8 +7,10 @@ const ActiveLink = (props) => {
   const { as, children } = props;
 
   const NavLink = styled.a(({ isActive }) => [
-    tw`font-medium hover:text-primary p-3 uppercase text-base`,
-    isActive ? tw`text-primary` : tw`text-mainLight-700 dark:text-mainDark-700`,
+    isActive
+      ? tw`text-primary`
+      : tw`text-mainLight-600 dark:text-mainDark-600 hover:(text-mainLight-800 dark:text-mainDark-800)`,
+    tw`font-medium p-3 uppercase text-base`,
   ]);
 
   return (
@@ -18,10 +19,4 @@ const ActiveLink = (props) => {
     </Link>
   );
 };
-
-ActiveLink.propTypes = {
-  as: PropTypes.string.isRequired,
-  children: PropTypes.string.isRequired,
-};
-
 export default ActiveLink;

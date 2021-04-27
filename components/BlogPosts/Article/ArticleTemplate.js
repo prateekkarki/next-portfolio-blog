@@ -5,8 +5,11 @@ import tw from 'twin.macro';
 import Markdown from 'react-markdown';
 import format from 'date-fns/format';
 import Head from 'next/head';
+import { useTheme } from 'next-themes';
+
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import syntaxTheme from 'react-syntax-highlighter/dist/cjs/styles/prism/atom-dark';
+import syntaxThemeDark from 'react-syntax-highlighter/dist/cjs/styles/prism/material-dark';
+import syntaxThemeLight from 'react-syntax-highlighter/dist/cjs/styles/prism/material-light';
 import TitleBlock from '../../Common/TitleBlock';
 import BreadCrumbs from '../../Common/BreadCrumbs';
 import style from './ArticleTemplate.css';
@@ -17,11 +20,12 @@ function ArticleTemplate({ postData }) {
       {children}
     </a>
   );
+  const { theme } = useTheme();
   const SyntaxRenderer = ({ className, value, language, ...props }) => (
     <SyntaxHighlighter
-      style={syntaxTheme}
+      style={theme === 'dark' ? syntaxThemeDark : syntaxThemeLight}
       language={language}
-      customStyle={{ background: 'rgb(22, 29, 38)' }}
+      customStyle={{ background: theme === 'dark' ? '#2f2f2f' : '#fafafa' }}
       className={className}
       PreTag="div"
       {...props}

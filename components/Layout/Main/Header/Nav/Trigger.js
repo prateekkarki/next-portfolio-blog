@@ -3,9 +3,8 @@ import { Squash as Hamburger } from 'hamburger-react';
 import { theme as twinTheme } from 'twin.macro';
 
 import { useTheme } from 'next-themes';
+import { useHasMounted } from 'hooks';
 import { NavTrigger } from './styles';
-
-import { useHasMounted } from '../../../../../hooks';
 
 function Trigger({ toggled, toggle }) {
   const { theme } = useTheme();

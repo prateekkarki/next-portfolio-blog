@@ -22,7 +22,7 @@ const App = ({ Component, pageProps, apollo, router }) => {
 
   return (
     <ApolloProvider client={apollo}>
-      <ThemeProvider attribute="class">
+      <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
         <MainLayout pathname={router.pathname}>
           <Component {...pageProps} />
         </MainLayout>

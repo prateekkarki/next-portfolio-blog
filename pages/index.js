@@ -4,15 +4,15 @@ import tw from 'twin.macro';
 import PropTypes from 'prop-types';
 import AOS from 'aos';
 
-import { LANDING_PAGE_POSTS } from '../apollo/queries/article/articles';
-import { initializeApollo } from '../utils/apollo';
+import { LANDING_PAGE_POSTS } from 'apollo/queries/article/articles';
+import { initializeApollo } from 'utils/apollo';
 
-import BlogPosts from '../components/LandingPage/BlogPosts/BlogPosts';
-import Skewed from '../components/LandingPage/Skewed';
-import Intro from '../components/LandingPage/Intro/Intro';
-import About from '../components/LandingPage/About/About';
-import Contact from '../components/LandingPage/Contact/Contact';
-import { Container } from '../components/styles';
+import BlogPosts from 'components/LandingPage/BlogPosts/BlogPosts';
+import Skewed from 'components/LandingPage/Skewed';
+import Intro from 'components/LandingPage/Intro/Intro';
+import About from 'components/LandingPage/About/About';
+import Contact from 'components/LandingPage/Contact/Contact';
+import { Container } from 'components/styles';
 
 const Home = ({ articles }) => {
   const refs = {

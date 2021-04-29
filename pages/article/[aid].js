@@ -3,13 +3,13 @@ import { useState, useEffect, Fragment } from 'react';
 import { useRouter } from 'next/router';
 import tw from 'twin.macro';
 import { DiscussionEmbed } from 'disqus-react';
-import { initializeApollo } from '../../utils/apollo';
+import { initializeApollo } from 'utils/apollo';
 
-import ARTICLE_QUERY from '../../apollo/queries/article/article';
-import ARTICLES_QUERY from '../../apollo/queries/article/articles';
-import ArticleTemplate from '../../components/BlogPosts/Article/ArticleTemplate';
+import ARTICLE_QUERY from 'apollo/queries/article/article';
+import ARTICLES_QUERY from 'apollo/queries/article/articles';
+import ArticleTemplate from 'components/BlogPosts/Article/ArticleTemplate';
 
-import { Container } from '../../components/styles';
+import { Container } from 'components/styles';
 
 const SingleArticle = ({ articles }) => {
   const [postData, setPostData] = useState(null);

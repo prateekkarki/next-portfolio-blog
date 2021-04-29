@@ -30,7 +30,7 @@ module.exports = {
     'comma-dangle': 0,
     'linebreak-style': 0,
     'no-tabs': 0,
-    indent: 0,
+    'import/no-unresolved': 0,
     'react/jsx-filename-extension': 0,
     'react/jsx-indent': 0,
     'react/jsx-indent-props': 0,

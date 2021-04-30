@@ -10,7 +10,7 @@ import {
   ContactTextarea,
   BigButton,
   ContactLabel,
-} from '../../styles';
+} from 'components/styles';
 
 function ContactForm() {
   const { register, handleSubmit, errors, reset } = useForm({

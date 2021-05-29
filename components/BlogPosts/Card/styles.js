@@ -10,7 +10,7 @@ export const Tag = tw.span`
 export const iconStyle = [
   tw`
     h-64 w-full mx-auto origin-center
-    transition-all duration-500 ease-out transform hover:scale-125
+    transition-all duration-500 ease-out transform 
   `,
   css`
     &:hover {
@@ -20,14 +20,14 @@ export const iconStyle = [
 ];
 
 export const IconContainer = tw.div`
-  w-full h-64 text-center
+  w-full text-center aspect-ratio[16 / 9] relative
   bg-mainLight-400 dark:bg-mainDark-400 
   text-mainLight-800 dark:text-mainDark-800 
   rounded-t-md overflow-hidden
 `;
 
 export const ImageWindow = styled.div([
-  tw`rounded-t-md w-full overflow-hidden cursor-pointer`,
+  tw`rounded-t-md w-full overflow-hidden cursor-pointer relative`,
   css`
     aspect-ratio: 16 / 9;
     svg {

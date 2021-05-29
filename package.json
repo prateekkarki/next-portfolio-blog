@@ -11,7 +11,7 @@
   },
   "babelMacros": {
     "twin": {
-      "config": "tailwind-config.js",
+      "config": "tailwind.config.js",
       "preset": "emotion",
       "dataTwProp": true,
       "debugPlugins": false,
@@ -32,7 +32,6 @@
     "apollo-link-http": "^1.5.17",
     "axios": "^0.21.1",
     "babel-plugin-macros": "^2.8.0",
-    "cloudinary-react": "^1.6.6",
     "date-fns": "^2.16.1",
     "disqus-react": "^1.0.10",
     "dotenv": "^8.2.0",

@@ -1,5 +1,5 @@
 import { DiSass, DiReact, DiJavascript1, DiDatabase } from 'react-icons/di';
-import { iconStyle } from './styles';
+import { iconStyle } from '../styles';
 
 export default {
   react: <DiReact css={iconStyle} />,

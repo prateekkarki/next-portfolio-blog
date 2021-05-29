@@ -1,6 +1,6 @@
 import { CgCodeSlash } from 'react-icons/cg';
 import intersection from 'lodash/intersection';
-import { iconStyle, IconContainer } from './styles';
+import { iconStyle, IconContainer } from '../styles';
 import tagsToIconConfig from './tagsToIconConfig';
 
 function TagToIcon({ tags }) {

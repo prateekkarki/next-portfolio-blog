@@ -1,9 +1,9 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
 
-import TitleBlock from '../components/Common/TitleBlock';
-import Timeline from '../components/AboutPage/Timeline/index';
-import { Container, MainBg } from '../components/styles';
+import TitleBlock from 'components/Common/TitleBlock';
+import Timeline from 'components/pages/AboutPage/Timeline';
+import { Container, MainBg } from 'components/styles';
 
 function about() {
   return (

@@ -8,7 +8,7 @@ function TitleBlock({ title, subtitle }) {
       <h1 css={tw`font-bold text-primary text-5xl`}>{title}</h1>
       <p
         css={[
-          tw`mt-2 mb-4 font-normal text-base text-mainLight-700 dark:text-mainDark-700`,
+          tw`mt-6 mb-4 font-normal text-base text-mainLight-700 dark:text-mainDark-700`,
           css`
             letter-spacing: 0.5px;
             line-height: 19.2px;
@@ -17,7 +17,7 @@ function TitleBlock({ title, subtitle }) {
       >
         {subtitle}
       </p>
-      <div css={tw`w-64 relative h-6 mt-2`}>
+      <div css={tw`w-64 relative h-6 mt-6`}>
         <div
           css={[
             tw`w-full absolute top-0 bg-primary rounded-full h-1`,

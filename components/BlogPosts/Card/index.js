@@ -11,8 +11,8 @@ import TagToIcon from './TagToIcon';
 
 const Card = ({ article, dark }) => (
   <Link href="/article/[aid]" passHref as={`/article/${article.slug}`}>
-    <a href={`/article/${article.slug}`} title={article.title}>
-      <CardContainer>
+    <a href={`/article/${article.slug}`} title={article.title} tw="max-w-full">
+      <CardContainer dark={dark}>
         <Fragment>
           {article.thumbnail && (
             <ImageWindow>
@@ -33,17 +33,10 @@ const Card = ({ article, dark }) => (
           )}
         </Fragment>
         {!article.thumbnail && <TagToIcon tags={article.tags} />}
-        <div
-          css={[
-            dark
-              ? tw`bg-mainLight-100 dark:bg-mainDark-100 rounded-b-md`
-              : tw`bg-mainLight-200 dark:bg-mainDark-200 rounded-b-md`,
-            css`height:calc(100% - 16rem);`,
-          ]}
-        >
+        <div css={[css`height:calc(100% - 16rem);`]}>
           <div css={tw`px-6 pt-4`}>
             <p
-              css={tw`font-bold text-mainLight-700 dark:text-mainDark-700 text-xl mb-0 truncate `}
+              css={tw`font-bold text-mainLight-700 dark:text-mainDark-700 text-xl mb-0`}
             >
               {article.title}
             </p>

@@ -13,6 +13,7 @@ export const iconStyle = [
     transition-all duration-500 ease-out transform 
   `,
   css`
+    max-height: 100%;
     &:hover {
       transform: scale(1.1);
     }
@@ -31,7 +32,7 @@ export const ImageWindow = styled.div([
   css`
     aspect-ratio: 16 / 9;
     svg {
-      width: 100%;
+      width: 100%; 
       aspect-ratio: 16 / 9;
     }
     img {
@@ -50,8 +51,15 @@ export const ImageWindow = styled.div([
   `,
 ]);
 
-export const CardContainer = styled.div([
-  tw`w-full overflow-hidden shadow-md hover:shadow-lg cursor-pointer`,
+export const CardContainer = styled.div(({ dark }) => [
+  tw`w-full overflow-hidden shadow-md hover:shadow-lg cursor-pointer
+    rounded-b-md rounded-t-md h-full
+  `,
+
+  dark
+    ? tw`bg-mainLight-100 dark:bg-mainDark-100`
+    : tw`bg-mainLight-200 dark:bg-mainDark-200`,
+
   css`
     &:hover {
       ${ImageWindow} {

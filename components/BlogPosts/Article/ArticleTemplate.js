@@ -69,7 +69,7 @@ function ArticleTemplate({ postData }) {
         <TitleBlock title={postData.title} subtitle={postData.description} />
       </div>
       <div css={tw`bg-mainLight-200 dark:bg-mainDark-200`}>
-        <div css={tw`container mx-auto px-3`}>
+        <div css={tw`container mx-auto px-3 pb-6`}>
           <article css={style}>
             <Markdown
               renderers={{ code: SyntaxRenderer, link: LinkRenderer }}

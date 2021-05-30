@@ -31,9 +31,10 @@ function ArticleTemplate({ postData }) {
         customStyle={{ background: theme === 'dark' ? '#2f2f2f' : '#fafafa' }}
         className={className}
         PreTag="div"
-        children={String(children).replace(/\n$/, '')} 
         {...props}
-      />
+      >
+        {String(children).replace(/\n$/, '')}
+      </SyntaxHighlighter>
     );
   };
 

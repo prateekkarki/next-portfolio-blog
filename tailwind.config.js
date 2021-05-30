@@ -14,7 +14,7 @@ module.exports = {
       },
       spacing: {
         header: '5rem',
-        footer: '58px',
+        footer: '56px',
       },
       fontSize: {
         huge: '6rem',

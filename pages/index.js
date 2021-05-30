@@ -7,12 +7,12 @@ import AOS from 'aos';
 import { LANDING_PAGE_POSTS } from 'apollo/queries/article/articles';
 import { initializeApollo } from 'utils/apollo';
 
-import BlogPosts from 'components/LandingPage/BlogPosts/BlogPosts';
-import Skewed from 'components/LandingPage/Skewed';
-import Intro from 'components/LandingPage/Intro/Intro';
-import About from 'components/LandingPage/About/About';
-import Contact from 'components/LandingPage/Contact/Contact';
 import { Container } from 'components/styles';
+import BlogPosts from 'components/pages/LandingPage/BlogPosts/BlogPosts';
+import Skewed from 'components/pages/LandingPage/Skewed';
+import Intro from 'components/pages/LandingPage/Intro/Intro';
+import About from 'components/pages/LandingPage/About/About';
+import Contact from 'components/pages/LandingPage/Contact/Contact';
 
 const Home = ({ articles }) => {
   const refs = {

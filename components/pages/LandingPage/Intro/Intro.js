@@ -4,9 +4,9 @@ import Link from 'next/link';
 import tw from 'twin.macro';
 
 import { useHasMounted } from 'hooks';
+import { BigLink, Text } from 'components/styles';
 import Programmer from './Programmer';
-import { IntroContainer, ButtonsHolder } from './intro.components';
-import { BigLink } from '../../styles';
+import { IntroContainer, ButtonsHolder } from './styles';
 
 function Intro() {
   const introRef = useRef(null);
@@ -15,13 +15,13 @@ function Intro() {
 
   useEffect(() => {
     if (hasMounted) {
-      anime({
-        targets: introRef.current.querySelectorAll('p'),
-        translateY: ['100%', 0],
-        easing: 'easeInOutQuad',
-        duration: 800,
-        delay: anime.stagger(250, { start: 500 }),
-      });
+      // anime({
+      //   targets: introRef.current.querySelectorAll('p'),
+      //   translateY: ['100%', 0],
+      //   easing: 'easeInOutQuad',
+      //   duration: 800,
+      //   delay: anime.stagger(250, { start: 500 }),
+      // });
       anime({
         targets: buttonsHolder.current,
         scale: [0, 1],
@@ -46,16 +46,18 @@ function Intro() {
               css={tw`w-full px-3 md:w-1/2 text-center md:text-left`}
             >
               <div css={tw`overflow-y-hidden`}>
-                <p css={tw`text-primary font-semibold text-2xl`}>
-                  Hello, I&apos;m{' '}
-                  <span css={tw`text-secondary`}>Prateek Karki</span>
+                <p
+                  css={tw`text-mainLight-600 dark:text-mainDark-600 font-semibold text-2xl`}
+                >
+                  Hello, I&apos;m
                 </p>
-              </div>
-
-              <div css={tw`overflow-y-hidden`}>
-                <p css={tw`text-primary text-5xl font-bold`}>
-                  Javascript Developer
+                <p css={tw`text-primary text-5xl font-bold pt-3`}>
+                  Prateek Karki
                 </p>
+                <Text>
+                  A Fullstack Developer with an eye for design and a Frontend
+                  bias.
+                </Text>
               </div>
 
               <ButtonsHolder ref={buttonsHolder}>

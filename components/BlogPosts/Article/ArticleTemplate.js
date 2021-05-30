@@ -21,18 +21,22 @@ function ArticleTemplate({ postData }) {
     </a>
   );
   const { theme } = useTheme();
-  const SyntaxRenderer = ({ className, value, language, ...props }) => (
-    <SyntaxHighlighter
-      style={theme === 'dark' ? syntaxThemeDark : syntaxThemeLight}
-      language={language}
-      customStyle={{ background: theme === 'dark' ? '#2f2f2f' : '#fafafa' }}
-      className={className}
-      PreTag="div"
-      {...props}
-    >
-      {String(value).replace(/\n$/, '')}
-    </SyntaxHighlighter>
-  );
+  const SyntaxRenderer = ({ className, children, ...props }) => {
+    const match = /language-(\w+)/.exec(className || '');
+    const language = match ? match[1] : '';
+    return (
+      <SyntaxHighlighter
+        style={theme === 'dark' ? syntaxThemeDark : syntaxThemeLight}
+        language={language}
+        customStyle={{ background: theme === 'dark' ? '#2f2f2f' : '#fafafa' }}
+        className={className}
+        PreTag="div"
+        {...props}
+      >
+        {String(children).replace(/\n$/, '')}
+      </SyntaxHighlighter>
+    );
+  };
 
   const tagsString = postData.tags.map((tag) => tag.name).join(', ');
   return (
@@ -69,10 +73,10 @@ function ArticleTemplate({ postData }) {
         <TitleBlock title={postData.title} subtitle={postData.description} />
       </div>
       <div css={tw`bg-mainLight-200 dark:bg-mainDark-200`}>
-        <div css={tw`container mx-auto px-3`}>
+        <div css={tw`container mx-auto px-3 pb-6`}>
           <article css={style}>
             <Markdown
-              renderers={{ code: SyntaxRenderer, link: LinkRenderer }}
+              components={{ code: SyntaxRenderer, a: LinkRenderer }}
               className="article-main"
             >
               {postData.content}

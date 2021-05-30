@@ -2,7 +2,11 @@ import gql from 'graphql-tag';
 
 const ARTICLES_QUERY = gql`
   query Articles {
-    articles {
+    articles (
+      limit: 100
+      where: { status: true }
+      sort: "published_on:DESC"
+    ) {
       id
       slug
       title
@@ -25,7 +29,7 @@ export default ARTICLES_QUERY;
 
 export const LANDING_PAGE_POSTS = gql`
   query Articles {
-    articles(
+    articles (
       limit: 1
       where: { status: true, featured: true }
       sort: "published_on:DESC"

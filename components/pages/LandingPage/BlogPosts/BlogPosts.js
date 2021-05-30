@@ -2,9 +2,8 @@ import tw from 'twin.macro';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 
-import Card from '../../BlogPosts/Card';
-
-import { BigLink, Text, Title, Flex } from '../../styles';
+import { BigLink, Text, Title, Flex } from 'components/styles';
+import Card from 'components/BlogPosts/Card';
 
 const BlogPosts = ({ articles }) => (
   <Flex>

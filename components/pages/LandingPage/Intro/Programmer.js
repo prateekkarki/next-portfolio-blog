@@ -33,7 +33,7 @@ function Programmer() {
       scale: [0, 1],
       easing: 'easeInOutQuad',
       duration: 500,
-      delay: anime.stagger(150, { start: 2500 }),
+      delay: anime.stagger(150, { start: 3500 }),
     });
 
     anime({
@@ -41,7 +41,7 @@ function Programmer() {
       translateX: ['400%', 0],
       easing: 'easeInOutQuad',
       duration: 800,
-      delay: anime.stagger(180, { start: 1000 }),
+      delay: anime.stagger(180, { start: 2500 }),
     });
 
     return () => {

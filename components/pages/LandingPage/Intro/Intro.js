@@ -6,28 +6,61 @@ import tw from 'twin.macro';
 import { useHasMounted } from 'hooks';
 import { BigLink, Text } from 'components/styles';
 import Programmer from './Programmer';
-import { IntroContainer, ButtonsHolder } from './styles';
+import {
+  IntroContainer,
+  ButtonsHolder,
+  AnimatedText,
+  LoaderBar,
+} from './styles';
 
 function Intro() {
   const introRef = useRef(null);
-  const buttonsHolder = useRef(null);
   const hasMounted = useHasMounted();
 
   useEffect(() => {
     if (hasMounted) {
-      // anime({
-      //   targets: introRef.current.querySelectorAll('p'),
-      //   translateY: ['100%', 0],
-      //   easing: 'easeInOutQuad',
-      //   duration: 800,
-      //   delay: anime.stagger(250, { start: 500 }),
-      // });
+      const loaders = introRef.current.querySelectorAll(
+        `${AnimatedText} ${LoaderBar}`
+      );
+      const texts = introRef.current.querySelectorAll(`${AnimatedText} p`);
+      const buttonsHolder = introRef.current.querySelectorAll(
+        `${ButtonsHolder}`
+      );
+
       anime({
-        targets: buttonsHolder.current,
+        targets: texts,
+        opacity: 0,
+      });
+
+      const tl = anime.timeline({
+        easing: 'easeInOutQuad',
+        delay(el, i) {
+          return i * 250;
+        },
+      });
+
+      tl.add({
+        targets: loaders,
+        translateX: ['-100%', 0],
+        duration: 600,
+      })
+        .add({
+          targets: texts,
+          opacity: 1,
+          duration: 50,
+        })
+        .add({
+          targets: loaders,
+          translateX: ['0', '100%'],
+          duration: 600,
+        });
+
+      anime({
+        targets: buttonsHolder,
         scale: [0, 1],
         easing: 'easeOutBack',
         duration: 750,
-        delay: 1250,
+        delay: 4500,
       });
     }
   });
@@ -46,21 +79,31 @@ function Intro() {
               css={tw`w-full px-3 md:w-1/2 text-center md:text-left`}
             >
               <div css={tw`overflow-y-hidden`}>
-                <p
-                  css={tw`text-mainLight-600 dark:text-mainDark-600 font-semibold text-2xl`}
-                >
-                  Hello, I&apos;m
-                </p>
-                <p css={tw`text-primary text-5xl font-bold pt-3`}>
-                  Prateek Karki
-                </p>
-                <Text>
-                  A Fullstack Developer with an eye for design and a Frontend
-                  bias.
-                </Text>
+                <AnimatedText>
+                  <LoaderBar tw="bg-mainLight-600 dark:bg-mainDark-600" />
+                  <p
+                    css={tw`text-mainLight-600 dark:text-mainDark-600 font-semibold text-2xl my-2`}
+                  >
+                    Hello, I&apos;m
+                  </p>
+                </AnimatedText>
+                <br />
+                <AnimatedText>
+                  <LoaderBar tw="bg-primary" />
+                  <p css={tw`text-primary text-6xl font-bold my-2`}>
+                    Prateek Karki
+                  </p>
+                </AnimatedText>
+                <AnimatedText>
+                  <LoaderBar tw="bg-mainLight-600 dark:bg-mainDark-600" />
+                  <Text tw="opacity-0 mt-0 my-2">
+                    A Fullstack Developer with an eye for design and a Frontend
+                    bias.
+                  </Text>
+                </AnimatedText>
               </div>
 
-              <ButtonsHolder ref={buttonsHolder}>
+              <ButtonsHolder>
                 <Link href="/#contact" as="/#contact" passHref>
                   <BigLink>Hire Me</BigLink>
                 </Link>

@@ -14,6 +14,13 @@ const ProgrammerCss = css`
     transform-origin: center center;
     transform: scale(0);
   }
+  #dude-with-chair,
+  #laptop,
+  #table,
+  #vase,
+  #base{
+    transform: translateX(400%);
+  }
 `;
 
 export default ProgrammerCss;

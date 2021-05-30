@@ -28,10 +28,8 @@
     "apollo-client": "^2.6.10",
     "apollo-link-http": "^1.5.17",
     "axios": "^0.21.1",
-    "babel-plugin-macros": "^2.8.0",
     "disqus-react": "^1.0.11",
     "date-fns": "^2.21.1",
-    "dotenv": "^8.2.0",
     "graphql": "^15.3.0",
     "graphql-tag": "^2.12.4",
     "hamburger-react": "^2.4.0",
@@ -56,7 +54,8 @@
     "twin.macro": "^2.4.1"
   },
   "devDependencies": {
-    "eslint": "7.25.0",
+    "dotenv": "10.0.0",
+    "eslint": "7.27.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.22.0",
@@ -64,11 +63,8 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.1.0",
-    "postcss": "^8.3.0",
-    "postcss-cli": "^7.1.1",
-    "postcss-preset-env": "^6.7.0",
     "@emotion/babel-plugin": "^11.3.0",
-    "babel-plugin-macros": "^3.0.1",
+    "babel-plugin-macros": "^3.1.0",
     "prettier": "^2.0.5"
   }
 }

@@ -3,7 +3,7 @@ import anime from 'animejs';
 import Link from 'next/link';
 import tw from 'twin.macro';
 
-import { useHasMounted } from 'hooks';
+import { useHasMounted, useWindowSize } from 'hooks';
 import { BigLink, Text } from 'components/styles';
 import Programmer from './Programmer';
 import {
@@ -16,6 +16,7 @@ import {
 function Intro() {
   const introRef = useRef(null);
   const hasMounted = useHasMounted();
+  const { width } = useWindowSize();
 
   useEffect(() => {
     if (hasMounted) {
@@ -60,7 +61,7 @@ function Intro() {
         scale: [0, 1],
         easing: 'easeOutBack',
         duration: 750,
-        delay: 4500,
+        delay: width < 768 ? 2500 : 4500,
       });
     }
   });

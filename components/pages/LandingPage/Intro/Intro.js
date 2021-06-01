@@ -34,7 +34,7 @@ function Intro() {
       });
 
       const tl = anime.timeline({
-        easing: 'easeInOutQuad',
+        easing: 'easeInOutCubic',
         delay(el, i) {
           return i * 250;
         },
@@ -48,7 +48,7 @@ function Intro() {
         .add({
           targets: texts,
           opacity: 1,
-          duration: 50,
+          duration: 5,
         })
         .add({
           targets: loaders,

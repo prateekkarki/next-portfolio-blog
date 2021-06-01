@@ -20,7 +20,7 @@ const ContactLinks = ({ href, children, lastItem }) => (
 
 function Contact() {
   return (
-    <div css={tw`container mx-auto flex flex-col sm:flex-row`}>
+    <div css={tw`container mx-auto flex flex-col sm:flex-row overflow-hidden`}>
       <div
         css={tw`w-full sm:w-1/2 flex flex-col justify-center items-center lg:items-start py-6`}
         data-aos="zoom-out-down"
@@ -29,15 +29,16 @@ function Contact() {
       </div>
       <div
         css={tw`
-              w-full sm:w-1/2 py-6 px-3
-              flex flex-col justify-center items-center text-center sm:text-left sm:justify-start md:items-start
-            `}
+          w-full sm:w-1/2 py-6 px-3
+          flex flex-col justify-center items-center text-center sm:text-left sm:justify-start md:items-start
+        `}
         data-aos="zoom-in-up"
       >
         <div
           css={tw`
-                flex flex-col justify-center items-center text-center sm:text-left sm:justify-start sm:items-start
-              `}
+            flex flex-col justify-center items-center text-center 
+            sm:text-left sm:justify-start sm:items-start
+          `}
         >
           <Title>Get in touch</Title>
           <Text>

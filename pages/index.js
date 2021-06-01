@@ -25,7 +25,7 @@ const Home = ({ articles }) => {
   useEffect(() => {
     AOS.init({
       duration: 750,
-      offset: 400,
+      offset: 200,
     });
 
     if (router.asPath.length && router.asPath.slice(0, 2) === '/#') {

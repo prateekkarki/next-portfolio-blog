@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 
-import { BsChevronRight } from 'react-icons/bs';
+import { FaAngleRight } from 'react-icons/fa';
 import Link from 'next/link';
 
 import tw from 'twin.macro';
@@ -16,7 +16,7 @@ function EachBlock({ path, title }) {
           {title}
         </a>
       </Link>
-      <BsChevronRight />
+      <FaAngleRight tw="mx-1" />
     </Fragment>
   ) : (
     <span>{title}</span>
@@ -25,7 +25,7 @@ function EachBlock({ path, title }) {
 
 function BreadCrumbs({ blocks }) {
   return (
-    <div css={tw`flex items-center col-gap-2`}>
+    <div css={tw`flex items-center`}>
       {blocks.map((block, i) => (
         <EachBlock
           path={block.path}

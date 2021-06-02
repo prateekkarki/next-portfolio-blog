@@ -14,7 +14,7 @@ function Skewed({ children }) {
           `,
         ]}
       />
-      <div css={tw` relative container mx-auto py-16`}>{children}</div>
+      <div css={tw` relative container mx-auto py-24`}>{children}</div>
     </Fragment>
   );
 }

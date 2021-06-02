@@ -3,7 +3,7 @@ import anime from 'animejs';
 import Link from 'next/link';
 import tw from 'twin.macro';
 
-import { useHasMounted, useWindowSize } from 'hooks';
+import { useHasMounted } from 'hooks';
 import { BigLink, Text } from 'components/styles';
 import Programmer from './Programmer';
 import {
@@ -16,8 +16,9 @@ import {
 function Intro() {
   const introRef = useRef(null);
   const hasMounted = useHasMounted();
-  const { width } = useWindowSize();
+  const width = typeof window === 'undefined' ? 1200 : window.innerWidth;
 
+  // eslint-disable-next-line consistent-return
   useEffect(() => {
     if (hasMounted) {
       const loaders = introRef.current.querySelectorAll(
@@ -27,12 +28,6 @@ function Intro() {
       const buttonsHolder = introRef.current.querySelectorAll(
         `${ButtonsHolder}`
       );
-
-      anime({
-        targets: texts,
-        opacity: 0,
-      });
-
       const tl = anime.timeline({
         easing: 'easeInOutCubic',
         delay(el, i) {
@@ -43,17 +38,18 @@ function Intro() {
       tl.add({
         targets: loaders,
         translateX: ['-100%', 0],
-        duration: 600,
+        duration: 500,
       })
         .add({
           targets: texts,
           opacity: 1,
-          duration: 5,
+          duration: 0.01,
+          delay: 0.01,
         })
         .add({
           targets: loaders,
           translateX: ['0', '100%'],
-          duration: 600,
+          duration: 500,
         });
 
       anime({
@@ -61,8 +57,20 @@ function Intro() {
         scale: [0, 1],
         easing: 'easeOutBack',
         duration: 750,
-        delay: width < 768 ? 2500 : 4500,
+        delay: width < 768 ? 1800 : 3500,
       });
+
+      return () => {
+        anime({
+          targets: texts,
+          opacity: 0,
+        });
+
+        anime({
+          targets: buttonsHolder,
+          scale: 0,
+        });
+      };
     }
   });
 
@@ -88,8 +96,8 @@ function Intro() {
                     Hello, I&apos;m
                   </p>
                 </AnimatedText>
-                <br />
-                <AnimatedText>
+                <br tw="sm:inline-block hidden" />
+                <AnimatedText tw="my-1 sm:my-0">
                   <LoaderBar tw="bg-primary" />
                   <p css={tw`text-primary text-6xl font-bold my-2`}>
                     Prateek Karki
@@ -113,6 +121,7 @@ function Intro() {
                   rel="noreferrer"
                   href={process.env.NEXT_PUBLIC_RESUME_LINK}
                   variant="secondary"
+                  tw="pl-10"
                 >
                   Get Resume
                 </BigLink>

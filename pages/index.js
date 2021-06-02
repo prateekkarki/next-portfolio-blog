@@ -63,7 +63,7 @@ const Home = ({ articles }) => {
       <div css={tw`bg-mainLight-100 dark:bg-mainDark-100`} ref={refs.home}>
         <Intro />
 
-        <div css={[tw`relative my-16`]} ref={refs.about}>
+        <div css={[tw`relative my-24`]} ref={refs.about}>
           <Skewed>
             <About />
           </Skewed>
@@ -73,7 +73,7 @@ const Home = ({ articles }) => {
           <BlogPosts articles={articles} />
         </Container>
 
-        <div css={[tw`relative my-16`]} ref={refs.contact}>
+        <div css={[tw`relative my-24`]} ref={refs.contact}>
           <Skewed>
             <Contact />
           </Skewed>

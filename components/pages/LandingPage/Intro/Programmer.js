@@ -33,7 +33,7 @@ function Programmer() {
       scale: [0, 1],
       easing: 'easeInOutQuad',
       duration: 500,
-      delay: anime.stagger(150, { start: 3500 }),
+      delay: anime.stagger(150, { start: 2500 }),
     });
 
     anime({
@@ -41,10 +41,20 @@ function Programmer() {
       translateX: ['400%', 0],
       easing: 'easeInOutQuad',
       duration: 800,
-      delay: anime.stagger(180, { start: 2500 }),
+      delay: anime.stagger(180, { start: 1500 }),
     });
 
     return () => {
+      anime({
+        targets: [codeElements],
+        scale: 0,
+      });
+
+      anime({
+        targets: [base, vase, table, laptop, dudeWithChair],
+        translateX: '400%',
+      });
+
       anime.remove([
         leaves,
         codeElements,
@@ -440,7 +450,7 @@ function Programmer() {
         <rect x="118.3" y="192.2" fill="#8495A0" width="8.5" height="140.2" />
         <rect x="71.9" y="192.2" fill="#ABB5BA" width="8.5" height="140.2" />
         <path
-          fill="#141B56"
+          fill="#B0CBCA"
           d="M63.7,182.6h266.4c2.3,0,4.1,1.9,4.1,4.1v1.8c0,2.3-1.9,4.1-4.1,4.1H63.7c-2.3,0-4.2-1.9-4.2-4.1v-1.8
        C59.6,184.4,61.4,182.6,63.7,182.6L63.7,182.6z"
         />

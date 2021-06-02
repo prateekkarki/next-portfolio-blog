@@ -1,6 +1,5 @@
 /* eslint-disable react/no-danger */
 import { Fragment } from 'react';
-import { useRouter } from 'next/router';
 import tw from 'twin.macro';
 import { DiscussionEmbed } from 'disqus-react';
 import { initializeApollo } from 'utils/apollo';
@@ -14,9 +13,7 @@ import { Container, Link as RegularLink } from 'components/styles';
 import Link from 'next/link';
 
 const SingleArticle = ({ article }) => {
-  const router = useRouter();
-  const { aid } = router.query;
-  if (!aid || !article) {
+  if (!article) {
     return (
       <Container css={tw`px-3`}>
         <Head>

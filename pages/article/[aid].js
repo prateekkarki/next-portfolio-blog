@@ -14,7 +14,6 @@ import { Container, Link as RegularLink } from 'components/styles';
 import Link from 'next/link';
 
 const SingleArticle = ({ article }) => {
-  console.log({ article });
   const router = useRouter();
   const { aid } = router.query;
   if (!aid || !article) {
@@ -46,6 +45,12 @@ const SingleArticle = ({ article }) => {
         <meta name="description" content={article.description} />
         {article.thumbnail?.url && (
           <meta property="og:image" content={article.thumbnail.url} />
+        )}
+        {!article.thumbnail?.url && (
+          <meta
+            property="og:image"
+            content="https://meetprateek.com/images/logo/3x/logo.png"
+          />
         )}
         <meta property="og:title" content={article.title} />
         <meta property="og:type" content="article" />

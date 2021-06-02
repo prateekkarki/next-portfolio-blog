@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import tw from 'twin.macro';
 import Markdown from 'react-markdown';
 import format from 'date-fns/format';
-import Head from 'next/head';
 import { useTheme } from 'next-themes';
 
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -14,7 +13,7 @@ import TitleBlock from '../../Common/TitleBlock';
 import BreadCrumbs from '../../Common/BreadCrumbs';
 import style from './ArticleTemplate.css';
 
-function ArticleTemplate({ postData }) {
+function ArticleTemplate({ article }) {
   const LinkRenderer = ({ href, children }) => (
     <a href={href} target="_blank" rel="noreferrer">
       {children}
@@ -37,40 +36,19 @@ function ArticleTemplate({ postData }) {
       </SyntaxHighlighter>
     );
   };
-
-  const tagsString = postData.tags.map((tag) => tag.name).join(', ');
   return (
     <Fragment>
-      <Head>
-        <title>{postData.title}</title>
-        <meta name="keywords" content={tagsString} />
-        <meta name="author" content="Prateek Karki" />
-        <meta name="description" content={postData.description} />
-        <meta property="og:type" content="article" />
-        <meta property="og:article:author" content="Prateek Karki" />
-        <meta
-          property="og:article:published_time"
-          content={postData.published_on || postData.created_at}
-        />
-        <meta
-          property="og:article:modified_time"
-          content={postData.updated_at}
-        />
-        <meta property="og:article:section" content="Technology" />
-        <meta property="og:article:tag" content={tagsString} />
-      </Head>
-
       <div css={tw`container mx-auto px-3`}>
         <div css={tw`flex justify-center mt-16`}>
           <BreadCrumbs
             blocks={[
               { path: '/', title: 'Home' },
               { path: '/blog', title: 'Blogs' },
-              { title: postData.category?.name },
+              { title: article.category?.name },
             ]}
           />
         </div>
-        <TitleBlock title={postData.title} subtitle={postData.description} />
+        <TitleBlock title={article.title} subtitle={article.description} />
       </div>
       <div css={tw`bg-mainLight-200 dark:bg-mainDark-200`}>
         <div css={tw`container mx-auto px-3 pb-6`}>
@@ -79,14 +57,14 @@ function ArticleTemplate({ postData }) {
               components={{ code: SyntaxRenderer, a: LinkRenderer }}
               className="article-main"
             >
-              {postData.content}
+              {article.content}
             </Markdown>
 
-            {postData.published_on && (
+            {article.published_on && (
               <p css={tw`pt-4 text-mainLight-700 dark:text-mainDark-700`}>
                 Posted on:{' '}
                 <span css={tw`italic`}>
-                  {format(new Date(postData.published_on), 'do MMM yyyy')}
+                  {format(new Date(article.published_on), 'do MMM yyyy')}
                 </span>
               </p>
             )}
@@ -98,7 +76,7 @@ function ArticleTemplate({ postData }) {
 }
 
 ArticleTemplate.propTypes = {
-  postData: PropTypes.PropTypes.shape({
+  article: PropTypes.PropTypes.shape({
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     category: PropTypes.shape({

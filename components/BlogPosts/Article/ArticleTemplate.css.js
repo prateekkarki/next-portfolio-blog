@@ -49,10 +49,10 @@ export default [
         font-weight: 500;
       }
       a {
-        color: ${theme`colors.primary`};
+        font-weight: 700;
+        color: #0b88cd;
         &:hover {
-          color: ${theme`colors.mainDark.100`};
-          text-decoration: underline;
+          color: ${theme`colors.mainLight.600`};
         }
       }
       img {
@@ -73,9 +73,9 @@ export default [
           border-bottom: 0.25rem solid ${theme`colors.mainDark.100`};
         }
         a {
-          color: ${theme`colors.primary`};
+          color: ${theme`colors.mainDark.600`};
           &:hover {
-            color: ${theme`colors.mainDark.100`};
+            color: ${theme`colors.mainDark.700`};
           }
         }
       }

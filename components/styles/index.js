@@ -77,6 +77,10 @@ const buttonStyles = ({ variant }) => [
     }
   `,
 ];
+export const Link = styled.a(
+  tw`font-semibold text-primary hover:text-secondary`
+);
+
 export const PseudoBigLink = styled.a(buttonStyles);
 export const PseudoBigButton = styled.button(buttonStyles);
 export const BigLink = ({ children, variant, ...others }) => (

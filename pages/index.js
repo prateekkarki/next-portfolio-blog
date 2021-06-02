@@ -13,6 +13,7 @@ import Skewed from 'components/pages/LandingPage/Skewed';
 import Intro from 'components/pages/LandingPage/Intro/Intro';
 import About from 'components/pages/LandingPage/About/About';
 import Contact from 'components/pages/LandingPage/Contact/Contact';
+import Head from 'next/head';
 
 const Home = ({ articles }) => {
   const refs = {
@@ -41,25 +42,44 @@ const Home = ({ articles }) => {
   });
 
   return (
-    <div css={tw`bg-mainLight-100 dark:bg-mainDark-100`} ref={refs.home}>
-      <Intro />
+    <>
+      <Head>
+        <title>
+          Prateek Karki - Full-stack web developer from Kathmandu, Nepal
+        </title>
+        <meta
+          name="description"
+          content="Full-stack web developer dedicated to providing beautiful and performant solutions on the internet."
+        />
+        <meta
+          name="keywords"
+          content="Web Development, Web Developer, Javascript Developer, Fullstack Web Developer, Solution architect, Freelancer"
+        />
+        <meta
+          property="og:image"
+          content="https://meetprateek.com/images/logo/3x/logo.png"
+        />
+      </Head>
+      <div css={tw`bg-mainLight-100 dark:bg-mainDark-100`} ref={refs.home}>
+        <Intro />
 
-      <div css={[tw`relative my-16`]} ref={refs.about}>
-        <Skewed>
-          <About />
-        </Skewed>
+        <div css={[tw`relative my-16`]} ref={refs.about}>
+          <Skewed>
+            <About />
+          </Skewed>
+        </div>
+
+        <Container>
+          <BlogPosts articles={articles} />
+        </Container>
+
+        <div css={[tw`relative my-16`]} ref={refs.contact}>
+          <Skewed>
+            <Contact />
+          </Skewed>
+        </div>
       </div>
-
-      <Container>
-        <BlogPosts articles={articles} />
-      </Container>
-
-      <div css={[tw`relative my-16`]} ref={refs.contact}>
-        <Skewed>
-          <Contact />
-        </Skewed>
-      </div>
-    </div>
+    </>
   );
 };
 

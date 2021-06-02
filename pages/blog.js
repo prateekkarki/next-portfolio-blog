@@ -13,7 +13,16 @@ function Blog({ articles }) {
   return (
     <Fragment>
       <Head>
-        <title>Prateek Karki&apos;s blog</title>
+        <title>Blogs | Prateek Karki</title>
+        <meta name="description" content="Check out my recent blog posts." />
+        <meta
+          name="keywords"
+          content="Web Development, Frontend Development, Backend Development, Programming concepts"
+        />
+        <meta
+          property="og:image"
+          content="https://meetprateek.com/images/logo/3x/logo.png"
+        />
       </Head>
       <TitleBlock title="My Blog" subtitle="Check out my recent posts" />
       <MainBg>

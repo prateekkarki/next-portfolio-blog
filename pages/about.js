@@ -10,6 +10,18 @@ function about() {
     <Fragment>
       <Head>
         <title>About me | Prateek Karki</title>
+        <meta
+          name="description"
+          content="Full-stack web developer dedicated to providing beautiful and performant solutions on the internet."
+        />
+        <meta
+          name="keywords"
+          content="Web Development, Web Developer, Javascript Developer, Fullstack Web Developer, Solution architect, Freelancer"
+        />
+        <meta
+          property="og:image"
+          content="https://meetprateek.com/images/logo/3x/logo.png"
+        />
       </Head>
       <TitleBlock title="About Me" subtitle="Who am I?" />
       <MainBg>

@@ -1,5 +1,6 @@
 import { styled, css, theme } from 'twin.macro';
 import Link from 'next/link';
+import Head from 'next/head';
 
 const Container = styled.div(css`
   color: #000;
@@ -42,6 +43,17 @@ const Inner = styled.div(css`
 export default function Custom404() {
   return (
     <Container>
+      <Head>
+        <title>404 | Page not found</title>
+        <meta
+          name="description"
+          content="This page does not exist please check your link."
+        />
+        <meta
+          property="og:image"
+          content="https://meetprateek.com/images/logo/3x/logo.png"
+        />
+      </Head>
       <div>
         <h1>404</h1>
         <Inner>

@@ -8,7 +8,7 @@ import Card from 'components/BlogPosts/Card';
 const BlogPosts = ({ articles }) => (
   <Flex>
     <div
-      css={tw`text-center px-3 md:px-6 text-mainLight-700 py-4 md:w-1/2 md:text-left`}
+      css={tw`text-center px-3 md:px-6 text-light-700 py-4 md:w-1/2 md:text-left`}
       data-aos="fade-right"
     >
       <Title>Latest Posts</Title>

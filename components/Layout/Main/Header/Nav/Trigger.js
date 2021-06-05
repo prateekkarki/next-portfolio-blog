@@ -16,8 +16,8 @@ function Trigger({ toggled, toggle }) {
         tw="block sm:hidden"
         color={
           theme === 'dark'
-            ? twinTheme`colors.mainDark.700`
-            : twinTheme`colors.mainLight.700`
+            ? twinTheme`colors.dark.700`
+            : twinTheme`colors.light.700`
         }
         key={theme}
         rounded

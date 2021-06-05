@@ -155,7 +155,7 @@ export default styled.div(css`
     background: ${theme`colors.white`};
     border-radius: 0.25em;
     padding: 1em;
-    box-shadow: 0 3px 0 ${theme`colors.mainDark.100`};
+    box-shadow: 0 3px 0 ${theme`colors.dark.100`};
   }
 
   .vertical-timeline--one-column-right .vertical-timeline-element-content {

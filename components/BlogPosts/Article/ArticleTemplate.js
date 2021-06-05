@@ -50,7 +50,7 @@ function ArticleTemplate({ article }) {
         </div>
         <TitleBlock title={article.title} subtitle={article.description} />
       </div>
-      <div css={tw`bg-mainLight-200 dark:bg-mainDark-200`}>
+      <div css={tw`bg-light-200 dark:bg-dark-200`}>
         <div css={tw`container mx-auto px-3 pb-6`}>
           <article css={style}>
             <Markdown
@@ -61,7 +61,7 @@ function ArticleTemplate({ article }) {
             </Markdown>
 
             {article.published_on && (
-              <p css={tw`pt-4 text-mainLight-700 dark:text-mainDark-700`}>
+              <p css={tw`pt-4 text-light-700 dark:text-dark-700`}>
                 Posted on:{' '}
                 <span css={tw`italic`}>
                   {format(new Date(article.published_on), 'do MMM yyyy')}

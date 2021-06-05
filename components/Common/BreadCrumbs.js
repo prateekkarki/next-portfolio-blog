@@ -11,7 +11,7 @@ function EachBlock({ path, title }) {
       <Link href={path} as={path} passHref>
         <a
           href={path}
-          css={tw`text-mainLight-700 dark:text-mainDark-700 hover:text-primary font-bold`}
+          css={tw`text-light-700 dark:text-dark-700 hover:text-primary font-bold`}
         >
           {title}
         </a>

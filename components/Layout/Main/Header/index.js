@@ -6,7 +6,7 @@ function Header() {
   return (
     <header
       css={tw`
-        bg-mainLight-200 dark:bg-mainDark-200
+        bg-light-200 dark:bg-dark-200
         w-full z-10 fixed top-0 shadow-lg 
       `}
     >

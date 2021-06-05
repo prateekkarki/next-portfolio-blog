@@ -19,7 +19,7 @@ const SingleArticle = ({ article }) => {
         <Head>
           <title>Blog not found</title>
         </Head>
-        <p css={tw`dark:text-mainDark-600 text-mainLight-600 text-center my-6`}>
+        <p css={tw`dark:text-dark-600 text-light-600 text-center my-6`}>
           Looks like the article does not exist. Please checkout other sections
           of the website.
         </p>
@@ -65,7 +65,7 @@ const SingleArticle = ({ article }) => {
       </Head>
 
       <ArticleTemplate article={article} />
-      <div css={tw`py-12 bg-mainLight-500 dark:bg-mainDark-400`}>
+      <div css={tw`py-12 bg-light-500 dark:bg-dark-400`}>
         <div css={tw`container mx-auto px-3`}>
           <DiscussionEmbed
             shortname={process.env.NEXT_PUBLIC_DISQUS_SHORTNAME}

@@ -36,13 +36,13 @@ const Card = ({ article, dark }) => (
         <div css={[css`height:calc(100% - 16rem);`]}>
           <div css={tw`px-6 pt-4`}>
             <p
-              css={tw`font-bold text-mainLight-700 dark:text-mainDark-700 text-xl mb-0`}
+              css={tw`font-bold text-light-700 dark:text-dark-700 text-xl mb-0`}
             >
               {article.title}
             </p>
           </div>
           <div css={tw`px-6 pb-2`}>
-            <p css={tw`text-mainLight-600 dark:text-mainDark-600`}>
+            <p css={tw`text-light-600 dark:text-dark-600`}>
               {article.category?.name || ''}
             </p>
           </div>

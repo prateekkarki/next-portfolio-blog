@@ -1,7 +1,7 @@
 import tw, { styled, css } from 'twin.macro';
 
 export const Tag = tw.span`
-  bg-mainLight-400 dark:bg-mainDark-400 text-mainLight-500 dark:text-mainDark-600 
+  bg-light-400 dark:bg-dark-400 text-light-500 dark:text-dark-600 
   inline-block rounded-full 
   px-3 py-1 mr-2 mb-2
   text-sm font-semibold 
@@ -22,8 +22,8 @@ export const iconStyle = [
 
 export const IconContainer = tw.div`
   w-full text-center aspect-ratio[16 / 9] relative
-  bg-mainLight-400 dark:bg-mainDark-400 
-  text-mainLight-800 dark:text-mainDark-800 
+  bg-light-400 dark:bg-dark-400 
+  text-light-800 dark:text-dark-800 
   rounded-t-md overflow-hidden
 `;
 
@@ -57,8 +57,8 @@ export const CardContainer = styled.div(({ dark }) => [
   `,
 
   dark
-    ? tw`bg-mainLight-100 dark:bg-mainDark-100`
-    : tw`bg-mainLight-200 dark:bg-mainDark-200`,
+    ? tw`bg-light-100 dark:bg-dark-100`
+    : tw`bg-light-200 dark:bg-dark-200`,
 
   css`
     &:hover {

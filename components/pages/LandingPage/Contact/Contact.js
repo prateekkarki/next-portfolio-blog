@@ -6,8 +6,8 @@ import { Title, Text } from 'components/styles';
 import ContactForm from './ContactForm';
 
 const Links = styled.a(({ lastItem }) => [
-  tw`p-3 bg-mainLight-700 text-mainLight-100 dark:text-mainDark-100 dark:bg-mainDark-700 rounded-full text-2xl mr-4
-    hover:(bg-primary text-mainLight-200 dark:text-mainDark-100) 
+  tw`p-3 bg-light-700 text-light-100 dark:text-dark-100 dark:bg-dark-700 rounded-full text-2xl mr-4
+    hover:(bg-primary text-light-200 dark:text-dark-100) 
   `,
   lastItem && tw`mr-0`,
 ]);
@@ -50,13 +50,13 @@ function Contact() {
             </span>
           </Text>
           <div
-            css={tw`border-b-4 pb-10 w-48 border-mainLight-700 dark:border-mainDark-700`}
+            css={tw`border-b-4 pb-10 w-48 border-light-700 dark:border-dark-700`}
           />
           <div css={tw`pt-4`}>
             <a
               target="_blank"
               rel="noreferrer"
-              css={tw`text-xl text-mainLight-700 dark:text-mainDark-700 hover:text-primary`}
+              css={tw`text-xl text-light-700 dark:text-dark-700 hover:text-primary`}
               href="mailto:info@meetprateek.com"
             >
               info@meetprateek.com

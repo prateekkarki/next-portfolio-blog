@@ -13,14 +13,14 @@ const Body = styled.body([
     }
 
     ::-webkit-scrollbar-track {
-      ${tw`bg-mainLight-600`};
+      ${tw`bg-light-600`};
     }
 
     ::-webkit-scrollbar-thumb {
       border-radius: 8px;
       ${tw`
-        bg-mainLight-400 bg-opacity-50 hover:bg-opacity-100
-        border-4 border-solid border-mainLight-600
+        bg-light-400 bg-opacity-50 hover:bg-opacity-100
+        border-4 border-solid border-light-600
       `};
     }
   `,
@@ -28,7 +28,7 @@ const Body = styled.body([
 
 const StyledHtml = styled(Html)`
   scrollbar-width: thin;
-  scrollbar-color: ${theme`colors.mainDark.400`} ${theme`colors.mainDark.600`};
+  scrollbar-color: ${theme`colors.dark.400`} ${theme`colors.dark.600`};
 `;
 
 class MyDocument extends Document {

@@ -9,7 +9,7 @@ const ActiveLink = (props) => {
   const NavLink = styled.a(({ isActive }) => [
     isActive
       ? tw`text-primary`
-      : tw`text-mainLight-600 dark:text-mainDark-600 hover:(text-mainLight-800 dark:text-mainDark-800)`,
+      : tw`text-light-600 dark:text-dark-600 hover:(text-light-800 dark:text-dark-800)`,
     tw`font-medium p-3 uppercase text-base`,
   ]);
 

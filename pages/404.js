@@ -43,7 +43,7 @@ const Inner = styled.div(css`
 
 export default function Custom404() {
   return (
-    <Container tw="bg-mainLight-400 dark:bg-mainDark-400">
+    <Container tw="bg-light-400 dark:bg-dark-400">
       <Head>
         <title>404 | Page not found</title>
         <meta
@@ -56,9 +56,9 @@ export default function Custom404() {
         />
       </Head>
       <div>
-        <h1 tw="text-mainLight-700 dark:text-mainDark-700">404</h1>
+        <h1 tw="text-light-700 dark:text-dark-700">404</h1>
         <Inner>
-          <h2 tw="text-mainLight-700 dark:text-mainDark-700">
+          <h2 tw="text-light-700 dark:text-dark-700">
             This page could not be found.
           </h2>
           <Link href="/" as="/" passHref>

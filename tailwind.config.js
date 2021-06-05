@@ -23,7 +23,7 @@ module.exports = {
         primary: '#5398BE',
         secondary: '#E26D5A',
         success: '#5FA85F',
-        mainLight: {
+        light: {
           primary: '#7EB4D7',
           secondary: '#F8BFb6',
           100: '#EDF6F9',
@@ -34,7 +34,7 @@ module.exports = {
           700: '#1F2935',
           800: '#161D26',
         },
-        mainDark: {
+        dark: {
           primary: '#186999',
           secondary: '#B24635',
           100: '#161D26',

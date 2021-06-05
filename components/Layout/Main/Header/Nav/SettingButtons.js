@@ -6,7 +6,7 @@ import { useTheme } from 'next-themes';
 import { useHasMounted } from 'hooks';
 
 const SettingButton = styled.button(() => [
-  tw`font-medium hover:text-primary p-3 uppercase text-base text-mainLight-700 dark:text-mainDark-700`,
+  tw`font-medium hover:text-primary p-3 uppercase text-base text-light-700 dark:text-dark-700`,
 ]);
 
 function SettingButtons() {

@@ -60,7 +60,7 @@ const Home = ({ articles }) => {
           content="https://meetprateek.com/images/logo/3x/logo.png"
         />
       </Head>
-      <div css={tw`bg-mainLight-100 dark:bg-mainDark-100`} ref={refs.home}>
+      <div css={tw`bg-light-100 dark:bg-dark-100`} ref={refs.home}>
         <Intro />
 
         <div css={[tw`relative my-24`]} ref={refs.about}>

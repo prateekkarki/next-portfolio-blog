@@ -25,7 +25,7 @@ const Nav = () => {
     <Fragment>
       <div
         css={tw`
-          bg-mainLight-200 dark:bg-mainDark-200 
+          bg-light-200 dark:bg-dark-200 
           container relative mx-auto px-3
           flex flex-row items-center justify-between py-4 z-10
         `}

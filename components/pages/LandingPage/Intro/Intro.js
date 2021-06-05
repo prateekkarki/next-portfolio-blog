@@ -89,9 +89,9 @@ function Intro() {
             >
               <div css={tw`overflow-y-hidden`}>
                 <AnimatedText>
-                  <LoaderBar tw="bg-mainLight-600 dark:bg-mainDark-600" />
+                  <LoaderBar tw="bg-light-600 dark:bg-dark-600" />
                   <p
-                    css={tw`text-mainLight-600 dark:text-mainDark-600 font-semibold text-2xl my-2`}
+                    css={tw`text-light-600 dark:text-dark-600 font-semibold text-2xl my-2`}
                   >
                     Hello, I&apos;m
                   </p>
@@ -104,7 +104,7 @@ function Intro() {
                   </p>
                 </AnimatedText>
                 <AnimatedText>
-                  <LoaderBar tw="bg-mainLight-600 dark:bg-mainDark-600" />
+                  <LoaderBar tw="bg-light-600 dark:bg-dark-600" />
                   <Text tw="opacity-0 mt-0 my-2">
                     A Fullstack Developer with an eye for design and a Frontend
                     bias.

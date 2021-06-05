@@ -52,7 +52,7 @@ export default [
         font-weight: 700;
         color: #0b88cd;
         &:hover {
-          color: ${theme`colors.mainLight.600`};
+          color: ${theme`colors.light.600`};
         }
       }
       img {
@@ -70,12 +70,12 @@ export default [
     .dark &{
       .article-main {
         h1 {
-          border-bottom: 0.25rem solid ${theme`colors.mainDark.100`};
+          border-bottom: 0.25rem solid ${theme`colors.dark.100`};
         }
         a {
-          color: ${theme`colors.mainDark.600`};
+          color: ${theme`colors.dark.600`};
           &:hover {
-            color: ${theme`colors.mainDark.700`};
+            color: ${theme`colors.dark.700`};
           }
         }
       }

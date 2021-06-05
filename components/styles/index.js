@@ -77,8 +77,9 @@ const buttonStyles = ({ variant }) => [
     }
   `,
 ];
+
 export const Link = styled.a(
-  tw`font-semibold text-primary hover:text-secondary`
+  tw`font-semibold text-mainDark-primary hover:text-mainDark-secondary dark:(text-primary hover:text-secondary)`
 );
 
 export const PseudoBigLink = styled.a(buttonStyles);

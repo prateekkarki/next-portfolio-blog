@@ -1,4 +1,5 @@
 import { styled, css, theme } from 'twin.macro';
+import { Link as TextLink } from 'components/styles';
 import Link from 'next/link';
 import Head from 'next/head';
 
@@ -42,7 +43,7 @@ const Inner = styled.div(css`
 
 export default function Custom404() {
   return (
-    <Container>
+    <Container tw="bg-mainLight-400 dark:bg-mainDark-400">
       <Head>
         <title>404 | Page not found</title>
         <meta
@@ -55,11 +56,13 @@ export default function Custom404() {
         />
       </Head>
       <div>
-        <h1>404</h1>
+        <h1 tw="text-mainLight-700 dark:text-mainDark-700">404</h1>
         <Inner>
-          <h2>This page could not be found.</h2>
+          <h2 tw="text-mainLight-700 dark:text-mainDark-700">
+            This page could not be found.
+          </h2>
           <Link href="/" as="/" passHref>
-            <a href="/">Back to Homepage</a>
+            <TextLink href="/">Back to Homepage</TextLink>
           </Link>
         </Inner>
       </div>

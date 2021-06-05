@@ -24,6 +24,8 @@ module.exports = {
         secondary: '#E26D5A',
         success: '#5FA85F',
         mainLight: {
+          primary: '#7EB4D7',
+          secondary: '#F8BFb6',
           100: '#EDF6F9',
           200: '#C4DCE9',
           400: '#98AEC8',
@@ -33,6 +35,8 @@ module.exports = {
           800: '#161D26',
         },
         mainDark: {
+          primary: '#186999',
+          secondary: '#B24635',
           100: '#161D26',
           200: '#1F2935',
           400: '#2f3f54',

@@ -3,7 +3,6 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import tw from 'twin.macro';
-import { toast } from 'react-toastify';
 
 import {
   ContactInput,
@@ -23,25 +22,9 @@ function ContactForm() {
   const handleServerResponse = (ok, msg) => {
     isSubmitting(false);
     if (ok) {
-      toast.success(msg, {
-        position: 'bottom-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
+      // add success toast
     } else {
-      toast.error(msg, {
-        position: 'bottom-right',
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
+      // add error toast
     }
   };
 

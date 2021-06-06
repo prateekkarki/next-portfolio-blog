@@ -3,6 +3,8 @@ import { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import tw from 'twin.macro';
 import Markdown from 'react-markdown';
+
+import gfm from 'remark-gfm';
 import format from 'date-fns/format';
 import { useTheme } from 'next-themes';
 
@@ -19,6 +21,7 @@ function ArticleTemplate({ article }) {
       {children}
     </a>
   );
+
   const { theme } = useTheme();
   const SyntaxRenderer = ({ className, children, ...props }) => {
     const match = /language-(\w+)/.exec(className || '');
@@ -51,9 +54,10 @@ function ArticleTemplate({ article }) {
         <TitleBlock title={article.title} subtitle={article.description} />
       </div>
       <div css={tw`bg-light-200 dark:bg-dark-200`}>
-        <div css={tw`container mx-auto px-3 pb-6`}>
+        <div css={tw`mx-auto px-3 pb-6 max-w-3xl`}>
           <article css={style}>
             <Markdown
+              remarkPlugins={[gfm]}
               components={{ code: SyntaxRenderer, a: LinkRenderer }}
               className="article-main"
             >

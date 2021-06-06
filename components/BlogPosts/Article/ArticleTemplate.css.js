@@ -65,6 +65,24 @@ export default [
       code {
         border-radius: 0.375rem;
       }
+        table {
+          display: table;
+          border: 1px solid ${theme`colors.black`};
+          td{
+            padding: .5rem 1rem;
+            border: 1px solid ${theme`colors.black`};
+          }
+          thead {
+            background-color: ${theme`colors.light.400`};
+            th{
+              padding: 1rem 1rem;
+              border: 1px solid ${theme`colors.black`};
+            }
+          }
+          tbody {
+            background-color: ${theme`colors.gray.300`};
+          }
+        }
     }
     
     .dark &{
@@ -76,6 +94,25 @@ export default [
           color: ${theme`colors.dark.600`};
           &:hover {
             color: ${theme`colors.dark.700`};
+          }
+        }
+
+        table {
+          display: table;
+          border: 1px solid ${theme`colors.white`};
+          td{
+            padding: .5rem 1rem;
+            border: 1px solid ${theme`colors.white`};
+          }
+          thead {
+            background-color: ${theme`colors.dark.500`};
+            th{
+              padding: 1rem 1rem;
+              border: 1px solid ${theme`colors.white`};
+            }
+          }
+          tbody {
+            background-color: ${theme`colors.dark.400`};
           }
         }
       }

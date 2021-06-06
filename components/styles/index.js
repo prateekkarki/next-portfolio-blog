@@ -44,9 +44,9 @@ const buttonStyles = ({ variant }) => [
         transform transition-all duration-200 ease-in-out translate-y-0
       `}
 
-      ${variant === 'primary' && tw`bg-primary `}
-      ${variant === 'secondary' && tw`bg-secondary `}
-      ${!variant && tw`bg-primary `}
+      ${variant === 'primary' && tw`bg-primary`}
+      ${variant === 'secondary' && tw`bg-secondary`}
+      ${!variant && tw`bg-primary`}
 
       &:after {
         ${tw`bg-light-100 absolute top-0 opacity-25 `}

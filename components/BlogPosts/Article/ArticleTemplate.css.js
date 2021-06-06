@@ -9,6 +9,9 @@ export default [
         padding-bottom: 1.5rem;
       }
 
+      table{
+        margin-bottom: 1.5rem;
+      }
       ul {
         padding-bottom: 1rem;
         padding-top: 1rem;

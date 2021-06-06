@@ -23,16 +23,19 @@ function ArticleTemplate({ article }) {
   );
 
   const { theme } = useTheme();
-  const SyntaxRenderer = ({ className, children, ...props }) => {
+  const SyntaxRenderer = ({ className, children, inline, ...props }) => {
     const match = /language-(\w+)/.exec(className || '');
     const language = match ? match[1] : '';
     return (
       <SyntaxHighlighter
         style={theme === 'dark' ? syntaxThemeDark : syntaxThemeLight}
         language={language}
-        customStyle={{ background: theme === 'dark' ? '#2f2f2f' : '#fafafa' }}
+        customStyle={{
+          background: theme === 'dark' ? '#2f2f2f' : '#fafafa',
+          padding: inline ? '0' : '1.25em 1em',
+        }}
         className={className}
-        PreTag="div"
+        PreTag={inline ? 'span' : 'div'}
         {...props}
       >
         {String(children).replace(/\n$/, '')}

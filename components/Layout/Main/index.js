@@ -1,6 +1,7 @@
 import { GlobalStyles } from 'twin.macro';
 import { Transition, TransitionGroup } from 'react-transition-group';
 
+import { Toaster } from 'react-hot-toast';
 import Header from './Header';
 import Footer from './Footer';
 
@@ -25,6 +26,7 @@ function Main({ children, pathname }) {
           </Transition>
         </TransitionGroup>
         <Footer />
+        <Toaster position="bottom-center" />
       </MainContainer>
     </div>
   );

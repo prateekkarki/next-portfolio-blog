@@ -3,6 +3,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import tw from 'twin.macro';
+import toast from 'react-hot-toast';
 
 import {
   ContactInput,
@@ -22,8 +23,10 @@ function ContactForm() {
   const handleServerResponse = (ok, msg) => {
     isSubmitting(false);
     if (ok) {
+      toast.success(msg);
       // add success toast
     } else {
+      toast.error(msg);
       // add error toast
     }
   };
@@ -52,12 +55,12 @@ function ContactForm() {
         reset();
       })
       .catch((r) => {
-        if (r.response.data.error) {
+        if (r.response?.data?.error) {
           handleServerResponse(false, r.response.data.error);
         } else if (r.message) {
           handleServerResponse(false, r.message);
         } else {
-          handleServerResponse(false, r.statusText);
+          handleServerResponse(false, r.toString());
         }
       });
   };

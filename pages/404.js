@@ -15,7 +15,6 @@ const Container = styled.div(css`
   justify-content: center;
   h1 {
     display: inline-block;
-    border-right: 1px solid rgba(0, 0, 0, 0.3);
     margin: 0;
     margin-right: 20px;
     padding: 10px 23px 10px 0;
@@ -56,7 +55,9 @@ export default function Custom404() {
         />
       </Head>
       <div>
-        <h1 tw="text-light-700 dark:text-dark-700">404</h1>
+        <h1 tw="text-light-700 dark:text-dark-700 border-r-2 border-dark-100 dark:border-light-100">
+          404
+        </h1>
         <Inner>
           <h2 tw="text-light-700 dark:text-dark-700">
             This page could not be found.

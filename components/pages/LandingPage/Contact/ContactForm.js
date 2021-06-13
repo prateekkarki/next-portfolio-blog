@@ -24,10 +24,8 @@ function ContactForm() {
     isSubmitting(false);
     if (ok) {
       toast.success(msg);
-      // add success toast
     } else {
       toast.error(msg);
-      // add error toast
     }
   };
 

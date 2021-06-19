@@ -51,9 +51,7 @@ function Footer() {
           contentLabel="Resources"
         >
           <div css={tw`flex justify-between`}>
-            <h1
-              css={tw`font-bold text-2xl text-light-800 dark:text-dark-700`}
-            >
+            <h1 css={tw`font-bold text-2xl text-light-800 dark:text-dark-700`}>
               Credits
             </h1>
             <button
@@ -72,9 +70,7 @@ function Footer() {
             <div
               css={tw`mt-8 text-center sm:text-left sm:w-1/2 md:w-1/3 sm:inline-block`}
             >
-              <h2
-                css={tw`font-bold text-lg text-light-800 dark:text-dark-700`}
-              >
+              <h2 css={tw`font-bold text-lg text-light-800 dark:text-dark-700`}>
                 Frontend
               </h2>
               <ul>
@@ -113,9 +109,7 @@ function Footer() {
             <div
               css={tw`mt-8 text-center sm:text-left sm:w-1/2 md:w-1/3 sm:inline-block`}
             >
-              <h2
-                css={tw`font-bold text-lg text-light-800 dark:text-dark-700`}
-              >
+              <h2 css={tw`font-bold text-lg text-light-800 dark:text-dark-700`}>
                 Backend
               </h2>
               <ul>
@@ -164,9 +158,7 @@ function Footer() {
             <div
               css={tw`mt-8 text-center sm:text-left sm:w-1/2 md:w-1/3 sm:inline-block`}
             >
-              <h2
-                css={tw`font-bold text-lg text-light-800 dark:text-dark-700`}
-              >
+              <h2 css={tw`font-bold text-lg text-light-800 dark:text-dark-700`}>
                 Graphics
               </h2>
               <ul>

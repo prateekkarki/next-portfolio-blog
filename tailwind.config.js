@@ -22,7 +22,8 @@ module.exports = {
       colors: {
         primary: '#5398BE',
         secondary: '#E26D5A',
-        success: '#5FA85F',
+        successDim: '#5FA85F',
+        successBright: '#3DBB7E',
         light: {
           primary: '#7EB4D7',
           secondary: '#F8BFb6',

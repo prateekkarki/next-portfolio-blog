@@ -6,6 +6,7 @@ import tw from 'twin.macro';
 import { useHasMounted } from 'hooks';
 import { BigLink, Text } from 'components/styles';
 import Programmer from './Programmer';
+import GetResume from './GetResume';
 import {
   IntroContainer,
   ButtonsHolder,
@@ -16,6 +17,7 @@ import {
 function Intro() {
   const introRef = useRef(null);
   const hasMounted = useHasMounted();
+
   const width = typeof window === 'undefined' ? 1200 : window.innerWidth;
 
   // eslint-disable-next-line consistent-return
@@ -113,18 +115,10 @@ function Intro() {
               </div>
 
               <ButtonsHolder>
-                <Link href="/#contact" as="/#contact" passHref>
+                <Link href="/#contact" as="/#contact">
                   <BigLink>Hire Me</BigLink>
                 </Link>
-                <BigLink
-                  target="_blank"
-                  rel="noreferrer"
-                  href={process.env.NEXT_PUBLIC_RESUME_LINK}
-                  variant="secondary"
-                  tw="pl-10"
-                >
-                  Get Resume
-                </BigLink>
+                <GetResume />
               </ButtonsHolder>
             </div>
             <div css={tw`hidden md:block w-1/2 overflow-hidden`}>

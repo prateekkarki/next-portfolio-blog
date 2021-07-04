@@ -18,6 +18,12 @@ export const ButtonsHolder = styled.div([
   css`
     transform: scale(0);
     width: 100%;
+    button:last-child {
+      margin-left: 1rem;
+      @media (min-width: 375px) {
+        margin-left: 2rem;
+      }
+    }
     @media (min-width: 768px) {
       width:min-content;
     }

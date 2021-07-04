@@ -21,7 +21,7 @@ const inputStyles = ({ hasError }) => [
     appearance-none block w-full
     bg-light-100 border-light-400 
     text-gray-700 border rounded py-3 px-4 mb-3 leading-tight
-    transform duration-200 ease-in-out focus:(translate-x-1)
+    transition-transform transform duration-200 ease-in-out focus:(translate-x-1)
   `,
   hasError && tw`border-secondary`,
 ];

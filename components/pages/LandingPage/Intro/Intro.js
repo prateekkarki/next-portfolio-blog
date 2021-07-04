@@ -115,7 +115,7 @@ function Intro() {
               </div>
 
               <ButtonsHolder>
-                <Link href="/#contact" as="/#contact">
+                <Link href="/#contact" as="/#contact" passHref>
                   <BigLink>Hire Me</BigLink>
                 </Link>
                 <GetResume />

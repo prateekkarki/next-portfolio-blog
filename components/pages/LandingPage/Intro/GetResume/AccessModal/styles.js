@@ -2,7 +2,7 @@ import tw, { styled, css } from 'twin.macro';
 import Modal from 'react-modal';
 
 export const StyledModal = styled(Modal)`
-  ${tw`bg-light-200 dark:bg-dark-200 mx-auto overflow-visible rounded-lg p-6`}
+  ${tw`bg-light-400 dark:bg-dark-400 mx-auto overflow-visible rounded-lg p-6`}
   border: 1px solid #ccc;
   overflow: auto;
   height: fit-content;

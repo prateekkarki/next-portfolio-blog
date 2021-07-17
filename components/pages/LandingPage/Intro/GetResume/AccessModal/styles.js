@@ -13,6 +13,7 @@ export const StyledModal = styled(Modal)`
     transition: all 350ms ease-in-out;
     transform-origin: center;
     padding: 1.5rem;
+    width:530px;
     max-width:85%;
     box-shadow: #161d26 2px 2px 4px 1px;
   }
@@ -25,6 +26,31 @@ export const StyledModal = styled(Modal)`
   &.ReactModal__Content--before-close {
     opacity: 0;
     transform: scale(0);
+  }
+
+  .formsContainer{
+    display: flex;
+    width:482px;
+    max-width:100%;
+    transition: transform 400ms ease-in-out;
+    transform: translateX(-100%);
+    .accessForms{
+      width: 100%;
+      label {
+        display: block;
+        width: 482px;
+        max-width: 100%;
+      }
+    }
+  }
+
+  & .codeRequestForm{
+    &-enter-done, &-enter-active{
+      transform: translateX(0);
+    }
+    &-exit-done, &-exit-active{
+      transform: translateX(-100%);
+    }
   }
 `;
 

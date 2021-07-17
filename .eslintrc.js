@@ -27,6 +27,7 @@ module.exports = {
       },
     ],
     'object-curly-newline': ['error', { consistent: true }],
+    'no-unused-vars': 0,
     'comma-dangle': 0,
     'linebreak-style': 0,
     'no-tabs': 0,

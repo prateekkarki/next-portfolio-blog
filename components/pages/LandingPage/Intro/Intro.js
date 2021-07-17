@@ -1,10 +1,9 @@
 import { useRef, useEffect } from 'react';
 import anime from 'animejs';
-import Link from 'next/link';
 import tw from 'twin.macro';
 
 import { useHasMounted } from 'hooks';
-import { BigLink, Text } from 'components/styles';
+import { BigButton, Text } from 'components/styles';
 import Programmer from './Programmer';
 import GetResume from './GetResume';
 import {
@@ -14,7 +13,7 @@ import {
   LoaderBar,
 } from './styles';
 
-function Intro() {
+function Intro({ scrollToContact }) {
   const introRef = useRef(null);
   const hasMounted = useHasMounted();
 
@@ -115,9 +114,7 @@ function Intro() {
               </div>
 
               <ButtonsHolder>
-                <Link href="/#contact" as="/#contact" passHref>
-                  <BigLink>Hire Me</BigLink>
-                </Link>
+                <BigButton onClick={scrollToContact}>Hire Me</BigButton>
                 <GetResume />
               </ButtonsHolder>
             </div>

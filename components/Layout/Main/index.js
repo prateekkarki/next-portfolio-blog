@@ -7,7 +7,7 @@ import Footer from './Footer';
 
 import { InnerContainer, MainContainer } from './styles';
 import transitionConfig from './styles/transitionConfig';
-
+import ScrollToTop from '../../Common/ScrollToTop';
 import { FullpageLoader, MetaHead } from '../..';
 
 function Main({ children, pathname }) {
@@ -26,6 +26,7 @@ function Main({ children, pathname }) {
           </Transition>
         </TransitionGroup>
         <Footer />
+        <ScrollToTop />
         <Toaster position="bottom-center" />
       </MainContainer>
     </div>

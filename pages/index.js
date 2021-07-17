@@ -23,6 +23,14 @@ const Home = ({ articles }) => {
   };
 
   const router = useRouter();
+
+  const scrollToContact = () => {
+    const offsetTop = refs.contact.current.offsetTop - 150;
+    window.scrollTo({
+      top: offsetTop,
+      behavior: 'smooth',
+    });
+  };
   useEffect(() => {
     AOS.init({
       duration: 750,
@@ -61,7 +69,7 @@ const Home = ({ articles }) => {
         />
       </Head>
       <div css={tw`bg-light-100 dark:bg-dark-100`} ref={refs.home}>
-        <Intro />
+        <Intro scrollToContact={scrollToContact} />
 
         <div css={[tw`relative my-24`]} ref={refs.about}>
           <Skewed>

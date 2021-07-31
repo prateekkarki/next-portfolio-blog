@@ -3,7 +3,7 @@ import { IoIosMail } from 'react-icons/io';
 import tw, { styled } from 'twin.macro';
 
 import { Title, Text } from 'components/styles';
-import ContactForm from './ContactForm';
+import ContactForm from '../ContactForm';
 
 const Links = styled.a(({ lastItem }) => [
   tw`p-3 bg-light-700 text-light-100 dark:text-dark-100 dark:bg-dark-700 rounded-full text-2xl mr-4

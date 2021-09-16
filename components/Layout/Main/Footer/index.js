@@ -1,8 +1,8 @@
 import { useState, useRef } from 'react';
 import tw, { styled } from 'twin.macro';
-
 import { IoIosCloseCircle } from 'react-icons/io';
 import Modal from 'react-modal';
+import { FooterLink, Title } from './styles';
 
 const StyledModal = styled(Modal)`
   ${tw`bg-light-200 dark:bg-dark-200 w-11/12 mx-auto overflow-auto rounded-lg p-6`}
@@ -27,7 +27,6 @@ const StyledModal = styled(Modal)`
     transform: scale(0);
   }
 `;
-
 function Footer() {
   const [modalOpen, setModalOpen] = useState(false);
   const el = useRef(null);
@@ -70,109 +69,33 @@ function Footer() {
             <div
               css={tw`mt-8 text-center sm:text-left sm:w-1/2 md:w-1/3 sm:inline-block`}
             >
-              <h2 css={tw`font-bold text-lg text-light-800 dark:text-dark-700`}>
-                Frontend
-              </h2>
+              <Title>Frontend</Title>
               <ul>
-                <li css={tw`text-light-700`}>
-                  <a
-                    target="_blank"
-                    css={tw`text-primary`}
-                    rel="noreferrer"
-                    href="https://nextjs.org/docs"
-                  >
-                    NextJS
-                  </a>
-                </li>
-                <li css={tw`text-light-700`}>
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    css={tw`text-primary`}
-                    href="http://reactjs.org/"
-                  >
-                    ReactJS
-                  </a>
-                </li>
-                <li css={tw`text-light-700`}>
-                  <a
-                    target="_blank"
-                    css={tw`text-primary`}
-                    rel="noreferrer"
-                    href="https://tailwindcss.com/"
-                  >
-                    Tailwind
-                  </a>
-                </li>
+                <FooterLink label="NextJS" href="https://nextjs.org/" />
+                <FooterLink label="ReactJS" href="https://reactjs.org/" />
+                <FooterLink label="Tailwind" href="https://tailwindcss.com/" />
               </ul>
             </div>
             <div
               css={tw`mt-8 text-center sm:text-left sm:w-1/2 md:w-1/3 sm:inline-block`}
             >
-              <h2 css={tw`font-bold text-lg text-light-800 dark:text-dark-700`}>
-                Backend
-              </h2>
+              <Title>Backend</Title>
               <ul>
-                <li css={tw`text-light-700`}>
-                  <a
-                    target="_blank"
-                    css={tw`text-primary`}
-                    rel="noreferrer"
-                    href="https://graphql.org/"
-                  >
-                    GraphQL
-                  </a>
-                </li>
-                <li css={tw`text-light-700`}>
-                  <a
-                    target="_blank"
-                    css={tw`text-primary`}
-                    rel="noreferrer"
-                    href="http://strapi.io/"
-                  >
-                    Strapi
-                  </a>
-                </li>
-                <li css={tw`text-light-700`}>
-                  <a
-                    target="_blank"
-                    css={tw`text-primary`}
-                    rel="noreferrer"
-                    href="https://www.netlify.com/"
-                  >
-                    Netlify
-                  </a>
-                </li>
-                <li css={tw`text-light-700`}>
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    css={tw`text-primary`}
-                    href="https://cloudinary.com/"
-                  >
-                    Cloudinary
-                  </a>
-                </li>
+                <FooterLink label="GraphQL" href="https://graphql.org/" />
+                <FooterLink label="Strapi" href="https://strapi.io/" />
+                <FooterLink label="Vercel" href="https://vercel.com/" />
+                <FooterLink label="Cloudinary" href="https://cloudinary.com/" />
               </ul>
             </div>
             <div
               css={tw`mt-8 text-center sm:text-left sm:w-1/2 md:w-1/3 sm:inline-block`}
             >
-              <h2 css={tw`font-bold text-lg text-light-800 dark:text-dark-700`}>
-                Graphics
-              </h2>
+              <Title>Graphics</Title>
               <ul>
-                <li css={tw`text-light-700`}>
-                  Programmer illustrations from{' '}
-                  <a
-                    target="_blank"
-                    css={tw`text-primary`}
-                    rel="noreferrer"
-                    href="https://www.freepik.com/free-vector/colourful-illustration-programmer-working_5483080.htm"
-                  >
-                    Freepik
-                  </a>
-                </li>
+                <FooterLink
+                  label="Freepik"
+                  href="https://www.freepik.com/free-vector/colourful-illustration-programmer-working_5483080.htm"
+                />
               </ul>
             </div>
           </div>

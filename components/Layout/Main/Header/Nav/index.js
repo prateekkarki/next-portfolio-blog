@@ -26,8 +26,8 @@ const Nav = () => {
       <div
         css={tw`
           bg-light-200 dark:bg-dark-200 
-          container relative mx-auto px-3
-          flex flex-row items-center justify-between py-4 z-10
+          container relative mx-auto px-3 h-20
+          flex flex-row items-center justify-between z-10
         `}
       >
         <Link href="/#home" passHref>

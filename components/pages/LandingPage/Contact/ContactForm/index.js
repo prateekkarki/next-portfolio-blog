@@ -5,12 +5,8 @@ import { useForm } from 'react-hook-form';
 import tw from 'twin.macro';
 import toast from 'react-hot-toast';
 
-import {
-  ContactInput,
-  ContactTextarea,
-  BigButton,
-  ContactLabel,
-} from 'components/styles';
+import { BigButton } from 'components/styles';
+import { ContactInput, ContactTextarea, ContactLabel } from './styles';
 
 function ContactForm() {
   const { register, handleSubmit, errors, reset } = useForm({

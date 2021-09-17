@@ -16,3 +16,5 @@ export const ContactLabel = styled.label(({ hasError }) => [
   tw`block uppercase tracking-wide text-primary text-xs font-bold mb-2`,
   hasError && tw`text-secondary`,
 ]);
+
+export const ContactSelect = styled.input(inputStyles);

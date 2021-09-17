@@ -56,9 +56,7 @@ export const CardContainer = styled.div(({ dark }) => [
     rounded-b-md rounded-t-md h-full
   `,
 
-  dark
-    ? tw`bg-light-100 dark:bg-dark-100`
-    : tw`bg-light-200 dark:bg-dark-200`,
+  dark ? tw`bg-light-100 dark:bg-dark-100` : tw`bg-light-200 dark:bg-dark-200`,
 
   css`
     &:hover {

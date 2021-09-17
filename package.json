@@ -52,12 +52,12 @@
     "react-vertical-timeline-component": "^3.3.0",
     "remark-gfm": "^1.0.0",
     "tailwindcss": "^2.1.2",
+    "dotenv": "10.0.0",
     "twin.macro": "^2.4.1"
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.3.0",
     "babel-plugin-macros": "^3.1.0",
-    "dotenv": "10.0.0",
     "eslint": "7.27.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^8.3.0",

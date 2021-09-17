@@ -11,7 +11,7 @@ import toast from 'react-hot-toast';
 import { StyledModal, customStyles, CloseButton } from './styles';
 
 function Index({ modalOpen, handleClose }) {
-  const [codeRequest, setCodeRequest] = useState(false);
+  const [codeRequest, setCodeRequest] = useState(true);
   const {
     register,
     handleSubmit,
@@ -21,7 +21,25 @@ function Index({ modalOpen, handleClose }) {
     mode: 'onSubmit',
   });
 
+  function openInNewTab(href) {
+    Object.assign(document.createElement('a'), {
+      target: '_blank',
+      href,
+    }).click();
+  }
+
   const [submitting, isSubmitting] = useState(false);
+  const [codeError, setCodeError] = useState(false);
+  const [code, setCode] = useState('');
+
+  const onCodeSubmit = () => {
+    if (code === process.env.NEXT_PUBLIC_RESUME_CODE) {
+      setCodeError(false);
+      openInNewTab(process.env.NEXT_PUBLIC_RESUME_LINK);
+    } else {
+      setCodeError(true);
+    }
+  };
 
   const handleServerResponse = (ok, msg) => {
     isSubmitting(false);
@@ -148,14 +166,24 @@ function Index({ modalOpen, handleClose }) {
                         text-dark-200 bg-dark-800
                         focus:outline-none text-sm"
                   placeholder="XXXXX"
+                  onChange={(e) => {
+                    setCode(e.target.value);
+                  }}
                 />
                 <button
                   tw="width[44px] m-1 p-2 outline-none focus:outline-none text-sm bg-successBright text-dark-800 rounded-lg font-semibold uppercase flex items-center justify-center"
-                  type="submit"
+                  type="button"
+                  onClick={onCodeSubmit}
                 >
                   <FaArrowRight tw="w-6 h-6" />
                 </button>
               </div>
+
+              {codeError && (
+                <p css={tw`text-secondary text-xs italic pt-2`}>
+                  Code does not match. Please request one below.
+                </p>
+              )}
 
               <div tw="mt-4 flex items-end ">
                 <p tw="inline font-light text-dark-700 ">

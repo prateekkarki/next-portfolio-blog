@@ -22,7 +22,7 @@ const BlogPosts = ({ articles }) => (
         I usually post a few times every month. Here&apos;s one on the right to
         get you started. Be sure to check out more by clicking the button below.
       </Text>
-      <Link href="/blog" as="/blog" passHref>
+      <Link href="/blog" passHref>
         <BigLink css={tw`mt-6 mx-auto md:ml-0`}>View all posts</BigLink>
       </Link>
     </div>

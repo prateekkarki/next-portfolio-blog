@@ -62,7 +62,7 @@ export default function Custom404() {
           <h2 tw="text-light-700 dark:text-dark-700">
             This page could not be found.
           </h2>
-          <Link href="/" as="/" passHref>
+          <Link href="/" passHref>
             <TextLink href="/">Back to Homepage</TextLink>
           </Link>
         </Inner>

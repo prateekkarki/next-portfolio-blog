@@ -8,7 +8,7 @@ import tw from 'twin.macro';
 function EachBlock({ path, title }) {
   return path ? (
     <Fragment>
-      <Link href={path} as={path} passHref>
+      <Link href={path} passHref>
         <a
           href={path}
           css={tw`text-light-700 dark:text-dark-700 hover:text-primary font-bold`}

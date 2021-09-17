@@ -23,8 +23,9 @@ function SettingButtons() {
       setTheme('dark');
     }
   }, [theme]);
-
-  return !hasMounted ? null : (
+  return !hasMounted ? (
+    <SettingButton tw="min-width[40px]" />
+  ) : (
     <Fragment>
       <SettingButton onClick={onThemeToggle}>
         {theme === 'dark' ? <IoMdMoon /> : <IoMdSunny />}

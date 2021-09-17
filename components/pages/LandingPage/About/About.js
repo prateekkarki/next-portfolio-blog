@@ -30,7 +30,7 @@ function About() {
           I believe in long term relationships with the every client and my
           primarily focus on long term projects.
         </Text>
-        <Link href="/about" as="/about" passHref>
+        <Link href="/about" passHref>
           <BigLink css={tw`mt-6 mx-auto md:ml-0`}>Find out more</BigLink>
         </Link>
       </div>

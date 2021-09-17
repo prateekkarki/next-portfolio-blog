@@ -126,6 +126,20 @@ function ContactForm() {
           </div>
         </div>
       </div>
+
+      <div css={tw`flex flex-wrap mb-6 w-full`}>
+        <div css={tw`w-full px-3`}>
+          <ContactLabel hasError={errors.subject} htmlFor="subject">
+            Subject
+          </ContactLabel>
+          <ContactInput
+            hasError={errors.subject}
+            id="subject"
+            name="subject"
+            type="subject"
+          />
+        </div>
+      </div>
       <div css={tw`flex flex-wrap mb-6`}>
         <div css={tw`w-full px-3`}>
           <ContactLabel hasError={errors.message} htmlFor="message">
@@ -150,7 +164,7 @@ function ContactForm() {
           />
           {errors.message && (
             <p css={tw`text-secondary text-xs italic`}>
-              {errors.message.message || 'Please enter your email.'}
+              {errors.message.message || 'Please enter a message.'}
             </p>
           )}
         </div>

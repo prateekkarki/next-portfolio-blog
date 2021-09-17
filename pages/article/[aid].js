@@ -23,7 +23,7 @@ const SingleArticle = ({ article }) => {
           Looks like the article does not exist. Please checkout other sections
           of the website.
         </p>
-        <Link href="/blog" as="/blog" passHref>
+        <Link href="/blog" passHref>
           <RegularLink css={tw`block text-center`} href="/blog">
             Back to Blogs
           </RegularLink>

@@ -4,8 +4,7 @@ import Link from 'next/link';
 
 const ActiveLink = (props) => {
   const router = useRouter();
-  const { as, children } = props;
-
+  const { href, children } = props;
   const NavLink = styled.a(({ isActive }) => [
     isActive
       ? tw`text-primary`
@@ -15,7 +14,7 @@ const ActiveLink = (props) => {
 
   return (
     <Link {...props} passHref>
-      <NavLink isActive={router.asPath === as}>{children}</NavLink>
+      <NavLink isActive={router.pathname === href}>{children}</NavLink>
     </Link>
   );
 };

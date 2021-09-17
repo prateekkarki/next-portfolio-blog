@@ -11,12 +11,8 @@ const Nav = () => {
   const [isExpanded, setExpanded] = useState(false);
   const AllLinks = () => (
     <Fragment>
-      <ActiveLink href="/about" as="/about">
-        About
-      </ActiveLink>
-      <ActiveLink href="/blog" as="/blog">
-        Blog
-      </ActiveLink>
+      <ActiveLink href="/about">About</ActiveLink>
+      <ActiveLink href="/blog">Blog</ActiveLink>
       <SettingButtons />
     </Fragment>
   );
@@ -30,8 +26,8 @@ const Nav = () => {
           flex flex-row items-center justify-between z-10
         `}
       >
-        <Link href="/#home" passHref>
-          <a href="/#home" css={tw`font-black text-primary`}>
+        <Link href="/" passHref>
+          <a css={tw`font-black text-primary`}>
             <MainLogo src="/images/logo/logo.svg" alt="logo" />
           </a>
         </Link>

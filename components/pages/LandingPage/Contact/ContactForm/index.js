@@ -9,7 +9,12 @@ import { BigButton } from 'components/styles';
 import { ContactInput, ContactTextarea, ContactLabel } from './styles';
 
 function ContactForm() {
-  const { register, handleSubmit, errors, reset } = useForm({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
     mode: 'onSubmit',
   });
 
@@ -64,8 +69,6 @@ function ContactForm() {
       onSubmit={handleSubmit(onSubmit)}
       name="contact"
       css={tw`w-full max-w-lg`}
-      netlify="true"
-      data-netlify="true"
     >
       <div css={tw`flex flex-col md:flex-row`}>
         <div css={tw`flex flex-wrap mb-6 w-full md:w-1/2`}>
@@ -80,7 +83,7 @@ function ContactForm() {
               name="fullName"
               type="text"
               placeholder="John Doe"
-              ref={register({
+              {...register('fullName', {
                 required: 'Please enter your full name.',
                 maxLength: {
                   value: 30,
@@ -110,7 +113,7 @@ function ContactForm() {
               name="email"
               type="email"
               placeholder="john.doe@example.com"
-              ref={register({
+              {...register('email', {
                 required: 'Please enter your email.',
                 pattern: {
                   value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
@@ -136,7 +139,7 @@ function ContactForm() {
             id="message"
             name="message"
             placeholder="Type your message here"
-            ref={register({
+            {...register('message', {
               required: 'Please enter the message.',
               maxLength: {
                 value: 800,

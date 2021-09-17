@@ -1,3 +1,4 @@
+import React from 'react';
 import tw, { css, styled } from 'twin.macro';
 
 export const Title = tw.h1`
@@ -67,10 +68,12 @@ export const Link = styled.a(
 
 export const PseudoBigLink = styled.a(buttonStyles);
 export const PseudoBigButton = styled.button(buttonStyles);
-export const BigLink = ({ children, variant, ...others }) => (
-  <PseudoBigLink variant={variant} {...others}>
-    <div>{children}</div>
-  </PseudoBigLink>
+export const BigLink = React.forwardRef(
+  ({ children, variant, ...others }, ref) => (
+    <PseudoBigLink variant={variant} ref={ref} {...others}>
+      <div>{children}</div>
+    </PseudoBigLink>
+  )
 );
 export const BigButton = ({ children, variant, ...others }) => (
   <PseudoBigButton variant={variant} {...others}>

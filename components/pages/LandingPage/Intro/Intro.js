@@ -80,7 +80,11 @@ function Intro({ scrollToContact }) {
       <div css={tw`container flex h-full items-center justify-center mx-auto`}>
         {!hasMounted ? (
           <div css={tw`flex h-full`}>
-            <img alt="loading" src="/images/loading/puff.svg" />
+            <img
+              tw="max-width[80px]"
+              alt="loading"
+              src="/images/loading/puff.svg"
+            />
           </div>
         ) : (
           <>

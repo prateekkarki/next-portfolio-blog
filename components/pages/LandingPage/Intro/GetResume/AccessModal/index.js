@@ -11,7 +11,7 @@ import toast from 'react-hot-toast';
 import { StyledModal, customStyles, CloseButton } from './styles';
 
 function Index({ modalOpen, handleClose }) {
-  const [codeRequest, setCodeRequest] = useState(true);
+  const [codeRequest, setCodeRequest] = useState(false);
   const {
     register,
     handleSubmit,
@@ -34,9 +34,12 @@ function Index({ modalOpen, handleClose }) {
 
   const onCodeSubmit = () => {
     if (code === process.env.NEXT_PUBLIC_RESUME_CODE) {
+      setCode('');
       setCodeError(false);
+      handleClose();
       openInNewTab(process.env.NEXT_PUBLIC_RESUME_LINK);
     } else {
+      setCode('');
       setCodeError(true);
     }
   };
@@ -157,7 +160,6 @@ function Index({ modalOpen, handleClose }) {
                 Please enter your access code to view the resume.
               </label>
               <div tw="width[180px] max-w-full mt-2 bg-dark-800 rounded-lg flex flex-wrap justify-start md:flex-row">
-                <form action="" />
                 <input
                   id="accessCode"
                   type="email"
@@ -166,6 +168,7 @@ function Index({ modalOpen, handleClose }) {
                         text-dark-200 bg-dark-800
                         focus:outline-none text-sm"
                   placeholder="XXXXX"
+                  value={code}
                   onChange={(e) => {
                     setCode(e.target.value);
                   }}

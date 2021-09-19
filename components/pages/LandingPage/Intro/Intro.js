@@ -111,7 +111,7 @@ function Intro({ scrollToContact }) {
                 <AnimatedText>
                   <LoaderBar tw="bg-light-600 dark:bg-dark-600" />
                   <Text tw="opacity-0 mt-0 my-2">
-                    A Fullstack Developer with an eye for design and a Frontend
+                    A Fullstack Developer with an eye for design and a frontend
                     bias.
                   </Text>
                 </AnimatedText>

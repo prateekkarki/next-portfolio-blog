@@ -22,11 +22,11 @@ module.exports = {
       colors: {
         primary: '#5398BE',
         secondary: '#E26D5A',
-        successDim: '#5FA85F',
-        successBright: '#3DBB7E',
+        success: '#35B678',
         light: {
           primary: '#7EB4D7',
           secondary: '#F8BFb6',
+          success: '#2ECE81',
           100: '#EDF6F9',
           200: '#C4DCE9',
           400: '#98AEC8',
@@ -38,6 +38,7 @@ module.exports = {
         dark: {
           primary: '#186999',
           secondary: '#B24635',
+          success: '#26A568',
           100: '#161D26',
           200: '#1F2935',
           400: '#2f3f54',

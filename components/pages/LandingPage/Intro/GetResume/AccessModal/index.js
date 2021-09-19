@@ -4,31 +4,32 @@ import { FaArrowRight } from 'react-icons/fa';
 import tw from 'twin.macro';
 import { CSSTransition } from 'react-transition-group';
 
-import axios from 'axios';
-import { useForm } from 'react-hook-form';
+import { useFormRequest } from 'hooks';
+import {
+  StyledModal,
+  customStyles,
+  CloseButton,
+  Label,
+  SuggestionButton,
+  SubmitArrow,
+  SuggestionText,
+} from './styles';
+import SubmitButton from './SubmitButton';
 
-import toast from 'react-hot-toast';
-import { StyledModal, customStyles, CloseButton } from './styles';
+function openInNewTab(href) {
+  Object.assign(document.createElement('a'), {
+    target: '_blank',
+    href,
+  }).click();
+}
 
 function Index({ modalOpen, handleClose }) {
   const [codeRequest, setCodeRequest] = useState(false);
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm({
-    mode: 'onSubmit',
+  const { submitting, register, errors, handleFinished } = useFormRequest({
+    onSuccess: () => {
+      handleClose();
+    },
   });
-
-  function openInNewTab(href) {
-    Object.assign(document.createElement('a'), {
-      target: '_blank',
-      href,
-    }).click();
-  }
-
-  const [submitting, isSubmitting] = useState(false);
   const [codeError, setCodeError] = useState(false);
   const [code, setCode] = useState('');
 
@@ -44,41 +45,6 @@ function Index({ modalOpen, handleClose }) {
     }
   };
 
-  const handleServerResponse = (ok, msg) => {
-    isSubmitting(false);
-    if (ok) {
-      handleClose();
-      toast.success(msg);
-    } else {
-      toast.error(msg);
-    }
-  };
-
-  const onSubmit = (data) => {
-    isSubmitting(true);
-
-    axios({
-      method: 'POST',
-      url: 'https://formspree.io/f/xdolrnlo',
-      data,
-    })
-      .then(() => {
-        handleServerResponse(
-          true,
-          "Thanks for reaching out! I'll get back to you soon."
-        );
-        reset();
-      })
-      .catch((r) => {
-        if (r.response?.data?.error) {
-          handleServerResponse(false, r.response.data.error);
-        } else if (r.message) {
-          handleServerResponse(false, r.message);
-        } else {
-          handleServerResponse(false, r.toString());
-        }
-      });
-  };
   return (
     <StyledModal
       isOpen={modalOpen}
@@ -99,19 +65,16 @@ function Index({ modalOpen, handleClose }) {
         >
           <div className="formsContainer">
             <div className="accessForms">
-              <form onSubmit={handleSubmit(onSubmit)} name="resumeRequest">
-                <label htmlFor="accessEmail" tw="font-normal text-dark-700 ">
+              <form onSubmit={handleFinished} name="resumeRequest">
+                <Label htmlFor="accessEmail">
                   To request the access code, please enter your email below.
-                </label>
+                </Label>
                 <div tw="width[420px] max-w-full mt-2 bg-dark-800 rounded-lg flex flex-wrap justify-start md:flex-row">
                   <input
                     id="accessEmail"
                     type="text"
                     name="accessEmail"
-                    tw="rounded-lg p-4 appearance-none
-                    width[calc(100% - 52px)]
-                    text-dark-200 bg-dark-800
-                    focus:outline-none text-sm"
+                    tw="rounded-lg p-4 appearance-none width[calc(100% - 52px)] text-dark-200 bg-dark-800 focus:outline-none text-sm"
                     placeholder="john.doe@example.com"
                     noValidate
                     {...register('accessEmail', {
@@ -122,43 +85,38 @@ function Index({ modalOpen, handleClose }) {
                       },
                     })}
                   />
-                  <button
-                    tw="width[44px] m-1 p-2 outline-none focus:outline-none text-sm bg-successBright text-dark-800 rounded-lg font-semibold uppercase flex items-center justify-center"
-                    type="submit"
-                    disabled={submitting}
-                  >
+                  <SubmitButton type="submit" submitting={submitting}>
                     <FaArrowRight tw="w-6 h-6" />
-                  </button>
+                  </SubmitButton>
                 </div>
 
                 {errors.accessEmail && (
-                  <p css={tw`text-secondary text-xs italic pt-2`}>
+                  <p
+                    css={tw`text-dark-secondary dark:text-secondary text-xs italic pt-2`}
+                  >
                     {errors.accessEmail.message || 'Please enter your email.'}
                   </p>
                 )}
               </form>
 
-              <div tw="mt-4 flex items-end ">
-                <p tw="inline font-light text-dark-700 ">
+              <div tw="mt-4 flex items-end">
+                <SuggestionText>
                   Already have a access code?{' '}
-                  <button
+                  <SuggestionButton
                     type="button"
-                    tw="inline outline-none focus:outline-none font-light text-primary
-                  border-b-2 border-dashed border-primary
-                  hover:(border-light-primary text-light-primary)"
                     onClick={() => {
                       setCodeRequest(!codeRequest);
                     }}
                   >
                     Enter it here.
-                  </button>
-                </p>
+                  </SuggestionButton>
+                </SuggestionText>
               </div>
             </div>
             <div className="accessForms">
-              <label htmlFor="accessCode" tw="font-normal text-dark-700 ">
+              <Label htmlFor="accessCode">
                 Please enter your access code to view the resume.
-              </label>
+              </Label>
               <div tw="width[180px] max-w-full mt-2 bg-dark-800 rounded-lg flex flex-wrap justify-start md:flex-row">
                 <input
                   id="accessCode"
@@ -173,36 +131,31 @@ function Index({ modalOpen, handleClose }) {
                     setCode(e.target.value);
                   }}
                 />
-                <button
-                  tw="width[44px] m-1 p-2 outline-none focus:outline-none text-sm bg-successBright text-dark-800 rounded-lg font-semibold uppercase flex items-center justify-center"
-                  type="button"
-                  onClick={onCodeSubmit}
-                >
+                <SubmitButton type="button" onClick={onCodeSubmit}>
                   <FaArrowRight tw="w-6 h-6" />
-                </button>
+                </SubmitButton>
               </div>
 
               {codeError && (
-                <p css={tw`text-secondary text-xs italic pt-2`}>
+                <p
+                  css={tw`text-dark-secondary dark:text-secondary text-xs italic pt-2`}
+                >
                   Code does not match. Please request one below.
                 </p>
               )}
 
               <div tw="mt-4 flex items-end ">
-                <p tw="inline font-light text-dark-700 ">
+                <SuggestionText>
                   Don’t have a access code?{' '}
-                  <button
+                  <SuggestionButton
                     type="button"
-                    tw="inline outline-none focus:outline-none font-light text-primary
-                        border-b-2 border-dashed border-primary
-                        hover:(border-light-primary text-light-primary)"
                     onClick={() => {
                       setCodeRequest(!codeRequest);
                     }}
                   >
-                    Get one here.
-                  </button>
-                </p>
+                    Request one here.
+                  </SuggestionButton>
+                </SuggestionText>
               </div>
             </div>
           </div>

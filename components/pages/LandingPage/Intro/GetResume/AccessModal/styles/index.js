@@ -69,6 +69,7 @@ dark:(
 )`;
 
 export const SuggestionText = tw.p`inline font-light text-dark-200 dark:text-light-200`;
+export const ErrorText = tw.p`text-dark-secondary dark:text-secondary text-xs italic pt-2`;
 
 export const CloseButton = styled.button([
   tw`absolute inset-0 top-0 right-0 left-auto`,

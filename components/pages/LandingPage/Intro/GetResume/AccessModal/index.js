@@ -11,7 +11,7 @@ import {
   CloseButton,
   Label,
   SuggestionButton,
-  SubmitArrow,
+  ErrorText,
   SuggestionText,
 } from './styles';
 import SubmitButton from './SubmitButton';
@@ -63,7 +63,11 @@ function Index({ modalOpen, handleClose }) {
           timeout={400}
           classNames="codeRequestForm"
         >
-          <div className="formsContainer">
+          <div
+            className={`formsContainer ${
+              codeRequest ? 'codeRequestForm-enter-done' : ''
+            }`}
+          >
             <div className="accessForms">
               <form onSubmit={handleFinished} name="resumeRequest">
                 <Label htmlFor="accessEmail">
@@ -91,11 +95,7 @@ function Index({ modalOpen, handleClose }) {
                 </div>
 
                 {errors.accessEmail && (
-                  <p
-                    css={tw`text-dark-secondary dark:text-secondary text-xs italic pt-2`}
-                  >
-                    {errors.accessEmail.message || 'Please enter your email.'}
-                  </p>
+                  <ErrorText>{errors.accessEmail.message}</ErrorText>
                 )}
               </form>
 
@@ -130,6 +130,9 @@ function Index({ modalOpen, handleClose }) {
                   onChange={(e) => {
                     setCode(e.target.value);
                   }}
+                  onFocus={() => {
+                    setCodeError(false);
+                  }}
                 />
                 <SubmitButton type="button" onClick={onCodeSubmit}>
                   <FaArrowRight tw="w-6 h-6" />
@@ -137,11 +140,9 @@ function Index({ modalOpen, handleClose }) {
               </div>
 
               {codeError && (
-                <p
-                  css={tw`text-dark-secondary dark:text-secondary text-xs italic pt-2`}
-                >
+                <ErrorText>
                   Code does not match. Please request one below.
-                </p>
+                </ErrorText>
               )}
 
               <div tw="mt-4 flex items-end ">

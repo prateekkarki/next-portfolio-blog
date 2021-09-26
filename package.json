@@ -7,7 +7,8 @@
     "dev": "next dev",
     "develop": "next dev",
     "start": "next start",
-    "build": "next build"
+    "build": "next build",
+    "cypress": "cypress open"
   },
   "babelMacros": {
     "twin": {
@@ -30,6 +31,7 @@
     "axios": "^0.21.1",
     "date-fns": "^2.21.1",
     "disqus-react": "^1.0.11",
+    "dotenv": "10.0.0",
     "graphql": "^15.3.0",
     "graphql-tag": "^2.12.4",
     "hamburger-react": "^2.4.0",
@@ -52,12 +54,12 @@
     "react-vertical-timeline-component": "^3.3.0",
     "remark-gfm": "^1.0.0",
     "tailwindcss": "^2.1.2",
-    "dotenv": "10.0.0",
     "twin.macro": "^2.4.1"
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.3.0",
     "babel-plugin-macros": "^3.1.0",
+    "cypress": "^8.4.1",
     "eslint": "7.27.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^8.3.0",

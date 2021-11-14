@@ -2,10 +2,10 @@ import { Fragment } from 'react';
 import tw from 'twin.macro';
 
 import Head from 'next/head';
+import { Card } from 'components/BlogPosts/Card';
 import ARTICLES_QUERY from '../apollo/queries/article/articles';
 
 import { initializeApollo } from '../utils/apollo';
-import Card from '../components/BlogPosts/Card';
 import TitleBlock from '../components/Common/TitleBlock';
 import { Container, MainBg } from '../components/styles';
 

@@ -30,7 +30,7 @@ export default ARTICLES_QUERY;
 export const LANDING_PAGE_POSTS = gql`
   query Articles {
     articles (
-      limit: 1
+      limit: 2
       where: { status: true, featured: true }
       sort: "published_on:DESC"
     ) {

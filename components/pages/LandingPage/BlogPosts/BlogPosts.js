@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Link from 'next/link';
 
 import { BigLink, Text, Title, Flex } from 'components/styles';
-import Card from 'components/BlogPosts/Card';
+import { MiniCard } from 'components/BlogPosts/Card';
 
 const BlogPosts = ({ articles }) => (
   <Flex>
@@ -28,11 +28,11 @@ const BlogPosts = ({ articles }) => (
     </div>
 
     <div
-      css={tw`flex flex-col items-center justify-center md:w-1/2 px-3 md:px-6 `}
+      css={tw`flex flex-col items-center justify-center gap-4 md:w-1/2 px-3 md:px-6 `}
       data-aos="zoom-in-up"
     >
       {articles.map((article) => (
-        <Card article={article} key={`article__${article.id}`} />
+        <MiniCard article={article} key={`article__${article.id}`} />
       ))}
     </div>
   </Flex>

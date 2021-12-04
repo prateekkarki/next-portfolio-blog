@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
-import tw from 'twin.macro';
+import tw, { css } from 'twin.macro';
 import toast from 'react-hot-toast';
 
 import { BigButton } from 'components/styles';
@@ -161,7 +161,13 @@ function ContactForm() {
       <div css={tw`sm:flex sm:items-center px-3`}>
         <div css={tw`sm:w-1/3`}>
           <BigButton
-            css={tw`w-full sm:w-40`}
+            css={[
+              tw`w-full sm:w-40`,
+              css`& > div { 
+                width: 100%;
+                ${tw`w-full sm:w-40`}
+              }`,
+            ]}
             type="submit"
             disabled={submitting}
           >

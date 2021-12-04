@@ -5,7 +5,7 @@ import Modal from 'react-modal';
 import { FooterLink, Title } from './styles';
 
 const StyledModal = styled(Modal)`
-  ${tw`bg-light-200 dark:bg-dark-200 w-11/12 mx-auto overflow-auto rounded-lg p-6`}
+  ${tw`bg-light-200 dark:bg-dark-200 w-11/12 max-w-xl mx-auto overflow-auto rounded-lg p-6`}
   border: 1px solid #ccc;
   overflow: auto;
   height: fit-content;
@@ -51,7 +51,7 @@ function Footer() {
         >
           <div css={tw`flex justify-between`}>
             <h1 css={tw`font-bold text-2xl text-light-800 dark:text-dark-700`}>
-              Credits
+              Tools and Resources
             </h1>
             <button
               type="button"

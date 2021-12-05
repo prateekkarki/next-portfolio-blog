@@ -3,7 +3,7 @@ import anime from 'animejs';
 import tw from 'twin.macro';
 
 import { useHasMounted } from 'hooks';
-import { BigButton, Text } from 'components/styles';
+import { BigButton, BigLink, Text } from 'components/styles';
 import Programmer from './Programmer';
 import GetResume from './GetResume';
 import {
@@ -118,7 +118,12 @@ function Intro({ scrollToContact }) {
               </div>
 
               <ButtonsHolder>
-                <BigButton onClick={scrollToContact}>Hire Me</BigButton>
+                <BigLink
+                  href="https://www.toptal.com/resume/prateek-karki"
+                  target="_blank"
+                >
+                  Hire Me
+                </BigLink>
                 <GetResume />
               </ButtonsHolder>
             </div>

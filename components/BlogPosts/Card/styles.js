@@ -51,13 +51,28 @@ export const ImageWindow = styled.div([
   `,
 ]);
 
-export const CardContainer = styled.div(({ dark }) => [
-  tw`w-full overflow-hidden shadow-md hover:shadow-lg cursor-pointer
-    rounded-b-md rounded-t-md h-full
-  `,
-
+export const CardContainer = styled.div(({ dark, mini = false }) => [
+  mini
+    ? tw`w-full overflow-hidden shadow-md hover:shadow-lg cursor-pointer
+      rounded-b-md rounded-t-md h-full 
+    `
+    : tw`w-full overflow-hidden shadow-md hover:shadow-lg cursor-pointer
+      rounded-b-md rounded-t-md h-full
+    `,
   dark ? tw`bg-light-100 dark:bg-dark-100` : tw`bg-light-200 dark:bg-dark-200`,
 
+  mini &&
+    css`
+      ${ImageWindow} {
+        border-radius: 0;
+        border-top-left-radius: 0.375rem;
+        border-bottom-left-radius: 0.375rem;
+        img{
+          border-top-left-radius: 0.375rem;
+          border-bottom-left-radius: 0.375rem;
+        }
+      }
+  `,
   css`
     &:hover {
       ${ImageWindow} {

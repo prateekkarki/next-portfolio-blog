@@ -16,7 +16,7 @@ const Card = ({ article, dark }) => {
       <a
         href={`/article/${article.slug}`}
         title={article.title}
-        tw="max-w-full"
+        tw="max-w-full w-full"
       >
         <CardContainer dark={dark}>
           <Fragment>

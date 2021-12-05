@@ -4,10 +4,11 @@ import Link from 'next/link';
 
 import { BigLink, Text, Title, Flex } from 'components/styles';
 import { MiniCard, Card as FullCard } from 'components/BlogPosts/Card';
-import { useWindowSize } from 'hooks';
+import { useWindowSize, useHasMounted } from 'hooks';
 
 const BlogPosts = ({ articles }) => {
   const { width } = useWindowSize();
+  const hasMounted = useHasMounted();
   return (
     <Flex>
       <div
@@ -35,18 +36,20 @@ const BlogPosts = ({ articles }) => {
         css={tw`flex flex-col items-center justify-center gap-4 md:w-1/2 px-3 md:px-6 `}
         data-aos="zoom-in-up"
       >
-        {width < 640 || (width >= 768 && width < 1280) ? (
+        {hasMounted && (
           <>
-            <FullCard
-              article={articles[0]}
-              key={`article__${articles[0].id}`}
-            />
-          </>
-        ) : (
-          <>
-            {articles.map((article) => (
-              <MiniCard article={article} key={`article__${article.id}`} />
-            ))}
+            {width < 640 || (width >= 768 && width < 1280) ? (
+              <FullCard
+                article={articles[0]}
+                key={`article__${articles[0].id}`}
+              />
+            ) : (
+              <>
+                {articles.map((article) => (
+                  <MiniCard article={article} key={`article__${article.id}`} />
+                ))}
+              </>
+            )}
           </>
         )}
       </div>

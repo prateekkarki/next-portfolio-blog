@@ -9,5 +9,5 @@ export const defaultSeo = {
   image: `${process.env.NEXT_PUBLIC_SITE_URL}/images/og_thumb_me.jpg`,
   twitterUsername: '@PrateekKarki',
   twitterCard: 'summary_large_image',
-  tyoe: 'website',
+  type: 'website',
 };

@@ -11,6 +11,8 @@ import ArticleTemplate from 'components/BlogPosts/Article/ArticleTemplate';
 import Head from 'next/head';
 import { Container, Link as RegularLink } from 'components/styles';
 import Link from 'next/link';
+import { MetaHead } from 'components';
+import { defaultSeo } from '../../constants/index';
 
 const SingleArticle = ({ article }) => {
   if (!article) {
@@ -31,39 +33,23 @@ const SingleArticle = ({ article }) => {
       </Container>
     );
   }
-
   const tagsString = article.tags.map((tag) => tag.name).join(', ');
+  const seo = {
+    ...defaultSeo,
+    title: article.title,
+    description: article.description,
+    url: `${process.env.NEXT_PUBLIC_SITE_URL}/article/${article.slug}`,
+    image: article.thumbnail?.url ? article.thumbnail.url : defaultSeo.image,
+    article: {
+      tags: tagsString,
+      published_time: article.published_on || article.created_at,
+      modified_time: article.updated_at,
+    },
+  };
+
   return (
     <Fragment>
-      <Head>
-        <title>{article.title}</title>
-        <meta name="keywords" content={tagsString} />
-        <meta name="author" content="Prateek Karki" />
-        <meta name="description" content={article.description} />
-        {article.thumbnail?.url && (
-          <meta property="og:image" content={article.thumbnail.url} />
-        )}
-        {!article.thumbnail?.url && (
-          <meta
-            property="og:image"
-            content="https://meetprateek.com/images/logo/3x/logo.png"
-          />
-        )}
-        <meta property="og:title" content={article.title} />
-        <meta property="og:type" content="article" />
-        <meta property="og:article:author" content="Prateek Karki" />
-        <meta
-          property="og:article:published_time"
-          content={article.published_on || article.created_at}
-        />
-        <meta
-          property="og:article:modified_time"
-          content={article.updated_at}
-        />
-        <meta property="og:article:section" content="Technology" />
-        <meta property="og:article:tag" content={tagsString} />
-      </Head>
-
+      <MetaHead seo={seo} />
       <ArticleTemplate article={article} />
       <div css={tw`py-12 bg-light-500 dark:bg-dark-400`}>
         <div css={tw`container mx-auto px-3`}>

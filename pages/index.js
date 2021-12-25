@@ -4,7 +4,6 @@ import tw from 'twin.macro';
 import PropTypes from 'prop-types';
 import AOS from 'aos';
 
-import { defaultSeo } from 'constants';
 import { LANDING_PAGE_POSTS } from 'apollo/queries/article/articles';
 import { initializeApollo } from 'utils/apollo';
 
@@ -15,6 +14,7 @@ import Intro from 'components/pages/LandingPage/Intro/Intro';
 import About from 'components/pages/LandingPage/About/About';
 import Contact from 'components/pages/LandingPage/Contact/Contact';
 import { MetaHead } from 'components';
+import { defaultSeo } from '../constants/index';
 
 const Home = ({ articles }) => {
   const refs = {

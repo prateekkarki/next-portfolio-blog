@@ -4,8 +4,8 @@ import Head from 'next/head';
 import TitleBlock from 'components/Common/TitleBlock';
 import Timeline from 'components/pages/AboutPage/Timeline';
 import { Container, MainBg } from 'components/styles';
-import { defaultSeo } from 'constants';
 import { MetaHead } from 'components';
+import { defaultSeo } from '../constants/index';
 
 function about() {
   const seo = {

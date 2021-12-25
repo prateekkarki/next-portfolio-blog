@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-function MetaHead({ seo }) {
+function MetaHead({ seo = {} }) {
   return (
     <Head>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -44,6 +44,26 @@ function MetaHead({ seo }) {
       <meta name="twitter:image" content={seo.image} />
       <meta name="twitter:creator" content={seo.twitterUsername} />
       <meta property="og:type" content={seo.type} />
+      {seo.article ? (
+        <>
+          <meta name="keywords" content={seo.article.tags} />
+          <meta name="author" content="Prateek Karki" />
+          <meta property="og:type" content="article" />
+          <meta property="og:article:author" content="Prateek Karki" />
+          <meta
+            property="og:article:published_time"
+            content={seo.article.published_time}
+          />
+          <meta
+            property="og:article:modified_time"
+            content={seo.article.modified_time}
+          />
+          <meta property="og:article:section" content="Technology" />
+          <meta property="og:article:tag" content={seo.article.tags} />
+        </>
+      ) : (
+        <meta property="og:type" content={seo.type} />
+      )}
     </Head>
   );
 }

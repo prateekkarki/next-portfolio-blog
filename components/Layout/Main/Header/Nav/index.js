@@ -28,7 +28,7 @@ const Nav = () => {
       >
         <Link href="/" passHref>
           <a css={tw`font-black text-primary`}>
-            <MainLogo src="/images/logo/logo.svg" alt="logo" />
+            <MainLogo src="/images/logo/logo.svg" alt="logo" title="Logo" />
           </a>
         </Link>
         <div css={tw`flex items-center justify-center`}>

@@ -83,6 +83,7 @@ function Intro({ scrollToContact }) {
             <img
               tw="max-width[80px]"
               alt="loading"
+              title="Loading"
               src="/images/loading/puff.svg"
             />
           </div>
@@ -104,9 +105,9 @@ function Intro({ scrollToContact }) {
                 <br tw="sm:inline-block hidden" />
                 <AnimatedText tw="my-1 sm:my-0">
                   <LoaderBar tw="bg-primary" />
-                  <p css={tw`text-primary text-6xl font-bold my-2`}>
+                  <h1 css={tw`text-primary text-6xl font-bold my-2`}>
                     Prateek Karki
-                  </p>
+                  </h1>
                 </AnimatedText>
                 <AnimatedText>
                   <LoaderBar tw="bg-light-600 dark:bg-dark-600" />

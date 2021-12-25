@@ -49,28 +49,45 @@ const Home = ({ articles }) => {
     }
   });
 
+  const seo = {
+    siteName: 'Meet Prateek',
+    locale: 'en_US',
+    title: 'Prateek Karki | Full-stack web developer from Kathmandu, Nepal',
+    description:
+      'Prateek Karki is a Full-stack web developer dedicated to providing beautiful and performant solutions on the web. He is a self-taught developer with a passion for building awesome web applications.',
+    url: process.env.NEXT_PUBLIC_SITE_URL,
+    image: `${process.env.NEXT_PUBLIC_SITE_URL}/images/og_thumb_me.jpg`,
+    twitterUsername: '@PrateekKarki',
+    twitterCard: 'summary_large_image',
+  };
+
   return (
     <>
       <Head>
-        <title>
-          Prateek Karki - Full-stack web developer from Kathmandu, Nepal
-        </title>
-        <meta
-          name="description"
-          content="Full-stack web developer dedicated to providing beautiful and performant solutions on the internet."
-        />
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={seo.url} />
+        <meta property="og:title" content={seo.title} />
+        <meta property="og:description" content={seo.description} />
+        <meta property="og:image" content={seo.image} />
+        <meta property="og:site_name" content={seo.siteName} />
+        <meta property="og:locale" content={seo.locale} />
+        <meta name="twitter:card" content={seo.twitterCard} />
+        <meta name="twitter:title" content={seo.title} />
+        <meta name="twitter:description" content={seo.description} />
+        <meta name="twitter:site" content={seo.twitterUsername} />
+        <meta name="twitter:image" content={seo.image} />
+        <meta name="twitter:creator" content={seo.twitterUsername} />
+        <link rel="canonical" url={seo.description} />
+
         <meta
           name="keywords"
           content="Web Development, Web Developer, Javascript Developer, Fullstack Web Developer, Solution architect, Freelancer"
         />
-        <meta
-          property="og:image"
-          content="https://meetprateek.com/images/logo/3x/logo.png"
-        />
       </Head>
       <div css={tw`bg-light-100 dark:bg-dark-100`} ref={refs.home}>
         <Intro scrollToContact={scrollToContact} />
-
         <div css={[tw`relative my-24`]} ref={refs.about}>
           <Skewed>
             <About />

@@ -52,9 +52,9 @@ const Home = ({ articles }) => {
   const seo = {
     siteName: 'Meet Prateek',
     locale: 'en_US',
-    title: 'Prateek Karki | Full-stack web developer from Kathmandu, Nepal',
+    title: 'Prateek Karki | Full-stack web developer',
     description:
-      'Prateek Karki is a Full-stack web developer dedicated to providing beautiful and performant solutions on the web. He is a self-taught developer with a passion for building awesome web applications.',
+      'Prateek Karki is a Full-stack web developer dedicated to providing beautiful and performant experiences.',
     url: process.env.NEXT_PUBLIC_SITE_URL,
     image: `${process.env.NEXT_PUBLIC_SITE_URL}/images/og_thumb_me.jpg`,
     twitterUsername: '@PrateekKarki',
@@ -79,7 +79,7 @@ const Home = ({ articles }) => {
         <meta name="twitter:site" content={seo.twitterUsername} />
         <meta name="twitter:image" content={seo.image} />
         <meta name="twitter:creator" content={seo.twitterUsername} />
-        <link rel="canonical" url={seo.description} />
+        <link rel="canonical" href={seo.url} />
 
         <meta
           name="keywords"

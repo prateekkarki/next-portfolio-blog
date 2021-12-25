@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-function MetaHead() {
+function MetaHead({ seo }) {
   return (
     <Head>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -28,6 +28,22 @@ function MetaHead() {
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap"
         rel="stylesheet"
       />
+      <title>{seo.title}</title>
+      <link rel="canonical" href={seo.url} />
+      <meta name="description" content={seo.description} />
+      <meta property="og:url" content={seo.url} />
+      <meta property="og:title" content={seo.title} />
+      <meta property="og:description" content={seo.description} />
+      <meta property="og:image" content={seo.image} />
+      <meta property="og:site_name" content={seo.siteName} />
+      <meta property="og:locale" content={seo.locale} />
+      <meta name="twitter:card" content={seo.twitterCard} />
+      <meta name="twitter:title" content={seo.title} />
+      <meta name="twitter:description" content={seo.description} />
+      <meta name="twitter:site" content={seo.twitterUsername} />
+      <meta name="twitter:image" content={seo.image} />
+      <meta name="twitter:creator" content={seo.twitterUsername} />
+      <meta property="og:type" content={seo.type} />
     </Head>
   );
 }

@@ -4,6 +4,7 @@ import tw from 'twin.macro';
 import PropTypes from 'prop-types';
 import AOS from 'aos';
 
+import { defaultSeo } from 'constants';
 import { LANDING_PAGE_POSTS } from 'apollo/queries/article/articles';
 import { initializeApollo } from 'utils/apollo';
 
@@ -13,7 +14,7 @@ import Skewed from 'components/pages/LandingPage/Skewed';
 import Intro from 'components/pages/LandingPage/Intro/Intro';
 import About from 'components/pages/LandingPage/About/About';
 import Contact from 'components/pages/LandingPage/Contact/Contact';
-import Head from 'next/head';
+import { MetaHead } from 'components';
 
 const Home = ({ articles }) => {
   const refs = {
@@ -49,43 +50,9 @@ const Home = ({ articles }) => {
     }
   });
 
-  const seo = {
-    siteName: 'Meet Prateek',
-    locale: 'en_US',
-    title: 'Prateek Karki | Full-stack web developer',
-    description:
-      'Prateek Karki is a Full-stack web developer dedicated to providing beautiful and performant experiences.',
-    url: process.env.NEXT_PUBLIC_SITE_URL,
-    image: `${process.env.NEXT_PUBLIC_SITE_URL}/images/og_thumb_me.jpg`,
-    twitterUsername: '@PrateekKarki',
-    twitterCard: 'summary_large_image',
-  };
-
   return (
     <>
-      <Head>
-        <title>{seo.title}</title>
-        <meta name="description" content={seo.description} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={seo.url} />
-        <meta property="og:title" content={seo.title} />
-        <meta property="og:description" content={seo.description} />
-        <meta property="og:image" content={seo.image} />
-        <meta property="og:site_name" content={seo.siteName} />
-        <meta property="og:locale" content={seo.locale} />
-        <meta name="twitter:card" content={seo.twitterCard} />
-        <meta name="twitter:title" content={seo.title} />
-        <meta name="twitter:description" content={seo.description} />
-        <meta name="twitter:site" content={seo.twitterUsername} />
-        <meta name="twitter:image" content={seo.image} />
-        <meta name="twitter:creator" content={seo.twitterUsername} />
-        <link rel="canonical" href={seo.url} />
-
-        <meta
-          name="keywords"
-          content="Web Development, Web Developer, Javascript Developer, Fullstack Web Developer, Solution architect, Freelancer"
-        />
-      </Head>
+      <MetaHead seo={defaultSeo} />
       <div css={tw`bg-light-100 dark:bg-dark-100`} ref={refs.home}>
         <Intro scrollToContact={scrollToContact} />
         <div css={[tw`relative my-24`]} ref={refs.about}>

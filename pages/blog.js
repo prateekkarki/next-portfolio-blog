@@ -3,27 +3,25 @@ import tw from 'twin.macro';
 
 import Head from 'next/head';
 import { Card } from 'components/BlogPosts/Card';
+import { MetaHead } from 'components';
 import ARTICLES_QUERY from '../apollo/queries/article/articles';
 
 import { initializeApollo } from '../utils/apollo';
 import TitleBlock from '../components/Common/TitleBlock';
 import { Container, MainBg } from '../components/styles';
 
+import { defaultSeo } from '../constants/index';
+
 function Blog({ articles }) {
+  const seo = {
+    ...defaultSeo,
+    title: 'Blogs | Prateek Karki',
+    url: `${process.env.NEXT_PUBLIC_SITE_URL}/blog`,
+  };
+
   return (
     <Fragment>
-      <Head>
-        <title>Blogs | Prateek Karki</title>
-        <meta name="description" content="Check out my recent blog posts." />
-        <meta
-          name="keywords"
-          content="Web Development, Frontend Development, Backend Development, Programming concepts"
-        />
-        <meta
-          property="og:image"
-          content="https://meetprateek.com/images/logo/3x/logo.png"
-        />
-      </Head>
+      <MetaHead seo={seo} />
       <TitleBlock title="My Blog" subtitle="Check out my recent posts" />
       <MainBg>
         <Container>

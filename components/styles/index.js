@@ -1,7 +1,7 @@
 import React from 'react';
 import tw, { css, styled } from 'twin.macro';
 
-export const Title = tw.h1`
+export const Title = tw.h2`
   font-bold text-light-800 dark:text-dark-800 whitespace-nowrap 
   text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-huge
 `;

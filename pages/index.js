@@ -13,7 +13,8 @@ import Skewed from 'components/pages/LandingPage/Skewed';
 import Intro from 'components/pages/LandingPage/Intro/Intro';
 import About from 'components/pages/LandingPage/About/About';
 import Contact from 'components/pages/LandingPage/Contact/Contact';
-import Head from 'next/head';
+import { MetaHead } from 'components';
+import { defaultSeo } from '../constants/index';
 
 const Home = ({ articles }) => {
   const refs = {
@@ -51,26 +52,9 @@ const Home = ({ articles }) => {
 
   return (
     <>
-      <Head>
-        <title>
-          Prateek Karki - Full-stack web developer from Kathmandu, Nepal
-        </title>
-        <meta
-          name="description"
-          content="Full-stack web developer dedicated to providing beautiful and performant solutions on the internet."
-        />
-        <meta
-          name="keywords"
-          content="Web Development, Web Developer, Javascript Developer, Fullstack Web Developer, Solution architect, Freelancer"
-        />
-        <meta
-          property="og:image"
-          content="https://meetprateek.com/images/logo/3x/logo.png"
-        />
-      </Head>
+      <MetaHead seo={defaultSeo} />
       <div css={tw`bg-light-100 dark:bg-dark-100`} ref={refs.home}>
         <Intro scrollToContact={scrollToContact} />
-
         <div css={[tw`relative my-24`]} ref={refs.about}>
           <Skewed>
             <About />

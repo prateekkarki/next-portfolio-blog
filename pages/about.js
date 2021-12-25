@@ -4,25 +4,18 @@ import Head from 'next/head';
 import TitleBlock from 'components/Common/TitleBlock';
 import Timeline from 'components/pages/AboutPage/Timeline';
 import { Container, MainBg } from 'components/styles';
+import { MetaHead } from 'components';
+import { defaultSeo } from '../constants/index';
 
 function about() {
+  const seo = {
+    ...defaultSeo,
+    title: 'About me | Prateek Karki',
+    url: `${process.env.NEXT_PUBLIC_SITE_URL}/about`,
+  };
   return (
     <Fragment>
-      <Head>
-        <title>About me | Prateek Karki</title>
-        <meta
-          name="description"
-          content="Full-stack web developer dedicated to providing beautiful and performant solutions on the internet."
-        />
-        <meta
-          name="keywords"
-          content="Web Development, Web Developer, Javascript Developer, Fullstack Web Developer, Solution architect, Freelancer"
-        />
-        <meta
-          property="og:image"
-          content="https://meetprateek.com/images/logo/3x/logo.png"
-        />
-      </Head>
+      <MetaHead seo={seo} />
       <TitleBlock title="About Me" subtitle="Who am I?" />
       <MainBg>
         <Container>

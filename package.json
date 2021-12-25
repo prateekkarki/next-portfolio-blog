@@ -31,6 +31,7 @@
     "date-fns": "^2.21.1",
     "disqus-react": "^1.0.11",
     "dotenv": "10.0.0",
+    "globby": "^11.0.1",
     "graphql": "^15.3.0",
     "graphql-tag": "^2.12.4",
     "hamburger-react": "^2.4.0",

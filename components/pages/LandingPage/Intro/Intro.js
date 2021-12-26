@@ -25,7 +25,9 @@ function Intro({ scrollToContact }) {
       const loaders = introRef.current.querySelectorAll(
         `${AnimatedText} ${LoaderBar}`
       );
-      const texts = introRef.current.querySelectorAll(`${AnimatedText} p`);
+      const texts = introRef.current.querySelectorAll(
+        `${AnimatedText} p, ${AnimatedText} h1`
+      );
       const buttonsHolder = introRef.current.querySelectorAll(
         `${ButtonsHolder}`
       );
@@ -45,7 +47,7 @@ function Intro({ scrollToContact }) {
           targets: texts,
           opacity: 1,
           duration: 0.01,
-          delay: 0.01,
+          delay: 0.1,
         })
         .add({
           targets: loaders,

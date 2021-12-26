@@ -40,7 +40,7 @@ export const AnimatedText = styled.div([
     ${LoaderBar}{
       transform: translate(-100%);
     }
-    p{
+    p, h1{
       opacity: 0;
       display: block;
       @media (min-width: 640px){

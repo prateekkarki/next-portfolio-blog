@@ -6,8 +6,9 @@ import { Title, Text } from 'components/styles';
 import ContactForm from '../ContactForm';
 
 const Links = styled.a(({ lastItem }) => [
-  tw`p-3 bg-light-700 text-light-100 dark:text-dark-100 dark:bg-dark-700 rounded-full text-2xl mr-4
-    hover:(bg-primary text-light-200 dark:text-dark-100) 
+  tw`p-3 bg-light-700 dark:bg-dark-700 rounded-full mr-4
+    text-light-100 dark:text-dark-100  text-2xl 
+      hover:(bg-primary text-light-100) 
   `,
   lastItem && tw`mr-0`,
 ]);
@@ -23,7 +24,6 @@ function Contact() {
     <div css={tw`container mx-auto flex flex-col sm:flex-row overflow-hidden`}>
       <div
         css={tw`w-full sm:w-1/2 flex flex-col justify-center items-center lg:items-start py-6`}
-        data-aos="zoom-out-down"
       >
         <ContactForm />
       </div>
@@ -32,7 +32,6 @@ function Contact() {
           w-full sm:w-1/2 py-6 px-3
           flex flex-col justify-center items-center text-center sm:text-left sm:justify-start md:items-start
         `}
-        data-aos="zoom-in-up"
       >
         <div
           css={tw`

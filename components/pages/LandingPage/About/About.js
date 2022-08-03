@@ -18,7 +18,7 @@ function About() {
       >
         <Title>About Me</Title>
         <Text>
-          I&apos;m Prateek Karki, a web developer from Kathmandu, Nepal.
+          I&apos;m Prateek Karki, a web developer from Nepal.
           <br />I enjoy creating things for the internet, whether that be
           websites, applications, games or anything in between. My goal is to
           build products that provide pixel-perfect, performant experiences.

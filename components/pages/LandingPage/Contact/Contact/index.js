@@ -21,7 +21,9 @@ const ContactLinks = ({ href, children, lastItem }) => (
 
 function Contact() {
   return (
-    <div css={tw`container mx-auto flex flex-col sm:flex-row overflow-hidden`}>
+    <div
+      css={tw`container mx-auto flex flex-col-reverse sm:flex-row overflow-hidden`}
+    >
       <div
         css={tw`w-full sm:w-1/2 flex flex-col justify-center items-center lg:items-start py-6`}
       >
@@ -41,12 +43,10 @@ function Contact() {
         >
           <Title>Get in touch</Title>
           <Text>
-            <span>
-              I love to develop things for the web. I have lead projects and
-              teams to build great end-products for my clients. If you want to
-              get started with a project or just need my help, feel free to
-              contact me.
-            </span>
+            I love to develop things for the web. I have lead projects and teams
+            to build great end-products for my clients. If you want to get
+            started with a project or just need my help, feel free to contact
+            me.
           </Text>
           <div
             css={tw`border-b-4 pb-10 w-48 border-light-700 dark:border-dark-700`}

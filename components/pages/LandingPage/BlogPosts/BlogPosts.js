@@ -28,12 +28,14 @@ const BlogPosts = ({ articles }) => {
           below.
         </Text>
         <Link href="/blog" passHref>
-          <BigLink css={tw`mt-6 mx-auto md:ml-0`}>View all posts</BigLink>
+          <BigLink css={tw`mt-6 mx-auto md:ml-0 hidden md:inline-block`}>
+            View all posts
+          </BigLink>
         </Link>
       </div>
 
       <div
-        css={tw`flex flex-col items-center justify-center gap-4 md:w-1/2 px-3 md:px-6 `}
+        css={tw`flex flex-col items-center justify-center gap-4 mt-4 md:mt-0 md:w-1/2 px-3 md:px-6 `}
         data-aos="zoom-in-up"
       >
         {hasMounted && (
@@ -50,6 +52,11 @@ const BlogPosts = ({ articles }) => {
                 ))}
               </>
             )}
+            <Link href="/blog" passHref>
+              <BigLink css={tw`mt-2 inline-block md:hidden`}>
+                View all posts
+              </BigLink>
+            </Link>
           </>
         )}
       </div>

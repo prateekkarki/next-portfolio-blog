@@ -58,12 +58,12 @@ const Card = ({ article, dark }) => {
             </div>
             <div css={tw`px-6 pb-2`}>
               <p css={tw`text-light-600 dark:text-dark-600`}>
-                {article.category?.name || ''}
+                {article.category?.title || ''}
               </p>
             </div>
             <div css={tw`px-6 pb-2 mt-4`}>
               {article.tags.map((tag) => (
-                <Tag key={`tag-${tag.slug}`}>#{tag.name}</Tag>
+                <Tag key={`tag-${tag.slug}`}>#{tag.title}</Tag>
               ))}
             </div>
           </div>

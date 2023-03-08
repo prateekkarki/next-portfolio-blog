@@ -54,12 +54,12 @@ const Card = ({ article, dark }) => {
             </div>
             <div css={tw`px-6 pb-2`}>
               <p css={tw`text-light-600 dark:text-dark-600`}>
-                {article.category?.name || ''}
+                {article.category?.title || ''}
               </p>
             </div>
             <div css={tw`px-6 pb-2 mt-4`}>
               {article.tags.map((tag) => (
-                <Tag key={`tag-${tag.slug}`}>#{tag.name}</Tag>
+                <Tag key={`tag-${tag.slug}`}>#{tag.title}</Tag>
               ))}
             </div>
           </div>
@@ -74,7 +74,7 @@ Card.propTypes = {
     tags: PropTypes.arrayOf(
       PropTypes.PropTypes.shape({
         slug: PropTypes.string.isRequired,
-        name: PropTypes.string,
+        title: PropTypes.string,
       })
     ),
     slug: PropTypes.string.isRequired,
@@ -83,7 +83,7 @@ Card.propTypes = {
     }),
     title: PropTypes.string.isRequired,
     category: PropTypes.PropTypes.shape({
-      name: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
     }),
   }).isRequired,
 };

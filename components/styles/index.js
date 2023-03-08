@@ -40,6 +40,9 @@ const buttonStyles = ({ variant }) => [
         height: 100%;
         transform: skewX(-45deg);
         transition: all 700ms cubic-bezier(0.19, 1, 0.22, 1);
+        @supports (-webkit-touch-callout: none) {
+          display:none;
+        }
       }
 
       @media not all and (min-resolution:.001dpcm) { 

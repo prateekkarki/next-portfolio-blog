@@ -92,6 +92,11 @@ export async function getStaticProps() {
       articles: res.data.articles.data.map((article) => ({
         id: article.id,
         ...article.attributes,
+        thumbnail: article.attributes.thumbnail?.data?.attributes?.url
+          ? {
+              url: article.attributes.thumbnail?.data?.attributes?.url,
+            }
+          : null,
         category: {
           title: article.attributes.category.data.attributes.title || '',
           slug: article.attributes.category.data.attributes.slug || '',

@@ -13,10 +13,20 @@ const ARTICLE_QUERY = gql`
           title
           slug
           content
+          tagline
           featured
-          publishedAt
+          publishedOn
           updatedAt
           createdAt
+          isExternal
+          externalUrl
+          thumbnail{
+            data{
+              attributes{
+                url
+              }
+            }
+          }
           category{
             data{
               attributes{

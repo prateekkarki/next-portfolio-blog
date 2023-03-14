@@ -99,6 +99,13 @@ export async function getStaticProps({ params }) {
         ? {
             id: res.data.articles.data[0].id,
             ...res.data.articles.data[0].attributes,
+            thumbnail: res.data.articles.data[0].attributes.thumbnail?.data
+              ?.attributes?.url
+              ? {
+                  url: res.data.articles.data[0].attributes.thumbnail?.data
+                    ?.attributes?.url,
+                }
+              : null,
             category: {
               title:
                 res.data.articles.data[0].attributes.category.data.attributes

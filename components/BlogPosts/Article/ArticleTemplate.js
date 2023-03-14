@@ -50,11 +50,11 @@ function ArticleTemplate({ article }) {
             blocks={[
               { path: '/', title: 'Home' },
               { path: '/blog', title: 'Blogs' },
-              { title: article.category?.name },
+              { title: article.category?.title },
             ]}
           />
         </div>
-        <TitleBlock title={article.title} subtitle={article.description} />
+        <TitleBlock title={article.title} subtitle={article.tagline} />
       </div>
       <div css={tw`bg-light-200 dark:bg-dark-200`}>
         <div css={tw`mx-auto px-3 pb-6 max-w-3xl`}>
@@ -85,14 +85,14 @@ function ArticleTemplate({ article }) {
 ArticleTemplate.propTypes = {
   article: PropTypes.PropTypes.shape({
     title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
+    tagline: PropTypes.string,
     category: PropTypes.shape({
-      name: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
       slug: PropTypes.string.isRequired,
     }).isRequired,
     tags: PropTypes.arrayOf(
       PropTypes.shape({
-        name: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
         slug: PropTypes.string.isRequired,
       })
     ).isRequired,

@@ -12,7 +12,16 @@ export const LANDING_PAGE_POSTS = gql`
           attributes{
           title
           slug
-          publishedAt
+          publishedOn
+          isExternal
+          externalUrl
+          thumbnail{
+            data{
+              attributes{
+                url
+              }
+            }
+          }
           category{
             data{
               attributes{
@@ -46,7 +55,16 @@ const ARTICLES_QUERY = gql`
           attributes{
           title
           slug
-          publishedAt
+          publishedOn
+          isExternal
+          externalUrl
+          thumbnail{
+            data{
+              attributes{
+                url
+              }
+            }
+          }
           category{
             data{
               attributes{

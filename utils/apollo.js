@@ -12,6 +12,9 @@ let apolloClient;
 const link = createHttpLink({
   fetch, // Switches between unfetch & node-fetch for client & server.
   uri: `${GRAPHQL_URL}/graphql`,
+  headers: {
+    Authorization: `Bearer ${process.env.API_TOKEN}`,
+  },
 });
 
 function createApolloClient() {

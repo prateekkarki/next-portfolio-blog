@@ -74,8 +74,8 @@ export async function getStaticPaths() {
   const res = await client.query({
     query: ARTICLES_QUERY,
   });
-  const paths = res.data.articles.map((post) => ({
-    params: { aid: post.slug },
+  const paths = res.data.articles.data.map((article) => ({
+    params: { aid: article.attributes.slug },
   }));
 
   return {
@@ -94,6 +94,34 @@ export async function getStaticProps({ params }) {
   // The value of the `props` key will be
   //  passed to the `Home` component
   return {
-    props: { article: res.data.articles.length ? res.data.articles[0] : null },
+    props: {
+      article: res.data.articles.data.length
+        ? {
+            id: res.data.articles.data[0].id,
+            ...res.data.articles.data[0].attributes,
+            thumbnail: res.data.articles.data[0].attributes.thumbnail?.data
+              ?.attributes?.url
+              ? {
+                  url: res.data.articles.data[0].attributes.thumbnail?.data
+                    ?.attributes?.url,
+                }
+              : null,
+            category: {
+              title:
+                res.data.articles.data[0]?.attributes?.category?.data
+                  ?.attributes?.title || '',
+              slug:
+                res.data.articles.data[0]?.attributes?.category?.data
+                  ?.attributes?.slug || '',
+            },
+            tags: (res.data.articles.data[0].attributes.tags.data || []).map(
+              (tag) => ({
+                title: tag.attributes.title,
+                slug: tag.attributes.slug,
+              })
+            ),
+          }
+        : null,
+    },
   };
 }

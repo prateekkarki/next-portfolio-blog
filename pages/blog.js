@@ -46,9 +46,25 @@ export async function getStaticProps() {
     query: ARTICLES_QUERY,
   });
 
-  // The value of the `props` key will be
-  //  passed to the `Home` component
   return {
-    props: res.data,
+    props: {
+      articles: res.data.articles.data.map((article) => ({
+        id: article.id,
+        ...article.attributes,
+        thumbnail: article.attributes.thumbnail?.data?.attributes?.url
+          ? {
+              url: article.attributes.thumbnail?.data?.attributes?.url,
+            }
+          : null,
+        category: {
+          title: article.attributes.category?.data?.attributes?.title || '',
+          slug: article.attributes.category?.data?.attributes?.slug || '',
+        },
+        tags: (article.attributes.tags.data || []).map((tag) => ({
+          title: tag?.attributes?.title,
+          slug: tag?.attributes?.slug,
+        })),
+      })),
+    },
   };
 }

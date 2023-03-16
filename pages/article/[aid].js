@@ -108,11 +108,11 @@ export async function getStaticProps({ params }) {
               : null,
             category: {
               title:
-                res.data.articles.data[0].attributes.category.data.attributes
-                  .title || '',
+                res.data.articles.data[0]?.attributes?.category?.data
+                  ?.attributes?.title || '',
               slug:
-                res.data.articles.data[0].attributes.category.data.attributes
-                  .slug || '',
+                res.data.articles.data[0]?.attributes?.category?.data
+                  ?.attributes?.slug || '',
             },
             tags: (res.data.articles.data[0].attributes.tags.data || []).map(
               (tag) => ({

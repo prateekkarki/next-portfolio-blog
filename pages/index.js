@@ -4,9 +4,6 @@ import tw from 'twin.macro';
 import PropTypes from 'prop-types';
 import AOS from 'aos';
 
-import { LANDING_PAGE_POSTS } from 'apollo/queries/article/articles';
-import { initializeApollo } from 'utils/apollo';
-
 import { Container } from 'components/styles';
 import BlogPosts from 'components/pages/LandingPage/BlogPosts/BlogPosts';
 import Skewed from 'components/pages/LandingPage/Skewed';
@@ -15,6 +12,7 @@ import About from 'components/pages/LandingPage/About/About';
 import Contact from 'components/pages/LandingPage/Contact/Contact';
 import { MetaHead } from 'components';
 import { defaultSeo } from '../constants/index';
+import { getFeaturedBlogs } from '../data/blogs';
 
 const Home = ({ articles }) => {
   const refs = {
@@ -82,29 +80,21 @@ Home.propTypes = {
 export default Home;
 
 export async function getStaticProps() {
-  const client = initializeApollo();
-  const res = await client.query({
-    query: LANDING_PAGE_POSTS,
-  });
+  const articles = getFeaturedBlogs();
 
   return {
     props: {
-      articles: res.data.articles.data.map((article) => ({
+      articles: articles.map((article) => ({
         id: article.id,
-        ...article.attributes,
-        thumbnail: article.attributes.thumbnail?.data?.attributes?.url
-          ? {
-              url: article.attributes.thumbnail?.data?.attributes?.url,
-            }
-          : null,
-        category: {
-          title: article.attributes.category.data.attributes.title || '',
-          slug: article.attributes.category.data.attributes.slug || '',
-        },
-        tags: (article.attributes.tags.data || []).map((tag) => ({
-          title: tag.attributes.title,
-          slug: tag.attributes.slug,
-        })),
+        title: article.title,
+        slug: article.slug,
+        tagline: article.tagline,
+        publishedOn: article.publishedOn,
+        isExternal: article.isExternal,
+        externalUrl: article.externalUrl,
+        thumbnail: article.thumbnail,
+        category: article.category,
+        tags: article.tags,
       })),
     },
   };

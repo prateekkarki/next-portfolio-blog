@@ -2,17 +2,14 @@
 import { Fragment } from 'react';
 import tw from 'twin.macro';
 import { DiscussionEmbed } from 'disqus-react';
-import { initializeApollo } from 'utils/apollo';
-
-import ARTICLE_QUERY from 'apollo/queries/article/article';
-import ARTICLES_QUERY from 'apollo/queries/article/articles';
-import ArticleTemplate from 'components/BlogPosts/Article/ArticleTemplate';
-
 import Head from 'next/head';
-import { Container, Link as RegularLink } from 'components/styles';
 import Link from 'next/link';
+
+import ArticleTemplate from 'components/BlogPosts/Article/ArticleTemplate';
+import { Container, Link as RegularLink } from 'components/styles';
 import { MetaHead } from 'components';
 import { defaultSeo } from '../../constants/index';
+import { getBlogBySlug, getAllBlogs } from '../../data/blogs';
 
 const SingleArticle = ({ article }) => {
   if (!article) {
@@ -33,17 +30,17 @@ const SingleArticle = ({ article }) => {
       </Container>
     );
   }
-  const tagsString = article.tags.map((tag) => tag.name).join(', ');
+  const tagsString = article.tags.map((tag) => tag.title).join(', ');
   const seo = {
     ...defaultSeo,
     title: article.title,
-    description: article.description,
+    description: article.tagline,
     url: `${process.env.NEXT_PUBLIC_SITE_URL}/article/${article.slug}`,
     image: article.thumbnail?.url ? article.thumbnail.url : defaultSeo.image,
     article: {
       tags: tagsString,
-      published_time: article.published_on || article.created_at,
-      modified_time: article.updated_at,
+      published_time: article.publishedOn || article.createdAt,
+      modified_time: article.updatedAt,
     },
   };
 
@@ -70,56 +67,35 @@ const SingleArticle = ({ article }) => {
 export default SingleArticle;
 
 export async function getStaticPaths() {
-  const client = initializeApollo();
-  const res = await client.query({
-    query: ARTICLES_QUERY,
-  });
-  const paths = res.data.articles.data.map((article) => ({
-    params: { aid: article.attributes.slug },
+  const articles = getAllBlogs();
+  const paths = articles.map((article) => ({
+    params: { aid: article.slug },
   }));
 
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 }
 
 export async function getStaticProps({ params }) {
-  const client = initializeApollo();
-  const res = await client.query({
-    query: ARTICLE_QUERY,
-    variables: { slug: params.aid },
-  });
+  const article = getBlogBySlug(params.aid);
 
-  // The value of the `props` key will be
-  //  passed to the `Home` component
   return {
     props: {
-      article: res.data.articles.data.length
+      article: article
         ? {
-            id: res.data.articles.data[0].id,
-            ...res.data.articles.data[0].attributes,
-            thumbnail: res.data.articles.data[0].attributes.thumbnail?.data
-              ?.attributes?.url
-              ? {
-                  url: res.data.articles.data[0].attributes.thumbnail?.data
-                    ?.attributes?.url,
-                }
-              : null,
-            category: {
-              title:
-                res.data.articles.data[0]?.attributes?.category?.data
-                  ?.attributes?.title || '',
-              slug:
-                res.data.articles.data[0]?.attributes?.category?.data
-                  ?.attributes?.slug || '',
-            },
-            tags: (res.data.articles.data[0].attributes.tags.data || []).map(
-              (tag) => ({
-                title: tag.attributes.title,
-                slug: tag.attributes.slug,
-              })
-            ),
+            id: article.id,
+            title: article.title,
+            slug: article.slug,
+            tagline: article.tagline,
+            content: article.content,
+            publishedOn: article.publishedOn,
+            updatedAt: article.updatedAt,
+            createdAt: article.createdAt,
+            thumbnail: article.thumbnail,
+            category: article.category,
+            tags: article.tags,
           }
         : null,
     },

@@ -67,11 +67,11 @@ function ArticleTemplate({ article }) {
               {article.content}
             </Markdown>
 
-            {article.published_on && (
+            {article.publishedOn && (
               <p css={tw`pt-4 text-light-700 dark:text-dark-700`}>
                 Posted on:{' '}
                 <span css={tw`italic`}>
-                  {format(new Date(article.published_on), 'do MMM yyyy')}
+                  {format(new Date(article.publishedOn), 'do MMM yyyy')}
                 </span>
               </p>
             )}
@@ -83,9 +83,10 @@ function ArticleTemplate({ article }) {
 }
 
 ArticleTemplate.propTypes = {
-  article: PropTypes.PropTypes.shape({
+  article: PropTypes.shape({
     title: PropTypes.string.isRequired,
     tagline: PropTypes.string,
+    content: PropTypes.string.isRequired,
     category: PropTypes.shape({
       title: PropTypes.string.isRequired,
       slug: PropTypes.string.isRequired,
@@ -96,7 +97,7 @@ ArticleTemplate.propTypes = {
         slug: PropTypes.string.isRequired,
       })
     ).isRequired,
-    published_on: PropTypes.string.isRequired,
+    publishedOn: PropTypes.string,
     thumbnail: PropTypes.shape({
       url: PropTypes.string.isRequired,
     }).isRequired,

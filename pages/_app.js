@@ -1,15 +1,13 @@
 import { useEffect } from 'react';
-import { ApolloProvider } from '@apollo/react-hooks';
 
 import { ThemeProvider } from 'next-themes';
 import * as analytics from '../utils/analytics';
-import withApollo from '../utils/apollo';
 import { MainLayout } from '../components';
 
 import '../assets/css/styles.css';
 import 'aos/dist/aos.css';
 
-const App = ({ Component, pageProps, apollo, router }) => {
+const App = ({ Component, pageProps, router }) => {
   useEffect(() => {
     const handleRouteChange = (url) => {
       analytics.pageview(url);
@@ -21,21 +19,17 @@ const App = ({ Component, pageProps, apollo, router }) => {
   }, [router.events]);
 
   return (
-    <ApolloProvider client={apollo}>
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="dark"
-        enableColorScheme={false}
-        enableSystem={false}
-      >
-        <MainLayout pathname={router.pathname}>
-          <Component {...pageProps} />
-        </MainLayout>
-      </ThemeProvider>
-    </ApolloProvider>
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="dark"
+      enableColorScheme={false}
+      enableSystem={false}
+    >
+      <MainLayout pathname={router.pathname}>
+        <Component {...pageProps} />
+      </MainLayout>
+    </ThemeProvider>
   );
 };
 
-// Wraps all components in the tree with the data provider
-const AppolloApp = withApollo(App);
-export default AppolloApp;
+export default App;

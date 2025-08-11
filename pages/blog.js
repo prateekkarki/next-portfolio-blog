@@ -4,9 +4,8 @@ import tw from 'twin.macro';
 import Head from 'next/head';
 import { Card } from 'components/BlogPosts/Card';
 import { MetaHead } from 'components';
-import ARTICLES_QUERY from '../apollo/queries/article/articles';
+import { getAllBlogs } from '../data/blogs';
 
-import { initializeApollo } from '../utils/apollo';
 import TitleBlock from '../components/Common/TitleBlock';
 import { Container, MainBg } from '../components/styles';
 
@@ -41,29 +40,20 @@ function Blog({ articles }) {
 export default Blog;
 
 export async function getStaticProps() {
-  const client = initializeApollo();
-  const res = await client.query({
-    query: ARTICLES_QUERY,
-  });
+  const articles = getAllBlogs();
 
   return {
     props: {
-      articles: res.data.articles.data.map((article) => ({
+      articles: articles.map((article) => ({
         id: article.id,
-        ...article.attributes,
-        thumbnail: article.attributes.thumbnail?.data?.attributes?.url
-          ? {
-              url: article.attributes.thumbnail?.data?.attributes?.url,
-            }
-          : null,
-        category: {
-          title: article.attributes.category?.data?.attributes?.title || '',
-          slug: article.attributes.category?.data?.attributes?.slug || '',
-        },
-        tags: (article.attributes.tags.data || []).map((tag) => ({
-          title: tag?.attributes?.title,
-          slug: tag?.attributes?.slug,
-        })),
+        title: article.title,
+        slug: article.slug,
+        publishedOn: article.publishedOn,
+        isExternal: article.isExternal,
+        externalUrl: article.externalUrl,
+        thumbnail: article.thumbnail,
+        category: article.category,
+        tags: article.tags,
       })),
     },
   };

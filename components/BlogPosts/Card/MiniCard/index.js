@@ -99,18 +99,18 @@ const Card = ({ article, dark }) => {
 Card.propTypes = {
   article: PropTypes.shape({
     tags: PropTypes.arrayOf(
-      PropTypes.PropTypes.shape({
+      PropTypes.shape({
         slug: PropTypes.string.isRequired,
-        name: PropTypes.string,
+        title: PropTypes.string,
       })
     ),
     slug: PropTypes.string.isRequired,
-    thumbnail: PropTypes.PropTypes.shape({
+    thumbnail: PropTypes.shape({
       url: PropTypes.string.isRequired,
     }),
     title: PropTypes.string.isRequired,
-    category: PropTypes.PropTypes.shape({
-      name: PropTypes.string.isRequired,
+    category: PropTypes.shape({
+      title: PropTypes.string.isRequired,
     }),
   }).isRequired,
 };

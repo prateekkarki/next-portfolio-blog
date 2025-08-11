@@ -79,10 +79,10 @@ function Footer() {
             <div
               css={tw`mt-8 text-center sm:text-left sm:w-1/2 md:w-1/3 sm:inline-block`}
             >
-              <Title>Backend</Title>
+              <Title>Deployment</Title>
               <ul>
                 <FooterLink label="GraphQL" href="https://graphql.org/" />
-                <FooterLink label="Strapi" href="https://strapi.io/" />
+
                 <FooterLink label="Vercel" href="https://vercel.com/" />
                 <FooterLink label="Cloudinary" href="https://cloudinary.com/" />
               </ul>

@@ -1,39 +1,75 @@
 import { Fragment } from 'react';
-import { useRouter } from 'next/router';
-import Head from 'next/head';
-import capitalize from 'lodash/capitalize';
 import tw from 'twin.macro';
-import Query from 'components/Query';
-import CATEGORY_ARTICLES_QUERY from 'apollo/queries/category/articles';
-import { Container } from 'components/styles';
 
-const Category = () => {
-  const router = useRouter();
+import { Card } from '../../components/BlogPosts/Card';
+import { MetaHead } from '../../components';
+import TitleBlock from '../../components/Common/TitleBlock';
+import { Container, MainBg } from '../../components/styles';
+import { defaultSeo } from '../../constants/index';
+import { getBlogsByCategory, getCategories } from '../../data/blogs';
+
+const Category = ({ articles, category }) => {
+  const seo = {
+    ...defaultSeo,
+    title: `${category?.title} | Prateek Karki`,
+    url: `${process.env.NEXT_PUBLIC_SITE_URL}/category/${category?.slug}`,
+  };
 
   return (
-    <Query query={CATEGORY_ARTICLES_QUERY} id={router.query.cid}>
-      {({ data: { category } }) => (
-        <Fragment>
-          <Head>
-            <title>
-              {capitalize(category.name)} : Prateek Karki&apos;s blog
-            </title>
-          </Head>
-
-          <Container>
-            <p
-              css={tw`
-                inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2
-                text-sm font-semibold text-gray-700 
-              `}
-            >
-              #{category.name}
-            </p>
-          </Container>
-        </Fragment>
-      )}
-    </Query>
+    <Fragment>
+      <MetaHead seo={seo} />
+      <TitleBlock
+        title={category?.title}
+        subtitle={`Articles in ${category?.title}`}
+      />
+      <MainBg>
+        <Container>
+          <div
+            css={tw`grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-3 py-6`}
+          >
+            {articles.map((article) => (
+              <Card article={article} key={`article__${article.id}`} dark />
+            ))}
+          </div>
+        </Container>
+      </MainBg>
+    </Fragment>
   );
 };
 
 export default Category;
+
+export async function getStaticPaths() {
+  const categories = getCategories();
+  const paths = categories.map((category) => ({
+    params: { cid: category.slug },
+  }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const articles = getBlogsByCategory(params.cid);
+  const categories = getCategories();
+  const category = categories.find((cat) => cat.slug === params.cid);
+
+  return {
+    props: {
+      articles: articles.map((article) => ({
+        id: article.id,
+        title: article.title,
+        slug: article.slug,
+        publishedOn: article.publishedOn,
+        isExternal: article.isExternal,
+        externalUrl: article.externalUrl,
+        thumbnail: article.thumbnail,
+        category: article.category,
+        tags: article.tags,
+      })),
+      category,
+    },
+  };
+}

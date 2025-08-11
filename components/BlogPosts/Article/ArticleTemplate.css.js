@@ -17,9 +17,18 @@ export default [
         padding-top: 1rem;
         padding-left: 3rem;
       }
-
-      li {
-        list-style: inside;
+      ul, ol{
+        li {
+          &+li{
+            margin-top: 0.75rem;
+          }
+          list-style: inside;
+        }
+      }
+      ol{
+        li {
+          list-style: decimal;
+        }
       }
 
       h1 {

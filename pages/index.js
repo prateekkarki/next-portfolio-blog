@@ -1,8 +1,8 @@
-import { useEffect, useRef } from 'react';
-import { useRouter } from 'next/router';
 import tw from 'twin.macro';
 import PropTypes from 'prop-types';
 import AOS from 'aos';
+import { useRef, useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 import { Container } from 'components/styles';
 import BlogPosts from 'components/pages/LandingPage/BlogPosts/BlogPosts';
@@ -10,6 +10,8 @@ import Skewed from 'components/pages/LandingPage/Skewed';
 import Intro from 'components/pages/LandingPage/Intro/Intro';
 import About from 'components/pages/LandingPage/About/About';
 import Contact from 'components/pages/LandingPage/Contact/Contact';
+import Works from 'components/pages/LandingPage/Works/Works';
+import Skills from 'components/pages/LandingPage/Skills/Skills';
 import { MetaHead } from 'components';
 import { defaultSeo } from '../constants/index';
 import { getFeaturedBlogs } from '../data/blogs';
@@ -18,6 +20,8 @@ const Home = ({ articles }) => {
   const refs = {
     home: useRef(null),
     about: useRef(null),
+    works: useRef(null),
+    skills: useRef(null),
     contact: useRef(null),
   };
 
@@ -56,6 +60,16 @@ const Home = ({ articles }) => {
         <div css={[tw`relative my-24`]} ref={refs.about}>
           <Skewed>
             <About />
+          </Skewed>
+        </div>
+
+        <Container>
+          <Works />
+        </Container>
+
+        <div css={[tw`relative my-24`]} ref={refs.skills}>
+          <Skewed>
+            <Skills />
           </Skewed>
         </div>
 

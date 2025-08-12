@@ -1,4 +1,4 @@
-import React, { type ComponentType, type ReactElement } from 'react';
+import React, { ComponentType, ReactElement } from 'react';
 import tw, { theme } from 'twin.macro';
 import {
   VerticalTimeline,

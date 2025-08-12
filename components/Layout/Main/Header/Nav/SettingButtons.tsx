@@ -1,4 +1,4 @@
-import React, { useEffect, type ReactElement } from 'react';
+import React, { useEffect, ReactElement } from 'react';
 import tw, { styled } from 'twin.macro';
 
 import { IoMdSunny, IoMdMoon } from 'react-icons/io';

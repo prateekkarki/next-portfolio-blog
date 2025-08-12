@@ -1,4 +1,4 @@
-import React, { useState, type ReactElement } from 'react';
+import React, { useState, ReactElement } from 'react';
 import Close from 'components/Common/Icons/Close';
 import { FaArrowRight } from 'react-icons/fa';
 import tw from 'twin.macro';

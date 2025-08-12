@@ -1,4 +1,4 @@
-import React, { useState, useRef, type ReactElement } from 'react';
+import React, { useState, useRef, ReactElement } from 'react';
 import type { ComponentType } from 'react';
 import tw, { styled } from 'twin.macro';
 import { IoIosCloseCircle } from 'react-icons/io';

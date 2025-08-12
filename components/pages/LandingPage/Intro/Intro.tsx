@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, type ReactElement } from 'react';
+import React, { useRef, useEffect, ReactElement } from 'react';
 import anime from 'animejs';
 import tw from 'twin.macro';
 

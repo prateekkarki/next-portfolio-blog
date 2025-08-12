@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, type ReactElement } from 'react';
+import React, { Dispatch, SetStateAction, ReactElement } from 'react';
 import { Squash as Hamburger } from 'hamburger-react';
 
 import { theme as twinTheme } from 'twin.macro';

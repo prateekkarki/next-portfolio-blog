@@ -1,5 +1,5 @@
 /* eslint-disable react/no-danger */
-import React, { type ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import tw from 'twin.macro';
 import { DiscussionEmbed } from 'disqus-react';
 import Head from 'next/head';

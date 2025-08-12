@@ -1,4 +1,4 @@
-import React, { type ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import tw, { css, theme } from 'twin.macro';
 import { LoaderProps } from '../types';
 

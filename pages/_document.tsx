@@ -7,6 +7,7 @@ import Document, {
 } from 'next/document';
 import tw, { styled, css, theme } from 'twin.macro';
 
+import { ReactElement } from 'react';
 import { GA_TRACKING_ID } from '../utils/analytics';
 
 const Body = styled.body([
@@ -43,7 +44,7 @@ class MyDocument extends Document {
     return { ...initialProps };
   }
 
-  render(): JSX.Element {
+  render(): ReactElement {
     return (
       <StyledHtml lang="en">
         <Head />

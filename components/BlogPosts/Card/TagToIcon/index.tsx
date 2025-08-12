@@ -1,4 +1,4 @@
-import React, { type ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import { CgCodeSlash } from 'react-icons/cg';
 import intersection from 'lodash/intersection';
 import { iconStyle, IconContainer } from '../styles';

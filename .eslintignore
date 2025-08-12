@@ -4,3 +4,8 @@ out_functions/**
 out_publish/**
 public/**
 **/node_modules/**
+**/generateSitemap.js
+**/next.config.js
+**/tailwind.config.js
+**/eslintrc.js
+.eslintrc.js

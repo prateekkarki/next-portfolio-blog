@@ -1,4 +1,4 @@
-import React, { type ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import { GlobalStyles } from 'twin.macro';
 import { Transition, TransitionGroup } from 'react-transition-group';
 

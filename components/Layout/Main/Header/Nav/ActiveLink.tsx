@@ -1,4 +1,4 @@
-import React, { type ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import { useRouter } from 'next/router';
 import tw, { styled } from 'twin.macro';
 import Link from 'next/link';

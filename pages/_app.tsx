@@ -1,4 +1,4 @@
-import React, { useEffect, type ComponentType, type ReactElement } from 'react';
+import React, { useEffect, ComponentType, ReactElement } from 'react';
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'next-themes';
 import * as analytics from '../utils/analytics';

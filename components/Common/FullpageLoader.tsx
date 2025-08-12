@@ -1,4 +1,4 @@
-import React, { type ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import tw, { styled, css, theme } from 'twin.macro';
 
 const Loader = styled.div([

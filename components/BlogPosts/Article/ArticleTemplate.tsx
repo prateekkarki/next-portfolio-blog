@@ -1,4 +1,4 @@
-import React, { type ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import tw from 'twin.macro';
 import Markdown from 'react-markdown';
 
@@ -7,8 +7,8 @@ import format from 'date-fns/format';
 import { useTheme } from 'next-themes';
 
 import { Prism, SyntaxHighlighterProps } from 'react-syntax-highlighter';
-import syntaxThemeDark from 'react-syntax-highlighter/dist/esm/styles/prism/material-dark';
-import syntaxThemeLight from 'react-syntax-highlighter/dist/esm/styles/prism/material-light';
+import syntaxThemeDark from 'react-syntax-highlighter/dist/cjs/styles/prism/material-dark';
+import syntaxThemeLight from 'react-syntax-highlighter/dist/cjs/styles/prism/material-light';
 import TitleBlock from '../../Common/TitleBlock';
 import BreadCrumbs from '../../Common/BreadCrumbs';
 import style from './ArticleTemplate.css';

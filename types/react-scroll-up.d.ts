@@ -1,5 +1,6 @@
 declare module 'react-scroll-up' {
   import * as React from 'react';
+
   export interface ScrollToTopProps {
     showUnder?: number;
     duration?: number;

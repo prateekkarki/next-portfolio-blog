@@ -1,5 +1,5 @@
 /* eslint-disable implicit-arrow-linebreak */
-import React, { useState, type ReactElement } from 'react';
+import React, { useState, ReactElement } from 'react';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import tw, { css } from 'twin.macro';

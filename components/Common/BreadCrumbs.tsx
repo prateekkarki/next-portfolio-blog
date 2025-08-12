@@ -1,4 +1,4 @@
-import React, { type ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 
 import { FaAngleRight } from 'react-icons/fa';
 import Link from 'next/link';

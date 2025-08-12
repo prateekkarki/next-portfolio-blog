@@ -1,4 +1,4 @@
-import React, { type ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import Head from 'next/head';
 import { MetaHeadProps } from '../../types';
 

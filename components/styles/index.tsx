@@ -1,4 +1,4 @@
-import React, { type ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import tw, { css, styled } from 'twin.macro';
 
 export const Title = tw.h2`

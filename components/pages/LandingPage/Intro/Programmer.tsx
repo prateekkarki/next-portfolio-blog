@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import React, { useRef, useEffect, type ReactElement } from 'react';
+import React, { useRef, useEffect, ReactElement } from 'react';
 
 import anime from 'animejs';
 import programmerCss from './programmer.css';

@@ -1,4 +1,4 @@
-import React, { type ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import Scroller from 'react-scroll-up';
 import tw from 'twin.macro';
 import { FaArrowUp } from 'react-icons/fa';

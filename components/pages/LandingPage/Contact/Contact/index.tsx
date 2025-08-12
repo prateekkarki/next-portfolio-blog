@@ -1,4 +1,4 @@
-import React, { type ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 import { ImGithub, ImLinkedin2 } from 'react-icons/im';
 import { IoIosMail } from 'react-icons/io';
 import tw, { styled } from 'twin.macro';

@@ -40,7 +40,7 @@ const Inner = styled.div(css`
   }
 `);
 
-export default function Custom404() {
+export default function Custom404(): JSX.Element {
   return (
     <Container tw="bg-light-400 dark:bg-dark-400">
       <Head>

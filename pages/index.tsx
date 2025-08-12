@@ -1,8 +1,8 @@
 import tw from 'twin.macro';
-import PropTypes from 'prop-types';
 import AOS from 'aos';
 import { useRef, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { GetStaticProps } from 'next';
 
 import { Container } from 'components/styles';
 import BlogPosts from 'components/pages/LandingPage/BlogPosts/BlogPosts';
@@ -15,24 +15,27 @@ import Skills from 'components/pages/LandingPage/Skills/Skills';
 import { MetaHead } from 'components';
 import { defaultSeo } from '../constants/index';
 import { getFeaturedBlogs } from '../data/blogs';
+import { HomePageProps } from '../types';
 
-const Home = ({ articles }) => {
+const Home = ({ articles }: HomePageProps): JSX.Element => {
   const refs = {
-    home: useRef(null),
-    about: useRef(null),
-    works: useRef(null),
-    skills: useRef(null),
-    contact: useRef(null),
+    home: useRef<HTMLDivElement>(null),
+    about: useRef<HTMLDivElement>(null),
+    works: useRef<HTMLDivElement>(null),
+    skills: useRef<HTMLDivElement>(null),
+    contact: useRef<HTMLDivElement>(null),
   };
 
   const router = useRouter();
 
   const scrollToContact = () => {
-    const offsetTop = refs.contact.current.offsetTop - 150;
-    window.scrollTo({
-      top: offsetTop,
-      behavior: 'smooth',
-    });
+    if (refs.contact.current) {
+      const offsetTop = refs.contact.current.offsetTop - 150;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth',
+      });
+    }
   };
   useEffect(() => {
     AOS.init({
@@ -41,9 +44,9 @@ const Home = ({ articles }) => {
     });
 
     if (router.asPath.length && router.asPath.slice(0, 2) === '/#') {
-      const block = router.asPath.slice(2);
-      if (refs[block]) {
-        const offsetTop = refs[block].current.offsetTop - 150;
+      const block = router.asPath.slice(2) as keyof typeof refs;
+      if (refs[block] && refs[block].current) {
+        const offsetTop = refs[block].current!.offsetTop - 150;
         window.scrollTo({
           top: offsetTop,
           behavior: 'smooth',
@@ -87,13 +90,9 @@ const Home = ({ articles }) => {
   );
 };
 
-Home.propTypes = {
-  articles: PropTypes.arrayOf(PropTypes.object).isRequired,
-};
-
 export default Home;
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const articles = getFeaturedBlogs();
 
   return {
@@ -112,4 +111,4 @@ export async function getStaticProps() {
       })),
     },
   };
-}
+};

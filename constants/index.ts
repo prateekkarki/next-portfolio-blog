@@ -1,5 +1,7 @@
+import { SEOProps } from '../types';
+
 // eslint-disable-next-line import/prefer-default-export
-export const defaultSeo = {
+export const defaultSeo: SEOProps = {
   siteName: 'Meet Prateek',
   locale: 'en_US',
   title: 'Prateek Karki | Full-stack web developer',

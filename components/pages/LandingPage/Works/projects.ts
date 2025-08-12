@@ -1,4 +1,6 @@
-const projects = [
+import { Project } from '../../../../types';
+
+const projects: Project[] = [
   {
     id: 1,
     title: 'Canadian Train Vacations',

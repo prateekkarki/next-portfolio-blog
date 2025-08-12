@@ -1,4 +1,6 @@
-export default [
+import { TimelineItem } from '../../../../types';
+
+const timelineItems: TimelineItem[] = [
   {
     id: 3,
     date: '2014',
@@ -34,3 +36,5 @@ export default [
       'Developed interactive educational materials using technologies like ReactJS and GSAP. Provided the content team and design team with ideas for improvement of the office products. Mentored junior developers and helped them in developing high quality products.',
   },
 ];
+
+export default timelineItems;

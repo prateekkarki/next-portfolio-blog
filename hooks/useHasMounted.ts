@@ -1,6 +1,6 @@
 import React from 'react';
 
-function useHasMounted() {
+function useHasMounted(): boolean {
   const [hasMounted, setHasMounted] = React.useState(false);
   React.useEffect(() => {
     setHasMounted(true);

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-export default function useDisableBodyScroll(open) {
+export default function useDisableBodyScroll(open: boolean): void {
   useEffect(() => {
     if (document) {
       if (open) {

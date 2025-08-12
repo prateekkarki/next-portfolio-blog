@@ -1,4 +1,10 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, {
+  Html,
+  Head,
+  Main,
+  NextScript,
+  DocumentContext,
+} from 'next/document';
 import tw, { styled, css, theme } from 'twin.macro';
 
 import { GA_TRACKING_ID } from '../utils/analytics';
@@ -32,7 +38,12 @@ const StyledHtml = styled(Html)`
 `;
 
 class MyDocument extends Document {
-  render() {
+  static async getInitialProps(ctx: DocumentContext) {
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps };
+  }
+
+  render(): JSX.Element {
     return (
       <StyledHtml lang="en">
         <Head />

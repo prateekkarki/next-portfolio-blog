@@ -1,11 +1,10 @@
 import { useState } from 'react';
-
 import axios from 'axios';
-import { useForm } from 'react-hook-form';
-
+import { useForm, FieldValues } from 'react-hook-form';
 import toast from 'react-hot-toast';
+import { FormActions, UseFormRequestReturn } from '../types';
 
-const useFormRequest = (actions) => {
+const useFormRequest = (actions?: FormActions): UseFormRequestReturn => {
   const { onSuccess = () => {}, onError = () => {} } = actions || {
     onSuccess: () => {},
     onError: () => {},
@@ -21,17 +20,17 @@ const useFormRequest = (actions) => {
     mode: 'onSubmit',
   });
 
-  const handleServerResponse = (ok, msg) => {
+  const handleServerResponse = (ok: boolean, msg: string) => {
     isSubmitting(false);
     if (ok) {
       onSuccess();
       toast.success(msg);
     } else {
-      onError();
+      onError(msg);
       toast.error(msg);
     }
   };
-  const onSubmit = (data) => {
+  const onSubmit = (data: FieldValues) => {
     isSubmitting(true);
 
     axios({
@@ -57,7 +56,7 @@ const useFormRequest = (actions) => {
       });
   };
 
-  const handleFinished = (e) => {
+  const handleFinished = (e: React.FormEvent) => {
     e.preventDefault();
     handleSubmit(onSubmit)(e);
   };

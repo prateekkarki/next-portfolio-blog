@@ -1,4 +1,6 @@
-export default [
+import { BlogArticle } from '../types';
+
+const blogsData: BlogArticle[] = [
   {
     id: 5,
     title: 'Heavy Computation Made Lighter: React Memoization',
@@ -208,3 +210,5 @@ export default [
     ],
   },
 ];
+
+export default blogsData;

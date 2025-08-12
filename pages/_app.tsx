@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-
+import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'next-themes';
 import * as analytics from '../utils/analytics';
 import { MainLayout } from '../components';
@@ -7,9 +7,9 @@ import { MainLayout } from '../components';
 import '../assets/css/styles.css';
 import 'aos/dist/aos.css';
 
-const App = ({ Component, pageProps, router }) => {
+const App = ({ Component, pageProps, router }: AppProps): JSX.Element => {
   useEffect(() => {
-    const handleRouteChange = (url) => {
+    const handleRouteChange = (url: string) => {
       analytics.pageview(url);
     };
     router.events.on('routeChangeComplete', handleRouteChange);

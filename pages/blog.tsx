@@ -1,7 +1,6 @@
-import { Fragment } from 'react';
 import tw from 'twin.macro';
+import { GetStaticProps } from 'next';
 
-import Head from 'next/head';
 import { Card } from 'components/BlogPosts/Card';
 import { MetaHead } from 'components';
 import { getAllBlogs } from '../data/blogs';
@@ -10,8 +9,9 @@ import TitleBlock from '../components/Common/TitleBlock';
 import { Container, MainBg } from '../components/styles';
 
 import { defaultSeo } from '../constants/index';
+import { BlogPageProps } from '../types';
 
-function Blog({ articles }) {
+function Blog({ articles }: BlogPageProps): JSX.Element {
   const seo = {
     ...defaultSeo,
     title: 'Blogs | Prateek Karki',
@@ -19,7 +19,7 @@ function Blog({ articles }) {
   };
 
   return (
-    <Fragment>
+    <>
       <MetaHead seo={seo} />
       <TitleBlock title="My Blog" subtitle="Check out my recent posts" />
       <MainBg>
@@ -33,13 +33,13 @@ function Blog({ articles }) {
           </div>
         </Container>
       </MainBg>
-    </Fragment>
+    </>
   );
 }
 
 export default Blog;
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const articles = getAllBlogs();
 
   return {
@@ -57,4 +57,4 @@ export async function getStaticProps() {
       })),
     },
   };
-}
+};

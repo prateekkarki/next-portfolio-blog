@@ -1,4 +1,4 @@
-import { styled, css, theme } from 'twin.macro';
+import tw, { styled, css, theme } from 'twin.macro';
 import { Link as TextLink } from 'components/styles';
 import Link from 'next/link';
 import Head from 'next/head';

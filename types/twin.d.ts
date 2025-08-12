@@ -1,8 +1,7 @@
-// types/twin.d.ts
 import 'twin.macro';
 import { css as cssImport } from '@emotion/react';
 import styledImport from '@emotion/styled';
-import { CSSInterpolation } from '@emotion/serialize';
+import { CSSProp } from '@emotion/react';
 
 declare module 'twin.macro' {
   // The styled and css imports
@@ -14,6 +13,15 @@ declare module 'react' {
   // The tw and css prop
   interface DOMAttributes<T> {
     tw?: string;
-    css?: CSSInterpolation;
+    css?: CSSProp;
+  }
+}
+
+declare global {
+  namespace JSX {
+    interface IntrinsicAttributes {
+      tw?: string;
+      css?: CSSProp;
+    }
   }
 }

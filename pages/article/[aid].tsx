@@ -10,8 +10,9 @@ import { Container, Link as RegularLink } from 'components/styles';
 import { MetaHead } from 'components';
 import { defaultSeo } from '../../constants/index';
 import { getBlogBySlug, getAllBlogs } from '../../data/blogs';
+import { BlogArticle } from '@/types';
 
-const SingleArticle = ({ article }) => {
+const SingleArticle = ({ article }: { article: BlogArticle }) => {
   if (!article) {
     return (
       <Container css={tw`px-3`}>

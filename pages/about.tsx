@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import React from 'react';
 import Head from 'next/head';
 
 import TitleBlock from 'components/Common/TitleBlock';
@@ -6,15 +6,16 @@ import Timeline from 'components/pages/AboutPage/Timeline';
 import { Container, MainBg } from 'components/styles';
 import { MetaHead } from 'components';
 import { defaultSeo } from '../constants/index';
+import { AboutPageProps } from '../types';
 
-function about() {
+function About(): JSX.Element {
   const seo = {
     ...defaultSeo,
     title: 'About me | Prateek Karki',
     url: `${process.env.NEXT_PUBLIC_SITE_URL}/about`,
   };
   return (
-    <Fragment>
+    <>
       <MetaHead seo={seo} />
       <TitleBlock title="About Me" subtitle="Who am I?" />
       <MainBg>
@@ -22,8 +23,8 @@ function about() {
           <Timeline />
         </Container>
       </MainBg>
-    </Fragment>
+    </>
   );
 }
 
-export default about;
+export default About;

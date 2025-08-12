@@ -1,5 +1,6 @@
-import { Fragment } from 'react';
+import React from 'react';
 import tw from 'twin.macro';
+import { GetStaticProps, GetStaticPaths } from 'next';
 
 import { Card } from '../../components/BlogPosts/Card';
 import { MetaHead } from '../../components';
@@ -7,8 +8,9 @@ import TitleBlock from '../../components/Common/TitleBlock';
 import { Container, MainBg } from '../../components/styles';
 import { defaultSeo } from '../../constants/index';
 import { getBlogsByCategory, getCategories } from '../../data/blogs';
+import { CategoryPageProps } from '../../types';
 
-const Category = ({ articles, category }) => {
+const Category = ({ articles, category }: CategoryPageProps): JSX.Element => {
   const seo = {
     ...defaultSeo,
     title: `${category?.title} | Prateek Karki`,
@@ -16,10 +18,10 @@ const Category = ({ articles, category }) => {
   };
 
   return (
-    <Fragment>
+    <>
       <MetaHead seo={seo} />
       <TitleBlock
-        title={category?.title}
+        title={category?.title || ''}
         subtitle={`Articles in ${category?.title}`}
       />
       <MainBg>
@@ -33,13 +35,13 @@ const Category = ({ articles, category }) => {
           </div>
         </Container>
       </MainBg>
-    </Fragment>
+    </>
   );
 };
 
 export default Category;
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const categories = getCategories();
   const paths = categories.map((category) => ({
     params: { cid: category.slug },
@@ -49,12 +51,12 @@ export async function getStaticPaths() {
     paths,
     fallback: false,
   };
-}
+};
 
-export async function getStaticProps({ params }) {
-  const articles = getBlogsByCategory(params.cid);
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const articles = getBlogsByCategory(params!.cid as string);
   const categories = getCategories();
-  const category = categories.find((cat) => cat.slug === params.cid);
+  const category = categories.find((cat) => cat.slug === params!.cid);
 
   return {
     props: {
@@ -72,4 +74,4 @@ export async function getStaticProps({ params }) {
       category,
     },
   };
-}
+};

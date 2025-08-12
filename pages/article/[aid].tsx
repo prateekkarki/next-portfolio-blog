@@ -1,18 +1,19 @@
 /* eslint-disable react/no-danger */
-import { Fragment } from 'react';
+import React from 'react';
 import tw from 'twin.macro';
 import { DiscussionEmbed } from 'disqus-react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { GetStaticProps, GetStaticPaths } from 'next';
 
 import ArticleTemplate from 'components/BlogPosts/Article/ArticleTemplate';
 import { Container, Link as RegularLink } from 'components/styles';
 import { MetaHead } from 'components';
 import { defaultSeo } from '../../constants/index';
 import { getBlogBySlug, getAllBlogs } from '../../data/blogs';
-import { BlogArticle } from '@/types';
+import { ArticlePageProps } from '../../types';
 
-const SingleArticle = ({ article }: { article: BlogArticle }) => {
+const SingleArticle = ({ article }: ArticlePageProps): JSX.Element => {
   if (!article) {
     return (
       <Container css={tw`px-3`}>
@@ -46,13 +47,13 @@ const SingleArticle = ({ article }: { article: BlogArticle }) => {
   };
 
   return (
-    <Fragment>
+    <>
       <MetaHead seo={seo} />
       <ArticleTemplate article={article} />
       <div css={tw`py-12 bg-light-500 dark:bg-dark-400`}>
         <div css={tw`container mx-auto px-3`}>
           <DiscussionEmbed
-            shortname={process.env.NEXT_PUBLIC_DISQUS_SHORTNAME}
+            shortname={process.env.NEXT_PUBLIC_DISQUS_SHORTNAME!}
             config={{
               url: `${process.env.NEXT_PUBLIC_SITE_URL}/article/${article.slug}`,
               identifier: `article-${article.slug}`,
@@ -61,13 +62,13 @@ const SingleArticle = ({ article }: { article: BlogArticle }) => {
           />
         </div>
       </div>
-    </Fragment>
+    </>
   );
 };
 
 export default SingleArticle;
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const articles = getAllBlogs();
   const paths = articles.map((article) => ({
     params: { aid: article.slug },
@@ -77,10 +78,10 @@ export async function getStaticPaths() {
     paths,
     fallback: false,
   };
-}
+};
 
-export async function getStaticProps({ params }) {
-  const article = getBlogBySlug(params.aid);
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const article = getBlogBySlug(params!.aid as string);
 
   return {
     props: {
@@ -101,4 +102,4 @@ export async function getStaticProps({ params }) {
         : null,
     },
   };
-}
+};

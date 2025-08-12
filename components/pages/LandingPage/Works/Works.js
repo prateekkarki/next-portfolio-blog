@@ -27,11 +27,11 @@ const Works = () => {
           utilizing different technologies and approaches. I focus on creating
           clean, maintainable code and pixel-perfect user experiences.
         </Text>
-        {/* <Link href="/works" passHref>
+        <Link href="/works" passHref>
           <BigLink css={tw`mt-6 mx-auto md:ml-0 hidden md:inline-block`}>
             View all projects
           </BigLink>
-        </Link> */}
+        </Link>
       </div>
 
       <div
@@ -57,11 +57,11 @@ const Works = () => {
                 ))}
               </>
             )}
-            {/* <Link href="/works" passHref>
+            <Link href="/works" passHref>
               <BigLink css={tw`mt-2 inline-block md:hidden`}>
                 View all projects
               </BigLink>
-            </Link> */}
+            </Link>
           </>
         )}
       </div>

@@ -1,7 +1,8 @@
+import React, { type ReactElement } from 'react';
 import tw, { css } from 'twin.macro';
 import { TitleBlockProps } from '../../types';
 
-function TitleBlock({ title, subtitle }: TitleBlockProps): JSX.Element {
+function TitleBlock({ title, subtitle }: TitleBlockProps): ReactElement {
   return (
     <div css={tw`flex flex-col items-center text-center py-16`}>
       <h1 css={tw`font-bold text-primary text-5xl`}>{title}</h1>

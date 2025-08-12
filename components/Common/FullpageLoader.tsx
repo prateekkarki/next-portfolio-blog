@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type ReactElement } from 'react';
 import tw, { styled, css, theme } from 'twin.macro';
 
 const Loader = styled.div([
@@ -21,7 +21,7 @@ const LoaderChild = styled.div([
   `,
 ]);
 
-function FullpageLoader(): JSX.Element {
+function FullpageLoader(): ReactElement {
   return (
     <Loader className="fullpage-loader">
       <LoaderChild />

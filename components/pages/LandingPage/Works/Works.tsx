@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type ReactElement } from 'react';
 import tw from 'twin.macro';
 import Link from 'next/link';
 
@@ -7,7 +7,7 @@ import { useWindowSize, useHasMounted } from 'hooks';
 import ProjectCard from './ProjectCard';
 import projects from './projects';
 
-const Works = (): JSX.Element => {
+const Works = (): ReactElement => {
   const { width } = useWindowSize();
   const hasMounted = useHasMounted();
 
@@ -39,7 +39,7 @@ const Works = (): JSX.Element => {
         css={tw`flex flex-col items-center justify-center gap-4 mt-4 md:mt-0 md:w-1/2 px-3 md:px-6`}
         data-aos="zoom-in-up"
       >
-        {hasMounted && (
+        {hasMounted && width && (
           <>
             {width < 640 || (width >= 768 && width < 1280) ? (
               <ProjectCard

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import React, { useEffect, type ComponentType, type ReactElement } from 'react';
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'next-themes';
 import * as analytics from '../utils/analytics';
@@ -7,7 +7,9 @@ import { MainLayout } from '../components';
 import '../assets/css/styles.css';
 import 'aos/dist/aos.css';
 
-const App = ({ Component, pageProps, router }: AppProps): JSX.Element => {
+const NextThemeProvider = ThemeProvider as unknown as ComponentType<any>;
+
+const App = ({ Component, pageProps, router }: AppProps): ReactElement => {
   useEffect(() => {
     const handleRouteChange = (url: string) => {
       analytics.pageview(url);
@@ -19,7 +21,7 @@ const App = ({ Component, pageProps, router }: AppProps): JSX.Element => {
   }, [router.events]);
 
   return (
-    <ThemeProvider
+    <NextThemeProvider
       attribute="class"
       defaultTheme="dark"
       enableColorScheme={false}
@@ -28,7 +30,7 @@ const App = ({ Component, pageProps, router }: AppProps): JSX.Element => {
       <MainLayout pathname={router.pathname}>
         <Component {...pageProps} />
       </MainLayout>
-    </ThemeProvider>
+    </NextThemeProvider>
   );
 };
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type ReactElement } from 'react';
 
 import { FaAngleRight } from 'react-icons/fa';
 import Link from 'next/link';
@@ -6,7 +6,7 @@ import Link from 'next/link';
 import tw from 'twin.macro';
 import { BreadCrumbsProps, BreadCrumbBlock } from '../../types';
 
-function EachBlock({ path, title }: BreadCrumbBlock): JSX.Element {
+function EachBlock({ path, title }: BreadCrumbBlock): ReactElement {
   return path ? (
     <>
       <Link href={path} passHref>
@@ -24,7 +24,7 @@ function EachBlock({ path, title }: BreadCrumbBlock): JSX.Element {
   );
 }
 
-function BreadCrumbs({ blocks }: BreadCrumbsProps): JSX.Element {
+function BreadCrumbs({ blocks }: BreadCrumbsProps): ReactElement {
   return (
     <div css={tw`flex items-center`}>
       {blocks.map((block, i) => (

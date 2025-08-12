@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type ReactElement } from 'react';
 import tw, { css, styled } from 'twin.macro';
 
 export const Title = tw.h2`
@@ -98,7 +98,7 @@ export const BigButton = ({
   children,
   variant,
   ...others
-}: BigButtonProps): JSX.Element => (
+}: BigButtonProps): ReactElement => (
   <PseudoBigButton variant={variant} {...others}>
     <div>{children}</div>
   </PseudoBigButton>

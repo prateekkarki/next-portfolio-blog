@@ -1,6 +1,6 @@
+import React, { useRef, useEffect, type ReactElement } from 'react';
 import tw from 'twin.macro';
 import AOS from 'aos';
-import { useRef, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { GetStaticProps } from 'next';
 
@@ -17,7 +17,7 @@ import { defaultSeo } from '../constants/index';
 import { getFeaturedBlogs } from '../data/blogs';
 import { HomePageProps } from '../types';
 
-const Home = ({ articles }: HomePageProps): JSX.Element => {
+const Home = ({ articles }: HomePageProps): ReactElement => {
   const refs = {
     home: useRef<HTMLDivElement>(null),
     about: useRef<HTMLDivElement>(null),

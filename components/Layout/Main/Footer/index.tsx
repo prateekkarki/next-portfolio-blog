@@ -1,10 +1,11 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, type ReactElement } from 'react';
+import type { ComponentType } from 'react';
 import tw, { styled } from 'twin.macro';
 import { IoIosCloseCircle } from 'react-icons/io';
 import Modal from 'react-modal';
 import { FooterLink, Title } from './styles';
 
-const StyledModal = styled(Modal)`
+const StyledModal = styled(Modal as unknown as ComponentType<any>)`
   ${tw`bg-light-200 dark:bg-dark-200 w-11/12 max-w-xl mx-auto overflow-auto rounded-lg p-6`}
   border: 1px solid #ccc;
   overflow: auto;
@@ -28,7 +29,7 @@ const StyledModal = styled(Modal)`
   }
 `;
 
-function Footer(): JSX.Element {
+function Footer(): ReactElement {
   const [modalOpen, setModalOpen] = useState(false);
   const el = useRef<HTMLDivElement>(null);
   return (

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type ReactElement } from 'react';
 import Link from 'next/link';
 import { cloudinaryLoader } from 'utils';
 
@@ -10,7 +10,7 @@ import TagToIcon from '../TagToIcon';
 import { LinkWrapper } from '../MiniCard';
 import { FullCardProps } from '../../../../types';
 
-const Card = ({ article, dark }: FullCardProps): JSX.Element => {
+const Card = ({ article, dark }: FullCardProps): ReactElement => {
   const url = `${article?.thumbnail?.url.replace(/^.*[\\/]/, '')}`;
   return (
     <LinkWrapper article={article}>

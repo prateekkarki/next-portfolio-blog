@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { type ReactElement } from 'react';
 import tw from 'twin.macro';
 import { useState } from 'react';
 import Link from 'next/link';
 
 import { BigLink, Text, Title, Flex } from 'components/styles';
 
-const Skills = (): JSX.Element => {
+const Skills = (): ReactElement => {
   const [activeTab, setActiveTab] = useState<string>('frontend');
 
-  const skillCategories = {
+  const skillCategories: Record<
+    string,
+    { label: string; skills: { name: string; level: number }[] }
+  > = {
     frontend: {
       label: 'Frontend Development',
       skills: [
@@ -44,7 +47,7 @@ const Skills = (): JSX.Element => {
     },
   };
 
-  const tabs = Object.keys(skillCategories);
+  const tabs = Object.keys(skillCategories) as (keyof typeof skillCategories)[];
 
   return (
     <Flex css={tw`flex flex-col-reverse sm:flex-row `}>

@@ -1,5 +1,4 @@
-/* eslint-disable camelcase */
-import React from 'react';
+import React, { type ReactElement } from 'react';
 import tw from 'twin.macro';
 import Markdown from 'react-markdown';
 
@@ -7,9 +6,9 @@ import gfm from 'remark-gfm';
 import format from 'date-fns/format';
 import { useTheme } from 'next-themes';
 
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import syntaxThemeDark from 'react-syntax-highlighter/dist/cjs/styles/prism/material-dark';
-import syntaxThemeLight from 'react-syntax-highlighter/dist/cjs/styles/prism/material-light';
+import { Prism, SyntaxHighlighterProps } from 'react-syntax-highlighter';
+import syntaxThemeDark from 'react-syntax-highlighter/dist/esm/styles/prism/material-dark';
+import syntaxThemeLight from 'react-syntax-highlighter/dist/esm/styles/prism/material-light';
 import TitleBlock from '../../Common/TitleBlock';
 import BreadCrumbs from '../../Common/BreadCrumbs';
 import style from './ArticleTemplate.css';
@@ -19,19 +18,19 @@ interface ArticleTemplateProps {
   article: BlogArticle;
 }
 
-function ArticleTemplate({ article }: ArticleTemplateProps): JSX.Element {
+function ArticleTemplate({ article }: ArticleTemplateProps): ReactElement {
   const LinkRenderer = ({
     href,
     children,
   }: {
-    href: string;
+    href?: string | null;
     children: React.ReactNode;
   }) => (
-    <a href={href} target="_blank" rel="noreferrer">
+    <a href={href || '#'} target="_blank" rel="noreferrer">
       {children}
     </a>
   );
-
+  const SyntaxHighlighter = Prism as any as React.FC<SyntaxHighlighterProps>;
   const { theme } = useTheme();
   const SyntaxRenderer = ({ className, children, inline, ...props }: any) => {
     const match = /language-(\w+)/.exec(className || '');
@@ -74,7 +73,7 @@ function ArticleTemplate({ article }: ArticleTemplateProps): JSX.Element {
               components={{ code: SyntaxRenderer, a: LinkRenderer }}
               className="article-main"
             >
-              {article.content}
+              {article.content || ''}
             </Markdown>
 
             {article.publishedOn && (

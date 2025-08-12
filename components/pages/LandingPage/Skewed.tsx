@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { type ReactElement } from 'react';
 import tw, { css } from 'twin.macro';
 import { SkewedProps } from '../../../types';
 
-function Skewed({ children }: SkewedProps): JSX.Element {
+function Skewed({ children }: SkewedProps): ReactElement {
   return (
     <>
       <div

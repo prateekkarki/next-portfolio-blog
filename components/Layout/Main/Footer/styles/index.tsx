@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type ReactElement } from 'react';
 import tw from 'twin.macro';
 
 interface FooterLinkProps {
@@ -11,7 +11,7 @@ export const FooterLink = ({
   href,
   label,
   ...props
-}: FooterLinkProps): JSX.Element => (
+}: FooterLinkProps): ReactElement => (
   <li {...props}>
     <a
       css={tw`hover:(text-dark-primary dark:text-light-primary) text-primary`}

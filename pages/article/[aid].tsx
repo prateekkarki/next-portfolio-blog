@@ -1,5 +1,5 @@
 /* eslint-disable react/no-danger */
-import React from 'react';
+import React, { type ReactElement } from 'react';
 import tw from 'twin.macro';
 import { DiscussionEmbed } from 'disqus-react';
 import Head from 'next/head';
@@ -13,7 +13,7 @@ import { defaultSeo } from '../../constants/index';
 import { getBlogBySlug, getAllBlogs } from '../../data/blogs';
 import { ArticlePageProps } from '../../types';
 
-const SingleArticle = ({ article }: ArticlePageProps): JSX.Element => {
+const SingleArticle = ({ article }: ArticlePageProps): ReactElement => {
   if (!article) {
     return (
       <Container css={tw`px-3`}>

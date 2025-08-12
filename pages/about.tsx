@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type ReactElement } from 'react';
 import Head from 'next/head';
 
 import TitleBlock from 'components/Common/TitleBlock';
@@ -8,7 +8,7 @@ import { MetaHead } from 'components';
 import { defaultSeo } from '../constants/index';
 import { AboutPageProps } from '../types';
 
-function About(): JSX.Element {
+function About(): ReactElement {
   const seo = {
     ...defaultSeo,
     title: 'About me | Prateek Karki',

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, type ReactElement } from 'react';
 import tw, { styled } from 'twin.macro';
 
 import { IoMdSunny, IoMdMoon } from 'react-icons/io';
@@ -10,7 +10,7 @@ const SettingButton = styled.button(() => [
   px-3 h-20 flex items-center uppercase text-base text-light-700 dark:text-dark-700`,
 ]);
 
-function SettingButtons(): JSX.Element {
+function SettingButtons(): ReactElement {
   const hasMounted = useHasMounted();
   const { theme, setTheme } = useTheme();
 

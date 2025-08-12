@@ -1,3 +1,4 @@
+import React, { type ReactElement } from 'react';
 import tw from 'twin.macro';
 import { GetStaticProps } from 'next';
 
@@ -11,7 +12,7 @@ import { Container, MainBg } from '../components/styles';
 import { defaultSeo } from '../constants/index';
 import { BlogPageProps } from '../types';
 
-function Blog({ articles }: BlogPageProps): JSX.Element {
+function Blog({ articles }: BlogPageProps): ReactElement {
   const seo = {
     ...defaultSeo,
     title: 'Blogs | Prateek Karki',

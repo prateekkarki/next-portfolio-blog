@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { type ReactElement } from 'react';
 import tw from 'twin.macro';
 
 import Nav from './Nav';
 
-function Header(): JSX.Element {
+function Header(): ReactElement {
   return (
     <header
       css={tw`

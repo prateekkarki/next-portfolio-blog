@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Dispatch, SetStateAction, type ReactElement } from 'react';
 import { Squash as Hamburger } from 'hamburger-react';
 
 import { theme as twinTheme } from 'twin.macro';
@@ -9,10 +9,10 @@ import { NavTrigger } from './styles';
 
 interface TriggerProps {
   toggled: boolean;
-  toggle: (toggled: boolean) => void;
+  toggle: Dispatch<SetStateAction<boolean>>;
 }
 
-function Trigger({ toggled, toggle }: TriggerProps): JSX.Element | null {
+function Trigger({ toggled, toggle }: TriggerProps): ReactElement | null {
   const { theme } = useTheme();
   const hasMounted = useHasMounted();
 

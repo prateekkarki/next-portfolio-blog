@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { type ReactElement } from 'react';
 import Scroller from 'react-scroll-up';
 import tw from 'twin.macro';
 import { FaArrowUp } from 'react-icons/fa';
 
-function ScrollToTop(): JSX.Element {
+function ScrollToTop(): ReactElement {
   return (
     <Scroller showUnder={160} style={{ zIndex: 5 }}>
       <div

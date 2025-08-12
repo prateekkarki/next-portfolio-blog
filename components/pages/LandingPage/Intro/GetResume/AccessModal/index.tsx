@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, type ReactElement } from 'react';
 import Close from 'components/Common/Icons/Close';
 import { FaArrowRight } from 'react-icons/fa';
 import tw from 'twin.macro';
@@ -28,7 +28,7 @@ interface IndexProps {
   handleClose: () => void;
 }
 
-function Index({ modalOpen, handleClose }: IndexProps): JSX.Element {
+function Index({ modalOpen, handleClose }: IndexProps): ReactElement {
   const [codeRequest, setCodeRequest] = useState(false);
   const { submitting, register, errors, handleFinished } = useFormRequest({
     onSuccess: () => {
@@ -43,7 +43,7 @@ function Index({ modalOpen, handleClose }: IndexProps): JSX.Element {
       setCode('');
       setCodeError(false);
       handleClose();
-      openInNewTab(process.env.NEXT_PUBLIC_RESUME_LINK);
+      openInNewTab(process.env.NEXT_PUBLIC_RESUME_LINK || '#');
     } else {
       setCode('');
       setCodeError(true);

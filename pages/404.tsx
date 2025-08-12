@@ -1,3 +1,4 @@
+import React, { type ReactElement } from 'react';
 import tw, { styled, css, theme } from 'twin.macro';
 import { Link as TextLink } from 'components/styles';
 import Link from 'next/link';
@@ -40,7 +41,7 @@ const Inner = styled.div(css`
   }
 `);
 
-export default function Custom404(): JSX.Element {
+export default function Custom404(): ReactElement {
   return (
     <Container tw="bg-light-400 dark:bg-dark-400">
       <Head>

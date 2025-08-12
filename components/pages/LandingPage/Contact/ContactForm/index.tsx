@@ -1,5 +1,5 @@
 /* eslint-disable implicit-arrow-linebreak */
-import React, { useState } from 'react';
+import React, { useState, type ReactElement } from 'react';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import tw, { css } from 'twin.macro';
@@ -9,7 +9,7 @@ import { BigButton } from 'components/styles';
 import { ContactInput, ContactTextarea, ContactLabel } from './styles';
 import { ContactFormData } from '../../../../../types';
 
-function ContactForm(): JSX.Element {
+function ContactForm(): ReactElement {
   const {
     register,
     handleSubmit,
@@ -74,14 +74,13 @@ function ContactForm(): JSX.Element {
       <div css={tw`flex flex-col md:flex-row`}>
         <div css={tw`flex flex-wrap mb-6 w-full md:w-1/2`}>
           <div css={tw`w-full px-3 sm:mb-0`}>
-            <ContactLabel hasError={errors.fullName} htmlFor="fullName">
+            <ContactLabel hasError={!!errors.fullName} htmlFor="fullName">
               Full Name
             </ContactLabel>
 
             <ContactInput
-              hasError={errors.fullName}
+              hasError={!!errors.fullName}
               id="fullName"
-              name="fullName"
               type="text"
               placeholder="John Doe"
               {...register('fullName', {
@@ -105,13 +104,12 @@ function ContactForm(): JSX.Element {
         </div>
         <div css={tw`flex flex-wrap mb-6 w-full md:w-1/2`}>
           <div css={tw`w-full px-3`}>
-            <ContactLabel hasError={errors.email} htmlFor="email">
+            <ContactLabel hasError={!!errors.email} htmlFor="email">
               E-mail
             </ContactLabel>
             <ContactInput
-              hasError={errors.email}
+              hasError={!!errors.email}
               id="email"
-              name="email"
               type="email"
               placeholder="john.doe@example.com"
               {...register('email', {
@@ -132,13 +130,12 @@ function ContactForm(): JSX.Element {
       </div>
       <div css={tw`flex flex-wrap mb-6`}>
         <div css={tw`w-full px-3`}>
-          <ContactLabel hasError={errors.message} htmlFor="message">
+          <ContactLabel hasError={!!errors.message} htmlFor="message">
             Message
           </ContactLabel>
           <ContactTextarea
-            hasError={errors.message}
+            hasError={!!errors.message}
             id="message"
-            name="message"
             placeholder="Type your message here"
             {...register('message', {
               required: 'Please enter the message.',

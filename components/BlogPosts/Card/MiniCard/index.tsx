@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type ReactElement } from 'react';
 import Link from 'next/link';
 
 import tw from 'twin.macro';
@@ -14,7 +14,7 @@ import { LinkWrapperProps, MiniCardProps } from '../../../../types';
 export const LinkWrapper = ({
   children,
   article,
-}: LinkWrapperProps): JSX.Element => {
+}: LinkWrapperProps): ReactElement => {
   if (article.isExternal) {
     return (
       <a
@@ -43,7 +43,7 @@ export const LinkWrapper = ({
   );
 };
 
-const Card = ({ article, dark }: MiniCardProps): JSX.Element => {
+const Card = ({ article, dark }: MiniCardProps): ReactElement => {
   const url = `${article?.thumbnail?.url.replace(/^.*[\\/]/, '')}`;
 
   return (

@@ -1,7 +1,8 @@
+import React, { type ReactElement } from 'react';
 import Head from 'next/head';
 import { MetaHeadProps } from '../../types';
 
-function MetaHead({ seo = {} }: MetaHeadProps): JSX.Element {
+function MetaHead({ seo = {} }: MetaHeadProps): ReactElement {
   return (
     <Head>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type ReactElement } from 'react';
 import tw from 'twin.macro';
 import { GetStaticProps, GetStaticPaths } from 'next';
 
@@ -10,7 +10,7 @@ import { defaultSeo } from '../../constants/index';
 import { getBlogsByCategory, getCategories } from '../../data/blogs';
 import { CategoryPageProps } from '../../types';
 
-const Category = ({ articles, category }: CategoryPageProps): JSX.Element => {
+const Category = ({ articles, category }: CategoryPageProps): ReactElement => {
   const seo = {
     ...defaultSeo,
     title: `${category?.title} | Prateek Karki`,

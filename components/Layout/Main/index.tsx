@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type ReactElement } from 'react';
 import { GlobalStyles } from 'twin.macro';
 import { Transition, TransitionGroup } from 'react-transition-group';
 
@@ -12,7 +12,7 @@ import ScrollToTop from '../../Common/ScrollToTop';
 import { FullpageLoader } from '../..';
 import { LayoutProps } from '../../../types';
 
-function Main({ children, pathname }: LayoutProps): JSX.Element {
+function Main({ children, pathname }: LayoutProps): ReactElement {
   return (
     <div>
       <MainContainer>

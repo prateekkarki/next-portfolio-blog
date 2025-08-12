@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type ReactElement } from 'react';
 import { ImGithub, ImLinkedin2 } from 'react-icons/im';
 import { IoIosMail } from 'react-icons/io';
 import tw, { styled } from 'twin.macro';
@@ -28,13 +28,13 @@ const ContactLinks = ({
   href,
   children,
   lastItem,
-}: ContactLinksProps): JSX.Element => (
+}: ContactLinksProps): ReactElement => (
   <Links target="_blank" rel="noreferrer" href={href} lastItem={lastItem}>
     {children}
   </Links>
 );
 
-function Contact(): JSX.Element {
+function Contact(): ReactElement {
   return (
     <div
       css={tw`container mx-auto flex flex-col-reverse sm:flex-row overflow-hidden`}

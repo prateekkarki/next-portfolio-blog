@@ -3,11 +3,11 @@ import anime from 'animejs';
 export default {
   timeout: 650,
   unmountOnExit: true,
-  onEnter: (node) => {
+  onEnter: (node: HTMLElement) => {
     const el = node;
     el.style.display = 'none';
   },
-  onEntered: (node) => {
+  onEntered: (node: HTMLElement) => {
     const el = node;
     el.style.display = 'block';
     anime({
@@ -18,7 +18,7 @@ export default {
       delay: anime.stagger(150),
     });
   },
-  onExit: (node) => {
+  onExit: (node: HTMLElement) => {
     anime({
       targets: node.querySelectorAll('.fullpage-loader>div'),
       scaleX: [0, 1],

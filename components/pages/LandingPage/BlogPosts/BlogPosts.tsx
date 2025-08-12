@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type ReactElement } from 'react';
 import tw from 'twin.macro';
 import Link from 'next/link';
 
@@ -7,7 +7,7 @@ import { MiniCard, Card as FullCard } from 'components/BlogPosts/Card';
 import { useWindowSize, useHasMounted } from 'hooks';
 import { BlogPostsProps } from '../../../../types';
 
-const BlogPosts = ({ articles }: BlogPostsProps): JSX.Element => {
+const BlogPosts = ({ articles }: BlogPostsProps): ReactElement => {
   const { width } = useWindowSize();
   const hasMounted = useHasMounted();
   return (
@@ -39,7 +39,7 @@ const BlogPosts = ({ articles }: BlogPostsProps): JSX.Element => {
         css={tw`flex flex-col items-center justify-center gap-4 mt-4 md:mt-0 md:w-1/2 px-3 md:px-6 `}
         data-aos="zoom-in-up"
       >
-        {hasMounted && (
+        {hasMounted && width && (
           <>
             {width < 640 || (width >= 768 && width < 1280) ? (
               <FullCard

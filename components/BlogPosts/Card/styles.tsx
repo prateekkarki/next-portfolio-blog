@@ -20,12 +20,12 @@ export const iconStyle = [
   `,
 ];
 
-export const IconContainer = tw.div`
-  w-full text-center aspect-ratio[16 / 9] relative
+export const IconContainer = styled.div([
+  tw`w-full text-center aspect-ratio[16 / 9] relative
   bg-light-400 dark:bg-dark-400 
   text-light-800 dark:text-dark-800 
-  rounded-t-md overflow-hidden
-`;
+  rounded-t-md overflow-hidden`,
+]);
 
 export const ImageWindow = styled.div([
   tw`rounded-t-md w-full overflow-hidden cursor-pointer relative`,
@@ -82,18 +82,18 @@ export const CardContainer = styled.div<CardContainerProps>(
       }
   `,
     css`
-    &:hover {
-      ${ImageWindow} {
-        img {
-          transform: scale(1.1);
+      &:hover {
+        ${ImageWindow} {
+          img {
+            transform: scale(1.1);
+          }
+        }
+        ${IconContainer} {
+          svg {
+            transform: scale(1.1);
+          }
         }
       }
-      ${IconContainer} {
-        svg {
-          transform: scale(1.1);
-        }
-      }
-    }
   `,
   ]
 );

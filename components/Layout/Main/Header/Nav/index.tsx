@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, type ReactElement } from 'react';
 
 import Link from 'next/link';
 import tw from 'twin.macro';
@@ -7,9 +7,9 @@ import { MainNav, MobileNav, MainLogo } from './styles';
 import SettingButtons from './SettingButtons';
 import Trigger from './Trigger';
 
-const Nav = (): JSX.Element => {
+const Nav = (): ReactElement => {
   const [isExpanded, setExpanded] = useState(false);
-  const AllLinks = (): JSX.Element => (
+  const AllLinks = (): ReactElement => (
     <>
       <ActiveLink href="/about">About</ActiveLink>
       <ActiveLink href="/blog">Blog</ActiveLink>

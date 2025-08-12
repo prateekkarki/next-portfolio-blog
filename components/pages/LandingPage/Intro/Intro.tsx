@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, type ReactElement } from 'react';
 import anime from 'animejs';
 import tw from 'twin.macro';
 
@@ -14,15 +14,14 @@ import {
   LoaderBar,
 } from './styles';
 
-function Intro({ scrollToContact }: IntroProps): JSX.Element {
-  const introRef = useRef(null);
+function Intro({ scrollToContact }: IntroProps): ReactElement {
+  const introRef = useRef<HTMLDivElement>(null);
   const hasMounted = useHasMounted();
 
   const width = typeof window === 'undefined' ? 1200 : window.innerWidth;
 
-  // eslint-disable-next-line consistent-return
   useEffect(() => {
-    if (hasMounted) {
+    if (hasMounted && introRef.current) {
       const loaders = introRef.current.querySelectorAll(
         `${AnimatedText} ${LoaderBar}`
       );

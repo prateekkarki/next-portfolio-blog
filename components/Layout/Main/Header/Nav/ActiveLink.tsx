@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type ReactElement } from 'react';
 import { useRouter } from 'next/router';
 import tw, { styled } from 'twin.macro';
 import Link from 'next/link';
@@ -8,7 +8,7 @@ interface ActiveLinkProps {
   children: React.ReactNode;
 }
 
-const ActiveLink = (props: ActiveLinkProps): JSX.Element => {
+const ActiveLink = (props: ActiveLinkProps): ReactElement => {
   const router = useRouter();
   const { href, children } = props;
   const NavLink = styled.a<{ isActive: boolean }>(({ isActive }) => [

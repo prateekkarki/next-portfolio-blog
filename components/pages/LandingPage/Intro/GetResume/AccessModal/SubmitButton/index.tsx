@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type ReactElement } from 'react';
 import { SubmitArrow } from '../styles';
 
 interface SubmitButtonProps {
@@ -11,7 +11,7 @@ export const SubmitButton = ({
   submitting,
   children,
   ...props
-}: SubmitButtonProps): JSX.Element => (
+}: SubmitButtonProps): ReactElement => (
   <SubmitArrow disabled={submitting} isSubmitting={submitting} {...props}>
     {submitting ? (
       <img

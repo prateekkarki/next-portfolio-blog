@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { type ReactElement } from 'react';
 import { CgCodeSlash } from 'react-icons/cg';
 import intersection from 'lodash/intersection';
 import { iconStyle, IconContainer } from '../styles';
@@ -9,7 +9,7 @@ interface TagToIconProps {
   tags: BlogTag[];
 }
 
-function TagToIcon({ tags }: TagToIconProps): JSX.Element {
+function TagToIcon({ tags }: TagToIconProps): ReactElement {
   let icon = <CgCodeSlash css={iconStyle} />;
 
   const tagSlugs = tags.map((tag) => tag.slug);

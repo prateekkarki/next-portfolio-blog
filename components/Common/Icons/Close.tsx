@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { type ReactElement } from 'react';
 
-function Close(): JSX.Element {
+function Close(): ReactElement {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

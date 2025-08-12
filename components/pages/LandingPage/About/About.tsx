@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { type ReactElement } from 'react';
 import tw from 'twin.macro';
 import Link from 'next/link';
 import { BigLink, Text, Title, Flex } from 'components/styles';
 import DevOnSofa from './DevOnSofa';
 
-function About(): JSX.Element {
+function About(): ReactElement {
   return (
     <Flex>
       <div

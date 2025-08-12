@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, type ReactElement } from 'react';
 
 import { BigButton } from 'components/styles';
 import { useDisableBodyScroll } from 'hooks';
 import AccessModal from './AccessModal';
 
-function Index(): JSX.Element {
+function Index(): ReactElement {
   const [modalOpen, setModalOpen] = useState(false);
   useDisableBodyScroll(modalOpen);
 

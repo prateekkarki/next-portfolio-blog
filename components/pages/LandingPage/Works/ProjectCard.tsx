@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { type ReactElement } from 'react';
 import tw from 'twin.macro';
 import { ProjectCardProps } from '../../../../types';
 
 const ProjectCard = ({
   project,
   isMini = false,
-}: ProjectCardProps): JSX.Element => {
+}: ProjectCardProps): ReactElement => {
   if (isMini) {
     return (
       <div
@@ -71,18 +71,22 @@ const ProjectCard = ({
           ))}
         </div>
         <div css={tw`flex gap-3`}>
-          <a
-            href={project.link}
-            css={tw`px-4 py-2 bg-primary text-white rounded hover:bg-dark-primary transition-colors duration-200`}
-          >
-            Live Demo
-          </a>
-          <a
-            href={project.github}
-            css={tw`px-4 py-2 border border-primary text-primary rounded hover:bg-primary hover:text-white transition-colors duration-200`}
-          >
-            GitHub
-          </a>
+          {project.link && (
+            <a
+              href={project.link}
+              css={tw`px-4 py-2 bg-primary text-white rounded hover:bg-dark-primary transition-colors duration-200`}
+            >
+              Live Demo
+            </a>
+          )}
+          {project.github && (
+            <a
+              href={project.github}
+              css={tw`px-4 py-2 border border-primary text-primary rounded hover:bg-primary hover:text-white transition-colors duration-200`}
+            >
+              GitHub
+            </a>
+          )}
         </div>
       </div>
     </div>

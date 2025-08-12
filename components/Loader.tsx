@@ -1,7 +1,8 @@
+import React, { type ReactElement } from 'react';
 import tw, { css, theme } from 'twin.macro';
 import { LoaderProps } from '../types';
 
-const Loader = ({ fullpage }: LoaderProps): JSX.Element => (
+const Loader = ({ fullpage }: LoaderProps): ReactElement => (
   <div
     css={[
       tw`flex h-full items-center justify-center w-full`,

@@ -54,11 +54,11 @@ function MetaHead({ seo = {} }: MetaHeadProps): ReactElement {
           <meta property="og:article:author" content="Prateek Karki" />
           <meta
             property="og:article:published_time"
-            content={seo.article.published_time}
+            content={seo.article.publishedTime}
           />
           <meta
             property="og:article:modified_time"
-            content={seo.article.modified_time}
+            content={seo.article.modifiedTime}
           />
           <meta property="og:article:section" content="Technology" />
           <meta property="og:article:tag" content={seo.article.tags} />

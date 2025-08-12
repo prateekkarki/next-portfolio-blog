@@ -4,8 +4,8 @@ import Link from 'next/link';
 
 import { BigLink, Text, Title, Flex } from 'components/styles';
 import { useWindowSize, useHasMounted } from 'hooks';
+import { featuredProjects } from 'content/projects';
 import ProjectCard from './ProjectCard';
-import projects from './projects';
 
 const Works = (): ReactElement => {
   const { width } = useWindowSize();
@@ -43,13 +43,13 @@ const Works = (): ReactElement => {
           <>
             {width < 640 || (width >= 768 && width < 1280) ? (
               <ProjectCard
-                project={projects[0]}
-                key={`project__${projects[0].id}`}
+                project={featuredProjects[0]}
+                key={`project__${featuredProjects[0].id}`}
                 isMini={false}
               />
             ) : (
               <>
-                {projects.map((project) => (
+                {featuredProjects.map((project) => (
                   <ProjectCard
                     project={project}
                     key={`project__${project.id}`}

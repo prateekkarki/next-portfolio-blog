@@ -41,8 +41,8 @@ const SingleArticle = ({ article }: ArticlePageProps): ReactElement => {
     image: article.thumbnail?.url ? article.thumbnail.url : defaultSeo.image,
     article: {
       tags: tagsString,
-      published_time: article.publishedOn || article.createdAt,
-      modified_time: article.updatedAt,
+      publishedTime: article.publishedOn || article.createdAt,
+      modifiedTime: article.updatedAt,
     },
   };
 

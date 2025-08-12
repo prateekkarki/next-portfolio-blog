@@ -1,22 +1,44 @@
 import React, { ReactElement } from 'react';
 import tw from 'twin.macro';
-import { ProjectCardProps } from '../../../../types';
+import { BigLink } from '@/components/styles';
+import { cloudinaryLoader } from '@/utils';
+import {
+  ImageWindow,
+  ProjectImageWindow,
+} from '@/components/BlogPosts/Card/styles';
+import { ProjectCardProps } from '@/types';
+import Image from 'next/image';
 
 const ProjectCard = ({
   project,
   isMini = false,
 }: ProjectCardProps): ReactElement => {
+  const imageUrl = project?.image;
   if (isMini) {
     return (
       <div
         css={tw`bg-light-200 dark:bg-dark-200 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-row w-full`}
       >
         <div
-          css={tw`w-1/3 h-32 bg-light-200 dark:bg-dark-200 flex items-center justify-center`}
+          css={tw`w-1/3 h-full bg-light-200 dark:bg-dark-200 flex items-center justify-center`}
         >
-          <span css={tw`text-light-600 dark:text-dark-600 text-xs`}>
-            Project
-          </span>
+          <ProjectImageWindow backgroundColor={project.backgroundColor}>
+            <Image
+              src={imageUrl}
+              loader={cloudinaryLoader}
+              placeholder="blur"
+              blurDataURL={cloudinaryLoader({
+                src: imageUrl,
+                width: 1041,
+                blur: true,
+              })}
+              layout="responsive"
+              width={1041}
+              height={416}
+              alt={project.title}
+              title={project.title}
+            />
+          </ProjectImageWindow>
         </div>
         <div css={tw`w-2/3 p-4`}>
           <h3
@@ -31,11 +53,28 @@ const ProjectCard = ({
             {project.technologies.slice(0, 3).map((tech) => (
               <span
                 key={tech}
-                css={tw`px-2 py-1 bg-primary text-white text-xs rounded-full`}
+                css={tw`px-2 py-1 bg-light-400 dark:bg-dark-400 text-light-500 dark:text-dark-600  text-xs rounded-full`}
               >
                 {tech}
               </span>
             ))}
+          </div>
+          <div css={tw`flex gap-3 mt-4`}>
+            {project.link && (
+              <BigLink target="_blank" href={project.link} size="small">
+                Live Demo
+              </BigLink>
+            )}
+            {project.github && (
+              <BigLink target="_blank" href={project.github} size="small">
+                GitHub
+              </BigLink>
+            )}
+            {project.gallery && (
+              <BigLink target="_blank" href={project.gallery} size="small">
+                Gallery
+              </BigLink>
+            )}
           </div>
         </div>
       </div>

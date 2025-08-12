@@ -31,7 +31,7 @@ function Timeline(): ReactElement {
             date={item.date}
             icon={item.type === 'school' ? <MdSchool /> : <FaLaptopCode />}
             iconStyle={{
-              background: theme`colors.secondary`,
+              background: theme`colors.dark.500`,
               color: theme`colors.white`,
             }}
             key={item.id}
@@ -42,7 +42,7 @@ function Timeline(): ReactElement {
           </VTimelineElement>
         ))}
         <VTimelineElement
-          iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
+          iconStyle={{ background: theme`colors.dark.100`, color: '#fff' }}
           icon={<VscCircleFilled />}
         />
       </VTimeline>

@@ -35,9 +35,11 @@ export interface Project {
   description: string;
   technologies: string[];
   image: string;
-  link?: string | null;
-  github?: string | null;
+  link?: string;
+  github?: string;
   gallery?: string[];
+  isFeatured?: boolean;
+  backgroundColor?: string;
 }
 
 export interface TimelineItem {
@@ -61,8 +63,8 @@ export interface SEOProps {
   type: string;
   article?: {
     tags: string;
-    published_time: string;
-    modified_time: string;
+    publishedTime: string;
+    modifiedTime: string;
   };
 }
 

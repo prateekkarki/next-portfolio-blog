@@ -19,9 +19,10 @@ export const Text = styled.p([
 
 interface ButtonStyleProps {
   variant?: 'primary' | 'secondary';
+  size?: 'small' | 'medium' | 'large';
 }
 
-const buttonStyles = ({ variant }: ButtonStyleProps) => [
+const buttonStyles = ({ variant, size }: ButtonStyleProps) => [
   tw`bg-transparent cursor-pointer inline-block`,
   css`
     div {
@@ -31,6 +32,9 @@ const buttonStyles = ({ variant }: ButtonStyleProps) => [
         w-40 py-4 block rounded-full
         transform transition-all duration-200 ease-in-out translate-y-0
       `}
+      ${size === 'small' && tw`w-auto py-2 px-4 text-sm`}
+      ${size === 'medium' && tw`w-32 py-3`}
+      ${size === 'large' && tw`w-40 py-4`}
 
       ${variant === 'primary' && tw`bg-primary`}
       ${variant === 'secondary' && tw`bg-secondary`}
@@ -87,8 +91,8 @@ interface BigButtonProps extends ButtonStyleProps {
 }
 
 export const BigLink = React.forwardRef<HTMLAnchorElement, BigLinkProps>(
-  ({ children, variant, ...others }, ref) => (
-    <PseudoBigLink variant={variant} ref={ref} {...others}>
+  ({ children, variant, size, ...others }, ref) => (
+    <PseudoBigLink variant={variant} size={size} ref={ref} {...others}>
       <div>{children}</div>
     </PseudoBigLink>
   )

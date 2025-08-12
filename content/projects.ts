@@ -1,6 +1,6 @@
-import { Project } from '../../../../types';
+import { Project } from '../types';
 
-const projects: Project[] = [
+export const projects: Project[] = [
   {
     id: 1,
     title: 'Canadian Train Vacations',
@@ -15,12 +15,15 @@ const projects: Project[] = [
       'Figma',
       'React',
     ],
-    image: '/images/projects/portfolio.jpg',
+    image: 'v1755028281/Works/Screenshot_2025-08-13_013317_vgo8mp.png',
     link: 'https://canadiantrainvacations.com',
+    github: 'https://github.com/prateekkarki/next-portfolio-blog',
     gallery: [
       '/images/projects/portfolio.jpg',
       '/images/projects/portfolio.jpg',
     ],
+    backgroundColor: '#ffffff',
+    isFeatured: true,
   },
   {
     id: 2,
@@ -28,13 +31,13 @@ const projects: Project[] = [
     description:
       'A cross-platform progressive web app (PWA) to visualize and interpret large-scale industrial data. The application, accessible on both web and mobile, transforms complex raw datasets into clear, actionable insights. By streamlining data analysis and emphasizing operational performance, the app enables field teams and decision-makers to identify key trends and take informed action in real-time. This project significantly improved data accessibility, responsiveness, and overall efficiency for drilling operations.',
     technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    image: '/images/projects/ecommerce.jpg',
-    link: null,
-    github: null,
-    gallery: [
-      '/images/projects/ecommerce.jpg',
-      '/images/projects/ecommerce.jpg',
-    ],
+    image: 'v1755028674/Works/Screenshot_2025-08-13_014116_levni9.png',
+    // gallery: [
+    //   '/images/projects/ecommerce.jpg',
+    //   '/images/projects/ecommerce.jpg',
+    // ],
+    isFeatured: true,
+    backgroundColor: '#0d9b83',
   },
   {
     id: 3,
@@ -44,7 +47,6 @@ const projects: Project[] = [
     technologies: ['Magento 2', 'PHP', 'MySQL', 'JavaScript', 'HTML', 'CSS'],
     image: '/images/projects/taskapp.jpg',
     link: 'https://us.sfihealth.com/',
-    github: null,
     gallery: ['/images/projects/taskapp.jpg', '/images/projects/taskapp.jpg'],
   },
   {
@@ -85,4 +87,6 @@ const projects: Project[] = [
   },
 ];
 
-export default projects;
+export const featuredProjects: Project[] = projects.filter(
+  (project) => project.isFeatured
+);

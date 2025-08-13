@@ -2,12 +2,9 @@ import React, { ReactElement } from 'react';
 import tw from 'twin.macro';
 import { BigLink } from '@/components/styles';
 import { cloudinaryLoader } from '@/utils';
-import {
-  ImageWindow,
-  ProjectImageWindow,
-} from '@/components/BlogPosts/Card/styles';
+import Image from '@/utils/Image';
 import { ProjectCardProps } from '@/types';
-import Image from 'next/image';
+import { ProjectImageWindow } from './styles';
 
 const ProjectCard = ({
   project,
@@ -20,21 +17,19 @@ const ProjectCard = ({
         css={tw`bg-light-200 dark:bg-dark-200 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-row w-full`}
       >
         <div
-          css={tw`w-1/3 h-full bg-light-200 dark:bg-dark-200 flex items-center justify-center`}
+          css={tw`w-1/3 h-auto bg-light-200 dark:bg-dark-200 flex items-center justify-center`}
         >
           <ProjectImageWindow backgroundColor={project.backgroundColor}>
             <Image
-              src={imageUrl}
-              loader={cloudinaryLoader}
-              placeholder="blur"
-              blurDataURL={cloudinaryLoader({
+              src={cloudinaryLoader({
                 src: imageUrl,
-                width: 1041,
+                width: 300,
+              })}
+              blurUrl={cloudinaryLoader({
+                src: imageUrl,
+                width: 300,
                 blur: true,
               })}
-              layout="responsive"
-              width={1041}
-              height={416}
               alt={project.title}
               title={project.title}
             />
@@ -88,9 +83,21 @@ const ProjectCard = ({
       <div
         css={tw`h-48 bg-light-200 dark:bg-dark-200 flex items-center justify-center`}
       >
-        <span css={tw`text-light-600 dark:text-dark-600 text-sm`}>
-          Project Image
-        </span>
+        <ProjectImageWindow backgroundColor={project.backgroundColor}>
+          <Image
+            src={cloudinaryLoader({
+              src: imageUrl,
+              width: 400,
+            })}
+            blurUrl={cloudinaryLoader({
+              src: imageUrl,
+              width: 400,
+              blur: true,
+            })}
+            alt={project.title}
+            title={project.title}
+          />
+        </ProjectImageWindow>
       </div>
       <div css={tw`p-6`}>
         <h3 css={tw`text-xl font-bold text-light-800 dark:text-dark-800 mb-2`}>
@@ -103,7 +110,7 @@ const ProjectCard = ({
           {project.technologies.map((tech) => (
             <span
               key={tech}
-              css={tw`px-3 py-1 bg-primary text-white text-xs rounded-full`}
+              css={tw`px-3 py-1 bg-light-400 dark:bg-dark-400 text-light-500 dark:text-dark-600 text-xs rounded-full`}
             >
               {tech}
             </span>
@@ -111,20 +118,19 @@ const ProjectCard = ({
         </div>
         <div css={tw`flex gap-3`}>
           {project.link && (
-            <a
-              href={project.link}
-              css={tw`px-4 py-2 bg-primary text-white rounded hover:bg-dark-primary transition-colors duration-200`}
-            >
+            <BigLink target="_blank" href={project.link} size="small">
               Live Demo
-            </a>
+            </BigLink>
           )}
           {project.github && (
-            <a
-              href={project.github}
-              css={tw`px-4 py-2 border border-primary text-primary rounded hover:bg-primary hover:text-white transition-colors duration-200`}
-            >
+            <BigLink target="_blank" href={project.github} size="small">
               GitHub
-            </a>
+            </BigLink>
+          )}
+          {project.gallery && (
+            <BigLink target="_blank" href={project.gallery} size="small">
+              Gallery
+            </BigLink>
           )}
         </div>
       </div>

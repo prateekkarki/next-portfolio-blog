@@ -56,6 +56,6 @@ module.exports = {
     'react/react-in-jsx-scope': 0,
     'react/jsx-uses-react': 0,
     'react/jsx-fragments': 0,
-    camelcase: 1,
+    'implicit-arrow-linebreak': 0,
   },
 };

@@ -28,7 +28,6 @@ const Image: React.FC<ImageProps> = ({
   const handleError = () => {
     setHasError(true);
   };
-
   return (
     <div className={`relative overflow-hidden ${className}`}>
       {/* Blurred background image */}
@@ -40,7 +39,8 @@ const Image: React.FC<ImageProps> = ({
             isLoaded ? 'opacity-0' : 'opacity-100'
           }`}
           style={{
-            transform: 'scale(1.1)',
+            filter: 'blur(10px)',
+            transform: 'scale(1.1)', // Slightly scale up to hide blur edges
           }}
         />
       )}
@@ -49,11 +49,13 @@ const Image: React.FC<ImageProps> = ({
         src={hasError ? blurUrl : src}
         alt={alt}
         title={title}
-        width={isLoaded ? width : 0}
-        height={isLoaded ? height : 0}
         className={`relative z-10 w-full h-full object-cover transition-opacity duration-300 ${
           isLoaded ? 'opacity-100' : 'opacity-0'
         }`}
+        style={{
+          width: `${isLoaded ? 100 : 0}%`,
+          height: `${isLoaded ? 'auto' : 0}`,
+        }}
         onLoad={handleLoad}
         onError={handleError}
       />

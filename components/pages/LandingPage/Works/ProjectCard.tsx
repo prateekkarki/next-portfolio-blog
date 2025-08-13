@@ -4,7 +4,7 @@ import { BigLink } from '@/components/styles';
 import { cloudinaryLoader } from '@/utils';
 import Image from '@/utils/Image';
 import { ProjectCardProps } from '@/types';
-import { ProjectImageWindow } from './styles';
+import { ProjectContainer, ProjectImageWindow } from './styles';
 
 const ProjectCard = ({
   project,
@@ -13,9 +13,7 @@ const ProjectCard = ({
   const imageUrl = project?.image;
   if (isMini) {
     return (
-      <div
-        css={tw`bg-light-200 dark:bg-dark-200 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-row w-full`}
-      >
+      <ProjectContainer css={tw`flex flex-row w-full`}>
         <div
           css={tw`w-1/3 h-auto bg-light-200 dark:bg-dark-200 flex items-center justify-center`}
         >
@@ -72,27 +70,20 @@ const ProjectCard = ({
             )}
           </div>
         </div>
-      </div>
+      </ProjectContainer>
     );
   }
 
   return (
-    <div
-      css={tw`bg-light-200 dark:bg-dark-200 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300`}
-    >
+    <ProjectContainer>
       <div
         css={tw`h-48 bg-light-200 dark:bg-dark-200 flex items-center justify-center`}
       >
         <ProjectImageWindow backgroundColor={project.backgroundColor}>
-          <Image
+          <img
             src={cloudinaryLoader({
               src: imageUrl,
-              width: 400,
-            })}
-            blurUrl={cloudinaryLoader({
-              src: imageUrl,
-              width: 400,
-              blur: true,
+              width: 600,
             })}
             alt={project.title}
             title={project.title}
@@ -134,7 +125,7 @@ const ProjectCard = ({
           )}
         </div>
       </div>
-    </div>
+    </ProjectContainer>
   );
 };
 

@@ -12,6 +12,7 @@ const Nav = (): ReactElement => {
   const AllLinks = (): ReactElement => (
     <>
       <ActiveLink href="/about">About</ActiveLink>
+      <ActiveLink href="/works">Works</ActiveLink>
       <ActiveLink href="/blog">Blog</ActiveLink>
       <SettingButtons />
     </>

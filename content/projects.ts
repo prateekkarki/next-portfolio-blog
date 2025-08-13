@@ -15,7 +15,7 @@ export const projects: Project[] = [
       'Figma',
       'React',
     ],
-    image: 'v1755028281/Works/Screenshot_2025-08-13_013317_vgo8mp.png',
+    image: 'v1755090854/Technologies/icons/nextjs/nextjs_z80rkh.svg',
     link: 'https://canadiantrainvacations.com',
     github: 'https://github.com/prateekkarki/next-portfolio-blog',
     gallery: [
@@ -31,13 +31,13 @@ export const projects: Project[] = [
     description:
       'A cross-platform progressive web app (PWA) to visualize and interpret large-scale industrial data. The application, accessible on both web and mobile, transforms complex raw datasets into clear, actionable insights. By streamlining data analysis and emphasizing operational performance, the app enables field teams and decision-makers to identify key trends and take informed action in real-time. This project significantly improved data accessibility, responsiveness, and overall efficiency for drilling operations.',
     technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    image: 'v1755028674/Works/Screenshot_2025-08-13_014116_levni9.png',
+    image: 'v1755091108/Technologies/icons/logo_bdd5ah.svg',
     // gallery: [
     //   '/images/projects/ecommerce.jpg',
     //   '/images/projects/ecommerce.jpg',
     // ],
     isFeatured: true,
-    backgroundColor: '#0d9b83',
+    backgroundColor: '#ffffff',
   },
   {
     id: 3,
@@ -45,9 +45,10 @@ export const projects: Project[] = [
     description:
       "A Magento 2-based eCommerce website to sell medicine online. It's a popular website used by thousands of users. I worked mainly on the user dashboard section of the website. Here users can update their profile information, payment methods, and addresses. They can also update and check their order status.",
     technologies: ['Magento 2', 'PHP', 'MySQL', 'JavaScript', 'HTML', 'CSS'],
-    image: '/images/projects/taskapp.jpg',
+    image: 'v1755091327/Technologies/icons/Magento-1024x512_sdvaem.webp',
     link: 'https://us.sfihealth.com/',
     gallery: ['/images/projects/taskapp.jpg', '/images/projects/taskapp.jpg'],
+    backgroundColor: '#ffffff',
   },
   {
     id: 4,
@@ -63,8 +64,9 @@ export const projects: Project[] = [
       'Figma',
       'React',
     ],
-    image: '/images/projects/portfolio.jpg',
+    image: 'v1755090854/Technologies/icons/nextjs/nextjs_z80rkh.svg',
     link: 'https://www.freshtrackscanada.com/',
+    backgroundColor: '#ffffff',
   },
   {
     id: 5,
@@ -72,9 +74,10 @@ export const projects: Project[] = [
     description:
       "This is my website and blog. I post about new things I've recently learned and about my experiences as a remote developer.  In my blog post, you can read about memoization in JavaScript, using AI to generate blog ideas, avoiding glitchy CSS transitions on Hover, and getting started with Strapi.",
     technologies: ['Next.js', 'Tailwind CSS', 'Strapi', 'Figma', 'Vercel'],
-    image: '/images/projects/portfolio.jpg',
+    image: 'v1755090854/Technologies/icons/nextjs/nextjs_z80rkh.svg',
     link: 'https://meetprateek.com/',
     github: 'https://github.com/prateekkarki/next-portfolio-blog',
+    backgroundColor: '#ffffff',
   },
   {
     id: 6,
@@ -82,8 +85,9 @@ export const projects: Project[] = [
     description:
       'This is a Magento 2 extension that allows you to create and manage banners on your website. Convenient and easy to use extension if you need to add banners to your cms pages like about us or homepage in your Magento store.',
     technologies: ['Magento 2', 'PHP', 'MySQL', 'JavaScript', 'HTML', 'CSS'],
-    image: '/images/projects/portfolio.jpg',
+    image: 'v1755091327/Technologies/icons/Magento-1024x512_sdvaem.webp',
     github: 'https://github.com/prateekkarki/magento2-module-cmsbanner',
+    backgroundColor: '#ffffff',
   },
 ];
 

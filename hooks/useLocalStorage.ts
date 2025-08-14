@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { UseLocalStorageReturn } from '../types';
+import { UseLocalStorageReturn } from '@/types';
 
 function useLocalStorage<T>(
   key: string,

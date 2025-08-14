@@ -9,10 +9,10 @@ import { useTheme } from 'next-themes';
 import { Prism, SyntaxHighlighterProps } from 'react-syntax-highlighter';
 import syntaxThemeDark from 'react-syntax-highlighter/dist/cjs/styles/prism/material-dark';
 import syntaxThemeLight from 'react-syntax-highlighter/dist/cjs/styles/prism/material-light';
-import TitleBlock from '../../Common/TitleBlock';
-import BreadCrumbs from '../../Common/BreadCrumbs';
+import TitleBlock from 'components/Common/TitleBlock';
+import BreadCrumbs from 'components/Common/BreadCrumbs';
+import { BlogArticle } from '@/types';
 import style from './ArticleTemplate.css';
-import { BlogArticle } from '../../../types';
 
 interface ArticleTemplateProps {
   article: BlogArticle;

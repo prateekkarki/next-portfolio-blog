@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useForm, FieldValues } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { FormActions, UseFormRequestReturn } from '../types';
+import { FormActions, UseFormRequestReturn } from '@/types';
 
 const useFormRequest = (actions?: FormActions): UseFormRequestReturn => {
   const { onSuccess = () => {}, onError = () => {} } = actions || {

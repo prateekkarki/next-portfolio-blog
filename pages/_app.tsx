@@ -1,10 +1,10 @@
 import React, { useEffect, ComponentType, ReactElement } from 'react';
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'next-themes';
-import * as analytics from '../utils/analytics';
-import { MainLayout } from '../components';
+import * as analytics from 'utils/analytics';
+import { MainLayout } from 'components';
 
-import '../assets/css/styles.css';
+import 'assets/css/styles.css';
 import 'aos/dist/aos.css';
 
 const NextThemeProvider = ThemeProvider as unknown as ComponentType<any>;

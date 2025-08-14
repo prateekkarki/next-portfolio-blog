@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { SubmitArrow } from '../styles';
+import { SubmitArrow } from 'components/pages/LandingPage/Intro/GetResume/AccessModal/styles';
 
 interface SubmitButtonProps {
   submitting?: boolean;

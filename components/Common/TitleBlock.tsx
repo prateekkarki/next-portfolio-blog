@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import tw, { css } from 'twin.macro';
-import { TitleBlockProps } from '../../types';
+import { TitleBlockProps } from '@/types';
 
 function TitleBlock({ title, subtitle }: TitleBlockProps): ReactElement {
   return (

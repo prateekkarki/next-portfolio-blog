@@ -9,9 +9,9 @@ import { GetStaticProps, GetStaticPaths } from 'next';
 import ArticleTemplate from 'components/BlogPosts/Article/ArticleTemplate';
 import { Container, Link as RegularLink } from 'components/styles';
 import { MetaHead } from 'components';
-import { defaultSeo } from '../../constants/index';
-import { getBlogBySlug, getAllBlogs } from '../../data/blogs';
-import { ArticlePageProps } from '../../types';
+import { defaultSeo } from 'constants/index';
+import { getBlogBySlug, getAllBlogs } from 'data/blogs';
+import { ArticlePageProps } from '@/types';
 
 const SingleArticle = ({ article }: ArticlePageProps): ReactElement => {
   if (!article) {

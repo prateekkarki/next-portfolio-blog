@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import Head from 'next/head';
-import { MetaHeadProps } from '../../types';
+import { MetaHeadProps } from '@/types';
 
 function MetaHead({ seo = {} }: MetaHeadProps): ReactElement {
   return (

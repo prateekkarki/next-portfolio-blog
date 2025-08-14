@@ -4,13 +4,13 @@ import { GetStaticProps } from 'next';
 
 import { Card } from 'components/BlogPosts/Card';
 import { MetaHead } from 'components';
-import { getAllBlogs } from '../data/blogs';
+import { BlogPageProps } from '@/types';
+import { getAllBlogs } from 'data/blogs';
 
-import TitleBlock from '../components/Common/TitleBlock';
-import { Container, MainBg } from '../components/styles';
+import TitleBlock from 'components/Common/TitleBlock';
+import { Container, MainBg } from 'components/styles';
 
-import { defaultSeo } from '../constants/index';
-import { BlogPageProps } from '../types';
+import { defaultSeo } from 'constants/index';
 
 function Blog({ articles }: BlogPageProps): ReactElement {
   const seo = {

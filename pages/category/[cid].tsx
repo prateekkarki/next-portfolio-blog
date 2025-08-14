@@ -2,13 +2,13 @@ import React, { ReactElement } from 'react';
 import tw from 'twin.macro';
 import { GetStaticProps, GetStaticPaths } from 'next';
 
-import { Card } from '../../components/BlogPosts/Card';
-import { MetaHead } from '../../components';
-import TitleBlock from '../../components/Common/TitleBlock';
-import { Container, MainBg } from '../../components/styles';
-import { defaultSeo } from '../../constants/index';
-import { getBlogsByCategory, getCategories } from '../../data/blogs';
-import { CategoryPageProps } from '../../types';
+import { Card } from 'components/BlogPosts/Card';
+import { MetaHead } from 'components';
+import TitleBlock from 'components/Common/TitleBlock';
+import { Container, MainBg } from 'components/styles';
+import { defaultSeo } from 'constants/index';
+import { getBlogsByCategory, getCategories } from 'data/blogs';
+import { CategoryPageProps } from '@/types';
 
 const Category = ({ articles, category }: CategoryPageProps): ReactElement => {
   const seo = {

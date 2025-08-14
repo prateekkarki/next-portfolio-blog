@@ -1,6 +1,6 @@
 import React from 'react';
 import debounce from 'lodash/debounce';
-import { WindowSize } from '../types';
+import { WindowSize } from '@/types';
 
 export default function useWindowSize(): WindowSize {
   const isSSR = typeof window === 'undefined';

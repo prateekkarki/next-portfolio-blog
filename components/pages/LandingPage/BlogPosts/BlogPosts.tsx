@@ -2,10 +2,10 @@ import React, { ReactElement } from 'react';
 import tw from 'twin.macro';
 import Link from 'next/link';
 
-import { BigLink, Text, Title, Flex } from 'components/styles';
-import { MiniCard, Card as FullCard } from 'components/BlogPosts/Card';
-import { useWindowSize, useHasMounted } from 'hooks';
-import { BlogPostsProps } from '../../../../types';
+import { BigLink, Text, Title, Flex } from '@/components/styles';
+import { MiniCard, Card as FullCard } from '@/components/BlogPosts/Card';
+import { useWindowSize, useHasMounted } from '@/hooks';
+import { BlogPostsProps } from '@/types';
 
 const BlogPosts = ({ articles }: BlogPostsProps): ReactElement => {
   const { width } = useWindowSize();

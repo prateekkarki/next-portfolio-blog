@@ -5,10 +5,14 @@ import { cloudinaryLoader } from 'utils';
 import tw, { css } from 'twin.macro';
 import Image from 'next/image';
 
-import { ImageWindow, Tag, CardContainer } from '../styles';
-import TagToIcon from '../TagToIcon';
-import { LinkWrapper } from '../MiniCard';
-import { FullCardProps } from '../../../../types';
+import {
+  ImageWindow,
+  Tag,
+  CardContainer,
+} from 'components/BlogPosts/Card/styles';
+import TagToIcon from 'components/BlogPosts/Card/TagToIcon';
+import { LinkWrapper } from 'components/BlogPosts/Card/MiniCard';
+import { FullCardProps } from '@/types';
 
 const Card = ({ article, dark }: FullCardProps): ReactElement => {
   const url = `${article?.thumbnail?.url.replace(/^.*[\\/]/, '')}`;

@@ -4,7 +4,7 @@ import { IoIosMail } from 'react-icons/io';
 import tw, { styled } from 'twin.macro';
 
 import { Title, Text } from 'components/styles';
-import ContactForm from '../ContactForm';
+import ContactForm from 'components/pages/LandingPage/Contact/ContactForm';
 
 interface LinksProps {
   lastItem?: boolean;

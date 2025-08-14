@@ -1,6 +1,6 @@
 import React from 'react';
 import { DiSass, DiReact, DiJavascript1, DiDatabase } from 'react-icons/di';
-import { iconStyle } from '../styles';
+import { iconStyle } from 'components/BlogPosts/Card/styles';
 
 interface TagsToIconConfig {
   [key: string]: React.ReactElement;

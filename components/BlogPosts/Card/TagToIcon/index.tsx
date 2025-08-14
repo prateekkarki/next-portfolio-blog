@@ -1,9 +1,9 @@
 import React, { ReactElement } from 'react';
 import { CgCodeSlash } from 'react-icons/cg';
 import intersection from 'lodash/intersection';
-import { iconStyle, IconContainer } from '../styles';
+import { iconStyle, IconContainer } from 'components/BlogPosts/Card/styles';
+import { BlogTag } from '@/types';
 import tagsToIconConfig from './tagsToIconConfig';
-import { BlogTag } from '../../../../types';
 
 interface TagToIconProps {
   tags: BlogTag[];

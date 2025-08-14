@@ -4,7 +4,7 @@ import { FaAngleRight } from 'react-icons/fa';
 import Link from 'next/link';
 
 import tw from 'twin.macro';
-import { BreadCrumbsProps, BreadCrumbBlock } from '../../types';
+import { BreadCrumbsProps, BreadCrumbBlock } from '@/types';
 
 function EachBlock({ path, title }: BreadCrumbBlock): ReactElement {
   return path ? (

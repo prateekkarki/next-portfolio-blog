@@ -5,9 +5,9 @@ import { useForm } from 'react-hook-form';
 import tw, { css } from 'twin.macro';
 import toast from 'react-hot-toast';
 
-import { BigButton } from 'components/styles';
+import { BigButton } from '@/components/styles';
+import { ContactFormData } from '@/types';
 import { ContactInput, ContactTextarea, ContactLabel } from './styles';
-import { ContactFormData } from '../../../../../types';
 
 function ContactForm(): ReactElement {
   const {

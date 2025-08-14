@@ -5,8 +5,8 @@ import TitleBlock from 'components/Common/TitleBlock';
 import Timeline from 'components/pages/AboutPage/Timeline';
 import { Container, MainBg } from 'components/styles';
 import { MetaHead } from 'components';
-import { defaultSeo } from '../constants/index';
-import { AboutPageProps } from '../types';
+import { defaultSeo } from 'constants/index';
+import { AboutPageProps } from '@/types';
 
 function About(): ReactElement {
   const seo = {

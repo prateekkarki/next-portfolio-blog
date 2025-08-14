@@ -8,7 +8,7 @@ import Document, {
 import tw, { styled, css, theme } from 'twin.macro';
 
 import { ReactElement } from 'react';
-import { GA_TRACKING_ID } from '../utils/analytics';
+import { GA_TRACKING_ID } from 'utils/analytics';
 
 const Body = styled.body([
   tw`overflow-x-hidden`,

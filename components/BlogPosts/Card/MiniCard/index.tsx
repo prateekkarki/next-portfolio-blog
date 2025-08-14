@@ -6,10 +6,14 @@ import Image from 'next/image';
 
 import { cloudinaryLoader } from 'utils';
 
-import { ImageWindow, Tag, CardContainer } from '../styles';
+import {
+  ImageWindow,
+  Tag,
+  CardContainer,
+} from 'components/BlogPosts/Card/styles';
 
-import TagToIcon from '../TagToIcon';
-import { LinkWrapperProps, MiniCardProps } from '../../../../types';
+import TagToIcon from 'components/BlogPosts/Card/TagToIcon';
+import { LinkWrapperProps, MiniCardProps } from '@/types';
 
 export const LinkWrapper = ({
   children,

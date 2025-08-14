@@ -8,8 +8,8 @@ import {
 import { MdSchool } from 'react-icons/md';
 import { FaLaptopCode } from 'react-icons/fa';
 import { VscCircleFilled } from 'react-icons/vsc';
+import { experienceItems } from '@/content/experienceItems';
 import Main from './styles';
-import items from './items';
 
 const VTimeline = VerticalTimeline as unknown as ComponentType<any>;
 const VTimelineElement =
@@ -19,7 +19,7 @@ function Timeline(): ReactElement {
   return (
     <Main>
       <VTimeline>
-        {items.map((item) => (
+        {experienceItems.map((item) => (
           <VTimelineElement
             contentStyle={{
               background: theme`colors.primary`,

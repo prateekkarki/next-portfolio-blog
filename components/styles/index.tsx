@@ -32,7 +32,7 @@ const buttonStyles = ({ variant, size }: ButtonStyleProps) => [
         w-40 py-4 block rounded-full
         transform transition-all duration-200 ease-in-out translate-y-0
       `}
-      ${size === 'small' && tw`w-auto py-2 px-4 text-sm`}
+      ${size === 'small' && tw`w-auto py-2 px-4 text-sm whitespace-nowrap`}
       ${size === 'medium' && tw`w-32 py-3`}
       ${size === 'large' && tw`w-40 py-4`}
 

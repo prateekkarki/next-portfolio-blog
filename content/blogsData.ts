@@ -13,7 +13,7 @@ export const blogs: BlogArticle[] = [
     isExternal: true,
     externalUrl: 'https://www.toptal.com/react/react-memoization',
     thumbnail: {
-      url: 'https://res.cloudinary.com/pratiek/1014_Engineering_React_Memoization_Lina_Cover_48269fce65f0c227ea346d60501619f8_a121eb4fc8.jpg',
+      url: 'https://res.cloudinary.com/pratiek/image/upload/v1755169569/react-memoization-n_qral2s.png',
     },
     category: {
       title: 'Programming Concepts',
@@ -47,7 +47,7 @@ export const blogs: BlogArticle[] = [
     isExternal: false,
     externalUrl: null,
     thumbnail: {
-      url: 'https://res.cloudinary.com/pratiek/image/upload/v1678706777/ai_ideas_111_12_74448a3827_bc42cac1aa.jpg',
+      url: 'https://res.cloudinary.com/pratiek/image/upload/v1755169569/using-ai-ext_agj0x3.jpg',
     },
     category: {
       title: 'Content Creation',
@@ -81,7 +81,7 @@ export const blogs: BlogArticle[] = [
     isExternal: false,
     externalUrl: null,
     thumbnail: {
-      url: 'https://res.cloudinary.com/pratiek/memoization_6c07a12bed_c09d23ce9f.jpg',
+      url: 'https://res.cloudinary.com/pratiek/image/upload/v1755169569/js-memoization-ext_pfnugc.jpg',
     },
     category: {
       title: 'Programming Concepts',
@@ -114,7 +114,7 @@ export const blogs: BlogArticle[] = [
     isExternal: false,
     externalUrl: null,
     thumbnail: {
-      url: 'https://res.cloudinary.com/pratiek/Untitled_02ff198ce8.jpg',
+      url: 'https://res.cloudinary.com/pratiek/image/upload/v1755169568/glitchy-css-ext_arz0ii.jpg',
     },
     category: {
       title: 'Frontend development',

@@ -55,17 +55,17 @@ const ProjectCard = ({
           <div css={tw`flex gap-3 mt-4`}>
             {project.link && (
               <BigLink target="_blank" href={project.link} size="small">
-                Live Demo
+                Live Demo 🡵
               </BigLink>
             )}
             {project.github && (
               <BigLink target="_blank" href={project.github} size="small">
-                GitHub
+                GitHub 🡵
               </BigLink>
             )}
             {project.gallery && (
               <BigLink target="_blank" href={project.gallery} size="small">
-                Gallery
+                Gallery ⬔
               </BigLink>
             )}
           </div>
@@ -110,17 +110,17 @@ const ProjectCard = ({
         <div css={tw`flex gap-3`}>
           {project.link && (
             <BigLink target="_blank" href={project.link} size="small">
-              Live Demo
+              Live Demo 🡵
             </BigLink>
           )}
           {project.github && (
             <BigLink target="_blank" href={project.github} size="small">
-              GitHub
+              GitHub 🡵
             </BigLink>
           )}
           {project.gallery && (
             <BigLink target="_blank" href={project.gallery} size="small">
-              Gallery
+              Gallery ⬔
             </BigLink>
           )}
         </div>

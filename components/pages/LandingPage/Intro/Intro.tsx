@@ -2,11 +2,10 @@ import React, { useRef, useEffect, ReactElement } from 'react';
 import anime from 'animejs';
 import tw from 'twin.macro';
 
-import { useHasMounted } from 'hooks';
-import { BigButton, BigLink, Text } from 'components/styles';
+import { useHasMounted } from '@/hooks';
+import { BigLink, Text } from '@/components/styles';
 import Programmer from './Programmer';
 import GetResume from './GetResume';
-import { IntroProps } from '../../../../types';
 import {
   IntroContainer,
   ButtonsHolder,
@@ -14,7 +13,7 @@ import {
   LoaderBar,
 } from './styles';
 
-function Intro({ scrollToContact }: IntroProps): ReactElement {
+function Intro(): ReactElement {
   const introRef = useRef<HTMLDivElement>(null);
   const hasMounted = useHasMounted();
 

@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
-import blogs from './blogsData';
-import { BlogArticle, BlogCategory } from '../types';
+import { blogs } from '@/content/blogsData';
+import { BlogArticle, BlogCategory } from '@/types';
 
 // Read markdown content from files
 const readMarkdownContent = (slug: string): string => {

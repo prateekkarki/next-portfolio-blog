@@ -89,6 +89,16 @@ export const projects: Project[] = [
     github: 'https://github.com/prateekkarki/magento2-module-cmsbanner',
     backgroundColor: '#ffffff',
   },
+  {
+    id: 7,
+    title: 'Strapi blog backend',
+    description:
+      'This is a Strapi blog backend that allows you to create and manage blog posts on your website. I built this backend for my personal website to have a fully functional blog backend. I used Strapi headless CMS to build this backend.',
+    technologies: ['Strapi', 'TypeScript', 'PostgreSQL', 'GraphQL'],
+    image: 'v1755096828/Technologies/icons/Strapi.full.logo.dark_zxhyz3.svg',
+    github: 'https://github.com/prateekkarki/next-portfolio-blog',
+    backgroundColor: '#ffffff',
+  },
 ];
 
 export const featuredProjects: Project[] = projects.filter(

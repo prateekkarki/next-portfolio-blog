@@ -13,9 +13,9 @@ import Contact from 'components/pages/LandingPage/Contact/Contact';
 import Works from 'components/pages/LandingPage/Works/Works';
 import Skills from 'components/pages/LandingPage/Skills/Skills';
 import { MetaHead } from 'components';
-import { defaultSeo } from '../constants/index';
-import { getFeaturedBlogs } from '../data/blogs';
-import { HomePageProps } from '../types';
+import { getFeaturedBlogs } from '@/data/blogs';
+import { HomePageProps } from '@/types';
+import { defaultSeo } from '@/constants';
 
 const Home = ({ articles }: HomePageProps): ReactElement => {
   const refs = {
@@ -59,7 +59,7 @@ const Home = ({ articles }: HomePageProps): ReactElement => {
     <>
       <MetaHead seo={defaultSeo} />
       <div css={tw`bg-light-100 dark:bg-dark-100`} ref={refs.home}>
-        <Intro scrollToContact={scrollToContact} />
+        <Intro />
         <div css={[tw`relative my-24`]} ref={refs.about}>
           <Skewed>
             <About />

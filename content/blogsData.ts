@@ -1,6 +1,6 @@
 import { BlogArticle } from '../types';
 
-const blogsData: BlogArticle[] = [
+export const blogs: BlogArticle[] = [
   {
     id: 5,
     title: 'Heavy Computation Made Lighter: React Memoization',
@@ -210,5 +210,3 @@ const blogsData: BlogArticle[] = [
     ],
   },
 ];
-
-export default blogsData;

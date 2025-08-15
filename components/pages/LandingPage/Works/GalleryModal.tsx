@@ -1,4 +1,4 @@
-import React, { ComponentType } from 'react';
+import React, { ComponentType, useRef, useState } from 'react';
 import Modal from 'react-modal';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {
@@ -8,6 +8,7 @@ import {
   EffectCreative,
   Zoom,
 } from 'swiper/modules';
+import type { Swiper as SwiperType } from 'swiper';
 import tw, { styled } from 'twin.macro';
 import { cloudinaryLoader } from '@/utils';
 import Image from '@/utils/Image';
@@ -16,7 +17,7 @@ import Image from '@/utils/Image';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { FaTimes } from 'react-icons/fa';
+import { FaTimes, FaSearchPlus, FaSearchMinus, FaUndo } from 'react-icons/fa';
 import { NextImage } from '@/types';
 import { ProjectGalleryModal } from './styles';
 
@@ -38,6 +39,10 @@ const StyledModal = styled(Modal as unknown as ComponentType<any>)`
     transform: scale(0);
     transition: all 350ms ease-in-out;
     transform-origin: center;
+    :focus-visible {
+      outline: none;
+      border: none;
+    }
   }
 
   &.ReactModal__Content--after-open {
@@ -57,6 +62,9 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
   images,
   projectTitle,
 }) => {
+  const swiperRef = useRef<SwiperType | null>(null);
+  const [currentZoom, setCurrentZoom] = useState(1);
+
   // Disable body scroll when modal is open
   React.useEffect(() => {
     if (isOpen) {
@@ -70,6 +78,32 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
       document.body.style.overflow = 'unset';
     };
   }, [isOpen]);
+
+  const handleZoomIn = () => {
+    if (swiperRef.current && swiperRef.current.zoom) {
+      swiperRef.current.zoom.in();
+      setCurrentZoom((prev) => Math.min(prev * 1.5, 4));
+    }
+  };
+
+  const handleZoomOut = () => {
+    if (swiperRef.current && swiperRef.current.zoom) {
+      swiperRef.current.zoom.out();
+      setCurrentZoom((prev) => Math.max(prev / 1.5, 0.5));
+    }
+  };
+
+  const handleResetZoom = () => {
+    if (swiperRef.current && swiperRef.current.zoom) {
+      // Reset zoom by setting it back to 1
+      swiperRef.current.zoom.in(1);
+      setCurrentZoom(1);
+    }
+  };
+
+  const onSwiper = (swiper: SwiperType) => {
+    swiperRef.current = swiper;
+  };
 
   return (
     <StyledModal
@@ -111,18 +145,49 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
           <FaTimes />
         </button>
 
+        {/* Zoom control buttons */}
+        <div css={tw`absolute -top-4 left-auto right-8 z-10 flex gap-2`}>
+          <button
+            type="button"
+            onClick={handleZoomIn}
+            disabled={currentZoom >= 4}
+            css={tw`bg-white dark:bg-gray-800 text-gray-800 dark:text-white rounded-full p-2 shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed`}
+            aria-label="Zoom in"
+          >
+            <FaSearchPlus />
+          </button>
+          <button
+            type="button"
+            onClick={handleZoomOut}
+            disabled={currentZoom <= 0.5}
+            css={tw`bg-white dark:bg-gray-800 text-gray-800 dark:text-white rounded-full p-2 shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed`}
+            aria-label="Zoom out"
+          >
+            <FaSearchMinus />
+          </button>
+          <button
+            type="button"
+            onClick={handleResetZoom}
+            disabled={currentZoom === 1}
+            css={tw`bg-white dark:bg-gray-800 text-gray-800 dark:text-white rounded-full p-2 shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed`}
+            aria-label="Reset zoom"
+          >
+            <FaUndo />
+          </button>
+        </div>
+
         {/* Swiper carousel */}
         <Swiper
           modules={[Zoom, Navigation, Pagination, Keyboard, EffectCreative]}
           spaceBetween={0}
           slidesPerView={1}
-          // zoom={{
-          //   maxRatio: 2,
-          //   minRatio: 0.5,
-          //   panOnMouseMove: true,
-          //   toggle: true,
-          //   limitToOriginalSize: true,
-          // }}
+          zoom={{
+            maxRatio: 4,
+            minRatio: 0.5,
+            panOnMouseMove: true,
+            toggle: true,
+            limitToOriginalSize: true,
+          }}
           navigation
           pagination={{ clickable: true }}
           keyboard={{ enabled: true }}
@@ -130,7 +195,7 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
           effect="creative"
           creativeEffect={{
             prev: {
-              scale: 0.5,
+              scale: 0.2,
               shadow: false,
               translate: [0, 0, -1],
             },
@@ -140,6 +205,7 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
           }}
           loop={images.length > 1}
           css={tw`w-full h-full`}
+          onSwiper={onSwiper}
         >
           {images.map((image, index) => (
             <SwiperSlide key={image.src}>

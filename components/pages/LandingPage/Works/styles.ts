@@ -35,18 +35,25 @@ export const ProjectContainer = styled.div(() => [
 export const ProjectGalleryModal = styled.div(() => [
   tw`relative max-w-7xl w-full min-height[100px] max-height[70vh] h-auto`,
   css`
-    aspect-ratio: 1.77;
+    aspect-ratio: 0.7;
+    @media screen and (min-width: 769px) {
+      aspect-ratio: 1;
+    }
+    @media screen and (min-width: 1025px) {
+      aspect-ratio: 1.77;
+    }
     .swiper-button-next,
     .swiper-button-prev {
       color: ${theme`colors.primary`};
     }
     .swiper-pagination-bullet {
-      bottom: 0;
+      bottom: 0px;
       background: ${theme`colors.primary`};
     }
     .swiper-pagination {
       width: auto;
-      background: #ffffffe7;
+      bottom: 0px;
+      background: ${theme`colors.gray.700`};
       border-radius: 50px;
       padding: 0 5px;
       left: 50%;

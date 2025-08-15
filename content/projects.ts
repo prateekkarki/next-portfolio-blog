@@ -21,7 +21,6 @@ export const projects: Project[] = [
       height: 700,
     },
     link: 'https://canadiantrainvacations.com',
-    github: 'https://github.com/prateekkarki/next-portfolio-blog',
     backgroundColor: '#ffffff',
     isFeatured: true,
   },
@@ -37,6 +36,43 @@ export const projects: Project[] = [
       height: 700,
     },
     isFeatured: true,
+    gallery: [
+      {
+        src: 'v1755278185/Works/Pd/pdm-stats-1_wdakcy.png',
+        width: 1150,
+        height: 1641,
+      },
+      {
+        src: 'v1755278186/Works/Pd/pdm-rigs-2_oodsn1.png',
+        width: 1486,
+        height: 1808,
+      },
+      {
+        src: 'v1755278186/Works/Pd/pd-tbf-3_aplwys.png',
+        width: 1793,
+        height: 1272,
+      },
+      {
+        src: 'v1755278187/Works/Pd/pd-fp-4_wm3zsq.png',
+        width: 1826,
+        height: 1230,
+      },
+      {
+        src: 'v1755278188/Works/Pd/pd-rd-5_qmvcem.png',
+        width: 1810,
+        height: 1553,
+      },
+      {
+        src: 'v1755278187/Works/Pd/pd-sc-6_at0wki.png',
+        width: 1735,
+        height: 1792,
+      },
+      {
+        src: 'v1755278188/Works/Pd/pd-eg-7_jwyvpb.png',
+        width: 1792,
+        height: 1785,
+      },
+    ],
     backgroundColor: '#ffffff',
   },
   {

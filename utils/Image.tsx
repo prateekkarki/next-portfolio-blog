@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import tw, { styled } from 'twin.macro';
 
 interface ImageProps {
@@ -12,10 +12,15 @@ interface ImageProps {
 }
 
 const ImageContainer = styled.div(() => [
-  tw`relative overflow-hidden w-full h-full`,
+  tw`relative overflow-visible w-full h-full`,
 ]);
 
 const ImageRender = styled.img(() => [
+  tw`object-contain max-w-full max-h-full w-full h-full transition-opacity duration-300
+`,
+]);
+
+const ImageWrapper = styled.div(() => [
   tw`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform object-contain max-w-full max-h-full w-full h-full transition-opacity duration-300
 `,
 ]);
@@ -31,44 +36,45 @@ const Image: React.FC<ImageProps> = ({
   const isSvg = src.endsWith('.svg');
 
   const [isLoaded, setIsLoaded] = useState(false);
-  const [hasError, setHasError] = useState(false);
 
   const handleLoad = () => {
     setIsLoaded(true);
   };
 
+  useEffect(() => {
+    if (!isLoaded) {
+      setTimeout(() => {
+        setIsLoaded(true);
+      }, 500);
+    }
+  }, [isLoaded]);
   const isImageAvailable = isSvg || isLoaded;
 
-  const handleError = () => {
-    setHasError(true);
-  };
   return (
     <ImageContainer>
-      {/* Blurred background image */}
-      {!isImageAvailable && (
+      <ImageWrapper>
+        {/* Blurred background image */}
+        {isImageAvailable ? null : (
+          <ImageRender
+            tw="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform object-contain max-w-full max-h-full w-full h-full transition-opacity duration-300"
+            src={blurUrl}
+            alt="Blurred image"
+          />
+        )}
+        {/* Main image */}
         <ImageRender
-          src={blurUrl}
-          alt=""
-          tw="opacity-100"
+          src={src}
+          alt={alt}
+          title={title}
+          tw="z-10"
           style={{
-            opacity: isImageAvailable ? 0 : 1,
+            opacity: isImageAvailable ? 1 : 1,
+            width,
+            height,
           }}
+          onLoad={handleLoad}
         />
-      )}
-      {/* Main image */}
-      <ImageRender
-        src={hasError ? blurUrl : src}
-        alt={alt}
-        title={title}
-        tw="z-10"
-        style={{
-          opacity: isImageAvailable ? 1 : 1,
-          width,
-          height,
-        }}
-        onLoad={handleLoad}
-        onError={handleError}
-      />
+      </ImageWrapper>
     </ImageContainer>
   );
 };

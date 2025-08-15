@@ -1,11 +1,9 @@
 import React, { ReactElement, useState, useMemo } from 'react';
-import Head from 'next/head';
 import tw from 'twin.macro';
 
 import TitleBlock from 'components/Common/TitleBlock';
 import { Container, MainBg } from 'components/styles';
 import { MetaHead } from 'components';
-import { Project } from '@/types';
 import { defaultSeo } from 'constants/index';
 import { projects } from 'content/projects';
 import ProjectCard from 'components/pages/LandingPage/Works/ProjectCard';

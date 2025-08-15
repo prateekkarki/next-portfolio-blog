@@ -2,9 +2,10 @@
 
 interface CloudinaryLoaderParams {
   src: string;
-  width: number;
+  width?: number;
   quality?: number | string;
   blur?: boolean;
+  blurAmount?: number;
 }
 
 export function cloudinaryLoader({
@@ -12,12 +13,14 @@ export function cloudinaryLoader({
   width,
   quality,
   blur = false,
+  blurAmount = 1800,
 }: CloudinaryLoaderParams): string {
   const root = `https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_NAME}/`;
-  const params = ['c_limit', `w_${width}`, `q_${quality || 'auto'}`];
+  const cleanSrc = src.replace(root, '');
+  const params = ['c_limit', `w_${width || 'auto'}`, `q_${quality || 'auto'}`];
   if (blur) {
-    params.push('e_blur:1800');
+    params.push(`e_blur:${blurAmount || 500}`);
   }
   const paramsString = `${params.join(',')}/`;
-  return `${root}${paramsString}${src}`;
+  return `${root}${paramsString}${cleanSrc}`;
 }

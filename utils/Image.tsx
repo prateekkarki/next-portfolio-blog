@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import tw, { styled } from 'twin.macro';
 
 interface ImageProps {
   src: string;
@@ -10,56 +11,65 @@ interface ImageProps {
   height?: number;
 }
 
+const ImageContainer = styled.div(() => [
+  tw`relative overflow-hidden w-full h-full`,
+]);
+
+const ImageRender = styled.img(() => [
+  tw`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform object-contain max-w-full max-h-full w-full h-full transition-opacity duration-300
+`,
+]);
+
 const Image: React.FC<ImageProps> = ({
   src,
   blurUrl,
   alt = '',
   title,
-  className = '',
   width,
   height,
 }) => {
+  const isSvg = src.endsWith('.svg');
+
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
+
   const handleLoad = () => {
     setIsLoaded(true);
   };
+
+  const isImageAvailable = isSvg || isLoaded;
 
   const handleError = () => {
     setHasError(true);
   };
   return (
-    <div className={`relative overflow-hidden ${className}`}>
+    <ImageContainer>
       {/* Blurred background image */}
-      {!isLoaded && (
-        <img
+      {!isImageAvailable && (
+        <ImageRender
           src={blurUrl}
           alt=""
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
-            isLoaded ? 'opacity-0' : 'opacity-100'
-          }`}
+          tw="opacity-100"
           style={{
-            filter: 'blur(10px)',
-            transform: 'scale(1.1)', // Slightly scale up to hide blur edges
+            opacity: isImageAvailable ? 0 : 1,
           }}
         />
       )}
       {/* Main image */}
-      <img
+      <ImageRender
         src={hasError ? blurUrl : src}
         alt={alt}
         title={title}
-        className={`relative z-10 w-full h-full object-cover transition-opacity duration-300 ${
-          isLoaded ? 'opacity-100' : 'opacity-0'
-        }`}
+        tw="z-10"
         style={{
-          width: `${isLoaded ? 100 : 0}%`,
-          height: `${isLoaded ? 'auto' : 0}`,
+          opacity: isImageAvailable ? 1 : 1,
+          width,
+          height,
         }}
         onLoad={handleLoad}
         onError={handleError}
       />
-    </div>
+    </ImageContainer>
   );
 };
 

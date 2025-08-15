@@ -29,15 +29,20 @@ export interface BlogArticle {
   content?: string;
 }
 
+export interface NextImage {
+  src: string;
+  width?: number;
+  height?: number;
+}
 export interface Project {
   id: number;
   title: string;
   description: string;
   technologies: string[];
-  image: string;
+  image: NextImage;
   link?: string;
   github?: string;
-  gallery?: string[];
+  gallery?: NextImage[];
   isFeatured?: boolean;
   backgroundColor?: string;
 }

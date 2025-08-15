@@ -1,4 +1,4 @@
-import tw, { css, styled } from 'twin.macro';
+import tw, { css, styled, theme } from 'twin.macro';
 
 export const ProjectImageWindow = styled.div<{ backgroundColor?: string }>(
   ({ backgroundColor }) => [
@@ -30,4 +30,31 @@ export const ProjectImageWindow = styled.div<{ backgroundColor?: string }>(
 
 export const ProjectContainer = styled.div(() => [
   tw`bg-light-200 dark:bg-dark-200 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300`,
+]);
+
+export const ProjectGalleryModal = styled.div(() => [
+  tw`relative max-w-7xl w-full min-height[100px] max-height[70vh] h-auto`,
+  css`
+    aspect-ratio: 1.77;
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: ${theme`colors.primary`};
+    }
+    .swiper-pagination-bullet {
+      bottom: 0;
+      background: ${theme`colors.primary`};
+    }
+    .swiper-pagination {
+      width: auto;
+      background: #ffffffe7;
+      border-radius: 50px;
+      padding: 0 5px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .swiper-wrapper{
+      height: calc(100% - 32px);
+    }
+  `,
 ]);

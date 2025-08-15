@@ -47,6 +47,7 @@
     "react-transition-group": "^4.4.1",
     "react-vertical-timeline-component": "^3.3.0",
     "remark-gfm": "^1.0.0",
+    "swiper": "^11.2.10",
     "tailwindcss": "^2.1.2",
     "twin.macro": "^2.4.1"
   },

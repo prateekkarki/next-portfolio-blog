@@ -7,6 +7,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'airbnb',
   ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -14,8 +15,9 @@ module.exports = {
     ecmaVersion: 2020,
     sourceType: 'module',
     allowImportExportEverywhere: true,
+    project: './tsconfig.json',
   },
-  plugins: ['react', 'prettier'],
+  plugins: ['react', 'prettier', '@typescript-eslint'],
   rules: {
     'max-len': [
       'error',
@@ -27,9 +29,15 @@ module.exports = {
       },
     ],
     'object-curly-newline': ['error', { consistent: true }],
-    'no-unused-vars': 0,
     indent: 0,
     'comma-dangle': 0,
+    'no-unused-vars': 0,
+    'no-use-before-define': 0,
+    'import/extensions': 0,
+    'consistent-return': 0,
+    'react/require-default-props': 0,
+    'no-undef': 0,
+    'import/prefer-default-export': 0,
     'linebreak-style': 0,
     'no-tabs': 0,
     'import/no-unresolved': 0,
@@ -48,5 +56,7 @@ module.exports = {
     'react/react-in-jsx-scope': 0,
     'react/jsx-uses-react': 0,
     'react/jsx-fragments': 0,
+    'implicit-arrow-linebreak': 0,
+    'function-paren-newline': 0,
   },
 };

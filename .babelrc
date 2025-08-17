@@ -1,7 +1,15 @@
 {
   "presets": [
     [
-    "next/babel",
+      "@babel/preset-typescript",
+      {
+        "allowNamespaces": true,
+        "allowDeclareFields": true,
+        "onlyRemoveTypeImports": true
+      }
+    ],
+    [
+      "next/babel",
       {
         "preset-react": {
           "runtime": "automatic",

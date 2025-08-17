@@ -9,4 +9,10 @@ module.exports = {
   env: {
     API_URL: process.env.API_URL,
   },
+  typescript: {
+    // Enable TypeScript strict mode
+    ignoreBuildErrors: false,
+  },
+  // Use Babel for compilation (not SWC) since we need twin.macro
+  swcMinify: false,
 };

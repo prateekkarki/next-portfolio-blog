@@ -6,7 +6,6 @@ import {
   Pagination,
   Keyboard,
   EffectCreative,
-  Zoom,
 } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
 import tw, { styled } from 'twin.macro';
@@ -135,61 +134,19 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
       ariaHideApp={false}
     >
       <ProjectGalleryModal>
-        {/* Close button */}
         <button
           type="button"
           onClick={onClose}
-          css={tw`absolute -top-4 -right-4 z-10 bg-white dark:bg-gray-800 text-gray-800 dark:text-white rounded-full p-2 shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors`}
+          css={tw`absolute -top-4 -right-4 z-10 bg-white dark:bg-gray-800 text-gray-800 dark:text-white rounded-full p-2 shadow-lg text-2xl md:text-base hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors`}
           aria-label="Close gallery"
         >
           <FaTimes />
         </button>
 
-        {/* Zoom control buttons */}
-        <div
-          css={tw`absolute -top-4 left-auto right-8 z-10 flex gap-2 lg:hidden`}
-        >
-          <button
-            type="button"
-            onClick={handleZoomIn}
-            disabled={currentZoom >= 4}
-            css={tw`bg-white dark:bg-gray-800 text-gray-800 dark:text-white rounded-full p-2 shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed`}
-            aria-label="Zoom in"
-          >
-            <FaSearchPlus />
-          </button>
-          <button
-            type="button"
-            onClick={handleZoomOut}
-            disabled={currentZoom <= 0.5}
-            css={tw`bg-white dark:bg-gray-800 text-gray-800 dark:text-white rounded-full p-2 shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed`}
-            aria-label="Zoom out"
-          >
-            <FaSearchMinus />
-          </button>
-          <button
-            type="button"
-            onClick={handleResetZoom}
-            disabled={currentZoom === 1}
-            css={tw`bg-white dark:bg-gray-800 text-gray-800 dark:text-white rounded-full p-2 shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed`}
-            aria-label="Reset zoom"
-          >
-            <FaUndo />
-          </button>
-        </div>
-
-        {/* Swiper carousel */}
         <Swiper
-          modules={[Zoom, Navigation, Pagination, Keyboard, EffectCreative]}
+          modules={[Navigation, Pagination, Keyboard, EffectCreative]}
           spaceBetween={0}
           slidesPerView={1}
-          zoom={{
-            maxRatio: 4,
-            minRatio: 0.5,
-            panOnMouseMove: true,
-            toggle: true,
-            limitToOriginalSize: true,
-          }}
           navigation
           pagination={{ clickable: true }}
           keyboard={{ enabled: true }}

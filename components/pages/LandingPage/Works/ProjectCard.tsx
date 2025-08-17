@@ -1,5 +1,6 @@
 import React, { ReactElement, useState } from 'react';
 import tw from 'twin.macro';
+import { FaArrowUp, FaWindowRestore } from 'react-icons/fa';
 import { BigLink } from '@/components/styles';
 import { cloudinaryLoader } from '@/utils';
 import Image from '@/utils/Image';
@@ -57,14 +58,18 @@ const ProjectActions: React.FC<{
 }> = ({ project, onGalleryClick, hasGallery }) => (
   <div css={tw`flex gap-3 mt-4`}>
     {project.link && (
-      <ProjectButton href={project.link}>Live Site 🡵</ProjectButton>
+      <ProjectButton href={project.link}>
+        Live Site <FaArrowUp css={tw`transform rotate-45 -translate-y-1`} />
+      </ProjectButton>
     )}
     {project.github && (
-      <ProjectButton href={project.github}>GitHub 🡵</ProjectButton>
+      <ProjectButton href={project.github}>
+        GitHub <FaArrowUp css={tw`transform rotate-45 -translate-y-1`} />
+      </ProjectButton>
     )}
     {hasGallery && (
       <ProjectButton onClick={onGalleryClick} isButton>
-        Gallery ⬔
+        Gallery <FaWindowRestore />
       </ProjectButton>
     )}
   </div>

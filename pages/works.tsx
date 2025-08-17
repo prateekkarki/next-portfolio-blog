@@ -17,13 +17,25 @@ function Works(): ReactElement {
     url: `${process.env.NEXT_PUBLIC_SITE_URL}/works`,
   };
 
-  // Get all unique technologies from projects
+  // Get all unique technologies from projects sorted by frequency
   const allTechnologies = useMemo(() => {
-    const techs = new Set<string>();
+    const techCounts = new Map<string, number>();
+
+    // Count occurrences of each technology
     projects.forEach((project) => {
-      project.technologies.forEach((tech) => techs.add(tech));
+      project.technologies.forEach((tech) => {
+        techCounts.set(tech, (techCounts.get(tech) || 0) + 1);
+      });
     });
-    return Array.from(techs).sort();
+
+    return Array.from(techCounts.entries())
+      .sort(([techA, countA], [techB, countB]) => {
+        if (countB !== countA) {
+          return countB - countA; // Sort by frequency descending
+        }
+        return techA.localeCompare(techB); // Sort alphabetically for ties
+      })
+      .map(([tech]) => tech);
   }, []);
 
   // Filter projects based on selected technology

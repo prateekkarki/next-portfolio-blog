@@ -146,7 +146,9 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
         </button>
 
         {/* Zoom control buttons */}
-        <div css={tw`absolute -top-4 left-auto right-8 z-10 flex gap-2`}>
+        <div
+          css={tw`absolute -top-4 left-auto right-8 z-10 flex gap-2 lg:hidden`}
+        >
           <button
             type="button"
             onClick={handleZoomIn}
@@ -200,16 +202,16 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
               translate: [0, 0, -1],
             },
             next: {
-              translate: ['100%', 0, 0],
+              translate: ['110%', 5, 0],
             },
           }}
           loop={images.length > 1}
-          css={tw`w-full h-full`}
+          css={tw`w-full h-full `}
           onSwiper={onSwiper}
         >
           {images.map((image, index) => (
             <SwiperSlide key={image.src}>
-              <div className="swiper-zoom-container" tw="w-full h-full">
+              <div className="swiper-zoom-container" tw="w-full h-full ">
                 <div tw="flex items-center justify-center w-full h-full">
                   <Image
                     src={cloudinaryLoader({
@@ -227,6 +229,7 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
                       blurAmount: 100,
                       quality: 'auto:low',
                     })}
+                    centered
                     css={tw`max-w-full max-h-full object-contain rounded-lg`}
                   />
                 </div>

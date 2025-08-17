@@ -33,15 +33,8 @@ export const ProjectContainer = styled.div(() => [
 ]);
 
 export const ProjectGalleryModal = styled.div(() => [
-  tw`relative max-w-7xl w-full min-height[100px] max-height[70vh] h-auto`,
+  tw`relative max-w-7xl w-full min-height[100px] max-height[90vh] height[90vh] md:height[80vh] lg:height[70vh]`,
   css`
-    aspect-ratio: 0.7;
-    @media screen and (min-width: 769px) {
-      aspect-ratio: 1;
-    }
-    @media screen and (min-width: 1025px) {
-      aspect-ratio: 1.77;
-    }
     .swiper-button-next,
     .swiper-button-prev {
       color: ${theme`colors.primary`};
@@ -62,6 +55,9 @@ export const ProjectGalleryModal = styled.div(() => [
 
     .swiper-wrapper{
       height: calc(100% - 32px);
+      border-radius: 0.375rem;
     }
+
+
   `,
 ]);

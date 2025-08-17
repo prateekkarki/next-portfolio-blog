@@ -9,6 +9,7 @@ interface ImageProps {
   className?: string;
   width?: number;
   height?: number;
+  centered?: boolean;
 }
 
 const ImageContainer = styled.div(() => [
@@ -20,9 +21,9 @@ const ImageRender = styled.img(() => [
 `,
 ]);
 
-const ImageWrapper = styled.div(() => [
-  tw`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform object-contain max-w-full max-h-full w-full h-full transition-opacity duration-300
-`,
+const ImageWrapper = styled.div<{ centered?: boolean }>(({ centered }) => [
+  tw`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform object-contain max-w-full max-h-full w-full h-full transition-opacity duration-300`,
+  centered ? tw`flex items-center justify-center` : tw`block`,
 ]);
 
 const Image: React.FC<ImageProps> = ({
@@ -32,6 +33,7 @@ const Image: React.FC<ImageProps> = ({
   title,
   width,
   height,
+  centered,
 }) => {
   const isSvg = src.endsWith('.svg');
 
@@ -52,11 +54,11 @@ const Image: React.FC<ImageProps> = ({
 
   return (
     <ImageContainer>
-      <ImageWrapper>
+      <ImageWrapper centered={centered}>
         {/* Blurred background image */}
         {isImageAvailable ? null : (
           <ImageRender
-            tw="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform object-contain max-w-full max-h-full w-full h-full transition-opacity duration-300"
+            tw="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform object-contain object-center max-w-full max-h-full w-full h-full transition-opacity duration-300"
             src={blurUrl}
             alt="Blurred image"
           />

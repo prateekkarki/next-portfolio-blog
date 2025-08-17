@@ -29,7 +29,7 @@ export const projects: Project[] = [
     title: 'Data Visualization PWA for Precision Drilling',
     description:
       'A cross-platform progressive web app (PWA) to visualize and interpret large-scale industrial data. The application, accessible on both web and mobile, transforms complex raw datasets into clear, actionable insights. By streamlining data analysis and emphasizing operational performance, the app enables field teams and decision-makers to identify key trends and take informed action in real-time. This project significantly improved data accessibility, responsiveness, and overall efficiency for drilling operations.',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+    technologies: ['React', 'Node.js', 'MongoDB'],
     image: {
       src: 'v1755091108/Technologies/icons/logo_bdd5ah.svg',
       width: 700,
@@ -80,14 +80,13 @@ export const projects: Project[] = [
     title: 'Klaire Labs eCommerce Website',
     description:
       "A Magento 2-based eCommerce website to sell medicine online. It's a popular website used by thousands of users. I worked mainly on the user dashboard section of the website. Here users can update their profile information, payment methods, and addresses. They can also update and check their order status.",
-    technologies: ['Magento 2', 'PHP', 'MySQL', 'JavaScript', 'HTML', 'CSS'],
+    technologies: ['Magento 2', 'PHP', 'MySQL', 'JavaScript'],
     image: {
       src: 'v1755091327/Technologies/icons/Magento-1024x512_sdvaem.webp',
       width: 1024,
       height: 512,
     },
     link: 'https://us.sfihealth.com/',
-    gallery: [{ src: '/images/projects/taskapp.jpg', width: 700, height: 700 }],
     backgroundColor: '#ffffff',
   },
   {
@@ -172,7 +171,7 @@ export const projects: Project[] = [
     title: 'Magento 2 CMS Banner Extension',
     description:
       'This is a Magento 2 extension that allows you to create and manage banners on your website. Convenient and easy to use extension if you need to add banners to your cms pages like about us or homepage in your Magento store.',
-    technologies: ['Magento 2', 'PHP', 'MySQL', 'JavaScript', 'HTML', 'CSS'],
+    technologies: ['Magento 2', 'PHP', 'MySQL', 'JavaScript'],
     image: {
       src: 'v1755091327/Technologies/icons/Magento-1024x512_sdvaem.webp',
       width: 1024,

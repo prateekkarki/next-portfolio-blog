@@ -29,12 +29,15 @@ const buttonStyles = ({ variant, size }: ButtonStyleProps) => [
       ${tw`
         relative overflow-hidden
         font-semibold text-base text-light-100 text-center
-        w-40 py-4 block rounded-full
+        w-40 py-4 rounded-full
         transform transition-all duration-200 ease-in-out translate-y-0
+        flex items-center justify-center gap-1
       `}
-      ${size === 'small' && tw`w-auto py-2 px-4 text-sm whitespace-nowrap`}
-      ${size === 'medium' && tw`w-32 py-3`}
-      ${size === 'large' && tw`w-40 py-4`}
+      ${
+        size === 'small' && tw`w-auto py-2 px-4 text-sm whitespace-nowrap gap-1`
+      }
+      ${size === 'medium' && tw`w-32 py-3 `}
+      ${size === 'large' && tw`w-40 py-4 gap-2`}
 
       ${variant === 'primary' && tw`bg-primary`}
       ${variant === 'secondary' && tw`bg-secondary`}

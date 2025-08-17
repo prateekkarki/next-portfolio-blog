@@ -33,7 +33,7 @@ export const ProjectContainer = styled.div(() => [
 ]);
 
 export const ProjectGalleryModal = styled.div(() => [
-  tw`relative max-w-7xl w-full min-height[100px] max-height[90vh] height[90vh] md:height[80vh] lg:height[70vh]`,
+  tw`relative max-w-7xl w-full min-height[100px] max-height[90vh] height[80vh] md:height[75vh] lg:height[70vh]`,
   css`
     .swiper-button-next,
     .swiper-button-prev {

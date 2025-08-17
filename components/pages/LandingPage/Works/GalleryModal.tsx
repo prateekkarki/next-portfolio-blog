@@ -197,11 +197,12 @@ export const GalleryModal: React.FC<GalleryModalProps> = ({
           effect="creative"
           creativeEffect={{
             prev: {
-              scale: 0.2,
+              scale: 0,
               shadow: false,
               translate: [0, 0, -1],
             },
             next: {
+              scale: 0,
               translate: ['110%', 5, 0],
             },
           }}

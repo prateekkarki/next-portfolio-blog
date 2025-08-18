@@ -184,7 +184,7 @@ export const projects: Project[] = [
     updatedAt: '2024-01-20',
     createdAt: '2024-01-20',
     isExternal: true, // for external URLs
-    externalUrl: 'https://www.toptal.com/react/react-memoization', // for external URLs
+    externalUrl: 'https://...', // for external URLs
     thumbnail: {
       url: '...',
     },

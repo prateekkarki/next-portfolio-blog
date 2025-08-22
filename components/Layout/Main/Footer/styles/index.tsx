@@ -16,7 +16,7 @@ export const FooterLink = ({
     <a
       css={tw`hover:(text-dark-primary dark:text-light-primary) text-primary`}
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       href={href}
     >
       {label}

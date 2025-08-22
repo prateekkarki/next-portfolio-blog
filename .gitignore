@@ -40,3 +40,7 @@ yarn-error.log*
 
 #typescript
 tsconfig.tsbuildinfo
+
+# sitemap
+public/sitemap.xml
+public/robots.txt

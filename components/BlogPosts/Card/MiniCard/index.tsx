@@ -26,7 +26,7 @@ export const LinkWrapper = ({
         target="_blank"
         title={article.title}
         tw="max-w-full w-full"
-        rel="noreferrer"
+        rel="noopener noreferrer"
       >
         {children}
       </a>
@@ -39,7 +39,7 @@ export const LinkWrapper = ({
         href={`/article/${article.slug}`}
         title={article.title}
         tw="max-w-full w-full"
-        rel="noreferrer"
+        rel="noopener noreferrer"
       >
         {children}
       </a>

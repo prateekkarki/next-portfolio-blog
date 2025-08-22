@@ -23,7 +23,12 @@ const ProjectButton: React.FC<{
   }
 
   return (
-    <BigLink target="_blank" href={href || '#'} size="small">
+    <BigLink
+      target="_blank"
+      rel="noopener noreferrer"
+      href={href || '#'}
+      size="small"
+    >
       {children}
     </BigLink>
   );

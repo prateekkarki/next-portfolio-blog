@@ -29,7 +29,12 @@ const ContactLinks = ({
   children,
   lastItem,
 }: ContactLinksProps): ReactElement => (
-  <Links target="_blank" rel="noreferrer" href={href} lastItem={lastItem}>
+  <Links
+    target="_blank"
+    rel="noopener noreferrer"
+    href={href}
+    lastItem={lastItem}
+  >
     {children}
   </Links>
 );
@@ -69,7 +74,7 @@ function Contact(): ReactElement {
           <div css={tw`pt-4`}>
             <a
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               css={tw`text-xl text-light-700 dark:text-dark-700 hover:text-primary`}
               href="mailto:info@meetprateek.com"
             >

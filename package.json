@@ -8,7 +8,9 @@
     "develop": "next dev",
     "start": "next start",
     "build": "next build",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "postbuild": "node generateSitemap.js",
+    "generate-sitemap": "node generateSitemap.js"
   },
   "babelMacros": {
     "twin": {
@@ -22,6 +24,7 @@
   "dependencies": {
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
+    "@vercel/analytics": "^1.5.0",
     "animejs": "^3.2.0",
     "aos": "^3.0.0-beta.6",
     "axios": "^0.21.1",
@@ -30,11 +33,9 @@
     "dotenv": "10.0.0",
     "globby": "^11.0.1",
     "hamburger-react": "^2.4.0",
-    "isomorphic-unfetch": "^3.0.0",
     "lodash": "^4.17.21",
     "next": "^12.0.7",
     "next-themes": "^0.0.14",
-    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.15.3",

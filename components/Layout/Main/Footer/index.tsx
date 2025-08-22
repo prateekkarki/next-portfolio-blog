@@ -106,7 +106,7 @@ function Footer(): ReactElement {
           Made with ❤️ by{' '}
           <a
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             css={tw`font-semibold text-primary hover:text-secondary`}
             href="https://github.com/prateekkarki/"
           >

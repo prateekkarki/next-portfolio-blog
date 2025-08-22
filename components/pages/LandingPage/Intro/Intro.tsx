@@ -123,6 +123,7 @@ function Intro(): ReactElement {
                 <BigLink
                   href="https://www.toptal.com/resume/prateek-karki"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Hire Me
                 </BigLink>

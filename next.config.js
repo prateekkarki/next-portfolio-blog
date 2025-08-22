@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 module.exports = {
+  reactStrictMode: true,
   images: {
     domains: ['res.cloudinary.com'],
     deviceSizes: [320, 640, 660, 768, 1024, 1600],
@@ -14,5 +15,5 @@ module.exports = {
     ignoreBuildErrors: false,
   },
   // Use Babel for compilation (not SWC) since we need twin.macro
-  swcMinify: false,
+  swcMinify: true,
 };

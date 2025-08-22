@@ -19,6 +19,7 @@ import SubmitButton from './SubmitButton';
 function openInNewTab(href: string) {
   Object.assign(document.createElement('a'), {
     target: '_blank',
+    rel: 'noopener noreferrer',
     href,
   }).click();
 }
@@ -81,7 +82,7 @@ function Index({ modalOpen, handleClose }: IndexProps): ReactElement {
                 <div tw="width[420px] max-w-full mt-2 bg-dark-800 rounded-lg flex flex-wrap justify-start md:flex-row">
                   <input
                     id="accessEmail"
-                    type="text"
+                    type="email"
                     name="accessEmail"
                     tw="rounded-lg p-4 appearance-none width[calc(100% - 52px)] text-dark-200 bg-dark-800 focus:outline-none text-sm"
                     placeholder="john.doe@example.com"
@@ -125,7 +126,7 @@ function Index({ modalOpen, handleClose }: IndexProps): ReactElement {
               <div tw="width[180px] max-w-full mt-2 bg-dark-800 rounded-lg flex flex-wrap justify-start md:flex-row">
                 <input
                   id="accessCode"
-                  type="email"
+                  type="text"
                   tw="rounded-lg p-4 appearance-none
                         width[calc(100% - 52px)]
                         text-dark-200 bg-dark-800

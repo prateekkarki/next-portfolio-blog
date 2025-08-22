@@ -2,6 +2,7 @@ import React, { useEffect, ComponentType, ReactElement } from 'react';
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'next-themes';
 import * as analytics from 'utils/analytics';
+import { Analytics } from '@vercel/analytics/react';
 import { MainLayout } from 'components';
 
 import 'assets/css/styles.css';
@@ -28,6 +29,7 @@ const App = ({ Component, pageProps, router }: AppProps): ReactElement => {
       enableSystem={false}
     >
       <MainLayout pathname={router.pathname}>
+        <Analytics />
         <Component {...pageProps} />
       </MainLayout>
     </NextThemeProvider>
